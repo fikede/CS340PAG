@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76CE3259-76A9-491A-ADA1-0F2025C0EAC0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>_340GUI</RootNamespace>
+    <AssemblyName>340GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAgent.Designer.cs">
+      <DependentUpon>AddAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAgentWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAgentWarning.Designer.cs">
+      <DependentUpon>AddAgentWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPolicy.Designer.cs">
+      <DependentUpon>AddPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPolicyWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPolicyWarning.Designer.cs">
+      <DependentUpon>AddPolicyWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentDelinquent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentDelinquent.Designer.cs">
+      <DependentUpon>AgentDelinquent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentFailToSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentFailToSearch.Designer.cs">
+      <DependentUpon>AgentFailToSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentHome.Designer.cs">
+      <DependentUpon>AgentHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentSearched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentSearched.Designer.cs">
+      <DependentUpon>AgentSearched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentSearchPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentSearchPage.Designer.cs">
+      <DependentUpon>AgentSearchPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CancelPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelPolicy.Designer.cs">
+      <DependentUpon>CancelPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FailToLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FailToLogin.Designer.cs">
+      <DependentUpon>FailToLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LossWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LossWarning.Designer.cs">
+      <DependentUpon>LossWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakeClaim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeClaim.Designer.cs">
+      <DependentUpon>MakeClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerDelinquent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerDelinquent.Designer.cs">
+      <DependentUpon>ManagerDelinquent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerFailToSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerFailToSearch.Designer.cs">
+      <DependentUpon>ManagerFailToSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerHome.Designer.cs">
+      <DependentUpon>ManagerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerSearch.Designer.cs">
+      <DependentUpon>ManagerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerSearched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerSearched.Designer.cs">
+      <DependentUpon>ManagerSearched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoreLossWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoreLossWarning.Designer.cs">
+      <DependentUpon>MoreLossWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentHistory.Designer.cs">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolicyPage.Designer.cs">
+      <DependentUpon>PolicyPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PricePolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PricePolicy.Designer.cs">
+      <DependentUpon>PricePolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateMakeSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMakeSure.Designer.cs">
+      <DependentUpon>UpdateMakeSure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePolicy.Designer.cs">
+      <DependentUpon>UpdatePolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUnsave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUnsave.Designer.cs">
+      <DependentUpon>UpdateUnsave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateWarning.Designer.cs">
+      <DependentUpon>UpdateWarning.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddAgent.resx">
+      <DependentUpon>AddAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAgentWarning.resx">
+      <DependentUpon>AddAgentWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPolicy.resx">
+      <DependentUpon>AddPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPolicyWarning.resx">
+      <DependentUpon>AddPolicyWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentDelinquent.resx">
+      <DependentUpon>AgentDelinquent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentFailToSearch.resx">
+      <DependentUpon>AgentFailToSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentHome.resx">
+      <DependentUpon>AgentHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentSearched.resx">
+      <DependentUpon>AgentSearched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentSearchPage.resx">
+      <DependentUpon>AgentSearchPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelPolicy.resx">
+      <DependentUpon>CancelPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FailToLogin.resx">
+      <DependentUpon>FailToLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LossWarning.resx">
+      <DependentUpon>LossWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeClaim.resx">
+      <DependentUpon>MakeClaim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerDelinquent.resx">
+      <DependentUpon>ManagerDelinquent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerFailToSearch.resx">
+      <DependentUpon>ManagerFailToSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerHome.resx">
+      <DependentUpon>ManagerHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerSearch.resx">
+      <DependentUpon>ManagerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerSearched.resx">
+      <DependentUpon>ManagerSearched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoreLossWarning.resx">
+      <DependentUpon>MoreLossWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentHistory.resx">
+      <DependentUpon>PaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolicyPage.resx">
+      <DependentUpon>PolicyPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PricePolicy.resx">
+      <DependentUpon>PricePolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UpdateMakeSure.resx">
+      <DependentUpon>UpdateMakeSure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePolicy.resx">
+      <DependentUpon>UpdatePolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUnsave.resx">
+      <DependentUpon>UpdateUnsave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateWarning.resx">
+      <DependentUpon>UpdateWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
