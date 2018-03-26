@@ -100,9 +100,9 @@ namespace PAG340MiddleWare
 
         }
 
-        public LinkedList<Payment> GetPaymentHistory()
+        public List<Payment> GetPaymentHistory()
         {
-            LinkedList<Payment> paymentHistory = new LinkedList<Payment>();
+            List<Payment> paymentHistory = new List<Payment>();
 
             return paymentHistory;
         }

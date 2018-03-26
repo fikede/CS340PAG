@@ -39,16 +39,16 @@ namespace PAG340MiddleWare
 
         }
 
-        public LinkedList<Policy> search(string policyHolderFirstName, string policyHolderLastName, string policyNumber)
+        public List<Policy> search(string policyHolderFirstName, string policyHolderLastName, string policyNumber)
         {
-            LinkedList<Policy> policyList = new LinkedList<Policy>();
+            List<Policy> policyList = new List<Policy>();
 
             return policyList;
         }
 
-        public LinkedList<Policy> delinquentAccounts(string state, double amountOverdue)
+        public List<Policy> delinquentAccounts(string state, double amountOverdue)
         {
-            LinkedList<Policy> policyList = new LinkedList<Policy>();
+            List<Policy> policyList = new List<Policy>();
 
             return policyList;
         }
