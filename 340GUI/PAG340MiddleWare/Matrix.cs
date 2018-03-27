@@ -26,9 +26,25 @@ namespace PAG340MiddleWare
             return inverseMatrix;
         }
 
+        /*
+         * This method is used to produce the transpose of a Matrix.
+         * First a new matrix matrixTransposed is made that has it's number of rows equal to the number of columns of the existing matrix and vice versa.
+         * Then all that is done is the rows and columns are fliped.
+         * For example if the existing has a value v at row m and column n then that v will go at row n column m in matrixTransposed.
+         * -jef
+         **/
         public Matrix transpose()
         {
             Matrix matrixTransposed = new Matrix(numberOfColumns, numberOfRows);
+            double value;
+            for(int rowNumber = 0; rowNumber < numberOfRows; rowNumber++)
+            {
+                for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
+                {
+                    value = getNumberAt(rowNumber, columnNumber);
+                    matrixTransposed.setNumberAt(columnNumber, rowNumber, value);
+                }
+            }
 
             return matrixTransposed;
         }
@@ -38,6 +54,7 @@ namespace PAG340MiddleWare
          * What it does is takes a row from the lhsMatrix and column from the rhsMatrix and preforms a dot product of the two.
          * There is an exception thrown if a user tries to multiply two incompatible matrices.
          * The product of the two matrices will also have the number of rows of the lhsMatrix and the number of columns of the rhsMatrix.
+         * -jef
          **/
         public static Matrix operator*(Matrix lhsMatrix, Matrix rhsMatrix)
         {
@@ -53,7 +70,7 @@ namespace PAG340MiddleWare
                 int lhsNumberOfRows = lhsMatrix.numberOfRows;
                 int rhsNumberOfColumns = rhsMatrix.numberOfColumns;
                 int lhsNumberOfColumns = lhsMatrix.numberOfColumns;
-                //The resulting Matrix will have the same number of rows as the lhsMatrix and the same number of columns as the rhsMatrix
+                //The resulting Matrix will have the same number of rows as the lhsMatrix and the same number of columns as the rhsMatrix - jef
                 productMatrix = new Matrix(lhsNumberOfRows, rhsNumberOfColumns);
                 for(int index1 = 0; index1 < lhsNumberOfRows; index1++)
                 {
@@ -82,6 +99,7 @@ namespace PAG340MiddleWare
         /*
          * Every index in the array of a row and column number is found by
          * index = columnNumber + rowNumber(numberOfColumns)
+         * -jef
          **/
         private int getIndexOf(int rowNumber, int columnNumber)
         {
