@@ -308,5 +308,8 @@
     <None Include="Properties\Settings.settings" />
     <None Include="Resources\warning.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIC.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
