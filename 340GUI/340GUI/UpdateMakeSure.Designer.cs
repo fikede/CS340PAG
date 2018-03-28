@@ -74,7 +74,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "UpdateMakeSure";
-            this.Text = "UpdateMakeSure";
+            this.Text = "Update";
             this.Load += new System.EventHandler(this.UpdateMakeSure_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

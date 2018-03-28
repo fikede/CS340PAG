@@ -95,7 +95,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel1);
             this.Name = "PaymentHistory";
-            this.Text = "PaymentHistory";
+            this.Text = "Payment History";
             this.ResumeLayout(false);
             this.PerformLayout();
 

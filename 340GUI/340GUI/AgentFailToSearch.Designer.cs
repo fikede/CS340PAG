@@ -241,7 +241,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Name = "AgentFailToSearch";
-            this.Text = "AgentFailToSearch";
+            this.Text = "Search Page";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

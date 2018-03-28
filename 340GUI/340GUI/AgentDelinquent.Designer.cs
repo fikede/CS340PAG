@@ -185,7 +185,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Name = "AgentDelinquent";
-            this.Text = "AgentDelinquent";
+            this.Text = "Delinquent Account Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 

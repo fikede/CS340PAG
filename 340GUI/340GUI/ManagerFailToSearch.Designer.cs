@@ -281,7 +281,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Name = "ManagerFailToSearch";
-            this.Text = "ManagerFailToSearch";
+            this.Text = "Manager Search Page";
             this.Load += new System.EventHandler(this.ManagerFailToSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

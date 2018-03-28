@@ -215,6 +215,9 @@
     <Compile Include="UpdateWarning.Designer.cs">
       <DependentUpon>UpdateWarning.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAgent.aa-DJ.resx">
+      <DependentUpon>AddAgent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddAgent.resx">
       <DependentUpon>AddAgent.cs</DependentUpon>
     </EmbeddedResource>

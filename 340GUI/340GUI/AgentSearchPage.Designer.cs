@@ -205,7 +205,7 @@
             this.Controls.Add(this.linkLabel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "AgentSearchPage";
-            this.Text = "Agent Search Page";
+            this.Text = "Search Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 

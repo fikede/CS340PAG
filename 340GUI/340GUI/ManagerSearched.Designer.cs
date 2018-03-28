@@ -245,7 +245,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Name = "ManagerSearched";
-            this.Text = "ManagerSearched";
+            this.Text = "Manager Search Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 

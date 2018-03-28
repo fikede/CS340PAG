@@ -102,7 +102,7 @@
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label1);
             this.Name = "CancelPolicy";
-            this.Text = "CancelPolicy";
+            this.Text = "Cancel Policy";
             this.ResumeLayout(false);
             this.PerformLayout();
 

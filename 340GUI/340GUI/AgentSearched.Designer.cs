@@ -215,7 +215,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Name = "AgentSearched";
-            this.Text = "AgentSearched";
+            this.Text = "Search Page";
             this.Load += new System.EventHandler(this.AgentSearched_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

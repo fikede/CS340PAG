@@ -562,7 +562,7 @@
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "UpdatePolicy";
-            this.Text = "UpdatePolicy";
+            this.Text = "Update Policy";
             this.ResumeLayout(false);
             this.PerformLayout();
 

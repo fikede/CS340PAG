@@ -398,7 +398,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Name = "PricePolicy";
-            this.Text = "PricePolicy";
+            this.Text = "Price a Policy";
             this.Load += new System.EventHandler(this.PricePolicy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -215,7 +215,7 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Name = "ManagerDelinquent";
-            this.Text = "ManagerDelinquent";
+            this.Text = "Manager Delinquent Account Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 

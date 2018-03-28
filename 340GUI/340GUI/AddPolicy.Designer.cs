@@ -442,7 +442,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddPolicy";
-            this.Text = "AddPolicy";
+            this.Text = "Add Policy";
             this.Load += new System.EventHandler(this.AddPolicy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

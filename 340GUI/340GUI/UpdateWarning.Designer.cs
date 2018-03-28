@@ -74,7 +74,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "UpdateWarning";
-            this.Text = "UpdateWarning";
+            this.Text = "Warning";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
