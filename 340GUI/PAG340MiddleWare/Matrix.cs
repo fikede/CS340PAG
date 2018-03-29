@@ -10,13 +10,13 @@ namespace PAG340MiddleWare
     {
         private int numberOfRows;
         private int numberOfColumns;
-        private double[] matrix;
+        private double[,] matrix;
 
         public Matrix(int inNumberOfRows, int inNumberOfColumns)
         {
             numberOfRows = inNumberOfRows;
             numberOfColumns = inNumberOfColumns;
-            matrix = new double[inNumberOfColumns * inNumberOfRows];
+            matrix = new double[inNumberOfRows, inNumberOfColumns];
         }
 
         public Matrix inverse()
@@ -72,41 +72,28 @@ namespace PAG340MiddleWare
                 int lhsNumberOfColumns = lhsMatrix.numberOfColumns;
                 //The resulting Matrix will have the same number of rows as the lhsMatrix and the same number of columns as the rhsMatrix - jef
                 productMatrix = new Matrix(lhsNumberOfRows, rhsNumberOfColumns);
-                for(int index1 = 0; index1 < lhsNumberOfRows; index1++)
+                for(int lhsRowNumber = 0; lhsRowNumber < lhsNumberOfRows; lhsRowNumber++)
                 {
-                    for (int index2 = 0; index2 < rhsNumberOfColumns; index2++)
+                    for (int rhsColumnNumber = 0; rhsColumnNumber < rhsNumberOfColumns; rhsColumnNumber++)
                     {
                         double result = 0.0;
                         double lhsNumber;
                         double rhsNumber;
 
-                        for(int index3 = 0; index3 < lhsNumberOfColumns; index3++)
+                        for(int lhsColumnNumber = 0; lhsColumnNumber < lhsNumberOfColumns; lhsColumnNumber++)
                         {
-                            lhsNumber = lhsMatrix.getNumberAt(index1, index3);
-                            rhsNumber = rhsMatrix.getNumberAt(index3, index2);
+                            lhsNumber = lhsMatrix.getNumberAt(lhsRowNumber, lhsColumnNumber);
+                            rhsNumber = rhsMatrix.getNumberAt(lhsColumnNumber, rhsColumnNumber);
                             result += (lhsNumber * rhsNumber);
                         }
 
-                        productMatrix.setNumberAt(index1, index2, result);
+                        productMatrix.setNumberAt(lhsRowNumber, rhsColumnNumber, result);
                     }
                 }
 
             }
             
             return productMatrix;
-        }
-
-        /*
-         * Every index in the array of a row and column number is found by
-         * index = columnNumber + rowNumber(numberOfColumns)
-         * -jef
-         **/
-        private int getIndexOf(int rowNumber, int columnNumber)
-        {
-            int index = numberOfColumns;
-            index *= rowNumber;
-            index += columnNumber;
-            return index;
         }
 
         public int NumberOfRows
@@ -123,27 +110,25 @@ namespace PAG340MiddleWare
 
         public double getNumberAt(int rowNumber, int columnNumber)
         {
-            int index = getIndexOf(rowNumber, columnNumber);
-            double numberAt = matrix[index];
+            double numberAt = matrix[rowNumber, columnNumber];
             return numberAt;
         }
 
         public void setNumberAt(int rowNumber, int columnNumber, double numberToBeSet)
         {
-            int index = getIndexOf(rowNumber, columnNumber);
-            matrix[index] = numberToBeSet;
+            matrix[rowNumber, columnNumber] = numberToBeSet;
         }
 
 
         public override string ToString()
         {
             string output = "Number of Rows: " + numberOfRows + ", Number of Columns: " + numberOfColumns + " ";
-            for(int index1 = 0; index1 < numberOfRows; index1++)
+            for(int rowNumber = 0; rowNumber < numberOfRows; rowNumber++)
             {
                 output += "\n";
-                for(int index2 = 0; index2 < numberOfColumns; index2++)
+                for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
                 {
-                    double numberAt = getNumberAt(index1, index2);
+                    double numberAt = getNumberAt(rowNumber, columnNumber);
                     output += numberAt + "   ";
                 }
             }
