@@ -26,5 +26,15 @@ namespace _340GUI
         {
 
         }
+
+        private void Policyholder_First_Name_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Policyholder_First_Name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
