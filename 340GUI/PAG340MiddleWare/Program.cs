@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
 
 namespace PAG340MiddleWare
 {
@@ -16,7 +17,7 @@ namespace PAG340MiddleWare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Testing underneath - jef
+            /*Testing underneath - jef
             Matrix matrix = new Matrix(3, 5);
             FillMatrix(matrix);
             Console.WriteLine(matrix.ToString());
@@ -30,10 +31,12 @@ namespace PAG340MiddleWare
 
             Matrix newMatrix = matrix.transpose();
             Console.WriteLine(newMatrix.ToString());
-
+            */
+            
+            
         }
 
-        //Method for testing
+        /*Method for testing
         public static void FillMatrix(Matrix m)
         {
             int numOfRows = m.NumberOfRows;
@@ -46,6 +49,6 @@ namespace PAG340MiddleWare
                     m.setNumberAt(row, column, value);
                 }
             }
-        }
+        } */
     }
 }

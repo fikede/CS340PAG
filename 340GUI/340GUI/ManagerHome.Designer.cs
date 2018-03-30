@@ -1,4 +1,6 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+
+namespace _340GUI
 {
     partial class ManagerHome
     {
@@ -18,6 +20,8 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+
+
         }
 
         #region Windows Form Designer generated code
@@ -120,7 +124,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.LinkLabel linkLabel4;
+        //private System.Windows.Forms.LinkLabel linkLabel4;
+        // import System.Windows.Forms and use the class names directly. - jef
+        private LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
