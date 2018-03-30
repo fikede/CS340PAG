@@ -21,5 +21,10 @@ namespace _340GUI
         {
 
         }
+
+        private void LIC_Logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
