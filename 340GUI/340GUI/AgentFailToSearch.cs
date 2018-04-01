@@ -21,5 +21,10 @@ namespace _340GUI
         {
 
         }
+
+        private void Log_Out_Label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

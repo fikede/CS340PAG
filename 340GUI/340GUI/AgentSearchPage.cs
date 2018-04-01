@@ -21,5 +21,10 @@ namespace _340GUI
         {
 
         }
+
+        private void Agent_First_Name_Label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class AgentFailToSearch
     {
@@ -28,193 +29,194 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Submit_Button = new System.Windows.Forms.Button();
+            this.Policyholder_Last_Name_textBox = new System.Windows.Forms.TextBox();
+            this.Policyholder_First_Name_textBox = new System.Windows.Forms.TextBox();
+            this.Policy_Number_textBox = new System.Windows.Forms.TextBox();
+            this.Policyholder_Last_Name_Label = new System.Windows.Forms.Label();
+            this.Policyholder_First_Name_Label = new System.Windows.Forms.Label();
+            this.Agent_Last_Name_Label = new System.Windows.Forms.Label();
+            this.Agent_First_Name_Label = new System.Windows.Forms.Label();
+            this.Policy_Number_Label = new System.Windows.Forms.Label();
+            this.Search_by_Label = new System.Windows.Forms.Label();
+            this.Log_Out_Label = new System.Windows.Forms.LinkLabel();
+            this.Delinquent_Accounts_Label = new System.Windows.Forms.LinkLabel();
+            this.Create_A_Policy_Label = new System.Windows.Forms.LinkLabel();
+            this.Search_Label = new System.Windows.Forms.LinkLabel();
+            this.Home_Label = new System.Windows.Forms.LinkLabel();
+            this.Invalid_Input_Warning_Label = new System.Windows.Forms.Label();
+            this.Warning_Label = new System.Windows.Forms.Label();
+            this.Warning_Image = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Warning_Image)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Submit_Button
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(486, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Submit_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Submit_Button.ForeColor = System.Drawing.SystemColors.Control;
+            this.Submit_Button.Location = new System.Drawing.Point(486, 193);
+            this.Submit_Button.Name = "Submit_Button";
+            this.Submit_Button.Size = new System.Drawing.Size(75, 23);
+            this.Submit_Button.TabIndex = 33;
+            this.Submit_Button.Text = "Submit";
+            this.Submit_Button.UseVisualStyleBackColor = false;
             // 
-            // textBox5
+            // Policyholder_Last_Name_textBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(323, 167);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(238, 20);
-            this.textBox5.TabIndex = 32;
+            this.Policyholder_Last_Name_textBox.Location = new System.Drawing.Point(323, 167);
+            this.Policyholder_Last_Name_textBox.Name = "Policyholder_Last_Name_textBox";
+            this.Policyholder_Last_Name_textBox.Size = new System.Drawing.Size(238, 20);
+            this.Policyholder_Last_Name_textBox.TabIndex = 32;
             // 
-            // textBox4
+            // Policyholder_First_Name_textBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(323, 141);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(238, 20);
-            this.textBox4.TabIndex = 31;
+            this.Policyholder_First_Name_textBox.Location = new System.Drawing.Point(323, 141);
+            this.Policyholder_First_Name_textBox.Name = "Policyholder_First_Name_textBox";
+            this.Policyholder_First_Name_textBox.Size = new System.Drawing.Size(238, 20);
+            this.Policyholder_First_Name_textBox.TabIndex = 31;
             // 
-            // textBox1
+            // Policy_Number_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(323, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 20);
-            this.textBox1.TabIndex = 28;
+            this.Policy_Number_textBox.Location = new System.Drawing.Point(323, 63);
+            this.Policy_Number_textBox.Name = "Policy_Number_textBox";
+            this.Policy_Number_textBox.Size = new System.Drawing.Size(238, 20);
+            this.Policy_Number_textBox.TabIndex = 28;
             // 
-            // label6
+            // Policyholder_Last_Name_Label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(200, 170);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Policyholder Last Name";
+            this.Policyholder_Last_Name_Label.AutoSize = true;
+            this.Policyholder_Last_Name_Label.Location = new System.Drawing.Point(200, 170);
+            this.Policyholder_Last_Name_Label.Name = "Policyholder_Last_Name_Label";
+            this.Policyholder_Last_Name_Label.Size = new System.Drawing.Size(118, 13);
+            this.Policyholder_Last_Name_Label.TabIndex = 27;
+            this.Policyholder_Last_Name_Label.Text = "Policyholder Last Name";
             // 
-            // label5
+            // Policyholder_First_Name_Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(200, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 13);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Policyholder First Name";
+            this.Policyholder_First_Name_Label.AutoSize = true;
+            this.Policyholder_First_Name_Label.Location = new System.Drawing.Point(200, 144);
+            this.Policyholder_First_Name_Label.Name = "Policyholder_First_Name_Label";
+            this.Policyholder_First_Name_Label.Size = new System.Drawing.Size(117, 13);
+            this.Policyholder_First_Name_Label.TabIndex = 26;
+            this.Policyholder_First_Name_Label.Text = "Policyholder First Name";
             // 
-            // label4
+            // Agent_Last_Name_Label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(200, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Agent Last Name";
+            this.Agent_Last_Name_Label.AutoSize = true;
+            this.Agent_Last_Name_Label.Location = new System.Drawing.Point(200, 118);
+            this.Agent_Last_Name_Label.Name = "Agent_Last_Name_Label";
+            this.Agent_Last_Name_Label.Size = new System.Drawing.Size(89, 13);
+            this.Agent_Last_Name_Label.TabIndex = 25;
+            this.Agent_Last_Name_Label.Text = "Agent Last Name";
             // 
-            // label3
+            // Agent_First_Name_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(200, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Agent First Name";
+            this.Agent_First_Name_Label.AutoSize = true;
+            this.Agent_First_Name_Label.Location = new System.Drawing.Point(200, 92);
+            this.Agent_First_Name_Label.Name = "Agent_First_Name_Label";
+            this.Agent_First_Name_Label.Size = new System.Drawing.Size(88, 13);
+            this.Agent_First_Name_Label.TabIndex = 24;
+            this.Agent_First_Name_Label.Text = "Agent First Name";
             // 
-            // label2
+            // Policy_Number_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Policy Number";
+            this.Policy_Number_Label.AutoSize = true;
+            this.Policy_Number_Label.Location = new System.Drawing.Point(200, 66);
+            this.Policy_Number_Label.Name = "Policy_Number_Label";
+            this.Policy_Number_Label.Size = new System.Drawing.Size(75, 13);
+            this.Policy_Number_Label.TabIndex = 23;
+            this.Policy_Number_Label.Text = "Policy Number";
             // 
-            // label1
+            // Search_by_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Search by";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.Search_by_Label.AutoSize = true;
+            this.Search_by_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Search_by_Label.Location = new System.Drawing.Point(200, 40);
+            this.Search_by_Label.Name = "Search_by_Label";
+            this.Search_by_Label.Size = new System.Drawing.Size(64, 13);
+            this.Search_by_Label.TabIndex = 22;
+            this.Search_by_Label.Text = "Search by";
+            this.Search_by_Label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // linkLabel5
+            // Log_Out_Label
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(12, 144);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel5.TabIndex = 21;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Log out";
+            this.Log_Out_Label.AutoSize = true;
+            this.Log_Out_Label.Location = new System.Drawing.Point(12, 144);
+            this.Log_Out_Label.Name = "Log_Out_Label";
+            this.Log_Out_Label.Size = new System.Drawing.Size(43, 13);
+            this.Log_Out_Label.TabIndex = 21;
+            this.Log_Out_Label.TabStop = true;
+            this.Log_Out_Label.Text = "Log out";
+            this.Log_Out_Label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Log_Out_Label_LinkClicked);
             // 
-            // linkLabel4
+            // Delinquent_Accounts_Label
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(12, 118);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(106, 13);
-            this.linkLabel4.TabIndex = 20;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Delinquent Accounts";
+            this.Delinquent_Accounts_Label.AutoSize = true;
+            this.Delinquent_Accounts_Label.Location = new System.Drawing.Point(12, 118);
+            this.Delinquent_Accounts_Label.Name = "Delinquent_Accounts_Label";
+            this.Delinquent_Accounts_Label.Size = new System.Drawing.Size(106, 13);
+            this.Delinquent_Accounts_Label.TabIndex = 20;
+            this.Delinquent_Accounts_Label.TabStop = true;
+            this.Delinquent_Accounts_Label.Text = "Delinquent Accounts";
             // 
-            // linkLabel3
+            // Create_A_Policy_Label
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(12, 92);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(78, 13);
-            this.linkLabel3.TabIndex = 19;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Create a Policy";
+            this.Create_A_Policy_Label.AutoSize = true;
+            this.Create_A_Policy_Label.Location = new System.Drawing.Point(12, 92);
+            this.Create_A_Policy_Label.Name = "Create_A_Policy_Label";
+            this.Create_A_Policy_Label.Size = new System.Drawing.Size(78, 13);
+            this.Create_A_Policy_Label.TabIndex = 19;
+            this.Create_A_Policy_Label.TabStop = true;
+            this.Create_A_Policy_Label.Text = "Create a Policy";
             // 
-            // linkLabel2
+            // Search_Label
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(12, 66);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(41, 13);
-            this.linkLabel2.TabIndex = 18;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Search";
+            this.Search_Label.AutoSize = true;
+            this.Search_Label.Location = new System.Drawing.Point(12, 66);
+            this.Search_Label.Name = "Search_Label";
+            this.Search_Label.Size = new System.Drawing.Size(41, 13);
+            this.Search_Label.TabIndex = 18;
+            this.Search_Label.TabStop = true;
+            this.Search_Label.Text = "Search";
             // 
-            // linkLabel1
+            // Home_Label
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 40);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(35, 13);
-            this.linkLabel1.TabIndex = 17;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Home";
+            this.Home_Label.AutoSize = true;
+            this.Home_Label.Location = new System.Drawing.Point(12, 40);
+            this.Home_Label.Name = "Home_Label";
+            this.Home_Label.Size = new System.Drawing.Size(35, 13);
+            this.Home_Label.TabIndex = 17;
+            this.Home_Label.TabStop = true;
+            this.Home_Label.Text = "Home";
             // 
-            // label7
+            // Invalid_Input_Warning_Label
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(232, 219);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(279, 13);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Invalid input. Please enter a valid Policyholder First Name,";
+            this.Invalid_Input_Warning_Label.AutoSize = true;
+            this.Invalid_Input_Warning_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Invalid_Input_Warning_Label.Location = new System.Drawing.Point(232, 219);
+            this.Invalid_Input_Warning_Label.Name = "Invalid_Input_Warning_Label";
+            this.Invalid_Input_Warning_Label.Size = new System.Drawing.Size(279, 13);
+            this.Invalid_Input_Warning_Label.TabIndex = 34;
+            this.Invalid_Input_Warning_Label.Text = "Invalid input. Please enter a valid Policyholder First Name,";
             // 
-            // label8
+            // Warning_Label
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(232, 232);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 13);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Policyholder Last Name, or Policy Number.";
+            this.Warning_Label.AutoSize = true;
+            this.Warning_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Warning_Label.Location = new System.Drawing.Point(232, 232);
+            this.Warning_Label.Name = "Warning_Label";
+            this.Warning_Label.Size = new System.Drawing.Size(207, 13);
+            this.Warning_Label.TabIndex = 35;
+            this.Warning_Label.Text = "Policyholder Last Name, or Policy Number.";
             // 
-            // pictureBox1
+            // Warning_Image
             // 
-            this.pictureBox1.Image = global::_340GUI.Properties.Resources.warning;
-            this.pictureBox1.Location = new System.Drawing.Point(214, 216);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 21);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
+            this.Warning_Image.Image = global::_340GUI.Properties.Resources.warning;
+            this.Warning_Image.Location = new System.Drawing.Point(214, 216);
+            this.Warning_Image.Name = "Warning_Image";
+            this.Warning_Image.Size = new System.Drawing.Size(16, 21);
+            this.Warning_Image.TabIndex = 36;
+            this.Warning_Image.TabStop = false;
             // 
             // AgentFailToSearch
             // 
@@ -222,27 +224,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel5);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.Warning_Image);
+            this.Controls.Add(this.Warning_Label);
+            this.Controls.Add(this.Invalid_Input_Warning_Label);
+            this.Controls.Add(this.Submit_Button);
+            this.Controls.Add(this.Policyholder_Last_Name_textBox);
+            this.Controls.Add(this.Policyholder_First_Name_textBox);
+            this.Controls.Add(this.Policy_Number_textBox);
+            this.Controls.Add(this.Policyholder_Last_Name_Label);
+            this.Controls.Add(this.Policyholder_First_Name_Label);
+            this.Controls.Add(this.Agent_Last_Name_Label);
+            this.Controls.Add(this.Agent_First_Name_Label);
+            this.Controls.Add(this.Policy_Number_Label);
+            this.Controls.Add(this.Search_by_Label);
+            this.Controls.Add(this.Log_Out_Label);
+            this.Controls.Add(this.Delinquent_Accounts_Label);
+            this.Controls.Add(this.Create_A_Policy_Label);
+            this.Controls.Add(this.Search_Label);
+            this.Controls.Add(this.Home_Label);
             this.Name = "AgentFailToSearch";
             this.Text = "AgentFailToSearch";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Warning_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,23 +252,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private Button Submit_Button;
+        private TextBox Policyholder_Last_Name_textBox;
+        private TextBox Policyholder_First_Name_textBox;
+        private TextBox Policy_Number_textBox;
+        private Label Policyholder_Last_Name_Label;
+        private Label Policyholder_First_Name_Label;
+        private Label Agent_Last_Name_Label;
+        private Label Agent_First_Name_Label;
+        private Label Policy_Number_Label;
+        private Label Search_by_Label;
+        private LinkLabel Log_Out_Label;
+        private LinkLabel Delinquent_Accounts_Label;
+        private LinkLabel Create_A_Policy_Label;
+        private LinkLabel Search_Label;
+        private LinkLabel Home_Label;
+        private Label Invalid_Input_Warning_Label;
+        private Label Warning_Label;
+        private PictureBox Warning_Image;
     }
 }

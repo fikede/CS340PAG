@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class MakeClaim
     {
@@ -28,41 +29,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Cancel_Button = new System.Windows.Forms.Button();
+            this.Confirm_Button = new System.Windows.Forms.Button();
+            this.Input_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // Cancel_Button
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(186, 119);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancel_Button.Location = new System.Drawing.Point(186, 119);
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.Size = new System.Drawing.Size(93, 32);
+            this.Cancel_Button.TabIndex = 7;
+            this.Cancel_Button.Text = "Cancel";
+            this.Cancel_Button.UseVisualStyleBackColor = true;
+            this.Cancel_Button.Click += new System.EventHandler(this.Cancel_Button_Click);
             // 
-            // button1
+            // Confirm_Button
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(43, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Confirm_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Confirm_Button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Confirm_Button.Location = new System.Drawing.Point(43, 119);
+            this.Confirm_Button.Name = "Confirm_Button";
+            this.Confirm_Button.Size = new System.Drawing.Size(93, 32);
+            this.Confirm_Button.TabIndex = 6;
+            this.Confirm_Button.Text = "Confirm";
+            this.Confirm_Button.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // Input_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(117, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Make a Claim";
+            this.Input_Label.AutoSize = true;
+            this.Input_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Input_Label.Location = new System.Drawing.Point(117, 67);
+            this.Input_Label.Name = "Input_Label";
+            this.Input_Label.Size = new System.Drawing.Size(90, 16);
+            this.Input_Label.TabIndex = 4;
+            this.Input_Label.Text = "Make a Claim";
             // 
             // MakeClaim
             // 
@@ -70,9 +72,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(322, 187);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Cancel_Button);
+            this.Controls.Add(this.Confirm_Button);
+            this.Controls.Add(this.Input_Label);
             this.Name = "MakeClaim";
             this.Text = "MakeClaim";
             this.ResumeLayout(false);
@@ -82,8 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private Button Cancel_Button;
+        private Button Confirm_Button;
+        private Label Input_Label;
     }
 }

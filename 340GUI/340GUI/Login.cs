@@ -60,5 +60,10 @@ namespace _340GUI
             //Is this Manager's ID?
             return true;
         }
+
+        private void Agent_Number_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

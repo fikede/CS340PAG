@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class AgentHome
     {
@@ -28,55 +29,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Search = new System.Windows.Forms.LinkLabel();
-            this.Create_A_Policy = new System.Windows.Forms.LinkLabel();
-            this.Delinquent_Accounts = new System.Windows.Forms.LinkLabel();
-            this.Log_Out = new System.Windows.Forms.LinkLabel();
+            this.Search_Label = new System.Windows.Forms.LinkLabel();
+            this.Create_A_Policy_Label = new System.Windows.Forms.LinkLabel();
+            this.Delinquent_Accounts_Label = new System.Windows.Forms.LinkLabel();
+            this.Log_Out_Label = new System.Windows.Forms.LinkLabel();
             this.LIC_Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LIC_Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // Search
+            // Search_Label
             // 
-            this.Search.AutoSize = true;
-            this.Search.Location = new System.Drawing.Point(109, 357);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(41, 13);
-            this.Search.TabIndex = 1;
-            this.Search.TabStop = true;
-            this.Search.Text = "Search";
-            this.Search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.Search_Label.AutoSize = true;
+            this.Search_Label.Location = new System.Drawing.Point(109, 357);
+            this.Search_Label.Name = "Search_Label";
+            this.Search_Label.Size = new System.Drawing.Size(41, 13);
+            this.Search_Label.TabIndex = 1;
+            this.Search_Label.TabStop = true;
+            this.Search_Label.Text = "Search";
+            this.Search_Label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // Create_A_Policy
+            // Create_A_Policy_Label
             // 
-            this.Create_A_Policy.AutoSize = true;
-            this.Create_A_Policy.Location = new System.Drawing.Point(256, 357);
-            this.Create_A_Policy.Name = "Create_A_Policy";
-            this.Create_A_Policy.Size = new System.Drawing.Size(78, 13);
-            this.Create_A_Policy.TabIndex = 2;
-            this.Create_A_Policy.TabStop = true;
-            this.Create_A_Policy.Text = "Create a Policy";
+            this.Create_A_Policy_Label.AutoSize = true;
+            this.Create_A_Policy_Label.Location = new System.Drawing.Point(256, 357);
+            this.Create_A_Policy_Label.Name = "Create_A_Policy_Label";
+            this.Create_A_Policy_Label.Size = new System.Drawing.Size(78, 13);
+            this.Create_A_Policy_Label.TabIndex = 2;
+            this.Create_A_Policy_Label.TabStop = true;
+            this.Create_A_Policy_Label.Text = "Create a Policy";
             // 
-            // Delinquent_Accounts
+            // Delinquent_Accounts_Label
             // 
-            this.Delinquent_Accounts.AutoSize = true;
-            this.Delinquent_Accounts.Location = new System.Drawing.Point(429, 357);
-            this.Delinquent_Accounts.Name = "Delinquent_Accounts";
-            this.Delinquent_Accounts.Size = new System.Drawing.Size(106, 13);
-            this.Delinquent_Accounts.TabIndex = 3;
-            this.Delinquent_Accounts.TabStop = true;
-            this.Delinquent_Accounts.Text = "Delinquent Accounts";
-            this.Delinquent_Accounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            this.Delinquent_Accounts_Label.AutoSize = true;
+            this.Delinquent_Accounts_Label.Location = new System.Drawing.Point(429, 357);
+            this.Delinquent_Accounts_Label.Name = "Delinquent_Accounts_Label";
+            this.Delinquent_Accounts_Label.Size = new System.Drawing.Size(106, 13);
+            this.Delinquent_Accounts_Label.TabIndex = 3;
+            this.Delinquent_Accounts_Label.TabStop = true;
+            this.Delinquent_Accounts_Label.Text = "Delinquent Accounts";
+            this.Delinquent_Accounts_Label.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
-            // Log_Out
+            // Log_Out_Label
             // 
-            this.Log_Out.AutoSize = true;
-            this.Log_Out.Location = new System.Drawing.Point(612, 357);
-            this.Log_Out.Name = "Log_Out";
-            this.Log_Out.Size = new System.Drawing.Size(43, 13);
-            this.Log_Out.TabIndex = 4;
-            this.Log_Out.TabStop = true;
-            this.Log_Out.Text = "Log out";
+            this.Log_Out_Label.AutoSize = true;
+            this.Log_Out_Label.Location = new System.Drawing.Point(612, 357);
+            this.Log_Out_Label.Name = "Log_Out_Label";
+            this.Log_Out_Label.Size = new System.Drawing.Size(43, 13);
+            this.Log_Out_Label.TabIndex = 4;
+            this.Log_Out_Label.TabStop = true;
+            this.Log_Out_Label.Text = "Log out";
             // 
             // LIC_Logo
             // 
@@ -95,10 +96,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.Log_Out);
-            this.Controls.Add(this.Delinquent_Accounts);
-            this.Controls.Add(this.Create_A_Policy);
-            this.Controls.Add(this.Search);
+            this.Controls.Add(this.Log_Out_Label);
+            this.Controls.Add(this.Delinquent_Accounts_Label);
+            this.Controls.Add(this.Create_A_Policy_Label);
+            this.Controls.Add(this.Search_Label);
             this.Controls.Add(this.LIC_Logo);
             this.Name = "AgentHome";
             this.Text = "Agent Home Page";
@@ -110,10 +111,10 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox LIC_Logo;
-        private System.Windows.Forms.LinkLabel Search;
-        private System.Windows.Forms.LinkLabel Create_A_Policy;
-        private System.Windows.Forms.LinkLabel Delinquent_Accounts;
-        private System.Windows.Forms.LinkLabel Log_Out;
+        private PictureBox LIC_Logo;
+        private LinkLabel Search_Label;
+        private LinkLabel Create_A_Policy_Label;
+        private LinkLabel Delinquent_Accounts_Label;
+        private LinkLabel Log_Out_Label;
     }
 }

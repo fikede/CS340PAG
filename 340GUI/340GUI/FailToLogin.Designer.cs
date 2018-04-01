@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class FailToLogin
     {
@@ -28,79 +29,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Login_Button = new System.Windows.Forms.Button();
+            this.Password_textBox = new System.Windows.Forms.TextBox();
+            this.Agent_Number_textBox = new System.Windows.Forms.TextBox();
+            this.Password_Label = new System.Windows.Forms.Label();
+            this.Agent_Number_Label = new System.Windows.Forms.Label();
+            this.Warning_Prompt_Label = new System.Windows.Forms.Label();
+            this.Warning_Image = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Warning_Image)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Login_Button
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(529, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 22);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Login_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Login_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Login_Button.Location = new System.Drawing.Point(529, 200);
+            this.Login_Button.Name = "Login_Button";
+            this.Login_Button.Size = new System.Drawing.Size(54, 22);
+            this.Login_Button.TabIndex = 9;
+            this.Login_Button.Text = "Login";
+            this.Login_Button.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // Password_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(276, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 20);
-            this.textBox2.TabIndex = 8;
+            this.Password_textBox.Location = new System.Drawing.Point(276, 200);
+            this.Password_textBox.Name = "Password_textBox";
+            this.Password_textBox.Size = new System.Drawing.Size(238, 20);
+            this.Password_textBox.TabIndex = 8;
             // 
-            // textBox1
+            // Agent_Number_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 20);
-            this.textBox1.TabIndex = 7;
+            this.Agent_Number_textBox.Location = new System.Drawing.Point(276, 168);
+            this.Agent_Number_textBox.Name = "Agent_Number_textBox";
+            this.Agent_Number_textBox.Size = new System.Drawing.Size(238, 20);
+            this.Agent_Number_textBox.TabIndex = 7;
+            this.Agent_Number_textBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label2
+            // Password_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 203);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Password:";
+            this.Password_Label.AutoSize = true;
+            this.Password_Label.Location = new System.Drawing.Point(214, 203);
+            this.Password_Label.Name = "Password_Label";
+            this.Password_Label.Size = new System.Drawing.Size(56, 13);
+            this.Password_Label.TabIndex = 6;
+            this.Password_Label.Text = "Password:";
             // 
-            // label1
+            // Agent_Number_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 171);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Agent Number:";
+            this.Agent_Number_Label.AutoSize = true;
+            this.Agent_Number_Label.Location = new System.Drawing.Point(192, 171);
+            this.Agent_Number_Label.Name = "Agent_Number_Label";
+            this.Agent_Number_Label.Size = new System.Drawing.Size(78, 13);
+            this.Agent_Number_Label.TabIndex = 5;
+            this.Agent_Number_Label.Text = "Agent Number:";
             // 
-            // label3
+            // Warning_Prompt_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(296, 223);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(218, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Your Agent Number or Password is incorrect!";
+            this.Warning_Prompt_Label.AutoSize = true;
+            this.Warning_Prompt_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Warning_Prompt_Label.Location = new System.Drawing.Point(296, 223);
+            this.Warning_Prompt_Label.Name = "Warning_Prompt_Label";
+            this.Warning_Prompt_Label.Size = new System.Drawing.Size(218, 13);
+            this.Warning_Prompt_Label.TabIndex = 10;
+            this.Warning_Prompt_Label.Text = "Your Agent Number or Password is incorrect!";
             // 
-            // pictureBox1
+            // Warning_Image
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Image = global::_340GUI.Properties.Resources.warning;
-            this.pictureBox1.Location = new System.Drawing.Point(283, 220);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.Warning_Image.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Warning_Image.Image = global::_340GUI.Properties.Resources.warning;
+            this.Warning_Image.Location = new System.Drawing.Point(283, 220);
+            this.Warning_Image.Name = "Warning_Image";
+            this.Warning_Image.Size = new System.Drawing.Size(16, 16);
+            this.Warning_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Warning_Image.TabIndex = 11;
+            this.Warning_Image.TabStop = false;
             // 
             // FailToLogin
             // 
@@ -108,17 +110,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Warning_Image);
+            this.Controls.Add(this.Warning_Prompt_Label);
+            this.Controls.Add(this.Login_Button);
+            this.Controls.Add(this.Password_textBox);
+            this.Controls.Add(this.Agent_Number_textBox);
+            this.Controls.Add(this.Password_Label);
+            this.Controls.Add(this.Agent_Number_Label);
             this.Name = "FailToLogin";
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.FailToLogin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Warning_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,12 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private Button Login_Button;
+        private TextBox Password_textBox;
+        private TextBox Agent_Number_textBox;
+        private Label Password_Label;
+        private Label Agent_Number_Label;
+        private Label Warning_Prompt_Label;
+        private PictureBox Warning_Image;
     }
 }

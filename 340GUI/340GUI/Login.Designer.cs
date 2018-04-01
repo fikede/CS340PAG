@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class Login
     {
@@ -28,57 +29,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Agent_Number_Label = new System.Windows.Forms.Label();
+            this.Password_Label = new System.Windows.Forms.Label();
+            this.Agent_Number_textBox = new System.Windows.Forms.TextBox();
+            this.Password__textBox = new System.Windows.Forms.TextBox();
+            this.Login_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // Agent_Number_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 171);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Agent Number:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.Agent_Number_Label.AutoSize = true;
+            this.Agent_Number_Label.Location = new System.Drawing.Point(192, 171);
+            this.Agent_Number_Label.Name = "Agent_Number_Label";
+            this.Agent_Number_Label.Size = new System.Drawing.Size(78, 13);
+            this.Agent_Number_Label.TabIndex = 0;
+            this.Agent_Number_Label.Text = "Agent Number:";
+            this.Agent_Number_Label.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // Password_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(214, 203);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password:";
+            this.Password_Label.AutoSize = true;
+            this.Password_Label.Location = new System.Drawing.Point(214, 203);
+            this.Password_Label.Name = "Password_Label";
+            this.Password_Label.Size = new System.Drawing.Size(56, 13);
+            this.Password_Label.TabIndex = 1;
+            this.Password_Label.Text = "Password:";
             // 
-            // textBox1
+            // Agent_Number_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 20);
-            this.textBox1.TabIndex = 2;
+            this.Agent_Number_textBox.Location = new System.Drawing.Point(276, 168);
+            this.Agent_Number_textBox.Name = "Agent_Number_textBox";
+            this.Agent_Number_textBox.Size = new System.Drawing.Size(238, 20);
+            this.Agent_Number_textBox.TabIndex = 2;
+            this.Agent_Number_textBox.TextChanged += new System.EventHandler(this.Agent_Number_textBox_TextChanged);
             // 
-            // textBox2
+            // Password__textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(276, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 20);
-            this.textBox2.TabIndex = 3;
+            this.Password__textBox.Location = new System.Drawing.Point(276, 200);
+            this.Password__textBox.Name = "Password__textBox";
+            this.Password__textBox.Size = new System.Drawing.Size(238, 20);
+            this.Password__textBox.TabIndex = 3;
             // 
-            // button1
+            // Login_Button
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(529, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 22);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Login_Button.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Login_Button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Login_Button.Location = new System.Drawing.Point(529, 200);
+            this.Login_Button.Name = "Login_Button";
+            this.Login_Button.Size = new System.Drawing.Size(54, 22);
+            this.Login_Button.TabIndex = 4;
+            this.Login_Button.Text = "Login";
+            this.Login_Button.UseVisualStyleBackColor = false;
+            this.Login_Button.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 
@@ -86,11 +88,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Login_Button);
+            this.Controls.Add(this.Password__textBox);
+            this.Controls.Add(this.Agent_Number_textBox);
+            this.Controls.Add(this.Password_Label);
+            this.Controls.Add(this.Agent_Number_Label);
             this.Name = "Login";
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -101,11 +103,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private Label Agent_Number_Label;
+        private Label Password_Label;
+        private TextBox Agent_Number_textBox;
+        private TextBox Password__textBox;
+        private Button Login_Button;
     }
 }
 
