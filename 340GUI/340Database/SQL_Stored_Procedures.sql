@@ -1,7 +1,8 @@
 -- This is the format and commands to create the LIC_PAG SQL stored Procedures.
 -- NOTE: This has not been executed yet.
 -- There are some procedures that must be completed
-
+-- NOTE: If the table names are underlined and SQL states that the object is undefined.
+--			Go to: Edit -> IntelliSense -> Refresh Local Cache
 USE LIC_PAG
 GO
 
@@ -45,8 +46,8 @@ FROM Employee
 WHERE first_name = @agentFName AND last_name = @agentLName
 
 SELECT *
-FROM Policy
-WHERE Policy.[number] = @policyNumber
+FROM [Policy]
+WHERE [Policy].[number] = @policyNumber
 END
 GO
  
