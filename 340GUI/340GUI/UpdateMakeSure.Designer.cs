@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class UpdateMakeSure
     {
@@ -28,41 +29,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Cancel_Button = new System.Windows.Forms.Button();
+            this.Save_Button = new System.Windows.Forms.Button();
+            this.Prompt_Text_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // Cancel_Button
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(232, 109);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancel_Button.Location = new System.Drawing.Point(232, 109);
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.Size = new System.Drawing.Size(93, 32);
+            this.Cancel_Button.TabIndex = 7;
+            this.Cancel_Button.Text = "Cancel";
+            this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Save_Button
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(66, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Save_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Save_Button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Save_Button.Location = new System.Drawing.Point(66, 109);
+            this.Save_Button.Name = "Save_Button";
+            this.Save_Button.Size = new System.Drawing.Size(93, 32);
+            this.Save_Button.TabIndex = 6;
+            this.Save_Button.Text = "Save";
+            this.Save_Button.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // Prompt_Text_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Would you like to save the information?";
+            this.Prompt_Text_Label.AutoSize = true;
+            this.Prompt_Text_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Prompt_Text_Label.Location = new System.Drawing.Point(77, 64);
+            this.Prompt_Text_Label.Name = "Prompt_Text_Label";
+            this.Prompt_Text_Label.Size = new System.Drawing.Size(239, 16);
+            this.Prompt_Text_Label.TabIndex = 4;
+            this.Prompt_Text_Label.Text = "Would you like to save the information?";
             // 
             // UpdateMakeSure
             // 
@@ -70,9 +71,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(375, 187);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Cancel_Button);
+            this.Controls.Add(this.Save_Button);
+            this.Controls.Add(this.Prompt_Text_Label);
             this.Name = "UpdateMakeSure";
             this.Text = "UpdateMakeSure";
             this.Load += new System.EventHandler(this.UpdateMakeSure_Load);
@@ -83,8 +84,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private Button Cancel_Button;
+        private Button Save_Button;
+        private Label Prompt_Text_Label;
     }
 }

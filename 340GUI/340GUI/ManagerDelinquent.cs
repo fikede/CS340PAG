@@ -16,5 +16,15 @@ namespace _340GUI
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void Agent_First_Name_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

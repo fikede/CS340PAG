@@ -1,4 +1,5 @@
-﻿namespace _340GUI
+﻿using System.Windows.Forms;
+namespace _340GUI
 {
     partial class PaymentHistory
     {
@@ -28,60 +29,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Back = new System.Windows.Forms.LinkLabel();
+            this.Payment_History_Label = new System.Windows.Forms.Label();
+            this.Policy_Number_Label = new System.Windows.Forms.Label();
+            this.Policyholder_Name_Label = new System.Windows.Forms.Label();
+            this.Payment_History_listBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // linkLabel1
+            // Back
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(31, 27);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(32, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Back";
+            this.Back.AutoSize = true;
+            this.Back.Location = new System.Drawing.Point(31, 27);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(32, 13);
+            this.Back.TabIndex = 0;
+            this.Back.TabStop = true;
+            this.Back.Text = "Back";
             // 
-            // label1
+            // Payment_History_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Payment History";
+            this.Payment_History_Label.AutoSize = true;
+            this.Payment_History_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Payment_History_Label.Location = new System.Drawing.Point(330, 61);
+            this.Payment_History_Label.Name = "Payment_History_Label";
+            this.Payment_History_Label.Size = new System.Drawing.Size(98, 13);
+            this.Payment_History_Label.TabIndex = 1;
+            this.Payment_History_Label.Text = "Payment History";
             // 
-            // label2
+            // Policy_Number_Label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Policy Number:\r\n";
+            this.Policy_Number_Label.AutoSize = true;
+            this.Policy_Number_Label.Location = new System.Drawing.Point(85, 98);
+            this.Policy_Number_Label.Name = "Policy_Number_Label";
+            this.Policy_Number_Label.Size = new System.Drawing.Size(78, 13);
+            this.Policy_Number_Label.TabIndex = 2;
+            this.Policy_Number_Label.Text = "Policy Number:\r\n";
             // 
-            // label3
+            // Policyholder_Name_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Policyholder Name:";
+            this.Policyholder_Name_Label.AutoSize = true;
+            this.Policyholder_Name_Label.Location = new System.Drawing.Point(85, 120);
+            this.Policyholder_Name_Label.Name = "Policyholder_Name_Label";
+            this.Policyholder_Name_Label.Size = new System.Drawing.Size(98, 13);
+            this.Policyholder_Name_Label.TabIndex = 3;
+            this.Policyholder_Name_Label.Text = "Policyholder Name:";
             // 
-            // listBox1
+            // Payment_History_listBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(88, 172);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(581, 199);
-            this.listBox1.TabIndex = 4;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.Payment_History_listBox.FormattingEnabled = true;
+            this.Payment_History_listBox.Location = new System.Drawing.Point(88, 172);
+            this.Payment_History_listBox.Name = "Payment_History_listBox";
+            this.Payment_History_listBox.ScrollAlwaysVisible = true;
+            this.Payment_History_listBox.Size = new System.Drawing.Size(581, 199);
+            this.Payment_History_listBox.TabIndex = 4;
+            this.Payment_History_listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // PaymentHistory
             // 
@@ -89,11 +90,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.Payment_History_listBox);
+            this.Controls.Add(this.Policyholder_Name_Label);
+            this.Controls.Add(this.Policy_Number_Label);
+            this.Controls.Add(this.Payment_History_Label);
+            this.Controls.Add(this.Back);
             this.Name = "PaymentHistory";
             this.Text = "PaymentHistory";
             this.ResumeLayout(false);
@@ -103,10 +104,10 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
+        private LinkLabel Back;
+        private Label Payment_History_Label;
+        private Label Policy_Number_Label;
+        private Label Policyholder_Name_Label;
+        private ListBox Payment_History_listBox;
     }
 }

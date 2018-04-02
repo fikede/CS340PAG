@@ -16,5 +16,15 @@ namespace _340GUI
         {
             InitializeComponent();
         }
+
+        private void UpdatePolicy_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Beneficiary_Last_Name_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,5 +26,10 @@ namespace _340GUI
         {
 
         }
+
+        private void PolicyPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

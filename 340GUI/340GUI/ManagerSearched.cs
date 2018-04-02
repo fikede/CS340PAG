@@ -16,5 +16,10 @@ namespace _340GUI
         {
             InitializeComponent();
         }
+
+        private void Submit_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
