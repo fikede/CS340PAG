@@ -69,36 +69,6 @@
     <Compile Include="AddPolicyWarning.Designer.cs">
       <DependentUpon>AddPolicyWarning.cs</DependentUpon>
     </Compile>
-    <Compile Include="AgentDelinquent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgentDelinquent.Designer.cs">
-      <DependentUpon>AgentDelinquent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AgentFailToSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgentFailToSearch.Designer.cs">
-      <DependentUpon>AgentFailToSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AgentHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgentHome.Designer.cs">
-      <DependentUpon>AgentHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AgentSearched.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgentSearched.Designer.cs">
-      <DependentUpon>AgentSearched.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AgentSearchPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AgentSearchPage.Designer.cs">
-      <DependentUpon>AgentSearchPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="CancelPolicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,35 +99,35 @@
     <Compile Include="MakeClaim.Designer.cs">
       <DependentUpon>MakeClaim.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerDelinquent.cs">
+    <Compile Include="Delinquent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerDelinquent.Designer.cs">
-      <DependentUpon>ManagerDelinquent.cs</DependentUpon>
+    <Compile Include="Delinquent.Designer.cs">
+      <DependentUpon>Delinquent.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFailToSearch.cs">
+    <Compile Include="FailToSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerFailToSearch.Designer.cs">
-      <DependentUpon>ManagerFailToSearch.cs</DependentUpon>
+    <Compile Include="FailToSearch.Designer.cs">
+      <DependentUpon>FailToSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerHome.cs">
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerHome.Designer.cs">
-      <DependentUpon>ManagerHome.cs</DependentUpon>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerSearch.cs">
+    <Compile Include="Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerSearch.Designer.cs">
-      <DependentUpon>ManagerSearch.cs</DependentUpon>
+    <Compile Include="Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerSearched.cs">
+    <Compile Include="AfterSearched.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerSearched.Designer.cs">
-      <DependentUpon>ManagerSearched.cs</DependentUpon>
+    <Compile Include="AfterSearched.Designer.cs">
+      <DependentUpon>AfterSearched.cs</DependentUpon>
     </Compile>
     <Compile Include="MoreLossWarning.cs">
       <SubType>Form</SubType>
@@ -227,21 +197,6 @@
     <EmbeddedResource Include="AddPolicyWarning.resx">
       <DependentUpon>AddPolicyWarning.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AgentDelinquent.resx">
-      <DependentUpon>AgentDelinquent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgentFailToSearch.resx">
-      <DependentUpon>AgentFailToSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgentHome.resx">
-      <DependentUpon>AgentHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgentSearched.resx">
-      <DependentUpon>AgentSearched.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AgentSearchPage.resx">
-      <DependentUpon>AgentSearchPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CancelPolicy.resx">
       <DependentUpon>CancelPolicy.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,20 +212,20 @@
     <EmbeddedResource Include="MakeClaim.resx">
       <DependentUpon>MakeClaim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerDelinquent.resx">
-      <DependentUpon>ManagerDelinquent.cs</DependentUpon>
+    <EmbeddedResource Include="Delinquent.resx">
+      <DependentUpon>Delinquent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFailToSearch.resx">
-      <DependentUpon>ManagerFailToSearch.cs</DependentUpon>
+    <EmbeddedResource Include="FailToSearch.resx">
+      <DependentUpon>FailToSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerHome.resx">
-      <DependentUpon>ManagerHome.cs</DependentUpon>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSearch.resx">
-      <DependentUpon>ManagerSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerSearched.resx">
-      <DependentUpon>ManagerSearched.cs</DependentUpon>
+    <EmbeddedResource Include="AfterSearched.resx">
+      <DependentUpon>AfterSearched.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MoreLossWarning.resx">
       <DependentUpon>MoreLossWarning.cs</DependentUpon>

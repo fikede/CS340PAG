@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace _340GUI
 {
-    partial class ManagerSearched
+    partial class AfterSearched
     {
         /// <summary>
         /// Required designer variable.
@@ -228,7 +228,7 @@ namespace _340GUI
             this.listBox_Searching.Size = new System.Drawing.Size(358, 160);
             this.listBox_Searching.TabIndex = 53;
             // 
-            // ManagerSearched
+            // AfterSearched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,8 +253,8 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_CreatePolicy);
             this.Controls.Add(this.linkLabel_Search);
             this.Controls.Add(this.linkLabel_Home);
-            this.Name = "ManagerSearched";
-            this.Text = "Manager Search Page";
+            this.Name = "AfterSearched";
+            this.Text = "Search Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class AgentFailToSearch : Form
+    public partial class AfterSearched : Form
     {
-        public AgentFailToSearch()
+        public AfterSearched()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class ManagerSearch : Form
+    public partial class Search : Form
     {
-        public ManagerSearch()
+        public Search()
         {
             InitializeComponent();
         }

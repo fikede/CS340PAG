@@ -257,7 +257,7 @@ namespace _340GUI
             this.Controls.Add(this.label_AgentNumber);
             this.Controls.Add(this.label_AddNewAgent);
             this.Name = "AddNewAgent";
-            this.Text = "AddNewAgent";
+            this.Text = "Add New Agent";
             this.ResumeLayout(false);
             this.PerformLayout();
 

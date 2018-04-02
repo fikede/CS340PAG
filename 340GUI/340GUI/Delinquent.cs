@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class ManagerSearched : Form
+    public partial class Delinquent : Form
     {
-        public ManagerSearched()
+        public Delinquent()
         {
             InitializeComponent();
         }

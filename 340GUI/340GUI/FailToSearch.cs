@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class AgentSearched : Form
+    public partial class FailToSearch : Form
     {
-        public AgentSearched()
+        public FailToSearch()
         {
             InitializeComponent();
         }
 
-        private void AgentSearched_Load(object sender, EventArgs e)
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ManagerFailToSearch_Load(object sender, EventArgs e)
         {
 
         }

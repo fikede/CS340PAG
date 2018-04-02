@@ -26,7 +26,7 @@ namespace _340GUI
         {
             string s="";
             isManager = IsItManager(s);
-            ManagerHome agentHome = new ManagerHome(isManager);
+            Home agentHome = new Home(isManager);
             agentHome.Show();
             this.Hide();
 

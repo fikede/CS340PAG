@@ -10,23 +10,32 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class AgentHome : Form
+    public partial class Home : Form
     {
-        public AgentHome(bool isManager)
+        public Home(bool isManager)
         {
             InitializeComponent();
-            
+            if(!isManager)
+            {
+                linkLabel_AddNewAgent.Visible = false;
+            }
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AgentSearchPage agentSearchPage = new AgentSearchPage();
-            agentSearchPage.Show();
             this.Hide();
+            Search nextForm = new Search();
+            nextForm.Show();
             this.Close();
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ManagerHome_Load(object sender, EventArgs e)
         {
 
         }

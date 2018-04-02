@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace _340GUI
 {
-    partial class ManagerHome
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -109,7 +109,7 @@ namespace _340GUI
             this.pictureBox_LICLogo.TabIndex = 10;
             this.pictureBox_LICLogo.TabStop = false;
             // 
-            // ManagerHome
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,8 +121,8 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_DelinquentAccounts);
             this.Controls.Add(this.linkLabel_CreatePolicy);
             this.Controls.Add(this.linkLabel_Search);
-            this.Name = "ManagerHome";
-            this.Text = "Manager Home Page";
+            this.Name = "Home";
+            this.Text = "Home Page";
             this.Load += new System.EventHandler(this.ManagerHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LICLogo)).EndInit();
             this.ResumeLayout(false);

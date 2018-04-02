@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace _340GUI
 {
-    partial class ManagerFailToSearch
+    partial class FailToSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -261,7 +261,7 @@ namespace _340GUI
             this.pictureBox_Warning.TabIndex = 56;
             this.pictureBox_Warning.TabStop = false;
             // 
-            // ManagerFailToSearch
+            // FailToSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -289,8 +289,8 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_CreatePolicy);
             this.Controls.Add(this.linkLabel_Search);
             this.Controls.Add(this.linkLabel_Home);
-            this.Name = "ManagerFailToSearch";
-            this.Text = "Manager Search Page";
+            this.Name = "FailToSearch";
+            this.Text = "Search Page";
             this.Load += new System.EventHandler(this.ManagerFailToSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
