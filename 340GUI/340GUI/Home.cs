@@ -13,10 +13,11 @@ namespace _340GUI
 {
     public partial class Home : Form
     {
-        public Home(bool isManager)
+        public Home(Agent inUsingAgent)
         {
             InitializeComponent();
-            if(!isManager)
+            usingAgent = inUsingAgent;
+            if(!usingAgent.isManager())
             {
                 linkLabel_AddNewAgent.Visible = false;
             }
@@ -30,13 +31,14 @@ namespace _340GUI
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            Search nextForm = new Search();
-            nextForm.Show();
-            this.Close();
+
+        }
+        private void ManagerHome_Load(object sender, EventArgs e)
+        {
+
         }
 
-        private void ManagerHome_Load(object sender, EventArgs e)
+        private void linkLabel_DelinquentAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

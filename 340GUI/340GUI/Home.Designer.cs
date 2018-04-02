@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class Home
@@ -65,6 +67,7 @@ namespace _340GUI
             this.linkLabel_DelinquentAccounts.TabIndex = 7;
             this.linkLabel_DelinquentAccounts.TabStop = true;
             this.linkLabel_DelinquentAccounts.Text = "Delinquent Accounts";
+            this.linkLabel_DelinquentAccounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_DelinquentAccounts_LinkClicked);
             // 
             // linkLabel_CreatePolicy
             // 
@@ -137,6 +140,6 @@ namespace _340GUI
         private LinkLabel linkLabel_Search;
         private LinkLabel linkLabel_AddNewAgent;
         private PictureBox pictureBox_LICLogo;
-        //private Agent usingAgent;
+        private Agent usingAgent;
     }
 }

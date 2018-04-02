@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
-    class Beneficiary : Savable
+    public class Beneficiary : Savable
     {
         private string firstName;
         private string lastName;

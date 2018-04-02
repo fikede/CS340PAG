@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
@@ -24,23 +25,20 @@ namespace _340GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string s="";
-            isManager = IsItManager(s);
-            Home agentHome = new Home(isManager);
-            agentHome.Show();
-            this.Hide();
-
-            if (matchingID("ID") && matchingPassword("PSSWRD") && IsItManager(""))
+            Agent usingAgent = new Agent();
+            string id = textBox_AgentNumber.Text;
+            string password = textBox_Password.Text;
+            if (usingAgent.logIn(id, password))
             {
-               // if both ID and password are maching, go to ManagerHomePage
-            }
-            else if (matchingID("ID") && matchingPassword("PSSWRD") && !IsItManager(""))
-            {
-                // if both ID and password are matching, and not Manager's ID, then go to AgentHomePage
+                Home homePage = new Home(usingAgent);
+                this.Hide();
+                homePage.Show();
             }
             else
             {
-                //if ID or password is incorrect, go to FailToLogin.cs
+                FailToLogin failed = new FailToLogin();
+                failed.Show();
+                this.Hide();
             }
         }
 

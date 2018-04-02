@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
-    class Manager : Agent
+    public class Manager : Agent
     {
         public Manager() : base()
         {

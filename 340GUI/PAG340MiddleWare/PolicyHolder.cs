@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
-    class PolicyHolder : Savable
+    public class PolicyHolder : Savable
     {
         private string firstName;
         private string lastName;

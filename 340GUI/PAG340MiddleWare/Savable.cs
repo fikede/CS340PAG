@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PAG340MiddleWare
 {
-    abstract class Savable
+    public abstract class Savable
     {
         public abstract void saveToDataBase();
     }

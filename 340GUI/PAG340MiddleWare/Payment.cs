@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
-    class Payment : Savable
+    public class Payment : Savable
     {
         private string policyNumber;
         private DateTime date;

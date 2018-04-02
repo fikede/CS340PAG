@@ -27,5 +27,24 @@ namespace _340GUI
         {
 
         }
+
+        private void button_Login_Click(object sender, EventArgs e)
+        {
+            Agent usingAgent = new Agent();
+            string id = textBox_AgentNumber.Text;
+            string password = textBox_Password.Text;
+            if (usingAgent.logIn(id, password))
+            {
+                Home homePage = new Home(usingAgent);
+                this.Hide();
+                homePage.Show();
+            }
+            else
+            {
+                FailToLogin failed = new FailToLogin();
+                failed.Show();
+                this.Close();
+            }
+        }
     }
 }

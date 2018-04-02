@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
-    class Agent : Savable
+     public class Agent : Savable
     {
         private string firstName;
         private string lastName;
@@ -101,6 +101,12 @@ namespace PAG340MiddleWare
 
         }
 
+        public bool isManager()
+        {
+            if (userType.Equals("m") || userType.Equals("M")) return true;
+            else return false;  
+        }
+
         public string Firstname
         {
             get { return firstName; }
@@ -129,6 +135,12 @@ namespace PAG340MiddleWare
         {
             get { return hashPassword; }
             set { hashPassword = value; }
+        }
+
+        public string UserType
+        {
+            get { return userType; }
+            set { userType = value; }
         }
 
         public string Dept
