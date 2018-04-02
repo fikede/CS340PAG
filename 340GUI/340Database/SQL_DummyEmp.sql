@@ -3,20 +3,22 @@
  * Created By: Morgan
  */
 
+
 USE LIC_PAG
 GO
 
-INSERT INTO		Employee(ID, first_name, last_name, username, password_hashed, usertype)
-VALUES			(11111111111111111111, 'John', 'Wick', 'test', 'test', 'M')
+INSERT INTO Department(name)
+VALUES		('Freelancer')
 
--- NOTE: IF ID = 0's the result is just 0!!!
+INSERT INTO		Employee(ID, first_name, last_name, username, password_hashed, usertype, department)
+VALUES			(11111111111111111111, 'John', 'Smith', 'test', 'test', 'm', 'Freelancer')
 
 SELECT *
 FROM Employee
 
 
 /*
-TO DELETE THIS TEST USER DO THE FOLLOWING.
+TO DELETE THIS TEST USER and TEST DEPARTMENT DO THE FOLLOWING.
 
 USE LIC_PAG
 GO
@@ -24,7 +26,12 @@ GO
 DELETE FROM Employee
 WHERE username = 'test'
 
+DELETE FROM Department
+WHERE name = 'Freelancer'
+
+SELECT * 
+FROM Department
+
 SELECT * 
 FROM Employee
-
 */
