@@ -31,10 +31,13 @@ namespace PAG340MiddleWare
 
             Matrix newMatrix = matrix.transpose();
             Console.WriteLine(newMatrix.ToString());
-            */
+            
             Agent agent = new Agent();
             agent.logIn("11111111111111111111", "test");
-            
+
+            Agent newagent = new Agent("firstName", "lastName", "12341234123412341234","jfarmer", "hi", "A", "Freelancer");
+            newagent.saveToDataBase();
+            */
         }
 
         /*Method for testing

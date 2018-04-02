@@ -49,7 +49,15 @@ namespace PAG340MiddleWare
 
         public override void saveToDataBase()
         {
-
+            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "INSERT INTO Employee(ID, first_Name, last_Name, username, password_hashed, usertype, department) " +
+                " VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + userName + "', '" + hashPassword + "', '" + userType + "', '" + dept + "')";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public List<Policy> search(string policyHolderFirstName, string policyHolderLastName, string policyNumber)
@@ -87,6 +95,7 @@ namespace PAG340MiddleWare
                 this.userName = reader.GetString(columnNum++);
                 columnNum++; //skipping over password.
                 this.userType = reader.GetString(columnNum++);
+                conn.Close();
                //if(reader.GetString(columnNum++) != null) this.dept = reader.GetString(columnNum++);
                 return true;
             }
