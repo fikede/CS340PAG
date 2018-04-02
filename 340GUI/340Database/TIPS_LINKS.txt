@@ -1,0 +1,13 @@
+C# INSERT Ideas loops:
+https://stackoverflow.com/questions/9097147/sql-insert-in-while-loop
+
+Drop table
+https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql
+
+Statements
+https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements
+
+Edit -> IntelliSense -> Refresh Local Cache
+
+IF/ELSE
+https://technet.microsoft.com/en-us/library/ms182587(v=sql.110).aspx

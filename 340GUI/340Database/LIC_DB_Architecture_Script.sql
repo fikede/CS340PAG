@@ -21,7 +21,7 @@ ID varchar (20),
 first_name varchar(100),
 last_name varchar(100),
 username varchar(20),
-password_hashed binary(225),
+password_hashed varchar(225),
 usertype char,
 department varchar(50),
 CONSTRAINT PK_Employee PRIMARY KEY(ID),
@@ -43,7 +43,7 @@ zip char(9),
 CONSTRAINT PK_PolicyHolder PRIMARY KEY(ID),
 )
 
-CREATE TABLE Policy
+CREATE TABLE [Policy]
 (
 [number] varchar(30),
 holderID varchar(20),
@@ -83,7 +83,7 @@ policynumber varchar(30),
 amount decimal (8,2),
 CONSTRAINT PK_Payment PRIMARY KEY(policynumber, [date]),
 CONSTRAINT FK_Payment_Policy FOREIGN KEY(policynumber)
-	REFERENCES Policy([number]),
+	REFERENCES [Policy]([number]),
 CONSTRAINT CHECK_description CHECK([type] = 'P' OR [type] = 'C')
 )
 
