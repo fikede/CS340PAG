@@ -3,11 +3,24 @@
 -- There are some procedures that must be completed
 -- NOTE: If the table names are underlined and SQL states that the object is undefined.
 --			Go to: Edit -> IntelliSense -> Refresh Local Cache
+
 USE LIC_PAG
 GO
 
 -- COMPLETED AND NEEDS TESTING
 
+-- Procedure for retrieving all employee IDs
+-- CREATED IN DB
+CREATE PROCEDURE returnEmployeeID
+AS
+BEGIN
+
+SELECT ID 
+FROM Employee
+ORDER BY ID DESC
+
+END
+GO
 
 -- Procedure to search and validate the employees login
 -- CREATED IN DB
@@ -20,6 +33,7 @@ FROM Employee
 WHERE ID = @employeeID AND password_hashed = @password
 END
 GO
+
 
 -- NOTE: NO OTHER PROCEDURES HAVE BEEN CREATED IN THE DB.
 
@@ -83,7 +97,6 @@ END
 GO
 
 -- INCOMPLETE PROCEDURES
-
 
 -- Procedure to search for a policy by the holders name and the agents name.
 CREATE PROCEDURE searchPolicybyholderNameandAgentName @holderFName AS varchar(100), @holderLName AS varchar(100), @agentFName AS varchar(100), @agentLName AS varchar(100)
