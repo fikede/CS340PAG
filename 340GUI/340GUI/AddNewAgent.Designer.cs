@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class AddNewAgent
@@ -68,6 +70,7 @@ namespace _340GUI
             this.button_Cancel.TabIndex = 35;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // button_Submit
             // 
@@ -79,6 +82,7 @@ namespace _340GUI
             this.button_Submit.TabIndex = 34;
             this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = true;
+            this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
             // 
             // comboBox_Department
             // 
@@ -284,6 +288,6 @@ namespace _340GUI
         private Label label_AgentNumber;
         private Label label_AddNewAgent;
         private Label label_ShowAgentNumber;
-        //private Agent usingAgent;
+        private Manager usingManager;
     }
 }

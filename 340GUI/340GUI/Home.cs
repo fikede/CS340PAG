@@ -48,8 +48,8 @@ namespace _340GUI
 
         private void linkLabel_AddNewAgent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteForm incomplete = new IncompleteForm();
-            incomplete.Show();
+            AddNewAgent addNewAgent = new AddNewAgent();
+            addNewAgent.Show();
         }
 
         private void pictureBox_LICLogo_Click(object sender, EventArgs e)
