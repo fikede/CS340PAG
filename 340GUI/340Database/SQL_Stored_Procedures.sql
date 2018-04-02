@@ -6,10 +6,11 @@
 USE LIC_PAG
 GO
 
-
 -- COMPLETED AND NEEDS TESTING
 
+
 -- Procedure to search and validate the employees login
+-- CREATED IN DB
 CREATE PROCEDURE loginEmployee @employeeID AS varchar(20), @password AS varchar(255)
 AS
 BEGIN
@@ -19,6 +20,9 @@ FROM Employee
 WHERE ID = @employeeID AND password_hashed = @password
 END
 GO
+
+-- NOTE: NO OTHER PROCEDURES HAVE BEEN CREATED IN THE DB.
+
 
 -- Procedure to search for a policy by the policy number.
 -- if this is an agent then we use their agent ID as well.
