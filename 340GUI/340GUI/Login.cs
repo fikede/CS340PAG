@@ -42,24 +42,6 @@ namespace _340GUI
             }
         }
 
-        private bool matchingID (string ID)
-        {
-            // find ID
-            return true;
-        }
-
-        private bool matchingPassword (string password)
-        {
-            // hashing? find password
-            return true;
-        }
-
-        private bool IsItManager (string ID)
-        {
-            //Is this Manager's ID?
-            return true;
-        }
-
         private void textBox_AgentNumber_TextChanged(object sender, EventArgs e)
         {
 

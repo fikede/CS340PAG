@@ -81,6 +81,12 @@
     <Compile Include="FailToLogin.Designer.cs">
       <DependentUpon>FailToLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="IncompleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IncompleteForm.Designer.cs">
+      <DependentUpon>IncompleteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FailToLogin.resx">
       <DependentUpon>FailToLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IncompleteForm.resx">
+      <DependentUpon>IncompleteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
