@@ -17,11 +17,6 @@ namespace _340GUI
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -29,6 +24,12 @@ namespace _340GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string s="";
+            isManager = IsItManager(s);
+            ManagerHome agentHome = new ManagerHome(isManager);
+            agentHome.Show();
+            this.Hide();
+
             if (matchingID("ID") && matchingPassword("PSSWRD") && IsItManager(""))
             {
                // if both ID and password are maching, go to ManagerHomePage
@@ -45,13 +46,13 @@ namespace _340GUI
 
         private bool matchingID (string ID)
         {
-            //hasing? find ID
+            // find ID
             return true;
         }
 
         private bool matchingPassword (string password)
         {
-            //find password
+            // hashing? find password
             return true;
         }
 
@@ -59,6 +60,11 @@ namespace _340GUI
         {
             //Is this Manager's ID?
             return true;
+        }
+
+        private void textBox_AgentNumber_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

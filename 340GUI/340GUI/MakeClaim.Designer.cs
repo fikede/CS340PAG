@@ -1,4 +1,13 @@
-﻿namespace _340GUI
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace _340GUI
 {
     partial class MakeClaim
     {
@@ -28,41 +37,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button_Cancel = new System.Windows.Forms.Button();
+            this.button_Confirm = new System.Windows.Forms.Button();
+            this.label_Comment = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button2
+            // button_Cancel
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(186, 119);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Cancel.Location = new System.Drawing.Point(186, 119);
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.Size = new System.Drawing.Size(93, 32);
+            this.button_Cancel.TabIndex = 7;
+            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_Confirm
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(43, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Confirm.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_Confirm.Location = new System.Drawing.Point(43, 119);
+            this.button_Confirm.Name = "button_Confirm";
+            this.button_Confirm.Size = new System.Drawing.Size(93, 32);
+            this.button_Confirm.TabIndex = 6;
+            this.button_Confirm.Text = "Confirm";
+            this.button_Confirm.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label_Comment
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(117, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Make a Claim";
+            this.label_Comment.AutoSize = true;
+            this.label_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Comment.Location = new System.Drawing.Point(117, 67);
+            this.label_Comment.Name = "label_Comment";
+            this.label_Comment.Size = new System.Drawing.Size(90, 16);
+            this.label_Comment.TabIndex = 4;
+            this.label_Comment.Text = "Make a Claim";
             // 
             // MakeClaim
             // 
@@ -70,9 +79,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(322, 187);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button_Cancel);
+            this.Controls.Add(this.button_Confirm);
+            this.Controls.Add(this.label_Comment);
             this.Name = "MakeClaim";
             this.Text = "Make a Claim";
             this.ResumeLayout(false);
@@ -82,8 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private Button button_Cancel;
+        private Button button_Confirm;
+        private Label label_Comment;
+        //private Agent usingAgent;
     }
 }

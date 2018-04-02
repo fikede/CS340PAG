@@ -21,5 +21,15 @@ namespace _340GUI
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PolicyNum_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

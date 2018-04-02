@@ -1,4 +1,13 @@
-﻿namespace _340GUI
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace _340GUI
 {
     partial class PricePolicy
     {
@@ -28,336 +37,357 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label_TotalAmountOfPayment = new System.Windows.Forms.Label();
+            this.label_PayoffAmount = new System.Windows.Forms.Label();
+            this.label_HoursOfExercise = new System.Windows.Forms.Label();
+            this.label_DangerousActivity = new System.Windows.Forms.Label();
+            this.label_Hopitalized = new System.Windows.Forms.Label();
+            this.label_Cancer = new System.Windows.Forms.Label();
+            this.label_HeartDisease = new System.Windows.Forms.Label();
+            this.label_AverageFatPerDay = new System.Windows.Forms.Label();
+            this.label_SystolicBloodPressure = new System.Windows.Forms.Label();
+            this.label_CigPerDay = new System.Windows.Forms.Label();
+            this.label_SmokingHistory = new System.Windows.Forms.Label();
+            this.label_MotherAAD = new System.Windows.Forms.Label();
+            this.label_FatherAAD = new System.Windows.Forms.Label();
+            this.label_PolicyholderDOB = new System.Windows.Forms.Label();
+            this.textBox_PolicyholderDOB = new System.Windows.Forms.TextBox();
+            this.textBox_FatherAAD = new System.Windows.Forms.TextBox();
+            this.textBox_MotherAAD = new System.Windows.Forms.TextBox();
+            this.textBox_SmokingHistory = new System.Windows.Forms.TextBox();
+            this.textBox_CigPerDay = new System.Windows.Forms.TextBox();
+            this.textBox_SystolicBloodPressure = new System.Windows.Forms.TextBox();
+            this.textBox_AverageFatPerDay = new System.Windows.Forms.TextBox();
+            this.textBox_DangerousActivity = new System.Windows.Forms.TextBox();
+            this.textBox_HoursOfExercise = new System.Windows.Forms.TextBox();
+            this.radioButton_YesHeartDisease = new System.Windows.Forms.RadioButton();
+            this.radioButton_NoHeartDisease = new System.Windows.Forms.RadioButton();
+            this.radioButton_NoCancer = new System.Windows.Forms.RadioButton();
+            this.radioButton_YesCancer = new System.Windows.Forms.RadioButton();
+            this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
+            this.radioButton_YesHospitalized = new System.Windows.Forms.RadioButton();
+            this.label_PricePolicy = new System.Windows.Forms.Label();
+            this.button_Accept = new System.Windows.Forms.Button();
+            this.button_Cancel = new System.Windows.Forms.Button();
+            this.label_ShowPayoffAmount = new System.Windows.Forms.Label();
+            this.label_ShowTotalAmountOfPayment = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label21
+            // label_TotalAmountOfPayment
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(131, 332);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(225, 13);
-            this.label21.TabIndex = 48;
-            this.label21.Text = "Total Amount of Payment per Month: $";
+            this.label_TotalAmountOfPayment.AutoSize = true;
+            this.label_TotalAmountOfPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TotalAmountOfPayment.Location = new System.Drawing.Point(131, 332);
+            this.label_TotalAmountOfPayment.Name = "label_TotalAmountOfPayment";
+            this.label_TotalAmountOfPayment.Size = new System.Drawing.Size(225, 13);
+            this.label_TotalAmountOfPayment.TabIndex = 48;
+            this.label_TotalAmountOfPayment.Text = "Total Amount of Payment per Month: $";
             // 
-            // label20
+            // label_PayoffAmount
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(277, 309);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(79, 13);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Payoff Amount:";
+            this.label_PayoffAmount.AutoSize = true;
+            this.label_PayoffAmount.Location = new System.Drawing.Point(277, 309);
+            this.label_PayoffAmount.Name = "label_PayoffAmount";
+            this.label_PayoffAmount.Size = new System.Drawing.Size(79, 13);
+            this.label_PayoffAmount.TabIndex = 47;
+            this.label_PayoffAmount.Text = "Payoff Amount:";
             // 
-            // label19
+            // label_HoursOfExercise
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(213, 287);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(143, 13);
-            this.label19.TabIndex = 46;
-            this.label19.Text = "Hours of Exercise per Week:";
+            this.label_HoursOfExercise.AutoSize = true;
+            this.label_HoursOfExercise.Location = new System.Drawing.Point(213, 287);
+            this.label_HoursOfExercise.Name = "label_HoursOfExercise";
+            this.label_HoursOfExercise.Size = new System.Drawing.Size(143, 13);
+            this.label_HoursOfExercise.TabIndex = 46;
+            this.label_HoursOfExercise.Text = "Hours of Exercise per Week:";
             // 
-            // label18
+            // label_DangerousActivity
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(249, 265);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 13);
-            this.label18.TabIndex = 45;
-            this.label18.Text = "Dangerous Activities:";
+            this.label_DangerousActivity.AutoSize = true;
+            this.label_DangerousActivity.Location = new System.Drawing.Point(249, 265);
+            this.label_DangerousActivity.Name = "label_DangerousActivity";
+            this.label_DangerousActivity.Size = new System.Drawing.Size(107, 13);
+            this.label_DangerousActivity.TabIndex = 45;
+            this.label_DangerousActivity.Text = "Dangerous Activities:";
             // 
-            // label17
+            // label_Hopitalized
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(289, 243);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 13);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "Hospitalized:";
+            this.label_Hopitalized.AutoSize = true;
+            this.label_Hopitalized.Location = new System.Drawing.Point(289, 243);
+            this.label_Hopitalized.Name = "label_Hopitalized";
+            this.label_Hopitalized.Size = new System.Drawing.Size(67, 13);
+            this.label_Hopitalized.TabIndex = 44;
+            this.label_Hopitalized.Text = "Hospitalized:";
             // 
-            // label16
+            // label_Cancer
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(312, 221);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 13);
-            this.label16.TabIndex = 43;
-            this.label16.Text = "Cancer:";
+            this.label_Cancer.AutoSize = true;
+            this.label_Cancer.Location = new System.Drawing.Point(312, 221);
+            this.label_Cancer.Name = "label_Cancer";
+            this.label_Cancer.Size = new System.Drawing.Size(44, 13);
+            this.label_Cancer.TabIndex = 43;
+            this.label_Cancer.Text = "Cancer:";
             // 
-            // label15
+            // label_HeartDisease
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(279, 199);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 13);
-            this.label15.TabIndex = 42;
-            this.label15.Text = "Heart Disease:";
+            this.label_HeartDisease.AutoSize = true;
+            this.label_HeartDisease.Location = new System.Drawing.Point(279, 199);
+            this.label_HeartDisease.Name = "label_HeartDisease";
+            this.label_HeartDisease.Size = new System.Drawing.Size(77, 13);
+            this.label_HeartDisease.TabIndex = 42;
+            this.label_HeartDisease.Text = "Heart Disease:";
             // 
-            // label14
+            // label_AverageFatPerDay
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(215, 177);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(141, 13);
-            this.label14.TabIndex = 41;
-            this.label14.Text = "Average Grams Fat per Day:";
+            this.label_AverageFatPerDay.AutoSize = true;
+            this.label_AverageFatPerDay.Location = new System.Drawing.Point(215, 177);
+            this.label_AverageFatPerDay.Name = "label_AverageFatPerDay";
+            this.label_AverageFatPerDay.Size = new System.Drawing.Size(141, 13);
+            this.label_AverageFatPerDay.TabIndex = 41;
+            this.label_AverageFatPerDay.Text = "Average Grams Fat per Day:";
             // 
-            // label13
+            // label_SystolicBloodPressure
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(236, 155);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 13);
-            this.label13.TabIndex = 40;
-            this.label13.Text = "Systolic Blood Pressure:";
+            this.label_SystolicBloodPressure.AutoSize = true;
+            this.label_SystolicBloodPressure.Location = new System.Drawing.Point(236, 155);
+            this.label_SystolicBloodPressure.Name = "label_SystolicBloodPressure";
+            this.label_SystolicBloodPressure.Size = new System.Drawing.Size(120, 13);
+            this.label_SystolicBloodPressure.TabIndex = 40;
+            this.label_SystolicBloodPressure.Text = "Systolic Blood Pressure:";
             // 
-            // label12
+            // label_CigPerDay
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(286, 133);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 13);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Cigs per Day:";
+            this.label_CigPerDay.AutoSize = true;
+            this.label_CigPerDay.Location = new System.Drawing.Point(286, 133);
+            this.label_CigPerDay.Name = "label_CigPerDay";
+            this.label_CigPerDay.Size = new System.Drawing.Size(70, 13);
+            this.label_CigPerDay.TabIndex = 39;
+            this.label_CigPerDay.Text = "Cigs per Day:";
             // 
-            // label11
+            // label_SmokingHistory
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(270, 111);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Smoking History:";
+            this.label_SmokingHistory.AutoSize = true;
+            this.label_SmokingHistory.Location = new System.Drawing.Point(270, 111);
+            this.label_SmokingHistory.Name = "label_SmokingHistory";
+            this.label_SmokingHistory.Size = new System.Drawing.Size(86, 13);
+            this.label_SmokingHistory.TabIndex = 38;
+            this.label_SmokingHistory.Text = "Smoking History:";
             // 
-            // label10
+            // label_MotherAAD
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(240, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 13);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Mother\'s Age at Death:";
+            this.label_MotherAAD.AutoSize = true;
+            this.label_MotherAAD.Location = new System.Drawing.Point(240, 89);
+            this.label_MotherAAD.Name = "label_MotherAAD";
+            this.label_MotherAAD.Size = new System.Drawing.Size(116, 13);
+            this.label_MotherAAD.TabIndex = 37;
+            this.label_MotherAAD.Text = "Mother\'s Age at Death:";
             // 
-            // label9
+            // label_FatherAAD
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(243, 67);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 13);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Father\'s Age at Death:";
+            this.label_FatherAAD.AutoSize = true;
+            this.label_FatherAAD.Location = new System.Drawing.Point(243, 67);
+            this.label_FatherAAD.Name = "label_FatherAAD";
+            this.label_FatherAAD.Size = new System.Drawing.Size(113, 13);
+            this.label_FatherAAD.TabIndex = 36;
+            this.label_FatherAAD.Text = "Father\'s Age at Death:";
             // 
-            // label8
+            // label_PolicyholderDOB
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(220, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(136, 13);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "Policyholder\'s Date of Birth:";
+            this.label_PolicyholderDOB.AutoSize = true;
+            this.label_PolicyholderDOB.Location = new System.Drawing.Point(220, 45);
+            this.label_PolicyholderDOB.Name = "label_PolicyholderDOB";
+            this.label_PolicyholderDOB.Size = new System.Drawing.Size(136, 13);
+            this.label_PolicyholderDOB.TabIndex = 35;
+            this.label_PolicyholderDOB.Text = "Policyholder\'s Date of Birth:";
             // 
-            // textBox1
+            // textBox_PolicyholderDOB
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(362, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 20);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.Text = "yyyy/mm/dd";
+            this.textBox_PolicyholderDOB.ForeColor = System.Drawing.Color.Silver;
+            this.textBox_PolicyholderDOB.Location = new System.Drawing.Point(362, 42);
+            this.textBox_PolicyholderDOB.Name = "textBox_PolicyholderDOB";
+            this.textBox_PolicyholderDOB.Size = new System.Drawing.Size(239, 20);
+            this.textBox_PolicyholderDOB.TabIndex = 49;
+            this.textBox_PolicyholderDOB.Text = "yyyy/mm/dd";
             // 
-            // textBox2
+            // textBox_FatherAAD
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(362, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 20);
-            this.textBox2.TabIndex = 50;
+            this.textBox_FatherAAD.ForeColor = System.Drawing.Color.Black;
+            this.textBox_FatherAAD.Location = new System.Drawing.Point(362, 64);
+            this.textBox_FatherAAD.Name = "textBox_FatherAAD";
+            this.textBox_FatherAAD.Size = new System.Drawing.Size(239, 20);
+            this.textBox_FatherAAD.TabIndex = 50;
             // 
-            // textBox3
+            // textBox_MotherAAD
             // 
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(362, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 20);
-            this.textBox3.TabIndex = 51;
+            this.textBox_MotherAAD.ForeColor = System.Drawing.Color.Black;
+            this.textBox_MotherAAD.Location = new System.Drawing.Point(362, 86);
+            this.textBox_MotherAAD.Name = "textBox_MotherAAD";
+            this.textBox_MotherAAD.Size = new System.Drawing.Size(239, 20);
+            this.textBox_MotherAAD.TabIndex = 51;
             // 
-            // textBox4
+            // textBox_SmokingHistory
             // 
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(362, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 52;
+            this.textBox_SmokingHistory.ForeColor = System.Drawing.Color.Black;
+            this.textBox_SmokingHistory.Location = new System.Drawing.Point(362, 108);
+            this.textBox_SmokingHistory.Name = "textBox_SmokingHistory";
+            this.textBox_SmokingHistory.Size = new System.Drawing.Size(239, 20);
+            this.textBox_SmokingHistory.TabIndex = 52;
             // 
-            // textBox5
+            // textBox_CigPerDay
             // 
-            this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(362, 130);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(239, 20);
-            this.textBox5.TabIndex = 53;
+            this.textBox_CigPerDay.ForeColor = System.Drawing.Color.Black;
+            this.textBox_CigPerDay.Location = new System.Drawing.Point(362, 130);
+            this.textBox_CigPerDay.Name = "textBox_CigPerDay";
+            this.textBox_CigPerDay.Size = new System.Drawing.Size(239, 20);
+            this.textBox_CigPerDay.TabIndex = 53;
             // 
-            // textBox6
+            // textBox_SystolicBloodPressure
             // 
-            this.textBox6.ForeColor = System.Drawing.Color.Black;
-            this.textBox6.Location = new System.Drawing.Point(362, 152);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(239, 20);
-            this.textBox6.TabIndex = 54;
+            this.textBox_SystolicBloodPressure.ForeColor = System.Drawing.Color.Black;
+            this.textBox_SystolicBloodPressure.Location = new System.Drawing.Point(362, 152);
+            this.textBox_SystolicBloodPressure.Name = "textBox_SystolicBloodPressure";
+            this.textBox_SystolicBloodPressure.Size = new System.Drawing.Size(239, 20);
+            this.textBox_SystolicBloodPressure.TabIndex = 54;
             // 
-            // textBox7
+            // textBox_AverageFatPerDay
             // 
-            this.textBox7.ForeColor = System.Drawing.Color.Black;
-            this.textBox7.Location = new System.Drawing.Point(362, 174);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(239, 20);
-            this.textBox7.TabIndex = 55;
+            this.textBox_AverageFatPerDay.ForeColor = System.Drawing.Color.Black;
+            this.textBox_AverageFatPerDay.Location = new System.Drawing.Point(362, 174);
+            this.textBox_AverageFatPerDay.Name = "textBox_AverageFatPerDay";
+            this.textBox_AverageFatPerDay.Size = new System.Drawing.Size(239, 20);
+            this.textBox_AverageFatPerDay.TabIndex = 55;
             // 
-            // textBox11
+            // textBox_DangerousActivity
             // 
-            this.textBox11.ForeColor = System.Drawing.Color.Black;
-            this.textBox11.Location = new System.Drawing.Point(362, 262);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(239, 20);
-            this.textBox11.TabIndex = 59;
+            this.textBox_DangerousActivity.ForeColor = System.Drawing.Color.Black;
+            this.textBox_DangerousActivity.Location = new System.Drawing.Point(362, 262);
+            this.textBox_DangerousActivity.Name = "textBox_DangerousActivity";
+            this.textBox_DangerousActivity.Size = new System.Drawing.Size(239, 20);
+            this.textBox_DangerousActivity.TabIndex = 59;
             // 
-            // textBox12
+            // textBox_HoursOfExercise
             // 
-            this.textBox12.ForeColor = System.Drawing.Color.Black;
-            this.textBox12.Location = new System.Drawing.Point(362, 284);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(239, 20);
-            this.textBox12.TabIndex = 60;
+            this.textBox_HoursOfExercise.ForeColor = System.Drawing.Color.Black;
+            this.textBox_HoursOfExercise.Location = new System.Drawing.Point(362, 284);
+            this.textBox_HoursOfExercise.Name = "textBox_HoursOfExercise";
+            this.textBox_HoursOfExercise.Size = new System.Drawing.Size(239, 20);
+            this.textBox_HoursOfExercise.TabIndex = 60;
             // 
-            // radioButton1
+            // radioButton_YesHeartDisease
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(370, 197);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(43, 17);
-            this.radioButton1.TabIndex = 61;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Yes";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton_YesHeartDisease.AutoSize = true;
+            this.radioButton_YesHeartDisease.Location = new System.Drawing.Point(370, 197);
+            this.radioButton_YesHeartDisease.Name = "radioButton_YesHeartDisease";
+            this.radioButton_YesHeartDisease.Size = new System.Drawing.Size(43, 17);
+            this.radioButton_YesHeartDisease.TabIndex = 61;
+            this.radioButton_YesHeartDisease.TabStop = true;
+            this.radioButton_YesHeartDisease.Text = "Yes";
+            this.radioButton_YesHeartDisease.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButton_NoHeartDisease
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(432, 197);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 62;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton_NoHeartDisease.AutoSize = true;
+            this.radioButton_NoHeartDisease.Location = new System.Drawing.Point(432, 197);
+            this.radioButton_NoHeartDisease.Name = "radioButton_NoHeartDisease";
+            this.radioButton_NoHeartDisease.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_NoHeartDisease.TabIndex = 62;
+            this.radioButton_NoHeartDisease.TabStop = true;
+            this.radioButton_NoHeartDisease.Text = "No";
+            this.radioButton_NoHeartDisease.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButton_NoCancer
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(432, 219);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 17);
-            this.radioButton3.TabIndex = 64;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "No";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton_NoCancer.AutoSize = true;
+            this.radioButton_NoCancer.Location = new System.Drawing.Point(432, 219);
+            this.radioButton_NoCancer.Name = "radioButton_NoCancer";
+            this.radioButton_NoCancer.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_NoCancer.TabIndex = 64;
+            this.radioButton_NoCancer.TabStop = true;
+            this.radioButton_NoCancer.Text = "No";
+            this.radioButton_NoCancer.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radioButton_YesCancer
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(370, 219);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(43, 17);
-            this.radioButton4.TabIndex = 63;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Yes";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton_YesCancer.AutoSize = true;
+            this.radioButton_YesCancer.Location = new System.Drawing.Point(370, 219);
+            this.radioButton_YesCancer.Name = "radioButton_YesCancer";
+            this.radioButton_YesCancer.Size = new System.Drawing.Size(43, 17);
+            this.radioButton_YesCancer.TabIndex = 63;
+            this.radioButton_YesCancer.TabStop = true;
+            this.radioButton_YesCancer.Text = "Yes";
+            this.radioButton_YesCancer.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // radioButton_NoHospitalized
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(432, 241);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(39, 17);
-            this.radioButton5.TabIndex = 66;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "No";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton_NoHospitalized.AutoSize = true;
+            this.radioButton_NoHospitalized.Location = new System.Drawing.Point(432, 241);
+            this.radioButton_NoHospitalized.Name = "radioButton_NoHospitalized";
+            this.radioButton_NoHospitalized.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_NoHospitalized.TabIndex = 66;
+            this.radioButton_NoHospitalized.TabStop = true;
+            this.radioButton_NoHospitalized.Text = "No";
+            this.radioButton_NoHospitalized.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // radioButton_YesHospitalized
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(370, 241);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(43, 17);
-            this.radioButton6.TabIndex = 65;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Yes";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton_YesHospitalized.AutoSize = true;
+            this.radioButton_YesHospitalized.Location = new System.Drawing.Point(370, 241);
+            this.radioButton_YesHospitalized.Name = "radioButton_YesHospitalized";
+            this.radioButton_YesHospitalized.Size = new System.Drawing.Size(43, 17);
+            this.radioButton_YesHospitalized.TabIndex = 65;
+            this.radioButton_YesHospitalized.TabStop = true;
+            this.radioButton_YesHospitalized.Text = "Yes";
+            this.radioButton_YesHospitalized.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label_PricePolicy
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(328, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 67;
-            this.label1.Text = "Price a Policy";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label_PricePolicy.AutoSize = true;
+            this.label_PricePolicy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_PricePolicy.Location = new System.Drawing.Point(328, 16);
+            this.label_PricePolicy.Name = "label_PricePolicy";
+            this.label_PricePolicy.Size = new System.Drawing.Size(85, 13);
+            this.label_PricePolicy.TabIndex = 67;
+            this.label_PricePolicy.Text = "Price a Policy";
+            this.label_PricePolicy.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // button_Accept
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(246, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Accept";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Accept.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Accept.Location = new System.Drawing.Point(246, 361);
+            this.button_Accept.Name = "button_Accept";
+            this.button_Accept.Size = new System.Drawing.Size(75, 23);
+            this.button_Accept.TabIndex = 68;
+            this.button_Accept.Text = "Accept";
+            this.button_Accept.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button_Cancel
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(464, 361);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 69;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Cancel.Location = new System.Drawing.Point(464, 361);
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.button_Cancel.TabIndex = 69;
+            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // label_ShowPayoffAmount
+            // 
+            this.label_ShowPayoffAmount.AutoSize = true;
+            this.label_ShowPayoffAmount.Location = new System.Drawing.Point(367, 309);
+            this.label_ShowPayoffAmount.Name = "label_ShowPayoffAmount";
+            this.label_ShowPayoffAmount.Size = new System.Drawing.Size(35, 13);
+            this.label_ShowPayoffAmount.TabIndex = 70;
+            this.label_ShowPayoffAmount.Text = "label2";
+            // 
+            // label_ShowTotalAmountOfPayment
+            // 
+            this.label_ShowTotalAmountOfPayment.AutoSize = true;
+            this.label_ShowTotalAmountOfPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ShowTotalAmountOfPayment.Location = new System.Drawing.Point(367, 332);
+            this.label_ShowTotalAmountOfPayment.Name = "label_ShowTotalAmountOfPayment";
+            this.label_ShowTotalAmountOfPayment.Size = new System.Drawing.Size(41, 13);
+            this.label_ShowTotalAmountOfPayment.TabIndex = 71;
+            this.label_ShowTotalAmountOfPayment.Text = "label3";
             // 
             // PricePolicy
             // 
@@ -365,38 +395,40 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label_ShowTotalAmountOfPayment);
+            this.Controls.Add(this.label_ShowPayoffAmount);
+            this.Controls.Add(this.button_Cancel);
+            this.Controls.Add(this.button_Accept);
+            this.Controls.Add(this.label_PricePolicy);
+            this.Controls.Add(this.radioButton_NoHospitalized);
+            this.Controls.Add(this.radioButton_YesHospitalized);
+            this.Controls.Add(this.radioButton_NoCancer);
+            this.Controls.Add(this.radioButton_YesCancer);
+            this.Controls.Add(this.radioButton_NoHeartDisease);
+            this.Controls.Add(this.radioButton_YesHeartDisease);
+            this.Controls.Add(this.textBox_HoursOfExercise);
+            this.Controls.Add(this.textBox_DangerousActivity);
+            this.Controls.Add(this.textBox_AverageFatPerDay);
+            this.Controls.Add(this.textBox_SystolicBloodPressure);
+            this.Controls.Add(this.textBox_CigPerDay);
+            this.Controls.Add(this.textBox_SmokingHistory);
+            this.Controls.Add(this.textBox_MotherAAD);
+            this.Controls.Add(this.textBox_FatherAAD);
+            this.Controls.Add(this.textBox_PolicyholderDOB);
+            this.Controls.Add(this.label_TotalAmountOfPayment);
+            this.Controls.Add(this.label_PayoffAmount);
+            this.Controls.Add(this.label_HoursOfExercise);
+            this.Controls.Add(this.label_DangerousActivity);
+            this.Controls.Add(this.label_Hopitalized);
+            this.Controls.Add(this.label_Cancer);
+            this.Controls.Add(this.label_HeartDisease);
+            this.Controls.Add(this.label_AverageFatPerDay);
+            this.Controls.Add(this.label_SystolicBloodPressure);
+            this.Controls.Add(this.label_CigPerDay);
+            this.Controls.Add(this.label_SmokingHistory);
+            this.Controls.Add(this.label_MotherAAD);
+            this.Controls.Add(this.label_FatherAAD);
+            this.Controls.Add(this.label_PolicyholderDOB);
             this.Name = "PricePolicy";
             this.Text = "Price a Policy";
             this.Load += new System.EventHandler(this.PricePolicy_Load);
@@ -407,37 +439,40 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private Label label_TotalAmountOfPayment;
+        private Label label_PayoffAmount;
+        private Label label_HoursOfExercise;
+        private Label label_DangerousActivity;
+        private Label label_Hopitalized;
+        private Label label_Cancer;
+        private Label label_HeartDisease;
+        private Label label_AverageFatPerDay;
+        private Label label_SystolicBloodPressure;
+        private Label label_CigPerDay;
+        private Label label_SmokingHistory;
+        private Label label_MotherAAD;
+        private Label label_FatherAAD;
+        private Label label_PolicyholderDOB;
+        private TextBox textBox_PolicyholderDOB;
+        private TextBox textBox_FatherAAD;
+        private TextBox textBox_MotherAAD;
+        private TextBox textBox_SmokingHistory;
+        private TextBox textBox_CigPerDay;
+        private TextBox textBox_SystolicBloodPressure;
+        private TextBox textBox_AverageFatPerDay;
+        private TextBox textBox_DangerousActivity;
+        private TextBox textBox_HoursOfExercise;
+        private RadioButton radioButton_YesHeartDisease;
+        private RadioButton radioButton_NoHeartDisease;
+        private RadioButton radioButton_NoCancer;
+        private RadioButton radioButton_YesCancer;
+        private RadioButton radioButton_NoHospitalized;
+        private RadioButton radioButton_YesHospitalized;
+        private Label label_PricePolicy;
+        private Button button_Accept;
+        private Button button_Cancel;
+        private Label label_ShowPayoffAmount;
+        private Label label_ShowTotalAmountOfPayment;
+        //private Agent usingAgent;
     }
 }

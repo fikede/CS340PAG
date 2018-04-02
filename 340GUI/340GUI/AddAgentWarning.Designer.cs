@@ -1,4 +1,13 @@
-﻿namespace _340GUI
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace _340GUI
 {
     partial class AddAgentWarning
     {
@@ -28,40 +37,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.button_OK = new System.Windows.Forms.Button();
+            this.label_IncompInfo = new System.Windows.Forms.Label();
+            this.pictureBox_Warning = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // button_OK
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(94, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_OK.Location = new System.Drawing.Point(94, 94);
+            this.button_OK.Name = "button_OK";
+            this.button_OK.Size = new System.Drawing.Size(84, 30);
+            this.button_OK.TabIndex = 3;
+            this.button_OK.Text = "Ok";
+            this.button_OK.UseVisualStyleBackColor = true;
+            this.button_OK.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // label_IncompInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(81, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Incomplete Information";
+            this.label_IncompInfo.AutoSize = true;
+            this.label_IncompInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_IncompInfo.Location = new System.Drawing.Point(81, 60);
+            this.label_IncompInfo.Name = "label_IncompInfo";
+            this.label_IncompInfo.Size = new System.Drawing.Size(114, 13);
+            this.label_IncompInfo.TabIndex = 2;
+            this.label_IncompInfo.Text = "Incomplete Information";
+            this.label_IncompInfo.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
+            // pictureBox_Warning
             // 
-            this.pictureBox1.Image = global::_340GUI.Properties.Resources.warning;
-            this.pictureBox1.Location = new System.Drawing.Point(64, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 21);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox_Warning.Image = global::_340GUI.Properties.Resources.warning;
+            this.pictureBox_Warning.Location = new System.Drawing.Point(64, 58);
+            this.pictureBox_Warning.Name = "pictureBox_Warning";
+            this.pictureBox_Warning.Size = new System.Drawing.Size(16, 21);
+            this.pictureBox_Warning.TabIndex = 4;
+            this.pictureBox_Warning.TabStop = false;
             // 
             // AddAgentWarning
             // 
@@ -69,12 +80,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(260, 162);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox_Warning);
+            this.Controls.Add(this.button_OK);
+            this.Controls.Add(this.label_IncompInfo);
             this.Name = "AddAgentWarning";
             this.Text = "Warning";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,8 +93,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private Button button_OK;
+        private Label label_IncompInfo;
+        private PictureBox pictureBox_Warning;
+        //private Agent usingAgent;
     }
 }

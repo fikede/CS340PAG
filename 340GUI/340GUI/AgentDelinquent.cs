@@ -16,5 +16,10 @@ namespace _340GUI
         {
             InitializeComponent();
         }
+
+        private void AgentFirstName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -45,17 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddAgent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddAgent.Designer.cs">
-      <DependentUpon>AddAgent.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddAgentWarning.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddAgentWarning.Designer.cs">
       <DependentUpon>AddAgentWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewAgent.Designer.cs">
+      <DependentUpon>AddNewAgent.cs</DependentUpon>
     </Compile>
     <Compile Include="AddPolicy.cs">
       <SubType>Form</SubType>
@@ -215,14 +215,11 @@
     <Compile Include="UpdateWarning.Designer.cs">
       <DependentUpon>UpdateWarning.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddAgent.aa-DJ.resx">
-      <DependentUpon>AddAgent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddAgent.resx">
-      <DependentUpon>AddAgent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddAgentWarning.resx">
       <DependentUpon>AddAgentWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewAgent.resx">
+      <DependentUpon>AddNewAgent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddPolicy.resx">
       <DependentUpon>AddPolicy.cs</DependentUpon>
@@ -313,6 +310,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LIC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PAG340MiddleWare\PAG340MiddleWare.csproj">
+      <Project>{c7318192-2d0c-472e-a318-6902609cf136}</Project>
+      <Name>PAG340MiddleWare</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

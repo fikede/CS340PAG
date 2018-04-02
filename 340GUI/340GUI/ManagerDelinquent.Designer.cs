@@ -1,4 +1,14 @@
-﻿namespace _340GUI
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace _340GUI
 {
     partial class ManagerDelinquent
     {
@@ -28,169 +38,169 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.linkLabel_AddNewAgent = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_Logout = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_DelinquentAccounts = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_CreatePolicy = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_Search = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_Home = new System.Windows.Forms.LinkLabel();
+            this.comboBox_State = new System.Windows.Forms.ComboBox();
+            this.button_Submit = new System.Windows.Forms.Button();
+            this.textBox_AmountOverdue = new System.Windows.Forms.TextBox();
+            this.label_AmountOverdue = new System.Windows.Forms.Label();
+            this.label_AgentLastName = new System.Windows.Forms.Label();
+            this.label_AgentFirstName = new System.Windows.Forms.Label();
+            this.label_State = new System.Windows.Forms.Label();
+            this.label_DelinquentAccount = new System.Windows.Forms.Label();
+            this.textBox_AgentLastName = new System.Windows.Forms.TextBox();
+            this.textBox_AgentFirstName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // linkLabel6
+            // linkLabel_AddNewAgent
             // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(12, 144);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(82, 13);
-            this.linkLabel6.TabIndex = 58;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Add New Agent";
+            this.linkLabel_AddNewAgent.AutoSize = true;
+            this.linkLabel_AddNewAgent.Location = new System.Drawing.Point(12, 144);
+            this.linkLabel_AddNewAgent.Name = "linkLabel_AddNewAgent";
+            this.linkLabel_AddNewAgent.Size = new System.Drawing.Size(82, 13);
+            this.linkLabel_AddNewAgent.TabIndex = 58;
+            this.linkLabel_AddNewAgent.TabStop = true;
+            this.linkLabel_AddNewAgent.Text = "Add New Agent";
             // 
-            // linkLabel5
+            // linkLabel_Logout
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(12, 170);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel5.TabIndex = 57;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Log out";
+            this.linkLabel_Logout.AutoSize = true;
+            this.linkLabel_Logout.Location = new System.Drawing.Point(12, 170);
+            this.linkLabel_Logout.Name = "linkLabel_Logout";
+            this.linkLabel_Logout.Size = new System.Drawing.Size(43, 13);
+            this.linkLabel_Logout.TabIndex = 57;
+            this.linkLabel_Logout.TabStop = true;
+            this.linkLabel_Logout.Text = "Log out";
             // 
-            // linkLabel4
+            // linkLabel_DelinquentAccounts
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(12, 118);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(106, 13);
-            this.linkLabel4.TabIndex = 56;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Delinquent Accounts";
+            this.linkLabel_DelinquentAccounts.AutoSize = true;
+            this.linkLabel_DelinquentAccounts.Location = new System.Drawing.Point(12, 118);
+            this.linkLabel_DelinquentAccounts.Name = "linkLabel_DelinquentAccounts";
+            this.linkLabel_DelinquentAccounts.Size = new System.Drawing.Size(106, 13);
+            this.linkLabel_DelinquentAccounts.TabIndex = 56;
+            this.linkLabel_DelinquentAccounts.TabStop = true;
+            this.linkLabel_DelinquentAccounts.Text = "Delinquent Accounts";
             // 
-            // linkLabel3
+            // linkLabel_CreatePolicy
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(12, 92);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(78, 13);
-            this.linkLabel3.TabIndex = 55;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Create a Policy";
+            this.linkLabel_CreatePolicy.AutoSize = true;
+            this.linkLabel_CreatePolicy.Location = new System.Drawing.Point(12, 92);
+            this.linkLabel_CreatePolicy.Name = "linkLabel_CreatePolicy";
+            this.linkLabel_CreatePolicy.Size = new System.Drawing.Size(78, 13);
+            this.linkLabel_CreatePolicy.TabIndex = 55;
+            this.linkLabel_CreatePolicy.TabStop = true;
+            this.linkLabel_CreatePolicy.Text = "Create a Policy";
             // 
-            // linkLabel2
+            // linkLabel_Search
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(12, 66);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(41, 13);
-            this.linkLabel2.TabIndex = 54;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Search";
+            this.linkLabel_Search.AutoSize = true;
+            this.linkLabel_Search.Location = new System.Drawing.Point(12, 66);
+            this.linkLabel_Search.Name = "linkLabel_Search";
+            this.linkLabel_Search.Size = new System.Drawing.Size(41, 13);
+            this.linkLabel_Search.TabIndex = 54;
+            this.linkLabel_Search.TabStop = true;
+            this.linkLabel_Search.Text = "Search";
             // 
-            // linkLabel1
+            // linkLabel_Home
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 40);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(35, 13);
-            this.linkLabel1.TabIndex = 53;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Home";
+            this.linkLabel_Home.AutoSize = true;
+            this.linkLabel_Home.Location = new System.Drawing.Point(12, 40);
+            this.linkLabel_Home.Name = "linkLabel_Home";
+            this.linkLabel_Home.Size = new System.Drawing.Size(35, 13);
+            this.linkLabel_Home.TabIndex = 53;
+            this.linkLabel_Home.TabStop = true;
+            this.linkLabel_Home.Text = "Home";
             // 
-            // comboBox1
+            // comboBox_State
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(338, 63);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(223, 21);
-            this.comboBox1.TabIndex = 66;
+            this.comboBox_State.FormattingEnabled = true;
+            this.comboBox_State.Location = new System.Drawing.Point(338, 63);
+            this.comboBox_State.Name = "comboBox_State";
+            this.comboBox_State.Size = new System.Drawing.Size(223, 21);
+            this.comboBox_State.TabIndex = 66;
             // 
-            // button1
+            // button_Submit
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(486, 167);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 65;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_Submit.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_Submit.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_Submit.Location = new System.Drawing.Point(486, 167);
+            this.button_Submit.Name = "button_Submit";
+            this.button_Submit.Size = new System.Drawing.Size(75, 23);
+            this.button_Submit.TabIndex = 65;
+            this.button_Submit.Text = "Submit";
+            this.button_Submit.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // textBox_AmountOverdue
             // 
-            this.textBox4.Location = new System.Drawing.Point(338, 141);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(223, 20);
-            this.textBox4.TabIndex = 64;
+            this.textBox_AmountOverdue.Location = new System.Drawing.Point(338, 141);
+            this.textBox_AmountOverdue.Name = "textBox_AmountOverdue";
+            this.textBox_AmountOverdue.Size = new System.Drawing.Size(223, 20);
+            this.textBox_AmountOverdue.TabIndex = 64;
             // 
-            // label5
+            // label_AmountOverdue
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(200, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 13);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Amount Overdue is at least";
+            this.label_AmountOverdue.AutoSize = true;
+            this.label_AmountOverdue.Location = new System.Drawing.Point(200, 144);
+            this.label_AmountOverdue.Name = "label_AmountOverdue";
+            this.label_AmountOverdue.Size = new System.Drawing.Size(134, 13);
+            this.label_AmountOverdue.TabIndex = 63;
+            this.label_AmountOverdue.Text = "Amount Overdue is at least";
             // 
-            // label4
+            // label_AgentLastName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(200, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "Agent Last Name";
+            this.label_AgentLastName.AutoSize = true;
+            this.label_AgentLastName.Location = new System.Drawing.Point(200, 118);
+            this.label_AgentLastName.Name = "label_AgentLastName";
+            this.label_AgentLastName.Size = new System.Drawing.Size(89, 13);
+            this.label_AgentLastName.TabIndex = 62;
+            this.label_AgentLastName.Text = "Agent Last Name";
             // 
-            // label3
+            // label_AgentFirstName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(200, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Agent First Name";
+            this.label_AgentFirstName.AutoSize = true;
+            this.label_AgentFirstName.Location = new System.Drawing.Point(200, 92);
+            this.label_AgentFirstName.Name = "label_AgentFirstName";
+            this.label_AgentFirstName.Size = new System.Drawing.Size(88, 13);
+            this.label_AgentFirstName.TabIndex = 61;
+            this.label_AgentFirstName.Text = "Agent First Name";
             // 
-            // label2
+            // label_State
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 60;
-            this.label2.Text = "State";
+            this.label_State.AutoSize = true;
+            this.label_State.Location = new System.Drawing.Point(200, 66);
+            this.label_State.Name = "label_State";
+            this.label_State.Size = new System.Drawing.Size(32, 13);
+            this.label_State.TabIndex = 60;
+            this.label_State.Text = "State";
             // 
-            // label1
+            // label_DelinquentAccount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Delinquent Account";
+            this.label_DelinquentAccount.AutoSize = true;
+            this.label_DelinquentAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_DelinquentAccount.Location = new System.Drawing.Point(200, 40);
+            this.label_DelinquentAccount.Name = "label_DelinquentAccount";
+            this.label_DelinquentAccount.Size = new System.Drawing.Size(119, 13);
+            this.label_DelinquentAccount.TabIndex = 59;
+            this.label_DelinquentAccount.Text = "Delinquent Account";
             // 
-            // textBox1
+            // textBox_AgentLastName
             // 
-            this.textBox1.Location = new System.Drawing.Point(338, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 20);
-            this.textBox1.TabIndex = 67;
+            this.textBox_AgentLastName.Location = new System.Drawing.Point(338, 115);
+            this.textBox_AgentLastName.Name = "textBox_AgentLastName";
+            this.textBox_AgentLastName.Size = new System.Drawing.Size(223, 20);
+            this.textBox_AgentLastName.TabIndex = 67;
             // 
-            // textBox2
+            // textBox_AgentFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(338, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(223, 20);
-            this.textBox2.TabIndex = 68;
+            this.textBox_AgentFirstName.Location = new System.Drawing.Point(338, 89);
+            this.textBox_AgentFirstName.Name = "textBox_AgentFirstName";
+            this.textBox_AgentFirstName.Size = new System.Drawing.Size(223, 20);
+            this.textBox_AgentFirstName.TabIndex = 68;
             // 
             // ManagerDelinquent
             // 
@@ -198,22 +208,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel6);
-            this.Controls.Add(this.linkLabel5);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.textBox_AgentFirstName);
+            this.Controls.Add(this.textBox_AgentLastName);
+            this.Controls.Add(this.comboBox_State);
+            this.Controls.Add(this.button_Submit);
+            this.Controls.Add(this.textBox_AmountOverdue);
+            this.Controls.Add(this.label_AmountOverdue);
+            this.Controls.Add(this.label_AgentLastName);
+            this.Controls.Add(this.label_AgentFirstName);
+            this.Controls.Add(this.label_State);
+            this.Controls.Add(this.label_DelinquentAccount);
+            this.Controls.Add(this.linkLabel_AddNewAgent);
+            this.Controls.Add(this.linkLabel_Logout);
+            this.Controls.Add(this.linkLabel_DelinquentAccounts);
+            this.Controls.Add(this.linkLabel_CreatePolicy);
+            this.Controls.Add(this.linkLabel_Search);
+            this.Controls.Add(this.linkLabel_Home);
             this.Name = "ManagerDelinquent";
             this.Text = "Manager Delinquent Account Page";
             this.ResumeLayout(false);
@@ -223,21 +233,22 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private LinkLabel linkLabel_AddNewAgent;
+        private LinkLabel linkLabel_Logout;
+        private LinkLabel linkLabel_DelinquentAccounts;
+        private LinkLabel linkLabel_CreatePolicy;
+        private LinkLabel linkLabel_Search;
+        private LinkLabel linkLabel_Home;
+        private ComboBox comboBox_State;
+        private Button button_Submit;
+        private TextBox textBox_AmountOverdue;
+        private Label label_AmountOverdue;
+        private Label label_AgentLastName;
+        private Label label_AgentFirstName;
+        private Label label_State;
+        private Label label_DelinquentAccount;
+        private TextBox textBox_AgentLastName;
+        private TextBox textBox_AgentFirstName;
+        //private Agent usingAgent;
     }
 }

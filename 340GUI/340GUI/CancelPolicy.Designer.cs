@@ -1,4 +1,13 @@
-﻿namespace _340GUI
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace _340GUI
 {
     partial class CancelPolicy
     {
@@ -28,67 +37,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label_Asking = new System.Windows.Forms.Label();
+            this.radioButton_DelinquentStatus = new System.Windows.Forms.RadioButton();
+            this.radioButton_PolicyholderRequest = new System.Windows.Forms.RadioButton();
+            this.button_Cancel = new System.Windows.Forms.Button();
+            this.button_Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // label_Asking
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Would you like to  cancel this policy?";
+            this.label_Asking.AutoSize = true;
+            this.label_Asking.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Asking.Location = new System.Drawing.Point(105, 49);
+            this.label_Asking.Name = "label_Asking";
+            this.label_Asking.Size = new System.Drawing.Size(225, 16);
+            this.label_Asking.TabIndex = 0;
+            this.label_Asking.Text = "Would you like to  cancel this policy?";
             // 
-            // radioButton1
+            // radioButton_DelinquentStatus
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(134, 74);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(130, 20);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Delinquent Status";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton_DelinquentStatus.AutoSize = true;
+            this.radioButton_DelinquentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_DelinquentStatus.Location = new System.Drawing.Point(134, 74);
+            this.radioButton_DelinquentStatus.Name = "radioButton_DelinquentStatus";
+            this.radioButton_DelinquentStatus.Size = new System.Drawing.Size(130, 20);
+            this.radioButton_DelinquentStatus.TabIndex = 1;
+            this.radioButton_DelinquentStatus.TabStop = true;
+            this.radioButton_DelinquentStatus.Text = "Delinquent Status";
+            this.radioButton_DelinquentStatus.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButton_PolicyholderRequest
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(134, 97);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(155, 20);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Policyholder Request";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton_PolicyholderRequest.AutoSize = true;
+            this.radioButton_PolicyholderRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton_PolicyholderRequest.Location = new System.Drawing.Point(134, 97);
+            this.radioButton_PolicyholderRequest.Name = "radioButton_PolicyholderRequest";
+            this.radioButton_PolicyholderRequest.Size = new System.Drawing.Size(155, 20);
+            this.radioButton_PolicyholderRequest.TabIndex = 2;
+            this.radioButton_PolicyholderRequest.TabStop = true;
+            this.radioButton_PolicyholderRequest.Text = "Policyholder Request";
+            this.radioButton_PolicyholderRequest.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button_Cancel
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(237, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 32);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Cancel.Location = new System.Drawing.Point(237, 145);
+            this.button_Cancel.Name = "button_Cancel";
+            this.button_Cancel.Size = new System.Drawing.Size(93, 32);
+            this.button_Cancel.TabIndex = 9;
+            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button_Save
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(71, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Save.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_Save.Location = new System.Drawing.Point(71, 145);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(93, 32);
+            this.button_Save.TabIndex = 8;
+            this.button_Save.Text = "Save";
+            this.button_Save.UseVisualStyleBackColor = true;
             // 
             // CancelPolicy
             // 
@@ -96,11 +105,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(410, 209);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button_Cancel);
+            this.Controls.Add(this.button_Save);
+            this.Controls.Add(this.radioButton_PolicyholderRequest);
+            this.Controls.Add(this.radioButton_DelinquentStatus);
+            this.Controls.Add(this.label_Asking);
             this.Name = "CancelPolicy";
             this.Text = "Cancel Policy";
             this.ResumeLayout(false);
@@ -110,10 +119,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private Label label_Asking;
+        private RadioButton radioButton_DelinquentStatus;
+        private RadioButton radioButton_PolicyholderRequest;
+        private Button button_Cancel;
+        private Button button_Save;
+        //private Agent usingAgent;
     }
 }

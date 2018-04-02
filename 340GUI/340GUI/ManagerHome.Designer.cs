@@ -1,4 +1,13 @@
-﻿namespace _340GUI
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace _340GUI
 {
     partial class ManagerHome
     {
@@ -28,76 +37,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.linkLabel_Logout = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_DelinquentAccounts = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_CreatePolicy = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_Search = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_AddNewAgent = new System.Windows.Forms.LinkLabel();
+            this.pictureBox_LICLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LICLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // linkLabel4
+            // linkLabel_Logout
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Location = new System.Drawing.Point(645, 357);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel4.TabIndex = 8;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Log out";
+            this.linkLabel_Logout.AutoSize = true;
+            this.linkLabel_Logout.Location = new System.Drawing.Point(645, 357);
+            this.linkLabel_Logout.Name = "linkLabel_Logout";
+            this.linkLabel_Logout.Size = new System.Drawing.Size(43, 13);
+            this.linkLabel_Logout.TabIndex = 8;
+            this.linkLabel_Logout.TabStop = true;
+            this.linkLabel_Logout.Text = "Log out";
             // 
-            // linkLabel3
+            // linkLabel_DelinquentAccounts
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(333, 357);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(106, 13);
-            this.linkLabel3.TabIndex = 7;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Delinquent Accounts";
+            this.linkLabel_DelinquentAccounts.AutoSize = true;
+            this.linkLabel_DelinquentAccounts.Location = new System.Drawing.Point(333, 357);
+            this.linkLabel_DelinquentAccounts.Name = "linkLabel_DelinquentAccounts";
+            this.linkLabel_DelinquentAccounts.Size = new System.Drawing.Size(106, 13);
+            this.linkLabel_DelinquentAccounts.TabIndex = 7;
+            this.linkLabel_DelinquentAccounts.TabStop = true;
+            this.linkLabel_DelinquentAccounts.Text = "Delinquent Accounts";
             // 
-            // linkLabel2
+            // linkLabel_CreatePolicy
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(185, 357);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(78, 13);
-            this.linkLabel2.TabIndex = 6;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Create a Policy";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel_CreatePolicy.AutoSize = true;
+            this.linkLabel_CreatePolicy.Location = new System.Drawing.Point(185, 357);
+            this.linkLabel_CreatePolicy.Name = "linkLabel_CreatePolicy";
+            this.linkLabel_CreatePolicy.Size = new System.Drawing.Size(78, 13);
+            this.linkLabel_CreatePolicy.TabIndex = 6;
+            this.linkLabel_CreatePolicy.TabStop = true;
+            this.linkLabel_CreatePolicy.Text = "Create a Policy";
+            this.linkLabel_CreatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // linkLabel1
+            // linkLabel_Search
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(71, 357);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(41, 13);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Search";
+            this.linkLabel_Search.AutoSize = true;
+            this.linkLabel_Search.Location = new System.Drawing.Point(71, 357);
+            this.linkLabel_Search.Name = "linkLabel_Search";
+            this.linkLabel_Search.Size = new System.Drawing.Size(41, 13);
+            this.linkLabel_Search.TabIndex = 5;
+            this.linkLabel_Search.TabStop = true;
+            this.linkLabel_Search.Text = "Search";
+            this.linkLabel_Search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // linkLabel5
+            // linkLabel_AddNewAgent
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(501, 357);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(82, 13);
-            this.linkLabel5.TabIndex = 9;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Add New Agent";
+            this.linkLabel_AddNewAgent.AutoSize = true;
+            this.linkLabel_AddNewAgent.Location = new System.Drawing.Point(501, 357);
+            this.linkLabel_AddNewAgent.Name = "linkLabel_AddNewAgent";
+            this.linkLabel_AddNewAgent.Size = new System.Drawing.Size(82, 13);
+            this.linkLabel_AddNewAgent.TabIndex = 9;
+            this.linkLabel_AddNewAgent.TabStop = true;
+            this.linkLabel_AddNewAgent.Text = "Add New Agent";
             // 
-            // pictureBox2
+            // pictureBox_LICLogo
             // 
-            this.pictureBox2.Image = global::_340GUI.Properties.Resources.LIC;
-            this.pictureBox2.ImageLocation = "";
-            this.pictureBox2.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(756, 319);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox_LICLogo.Image = global::_340GUI.Properties.Resources.LIC;
+            this.pictureBox_LICLogo.ImageLocation = "";
+            this.pictureBox_LICLogo.Location = new System.Drawing.Point(0, 1);
+            this.pictureBox_LICLogo.Name = "pictureBox_LICLogo";
+            this.pictureBox_LICLogo.Size = new System.Drawing.Size(756, 319);
+            this.pictureBox_LICLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_LICLogo.TabIndex = 10;
+            this.pictureBox_LICLogo.TabStop = false;
             // 
             // ManagerHome
             // 
@@ -105,26 +115,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.linkLabel5);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.pictureBox_LICLogo);
+            this.Controls.Add(this.linkLabel_AddNewAgent);
+            this.Controls.Add(this.linkLabel_Logout);
+            this.Controls.Add(this.linkLabel_DelinquentAccounts);
+            this.Controls.Add(this.linkLabel_CreatePolicy);
+            this.Controls.Add(this.linkLabel_Search);
             this.Name = "ManagerHome";
             this.Text = "Manager Home Page";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Load += new System.EventHandler(this.ManagerHome_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LICLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private LinkLabel linkLabel_Logout;
+        private LinkLabel linkLabel_DelinquentAccounts;
+        private LinkLabel linkLabel_CreatePolicy;
+        private LinkLabel linkLabel_Search;
+        private LinkLabel linkLabel_AddNewAgent;
+        private PictureBox pictureBox_LICLogo;
+        //private Agent usingAgent;
     }
 }

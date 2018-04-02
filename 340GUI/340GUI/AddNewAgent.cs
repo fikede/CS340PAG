@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class AddAgent : Form
+    public partial class AddNewAgent : Form
     {
-        public AddAgent()
+        public AddNewAgent()
         {
             InitializeComponent();
         }

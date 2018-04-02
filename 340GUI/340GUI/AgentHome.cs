@@ -12,14 +12,18 @@ namespace _340GUI
 {
     public partial class AgentHome : Form
     {
-        public AgentHome()
+        public AgentHome(bool isManager)
         {
             InitializeComponent();
+            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            AgentSearchPage agentSearchPage = new AgentSearchPage();
+            agentSearchPage.Show();
+            this.Hide();
+            this.Close();
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
