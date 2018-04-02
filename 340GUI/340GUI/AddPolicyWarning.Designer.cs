@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {

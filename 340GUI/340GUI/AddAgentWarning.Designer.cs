@@ -77,6 +77,7 @@ namespace _340GUI
             this.Controls.Add(this.Incomplete_Information_Text);
             this.Name = "AddAgentWarning";
             this.Text = "AddAgentWarning";
+            this.Load += new System.EventHandler(this.AddAgentWarning_Load);
             ((System.ComponentModel.ISupportInitialize)(this.WarningSign_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
