@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-
 namespace _340GUI
 {
     partial class AgentDelinquent
