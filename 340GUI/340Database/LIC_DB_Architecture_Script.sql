@@ -63,8 +63,7 @@ start_date date,
 end_date date,
 payoff_amount decimal(8,2),
 monthly_premium decimal(8,2),
-beneficiary_first_name varchar(100),
-beneficiary_last_name varchar(100),
+
 CONSTRAINT PK_Policy PRIMARY KEY([number]),
 CONSTRAINT FK_Policy_PolicyHolder FOREIGN KEY(holderID)
 	REFERENCES PolicyHolder(ID),
@@ -96,4 +95,15 @@ amount_overdue decimal(8,2),
 CONSTRAINT PK_Delinquent_Accounts_Parameters PRIMARY KEY(emp_ID),
 CONSTRAINT FK_Delinquent_Accounts_Parameters_Employee FOREIGN KEY(emp_ID)
 	REFERENCES Employee(ID)
+)
+
+
+CREATE TABLE Beneficiary
+(
+policyNumber varchar(30),
+first_name varchar(100),
+last_name varchar(100),
+CONSTRAINT PK_Beneficiary PRIMARY KEY(policyNumber, first_name, last_name),
+CONSTRAINT FK_Beneficiary FOREIGN KEY(policyNumber)
+	REFERENCES Policy([number])
 )
