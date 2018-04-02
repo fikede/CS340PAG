@@ -57,6 +57,7 @@ namespace _340GUI
             this.linkLabel_Logout.TabIndex = 8;
             this.linkLabel_Logout.TabStop = true;
             this.linkLabel_Logout.Text = "Log out";
+            this.linkLabel_Logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Logout_LinkClicked);
             // 
             // linkLabel_DelinquentAccounts
             // 
@@ -78,7 +79,7 @@ namespace _340GUI
             this.linkLabel_CreatePolicy.TabIndex = 6;
             this.linkLabel_CreatePolicy.TabStop = true;
             this.linkLabel_CreatePolicy.Text = "Create a Policy";
-            this.linkLabel_CreatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel_CreatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_CreatePolicy_LinkClicked);
             // 
             // linkLabel_Search
             // 
@@ -89,7 +90,7 @@ namespace _340GUI
             this.linkLabel_Search.TabIndex = 5;
             this.linkLabel_Search.TabStop = true;
             this.linkLabel_Search.Text = "Search";
-            this.linkLabel_Search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel_Search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Search_LinkClicked);
             // 
             // linkLabel_AddNewAgent
             // 
@@ -100,6 +101,7 @@ namespace _340GUI
             this.linkLabel_AddNewAgent.TabIndex = 9;
             this.linkLabel_AddNewAgent.TabStop = true;
             this.linkLabel_AddNewAgent.Text = "Add New Agent";
+            this.linkLabel_AddNewAgent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_AddNewAgent_LinkClicked);
             // 
             // pictureBox_LICLogo
             // 
@@ -111,6 +113,7 @@ namespace _340GUI
             this.pictureBox_LICLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_LICLogo.TabIndex = 10;
             this.pictureBox_LICLogo.TabStop = false;
+            this.pictureBox_LICLogo.Click += new System.EventHandler(this.pictureBox_LICLogo_Click);
             // 
             // Home
             // 
