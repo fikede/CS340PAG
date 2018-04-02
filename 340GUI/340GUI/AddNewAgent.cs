@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
@@ -15,6 +16,11 @@ namespace _340GUI
         public AddNewAgent()
         {
             InitializeComponent();
+        }
+
+        private void Amount_Overdue_isAt_Least_textBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

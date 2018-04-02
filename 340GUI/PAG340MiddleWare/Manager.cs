@@ -3,11 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
     class Manager : Agent
     {
+        public Manager() : base()
+        {
+
+        }
+
+        public Manager(string inFirstName, string inLastName, string inID, string inUserName,
+                    string inHashPassword, string inUserType, string inDept) : base(inFirstName, inLastName, inID, inUserName, inHashPassword, inUserType, inDept)
+        {
+
+        }
+
+        public Manager(Agent inAgent) : base( inAgent)
+        {
+
+        }
+
         public override void saveToDataBase()
         {
 

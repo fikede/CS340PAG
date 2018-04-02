@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
@@ -13,6 +14,7 @@ namespace PAG340MiddleWare
         private string id;
         private string userName;
         private string hashPassword;
+        private string userType;
         private string dept;
 
         public Agent()
@@ -25,13 +27,24 @@ namespace PAG340MiddleWare
         }
 
         public Agent(string inFirstName, string inLastName, string inID, string inUserName,
-                    string inHashPassword, string inDept)
+                    string inHashPassword, string inUserType, string inDept)
         {
             firstName = inFirstName;
             lastName = inLastName;
             id = inID;
             hashPassword = inHashPassword;
+            userType = inUserType;
             dept = inDept;
+        }
+
+        public Agent(Agent inAgent)
+        {
+            firstName = inAgent.firstName;
+            lastName = inAgent.lastName;
+            id = inAgent.id;
+            hashPassword = inAgent.hashPassword;
+            userType = inAgent.userType;
+            dept = inAgent.dept;
         }
 
         public override void saveToDataBase()
@@ -49,15 +62,38 @@ namespace PAG340MiddleWare
         public List<Policy> delinquentAccounts(string state, double amountOverdue)
         {
             List<Policy> policyList = new List<Policy>();
-
+           
             return policyList;
         }
 
         public bool logIn(string inID, string inHashPassword)
         {
-            bool access = false;
 
-            return access;
+            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "execute loginEmployee '" + inID + "','" + inHashPassword + "'";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Connection = conn;
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if(reader.Read())
+            {
+                this.id = inID;
+                this.hashPassword = inHashPassword;
+                int columnNum = reader.GetOrdinal("first_name");
+                this.firstName = reader.GetString(columnNum++);
+                this.lastName = reader.GetString(columnNum++);
+                this.userName = reader.GetString(columnNum++);
+                columnNum++; //skipping over password.
+                this.userType = reader.GetString(columnNum++);
+               //if(reader.GetString(columnNum++) != null) this.dept = reader.GetString(columnNum++);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void logOut()

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
@@ -16,7 +17,7 @@ namespace _340GUI
         {
             InitializeComponent();
         }
-
+        
         private void UpdateMakeSure_Load(object sender, EventArgs e)
         {
 

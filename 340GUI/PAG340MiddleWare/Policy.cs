@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace PAG340MiddleWare
 {
@@ -18,6 +19,7 @@ namespace PAG340MiddleWare
         private double gramsFatPerDay;
         private bool heartDisease;
         private bool cancer;
+        private bool hospitalized;
         private string dangerousActivities;
         private DateTime startDate;
         private DateTime endDate;
@@ -38,6 +40,7 @@ namespace PAG340MiddleWare
             gramsFatPerDay = 0.0;
             heartDisease = false;
             cancer = false;
+            hospitalized = false;
             dangerousActivities = "";
             startDate = new DateTime();
             endDate = new DateTime();
@@ -48,7 +51,7 @@ namespace PAG340MiddleWare
         }
 
         public Policy(string inPolicyNumber, PolicyHolder inHolder, double inFathersAgeAtDeath, double inMothersAgeAtDeath, double inCigsPerDay, double inSmokingHis, double inSystolicBldPressure,
-                    double inGramsFatPerDay, bool inHeartDisease, bool inCancer, string inDangerousActivities, DateTime inStartDate, DateTime inEndDate,
+                    double inGramsFatPerDay, bool inHeartDisease, bool inCancer, bool inHospitalized, string inDangerousActivities, DateTime inStartDate, DateTime inEndDate,
                     Agent inRepresentativeAgent, double inPayOffAmount, double inPremium, Beneficiary inBeneficiary)
         {
             policyNumber = inPolicyNumber;
@@ -61,6 +64,7 @@ namespace PAG340MiddleWare
             gramsFatPerDay = inGramsFatPerDay;
             heartDisease = inHeartDisease;
             cancer = inCancer;
+            hospitalized = inHospitalized;
             dangerousActivities = inDangerousActivities;
             startDate = inStartDate;
             endDate = inEndDate;
@@ -70,9 +74,33 @@ namespace PAG340MiddleWare
             beneficiary = inBeneficiary;
         }
 
+        //This constructor takes in all the indicative date that will be used for the pricing of a new policy. 
+        public Policy(double inFathersAgeAtDeath, double inMothersAgeAtDeath, double inCigsPerDay, double inSmokingHis, double inSystolicBldPressure,
+                    double inGramsFatPerDay, bool inHeartDisease, bool inCancer, bool inHospitalized, string inDangerousActivities)
+        {
+            policyNumber = "";
+            holder = new PolicyHolder();
+            fathersAgeAtDeath = inFathersAgeAtDeath;
+            motherAgeAtDeath = inMothersAgeAtDeath;
+            cigsPerDay = inCigsPerDay;
+            smokingHis = inSmokingHis;
+            systolicBldPressure = inSystolicBldPressure;
+            gramsFatPerDay = inGramsFatPerDay;
+            heartDisease = inHeartDisease;
+            cancer = inCancer;
+            hospitalized = inHospitalized;
+            dangerousActivities = inDangerousActivities;
+            startDate = new DateTime();
+            endDate = new DateTime();
+            representativeAgent = new Agent();
+            payOffAmount = 0.0;
+            premium = 0.0;
+            beneficiary = new Beneficiary();
+        }
+
         public override void saveToDataBase()
         {
-
+            //insert needed.
         }
 
         public double PricePolicy()
@@ -172,6 +200,12 @@ namespace PAG340MiddleWare
         {
             get { return cancer; }
             set { cancer = value; }
+        }
+
+        public bool Hospitalized
+        {
+            get { return hospitalized; }
+            set { hospitalized = value; }
         }
 
         public string DangerousActivities

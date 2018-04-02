@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
@@ -23,6 +24,11 @@ namespace _340GUI
         }
 
         private void ManagerFailToSearch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Policyholder_Last_Name_textBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
@@ -15,6 +16,11 @@ namespace _340GUI
         public AddPolicyWarning()
         {
             InitializeComponent();
+        }
+
+        private void Ok_Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
