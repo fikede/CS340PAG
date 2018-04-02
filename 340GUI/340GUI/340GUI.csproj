@@ -311,5 +311,11 @@
   <ItemGroup>
     <None Include="Resources\LIC.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PAG340MiddleWare\PAG340MiddleWare.csproj">
+      <Project>{c7318192-2d0c-472e-a318-6902609cf136}</Project>
+      <Name>PAG340MiddleWare</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
