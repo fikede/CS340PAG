@@ -15,10 +15,16 @@ namespace PAG340MiddleWare
         }
 
         public Manager(string inFirstName, string inLastName, string inID, string inUserName,
-                    string inHashPassword, string inDept) : base( inFirstName, inLastName, inID, inUserName, inHashPassword, inDept)
+                    string inHashPassword, string inUserType, string inDept) : base(inFirstName, inLastName, inID, inUserName, inHashPassword, inUserType, inDept)
         {
-           
+
         }
+
+        public Manager(Agent inAgent) : base( inAgent)
+        {
+
+        }
+
         public override void saveToDataBase()
         {
 

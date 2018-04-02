@@ -22,8 +22,15 @@ namespace PAG340MiddleWare
         public Matrix inverse()
         {
             Matrix inverseMatrix = new Matrix(numberOfRows, numberOfColumns);
-
-            return inverseMatrix;
+            if(this.numberOfRows != this.numberOfColumns)
+            {
+                throw new Exception("Matrix is not square.");
+            }
+            else
+            {
+              
+            }
+              return inverseMatrix;
         }
 
         /*
