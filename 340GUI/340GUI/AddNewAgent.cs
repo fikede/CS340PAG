@@ -13,9 +13,11 @@ namespace _340GUI
 {
     public partial class AddNewAgent : Form
     {
-        public AddNewAgent()
+        public AddNewAgent(Agent inAgent, Home inPage)
         {
             InitializeComponent();
+            usingManager = new Manager(inAgent);
+            previousPage = inPage;
         }
 
         private void Amount_Overdue_isAt_Least_textBox_TextChanged(object sender, EventArgs e)
@@ -30,18 +32,29 @@ namespace _340GUI
             String AgentFirstName = textBox_AgentFirstName.Text;
             String AgentLastName = textBox_AgentLastName.Text;
             String Password = textBox_Password.Text;
-            String UserType = comboBox_UserType.Text;
+            String UserType = getUserTypeCharacter(comboBox_UserType.Text);
             String DateOfBirth = textBox_DateOfBirthday.Text;
             String Department = comboBox_Department.Text;
             Agent newAgent = new Agent(AgentFirstName, AgentLastName, AgentNumber, UserName, Password, UserType, Department);
-            usingManager.addAgent(newAgent);
-            
+            usingManager.addAgent(newAgent);            
             this.Close();
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AddAgentMakeSure confirmPage = new AddAgentMakeSure(this , previousPage);
+            confirmPage.Show();
+        }
+
+        private void comboBox_UserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private string getUserTypeCharacter(String s)
+        {
+            if (s.Equals("Manager")) return "M";
+            else return "A";
         }
     }
 }

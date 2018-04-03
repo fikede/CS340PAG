@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PAG340MiddleWare;
 
+
 namespace _340GUI
 {
     partial class AddNewAgent
@@ -95,10 +96,14 @@ namespace _340GUI
             // comboBox_UserType
             // 
             this.comboBox_UserType.FormattingEnabled = true;
+            this.comboBox_UserType.Items.AddRange(new object[] {
+            "Manager",
+            "Agent"});
             this.comboBox_UserType.Location = new System.Drawing.Point(296, 195);
             this.comboBox_UserType.Name = "comboBox_UserType";
             this.comboBox_UserType.Size = new System.Drawing.Size(261, 21);
             this.comboBox_UserType.TabIndex = 32;
+            this.comboBox_UserType.SelectedIndexChanged += new System.EventHandler(this.comboBox_UserType_SelectedIndexChanged);
             // 
             // textBox_DateOfBirthday
             // 
@@ -289,5 +294,6 @@ namespace _340GUI
         private Label label_AddNewAgent;
         private Label label_ShowAgentNumber;
         private Manager usingManager;
+        private Home previousPage;
     }
 }

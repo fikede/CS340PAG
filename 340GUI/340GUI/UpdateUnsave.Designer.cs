@@ -70,9 +70,9 @@ namespace _340GUI
             this.label_Comment2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Comment2.Location = new System.Drawing.Point(125, 69);
             this.label_Comment2.Name = "label_Comment2";
-            this.label_Comment2.Size = new System.Drawing.Size(123, 16);
+            this.label_Comment2.Size = new System.Drawing.Size(122, 16);
             this.label_Comment2.TabIndex = 5;
-            this.label_Comment2.Text = "unsaved changed?";
+            this.label_Comment2.Text = "unsaved changes?";
             // 
             // label_Comment1
             // 
