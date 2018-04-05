@@ -3,11 +3,59 @@
 -- There are some procedures that must be completed
 -- NOTE: If the table names are underlined and SQL states that the object is undefined.
 --			Go to: Edit -> IntelliSense -> Refresh Local Cache
-
 USE LIC_PAG
 GO
 
 -- COMPLETED AND NEEDS TESTING
+
+-- INSERTION PROCEDURES
+
+-- Add a department to DB
+CREATE PROCEDURE addDepartment @departmentName AS varchar(50)
+AS
+BEGIN
+INSERT INTO	Department(name)
+VALUES		(@departmentName)
+END
+GO
+
+
+-- Add a beneficiary to DB
+CREATE PROCEDURE addBeneficary @policyNumber AS varchar(30), @firstName AS varchar(100), @lastName AS varchar(100)
+AS
+BEGIN
+INSERT INTO	Beneficiary(policy_number, first_name, last_name)
+VALUES		(@policyNumber, @firstName, @lastName)
+END
+GO
+
+
+-- Add an employee to DB
+CREATE PROCEDURE addEmployee @employeeID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @username AS varchar(20), @password AS varchar(255), @usertype AS char, @department AS varchar (50)
+AS
+BEGIN
+INSERT INTO	Employee(ID, first_name, last_name, username, password_hashed, user_type, department)
+VALUES		(@employeeID, @firstName, @lastName, @username, @password, @usertype, @department)
+END
+GO
+
+-- Add a policyholder to DB
+CREATE PROCEDURE addPolicyHolder @ID AS varchar(30), @firstName AS varchar(100), @lastName AS varchar(100), @street AS varchar(30), @city AS varchar(20), @state AS char(2), @zip AS char(9)
+AS
+BEGIN
+INSERT INTO	PolicyHolder(ID, first_name, last_name, street, city, [state], zip)
+VALUES		(@ID, @firstName, @lastName,@street, @city, @state, @zip)
+END
+GO
+
+CREATE PROCEDURE addPolicy @policyNumber AS varchar(30), @holderID AS varchar(20), @empID AS varchar(20), @holderDOB  AS date, @fatherDeath AS decimal(5,2), @motherDeath AS decimal(5,2), @cigsPerDay AS int, @smokeHistory AS decimal(5,2), @sysBP AS decimal(5,2), @aGramsFat AS int, @heartDisease AS int, @cancer AS int, @hospitalized AS int, @dangerousActivities AS varchar(255), @startDate AS date, @endDate  AS date, @payoffAmount AS decimal(8,2), @monthlyPremium AS decimal(8,2)
+AS
+BEGIN
+INSERT INTO Policy([number], holder_ID, emp_ID, holder_dateofbirth, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, start_date, end_date, payoff_amount, monthly_premium)
+VALUES (@policyNumber, @holderID, @empID, @holderDOB, @fatherDeath, @motherDeath, @cigsPerDay, @smokeHistory, @sysBP, @aGramsFat, @heartDisease, @cancer, @hospitalized, @dangerousActivities, @startDate, @endDate, @payoffAmount, @monthlyPremium)
+END
+GO
+
 
 -- Procedure for retrieving all employee IDs
 -- CREATED IN DB
@@ -48,14 +96,14 @@ IF (@agentID = '') OR (@agentID = NULL)
 SELECT *
 FROM
 ([Policy] INNER JOIN PolicyHolder)
-ON [Policy].holderID = PolicyHolder.ID
+ON [Policy].holder_ID = PolicyHolder.ID
 
 ELSE
 SELECT *
 FROM
 ([Policy] INNER JOIN PolicyHolder)
-ON [Policy].holderID = PolicyHolder.ID
-WHERE [Policy].agentID = @agentID AND [Policy].[number] = @policyNumber
+ON [Policy].holder_ID = PolicyHolder.ID
+WHERE [Policy].emp_ID = @agentID AND [Policy].[number] = @policyNumber
 
 END
 GO
@@ -67,9 +115,9 @@ AS
 BEGIN
 SELECT * 
 FROM Payment
-EXCEPT SELECT policynumber
+EXCEPT SELECT policy_number
 FROM Payment
-WHERE policynumber = @policyNumber
+WHERE policy_number = @policyNumber
 END
 GO
 
@@ -85,11 +133,11 @@ FROM(
 SELECT ID 
 FROM Employee
 WHERE Employee.ID = @agentID
-ON [Policy]. agentID = Employee.ID
+ON [Policy]. emp_ID = Employee.ID
 )
 INNER JOIN PolicyHolder
 ON
-[Policy].holderID = PolicyHolder.ID
+[Policy].holder_ID = PolicyHolder.ID
 WHERE [Policy].[number] = @policyNumber
 )
 
@@ -120,3 +168,7 @@ WHERE amount_overdue >= @amountOverdue
 -- NOT DONE
 END
 GO
+
+-- More Insert Procedures
+-- addPayment
+-- MORE???

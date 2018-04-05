@@ -22,13 +22,13 @@ first_name varchar(100),
 last_name varchar(100),
 username varchar(20),
 password_hashed varchar(225),
-usertype char,
+user_type char,
 department varchar(50),
 CONSTRAINT PK_Employee PRIMARY KEY(ID),
 CONSTRAINT FK_Employee_department FOREIGN KEY(department)
 	REFERENCES Department(name),
 CONSTRAINT UNIQUE_employee_username UNIQUE(username),
-CONSTRAINT CHECK_employee_usertype CHECK(usertype = 'A' OR usertype = 'M')
+CONSTRAINT CHECK_employee_user_type CHECK(user_type = 'A' OR user_type = 'M')
 )
 
 CREATE TABLE PolicyHolder
@@ -46,7 +46,7 @@ CONSTRAINT PK_PolicyHolder PRIMARY KEY(ID),
 CREATE TABLE [Policy]
 (
 [number] varchar(30),
-holderID varchar(20),
+holder_ID varchar(20),
 emp_ID varchar(20),
 holder_dateofbirth date,
 fathers_age_at_death decimal(5,2), -- months/12
@@ -65,7 +65,7 @@ payoff_amount decimal(8,2),
 monthly_premium decimal(8,2),
 
 CONSTRAINT PK_Policy PRIMARY KEY([number]),
-CONSTRAINT FK_Policy_PolicyHolder FOREIGN KEY(holderID)
+CONSTRAINT FK_Policy_PolicyHolder FOREIGN KEY(holder_ID)
 	REFERENCES PolicyHolder(ID),
 CONSTRAINT FK_Policy_Employee FOREIGN KEY(emp_ID)
 	REFERENCES Employee(ID),
@@ -76,12 +76,12 @@ CONSTRAINT CHECK_hospitalized CHECK(hospitalized = 0 OR hospitalized = 1)
 
 CREATE TABLE Payment
 (
-policynumber varchar(30),
+policy_number varchar(30),
 [date] datetime,
 [type] char,
 amount decimal (8,2),
-CONSTRAINT PK_Payment PRIMARY KEY(policynumber, [date]),
-CONSTRAINT FK_Payment_Policy FOREIGN KEY(policynumber)
+CONSTRAINT PK_Payment PRIMARY KEY(policy_number, [date]),
+CONSTRAINT FK_Payment_Policy FOREIGN KEY(policy_number)
 	REFERENCES [Policy]([number]),
 CONSTRAINT CHECK_description CHECK([type] = 'P' OR [type] = 'C')
 )
@@ -97,13 +97,12 @@ CONSTRAINT FK_Delinquent_Accounts_Parameters_Employee FOREIGN KEY(emp_ID)
 	REFERENCES Employee(ID)
 )
 
-
 CREATE TABLE Beneficiary
 (
-policyNumber varchar(30),
+policy_number varchar(30),
 first_name varchar(100),
 last_name varchar(100),
-CONSTRAINT PK_Beneficiary PRIMARY KEY(policyNumber, first_name, last_name),
-CONSTRAINT FK_Beneficiary FOREIGN KEY(policyNumber)
+CONSTRAINT PK_Beneficiary PRIMARY KEY(policy_number, first_name, last_name),
+CONSTRAINT FK_Beneficiary FOREIGN KEY(policy_number)
 	REFERENCES Policy([number])
 )

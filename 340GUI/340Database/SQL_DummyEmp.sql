@@ -3,15 +3,41 @@
  * Created By: Morgan
  */
 
+-- Added all Departments for testing purposes.
+USE LIC_PAG
+GO
 
+INSERT INTO Department(name)
+VALUES
+	('Claims'),
+	('Customer Service'),
+	('Finance'),
+	('Human Resources'),
+	('Legal'),
+	('Marketing'),
+	('Obfuscation'),
+	('Sales')
+	
+	
 USE LIC_PAG
 GO
 
 INSERT INTO Department(name)
 VALUES		('Freelancer')
 
-INSERT INTO		Employee(ID, first_name, last_name, username, password_hashed, usertype, department)
+INSERT INTO		Employee(ID, first_name, last_name, username, password_hashed, user_type, department)
 VALUES			(11111111111111111111, 'John', 'Smith', 'test', 'test', 'm', 'Freelancer')
+
+SELECT *
+FROM Employee
+
+-- Another test employee
+
+USE LIC_PAG
+GO
+
+INSERT INTO		Employee(ID, first_name, last_name, username, password_hashed, user_type, department)
+VALUES			(12341234123412341234,'firstName','lastName','','hi','A','Freelancer')
 
 SELECT *
 FROM Employee

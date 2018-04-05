@@ -2,8 +2,9 @@ USE LIC_PAG
 GO
 
 DROP TABLE Delinquent_Accounts_Parameters
-DROP TABLE Department
-DROP TABLE Employee
+DROP TABLE Beneficiary
 DROP TABLE Payment
-DROP TABLE Policy
 DROP TABLE PolicyHolder
+DROP TABLE Policy
+DROP TABLE Employee
+DROP TABLE Department
