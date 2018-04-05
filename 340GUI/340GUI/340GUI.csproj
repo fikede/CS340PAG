@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAgentMakeSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAgentMakeSure.Designer.cs">
+      <DependentUpon>AddAgentMakeSure.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddAgentWarning.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     <Compile Include="UpdateWarning.Designer.cs">
       <DependentUpon>UpdateWarning.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAgentMakeSure.resx">
+      <DependentUpon>AddAgentMakeSure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddAgentWarning.resx">
       <DependentUpon>AddAgentWarning.cs</DependentUpon>
     </EmbeddedResource>

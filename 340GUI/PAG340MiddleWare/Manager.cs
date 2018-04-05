@@ -48,5 +48,25 @@ namespace PAG340MiddleWare
         {
             inAgent.saveToDataBase();
         }
+
+        public string getNextId()
+        {
+            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "EXECUTE returnEmployeeID";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Connection = conn;
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            String newID = "";
+
+            if(reader.Read())
+            {
+                int columnNum = reader.GetOrdinal("ID");
+                newID = reader.GetString(columnNum);
+            }
+
+            return newID;
+        }
     }
 }

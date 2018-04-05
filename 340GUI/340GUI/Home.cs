@@ -21,7 +21,6 @@ namespace _340GUI
             {
                 linkLabel_AddNewAgent.Visible = false;
             }
-
         }
 
         private void linkLabel_CreatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -48,8 +47,9 @@ namespace _340GUI
 
         private void linkLabel_AddNewAgent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteForm incomplete = new IncompleteForm();
-            incomplete.Show();
+            AddNewAgent addNewAgent = new AddNewAgent(usingAgent, this);
+            addNewAgent.Show();
+            this.Hide();
         }
 
         private void pictureBox_LICLogo_Click(object sender, EventArgs e)
