@@ -138,7 +138,11 @@ namespace PAG340MiddleWare
         private double getAge()
         {
             double age = 0.0;
-
+            DateTime now = DateTime.Today;
+            now.Subtract(holder.BirthDate);
+            age += now.Year;
+            age += now.Month / 12;
+            age += now.Day / 30.42; //Average Number of days in a month.
             return age;
         }
 

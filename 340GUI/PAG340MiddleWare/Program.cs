@@ -37,6 +37,9 @@ namespace PAG340MiddleWare
 
             Agent newagent = new Agent("firstName", "lastName", "12341234123412341234","jfarmer", "hi", "A", "Freelancer");
             newagent.saveToDataBase();
+
+            Manager manager = new Manager();
+            string s = manager.getNextId();
             */
         }
 
