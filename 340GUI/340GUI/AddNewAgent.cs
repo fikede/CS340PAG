@@ -17,6 +17,7 @@ namespace _340GUI
         {
             InitializeComponent();
             usingManager = new Manager(inAgent);
+            label_ShowAgentNumber.Text = usingManager.getNextId();
             previousPage = inPage;
         }
 
@@ -36,7 +37,9 @@ namespace _340GUI
             String DateOfBirth = textBox_DateOfBirthday.Text;
             String Department = comboBox_Department.Text;
             Agent newAgent = new Agent(AgentFirstName, AgentLastName, AgentNumber, UserName, Password, UserType, Department);
-            usingManager.addAgent(newAgent);            
+            usingManager.addAgent(newAgent);
+            AddAgentMakeSure makeSurePage = new AddAgentMakeSure(this, previousPage);
+            makeSurePage.Show();
             this.Close();
         }
 
@@ -46,15 +49,16 @@ namespace _340GUI
             confirmPage.Show();
         }
 
-        private void comboBox_UserType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private string getUserTypeCharacter(String s)
         {
             if (s.Equals("Manager")) return "M";
             else return "A";
+        }
+
+        private void label_ShowAgentNumber_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

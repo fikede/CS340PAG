@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class PricePolicy
@@ -71,6 +73,7 @@ namespace _340GUI
             this.button_Cancel = new System.Windows.Forms.Button();
             this.label_ShowPayoffAmount = new System.Windows.Forms.Label();
             this.label_ShowTotalAmountOfPayment = new System.Windows.Forms.Label();
+            this.button_Price = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_TotalAmountOfPayment
@@ -359,6 +362,7 @@ namespace _340GUI
             this.button_Accept.TabIndex = 68;
             this.button_Accept.Text = "Accept";
             this.button_Accept.UseVisualStyleBackColor = true;
+            this.button_Accept.Click += new System.EventHandler(this.button_Accept_Click);
             // 
             // button_Cancel
             // 
@@ -369,6 +373,7 @@ namespace _340GUI
             this.button_Cancel.TabIndex = 69;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // label_ShowPayoffAmount
             // 
@@ -389,12 +394,25 @@ namespace _340GUI
             this.label_ShowTotalAmountOfPayment.TabIndex = 71;
             this.label_ShowTotalAmountOfPayment.Text = "label3";
             // 
+            // button_Price
+            // 
+            this.button_Price.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button_Price.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Price.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_Price.Location = new System.Drawing.Point(546, 327);
+            this.button_Price.Name = "button_Price";
+            this.button_Price.Size = new System.Drawing.Size(55, 23);
+            this.button_Price.TabIndex = 72;
+            this.button_Price.Text = "Price";
+            this.button_Price.UseVisualStyleBackColor = false;
+            // 
             // PricePolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.button_Price);
             this.Controls.Add(this.label_ShowTotalAmountOfPayment);
             this.Controls.Add(this.label_ShowPayoffAmount);
             this.Controls.Add(this.button_Cancel);
@@ -473,6 +491,8 @@ namespace _340GUI
         private Button button_Cancel;
         private Label label_ShowPayoffAmount;
         private Label label_ShowTotalAmountOfPayment;
-        //private Agent usingAgent;
+        private Agent usingAgent;
+        private Button button_Price;
+        //private 
     }
 }

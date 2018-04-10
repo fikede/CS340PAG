@@ -44,6 +44,9 @@ namespace _340GUI
             this.textBox_AgentNumber = new System.Windows.Forms.TextBox();
             this.textBox_Password = new System.Windows.Forms.TextBox();
             this.button_Login = new System.Windows.Forms.Button();
+            this.pictureBox_Warning = new System.Windows.Forms.PictureBox();
+            this.label_WarningComment = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
             // Label_AgentNumber
@@ -91,12 +94,35 @@ namespace _340GUI
             this.button_Login.UseVisualStyleBackColor = false;
             this.button_Login.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox_Warning
+            // 
+            this.pictureBox_Warning.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox_Warning.Image = global::_340GUI.Properties.Resources.warning;
+            this.pictureBox_Warning.Location = new System.Drawing.Point(279, 220);
+            this.pictureBox_Warning.Name = "pictureBox_Warning";
+            this.pictureBox_Warning.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox_Warning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Warning.TabIndex = 13;
+            this.pictureBox_Warning.TabStop = false;
+            // 
+            // label_WarningComment
+            // 
+            this.label_WarningComment.AutoSize = true;
+            this.label_WarningComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_WarningComment.Location = new System.Drawing.Point(292, 223);
+            this.label_WarningComment.Name = "label_WarningComment";
+            this.label_WarningComment.Size = new System.Drawing.Size(218, 13);
+            this.label_WarningComment.TabIndex = 12;
+            this.label_WarningComment.Text = "Your Agent Number or Password is incorrect!";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.pictureBox_Warning);
+            this.Controls.Add(this.label_WarningComment);
             this.Controls.Add(this.button_Login);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.textBox_AgentNumber);
@@ -105,6 +131,7 @@ namespace _340GUI
             this.Name = "Login";
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +144,8 @@ namespace _340GUI
         private TextBox textBox_AgentNumber;
         private TextBox textBox_Password;
         private Button button_Login;
+        private PictureBox pictureBox_Warning;
+        private Label label_WarningComment;
         //private Agent usingAgent;
     }
 }

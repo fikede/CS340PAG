@@ -67,7 +67,7 @@ namespace PAG340MiddleWare
                 newID = reader.GetString(columnNum);
                 newID = addOneToID(newID);
             }
-
+            conn.Close();
             return newID;
         }
 

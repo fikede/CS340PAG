@@ -13,14 +13,24 @@ namespace _340GUI
 {
     public partial class CancelPolicy : Form
     {
-        public CancelPolicy()
+        public CancelPolicy(Agent inUsingAgent, PolicyPage policy)
         {
             InitializeComponent();
+            usingAgent = inUsingAgent;
+            previousPage = policy;
         }
 
-        private void Cancel_Button_Click(object sender, EventArgs e)
+        private void button_Save_Click(object sender, EventArgs e)
         {
+            Home home = new Home(usingAgent);
+            home.Show();
+            this.Close();
+            previousPage.Close();
+        }
 
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

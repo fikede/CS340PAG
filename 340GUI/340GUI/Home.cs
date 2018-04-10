@@ -25,45 +25,49 @@ namespace _340GUI
 
         private void linkLabel_CreatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteForm incomplete = new IncompleteForm();
-            incomplete.Show();
+            PricePolicy pricePolicy = new PricePolicy(usingAgent);
+            pricePolicy.Show();
+            this.Close();
         }
 
         private void linkLabel_Search_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteForm incomplete = new IncompleteForm();
-            incomplete.Show();
+            Search search = new Search(usingAgent);
+            search.Show();
+            this.Close();
         }
-        private void ManagerHome_Load(object sender, EventArgs e)
+
+        private void Home_Load(object sender, EventArgs e)
         {
 
         }
 
         private void linkLabel_DelinquentAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteForm incomplete = new IncompleteForm();
-            incomplete.Show();
+            Delinquent delinquent = new Delinquent(usingAgent);
+            delinquent.Show();
+            this.Close();
         }
 
         private void linkLabel_AddNewAgent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AddNewAgent addNewAgent = new AddNewAgent(usingAgent, this);
             addNewAgent.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void pictureBox_LICLogo_Click(object sender, EventArgs e)
         {
             Home homePage = new Home(usingAgent);
-            this.Hide();
             homePage.Show();
+            this.Close();
         }
 
         private void linkLabel_Logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Login loginPage = new Login();
-            this.Close();
             loginPage.Show();
+            this.Close();
         }
     }
 }

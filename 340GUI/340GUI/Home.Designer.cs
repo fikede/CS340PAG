@@ -129,7 +129,7 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_Search);
             this.Name = "Home";
             this.Text = "Home Page";
-            this.Load += new System.EventHandler(this.ManagerHome_Load);
+            this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LICLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

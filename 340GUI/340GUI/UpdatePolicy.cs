@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
     public partial class UpdatePolicy : Form
     {
-        public UpdatePolicy()
+        public UpdatePolicy(Agent inUsingAgent, PolicyPage policy)
         {
             InitializeComponent();
+            usingAgent = inUsingAgent;
+            previousPage = policy;
         }
 
-        private void label31_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class CancelPolicy
@@ -87,6 +89,7 @@ namespace _340GUI
             this.button_Cancel.TabIndex = 9;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // button_Save
             // 
@@ -98,6 +101,7 @@ namespace _340GUI
             this.button_Save.TabIndex = 8;
             this.button_Save.Text = "Save";
             this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // CancelPolicy
             // 
@@ -124,6 +128,7 @@ namespace _340GUI
         private RadioButton radioButton_PolicyholderRequest;
         private Button button_Cancel;
         private Button button_Save;
-        //private Agent usingAgent;
+        private Agent usingAgent;
+        private PolicyPage previousPage;
     }
 }

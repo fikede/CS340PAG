@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class LossWarning
@@ -42,6 +44,8 @@ namespace _340GUI
             this.label_WarningComment2 = new System.Windows.Forms.Label();
             this.label_WarningComment1 = new System.Windows.Forms.Label();
             this.pictureBox_Warning = new System.Windows.Forms.PictureBox();
+            this.label_MoreLoss2 = new System.Windows.Forms.Label();
+            this.label_MoreLoss1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,12 +103,36 @@ namespace _340GUI
             this.pictureBox_Warning.TabIndex = 8;
             this.pictureBox_Warning.TabStop = false;
             // 
+            // label_MoreLoss2
+            // 
+            this.label_MoreLoss2.AutoSize = true;
+            this.label_MoreLoss2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MoreLoss2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_MoreLoss2.Location = new System.Drawing.Point(20, 92);
+            this.label_MoreLoss2.Name = "label_MoreLoss2";
+            this.label_MoreLoss2.Size = new System.Drawing.Size(316, 16);
+            this.label_MoreLoss2.TabIndex = 11;
+            this.label_MoreLoss2.Text = "please notify the Obfuscation and Legal department!";
+            // 
+            // label_MoreLoss1
+            // 
+            this.label_MoreLoss1.AutoSize = true;
+            this.label_MoreLoss1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MoreLoss1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_MoreLoss1.Location = new System.Drawing.Point(86, 64);
+            this.label_MoreLoss1.Name = "label_MoreLoss1";
+            this.label_MoreLoss1.Size = new System.Drawing.Size(212, 16);
+            this.label_MoreLoss1.TabIndex = 10;
+            this.label_MoreLoss1.Text = "A loss off 5.4% has been detected,";
+            // 
             // LossWarning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(356, 205);
+            this.Controls.Add(this.label_MoreLoss2);
+            this.Controls.Add(this.label_MoreLoss1);
             this.Controls.Add(this.pictureBox_Warning);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Save);
@@ -125,6 +153,8 @@ namespace _340GUI
         private Label label_WarningComment2;
         private Label label_WarningComment1;
         private PictureBox pictureBox_Warning;
+        private Label label_MoreLoss2;
+        private Label label_MoreLoss1;
         //private Agent usingAgent;
     }
 }

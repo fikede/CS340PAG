@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
 
 namespace _340GUI
 {
@@ -65,6 +66,7 @@ namespace _340GUI
             this.linkLabel_AddNewAgent.TabIndex = 58;
             this.linkLabel_AddNewAgent.TabStop = true;
             this.linkLabel_AddNewAgent.Text = "Add New Agent";
+            this.linkLabel_AddNewAgent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_AddNewAgent_LinkClicked);
             // 
             // linkLabel_Logout
             // 
@@ -75,6 +77,7 @@ namespace _340GUI
             this.linkLabel_Logout.TabIndex = 57;
             this.linkLabel_Logout.TabStop = true;
             this.linkLabel_Logout.Text = "Log out";
+            this.linkLabel_Logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Logout_LinkClicked);
             // 
             // linkLabel_DelinquentAccounts
             // 
@@ -85,6 +88,7 @@ namespace _340GUI
             this.linkLabel_DelinquentAccounts.TabIndex = 56;
             this.linkLabel_DelinquentAccounts.TabStop = true;
             this.linkLabel_DelinquentAccounts.Text = "Delinquent Accounts";
+            this.linkLabel_DelinquentAccounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_DelinquentAccounts_LinkClicked);
             // 
             // linkLabel_CreatePolicy
             // 
@@ -95,6 +99,7 @@ namespace _340GUI
             this.linkLabel_CreatePolicy.TabIndex = 55;
             this.linkLabel_CreatePolicy.TabStop = true;
             this.linkLabel_CreatePolicy.Text = "Create a Policy";
+            this.linkLabel_CreatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_CreatePolicy_LinkClicked);
             // 
             // linkLabel_Search
             // 
@@ -105,6 +110,7 @@ namespace _340GUI
             this.linkLabel_Search.TabIndex = 54;
             this.linkLabel_Search.TabStop = true;
             this.linkLabel_Search.Text = "Search";
+            this.linkLabel_Search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Search_LinkClicked);
             // 
             // linkLabel_Home
             // 
@@ -115,10 +121,63 @@ namespace _340GUI
             this.linkLabel_Home.TabIndex = 53;
             this.linkLabel_Home.TabStop = true;
             this.linkLabel_Home.Text = "Home";
+            this.linkLabel_Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Home_LinkClicked);
             // 
             // comboBox_State
             // 
             this.comboBox_State.FormattingEnabled = true;
+            this.comboBox_State.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "DC",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
             this.comboBox_State.Location = new System.Drawing.Point(338, 63);
             this.comboBox_State.Name = "comboBox_State";
             this.comboBox_State.Size = new System.Drawing.Size(223, 21);
@@ -134,6 +193,7 @@ namespace _340GUI
             this.button_Submit.TabIndex = 65;
             this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = false;
+            this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
             // 
             // textBox_AmountOverdue
             // 
@@ -249,6 +309,6 @@ namespace _340GUI
         private Label label_DelinquentAccount;
         private TextBox textBox_AgentLastName;
         private TextBox textBox_AgentFirstName;
-        //private Agent usingAgent;
+        private Agent usingAgent;
     }
 }

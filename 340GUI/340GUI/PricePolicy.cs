@@ -13,9 +13,10 @@ namespace _340GUI
 {
     public partial class PricePolicy : Form
     {
-        public PricePolicy()
+        public PricePolicy(Agent inUsingAgent)
         {
             InitializeComponent();
+            usingAgent = inUsingAgent;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,6 +32,16 @@ namespace _340GUI
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_Accept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

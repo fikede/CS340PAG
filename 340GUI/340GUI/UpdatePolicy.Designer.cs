@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class UpdatePolicy
@@ -486,57 +488,57 @@ namespace _340GUI
             "Wyoming"});
             this.comboBox_AddressState.FormattingEnabled = true;
             this.comboBox_AddressState.Items.AddRange(new object[] {
-            "Alabama",
-            "Alaska",
-            "Arizona",
-            "Arkansas",
-            "California",
-            "Colorado",
-            "Connecticut",
-            "Delaware",
-            "Florida",
-            "Georgia",
-            "Hawaii",
-            "Idaho",
-            "Illinois",
-            "Indiana",
-            "Iowa",
-            "Kansas",
-            "Kentucky",
-            "Louisiana",
-            "Maine",
-            "Maryland",
-            "Massachusetts",
-            "Michigan",
-            "Minnesota",
-            "Mississippi",
-            "Missouri",
-            "Montana",
-            "Nebraska",
-            "Nevada",
-            "New Hampshire",
-            "New Jersey",
-            "New Mexico",
-            "New York",
-            "No Region Specified",
-            "North Carolina",
-            "North Dakota",
-            "Ohio",
-            "Oklahoma",
-            "Oregon",
-            "Pennsylvania",
-            "Rhode Island",
-            "South Carolina",
-            "South Dakota",
-            "Tennessee",
-            "Texas",
-            "Utah",
-            "Vermont",
-            "Virginia",
-            "Washington",
-            "West Virginia",
-            "Wisconsin",
-            "Wyoming"});
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "DC",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
             this.comboBox_AddressState.Location = new System.Drawing.Point(304, 185);
             this.comboBox_AddressState.Name = "comboBox_AddressState";
             this.comboBox_AddressState.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -560,7 +562,6 @@ namespace _340GUI
             this.label_ShowPolicyholderDOB.Size = new System.Drawing.Size(41, 13);
             this.label_ShowPolicyholderDOB.TabIndex = 70;
             this.label_ShowPolicyholderDOB.Text = "label31";
-            this.label_ShowPolicyholderDOB.Click += new System.EventHandler(this.label31_Click);
             // 
             // label_ShowFatherAAD
             // 
@@ -859,6 +860,7 @@ namespace _340GUI
         private Label label_ShowAgentLastName;
         private Label label_ShowPayoffAmount;
         private Label label_ShowMonthlyPremium;
-        //private Agent usingAgent;
+        private Agent usingAgent;
+        private PolicyPage previousPage;
     }
 }

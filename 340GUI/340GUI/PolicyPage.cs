@@ -13,24 +13,39 @@ namespace _340GUI
 {
     public partial class PolicyPage : Form
     {
-        public PolicyPage()
+        public PolicyPage(Agent inUsingAgent)
         {
             InitializeComponent();
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
+            usingAgent = inUsingAgent;
         }
 
         private void PolicyPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel_CancelPolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CancelPolicy cancelPolicy = new CancelPolicy(usingAgent, this);
+            cancelPolicy.Show();
+        }
+
+        private void linkLabel_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel_UpdatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UpdatePolicy update = new UpdatePolicy(usingAgent, this);
+            update.Show();
+            this.Hide();
+        }
+
+        private void linkLabel_MakeClaim_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MakeClaim claim = new MakeClaim();
+            claim.Show();
         }
     }
 }

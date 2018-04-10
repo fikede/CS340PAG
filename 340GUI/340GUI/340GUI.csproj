@@ -81,12 +81,6 @@
     <Compile Include="CancelPolicy.Designer.cs">
       <DependentUpon>CancelPolicy.cs</DependentUpon>
     </Compile>
-    <Compile Include="FailToLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FailToLogin.Designer.cs">
-      <DependentUpon>FailToLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="IncompleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,12 +111,6 @@
     <Compile Include="Delinquent.Designer.cs">
       <DependentUpon>Delinquent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FailToSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FailToSearch.Designer.cs">
-      <DependentUpon>FailToSearch.cs</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,18 +122,6 @@
     </Compile>
     <Compile Include="Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AfterSearched.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AfterSearched.Designer.cs">
-      <DependentUpon>AfterSearched.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MoreLossWarning.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MoreLossWarning.Designer.cs">
-      <DependentUpon>MoreLossWarning.cs</DependentUpon>
     </Compile>
     <Compile Include="PaymentHistory.cs">
       <SubType>Form</SubType>
@@ -215,9 +191,6 @@
     <EmbeddedResource Include="CancelPolicy.resx">
       <DependentUpon>CancelPolicy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FailToLogin.resx">
-      <DependentUpon>FailToLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="IncompleteForm.resx">
       <DependentUpon>IncompleteForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,20 +206,11 @@
     <EmbeddedResource Include="Delinquent.resx">
       <DependentUpon>Delinquent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FailToSearch.resx">
-      <DependentUpon>FailToSearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AfterSearched.resx">
-      <DependentUpon>AfterSearched.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MoreLossWarning.resx">
-      <DependentUpon>MoreLossWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentHistory.resx">
       <DependentUpon>PaymentHistory.cs</DependentUpon>

@@ -16,6 +16,8 @@ namespace _340GUI
         public Login()
         {
             InitializeComponent();
+            pictureBox_Warning.Visible = false;
+            label_WarningComment.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,9 +38,8 @@ namespace _340GUI
             }
             else
             {
-                FailToLogin failed = new FailToLogin();
-                failed.Show();
-                this.Hide();
+                pictureBox_Warning.Visible = true;
+                label_WarningComment.Visible = true;
             }
         }
 

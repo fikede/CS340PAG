@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PAG340MiddleWare;
+
 namespace _340GUI
 {
     partial class PolicyPage
@@ -97,6 +99,7 @@ namespace _340GUI
             this.label_ShowMonthlyPremium = new System.Windows.Forms.Label();
             this.label_ShowBeneficiaryFirstName = new System.Windows.Forms.Label();
             this.label_ShowBeneficiaryLastName = new System.Windows.Forms.Label();
+            this.linkLabel_Back = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label_PolicyNumber
@@ -160,7 +163,6 @@ namespace _340GUI
             this.label_AddressZip.Size = new System.Drawing.Size(66, 13);
             this.label_AddressZip.TabIndex = 6;
             this.label_AddressZip.Text = "Address Zip:";
-            this.label_AddressZip.Click += new System.EventHandler(this.label7_Click);
             // 
             // label_PolicyholderDOB
             // 
@@ -197,7 +199,6 @@ namespace _340GUI
             this.label_SmokingHistory.Size = new System.Drawing.Size(86, 13);
             this.label_SmokingHistory.TabIndex = 10;
             this.label_SmokingHistory.Text = "Smoking History:";
-            this.label_SmokingHistory.Click += new System.EventHandler(this.label11_Click);
             // 
             // label_CigPerDay
             // 
@@ -361,6 +362,7 @@ namespace _340GUI
             this.linkLabel_CancelPolicy.TabIndex = 28;
             this.linkLabel_CancelPolicy.TabStop = true;
             this.linkLabel_CancelPolicy.Text = "Cancel Policy";
+            this.linkLabel_CancelPolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_CancelPolicy_LinkClicked);
             // 
             // linkLabel_UpdatePolicy
             // 
@@ -371,6 +373,7 @@ namespace _340GUI
             this.linkLabel_UpdatePolicy.TabIndex = 29;
             this.linkLabel_UpdatePolicy.TabStop = true;
             this.linkLabel_UpdatePolicy.Text = "Update Policy";
+            this.linkLabel_UpdatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_UpdatePolicy_LinkClicked);
             // 
             // linkLabel_MakeClaim
             // 
@@ -381,6 +384,7 @@ namespace _340GUI
             this.linkLabel_MakeClaim.TabIndex = 30;
             this.linkLabel_MakeClaim.TabStop = true;
             this.linkLabel_MakeClaim.Text = "Make a Claim";
+            this.linkLabel_MakeClaim.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_MakeClaim_LinkClicked);
             // 
             // linkLabel_ViewPaymentHistory
             // 
@@ -644,12 +648,24 @@ namespace _340GUI
             this.label_ShowBeneficiaryLastName.TabIndex = 59;
             this.label_ShowBeneficiaryLastName.Text = "label56";
             // 
+            // linkLabel_Back
+            // 
+            this.linkLabel_Back.AutoSize = true;
+            this.linkLabel_Back.Location = new System.Drawing.Point(12, 21);
+            this.linkLabel_Back.Name = "linkLabel_Back";
+            this.linkLabel_Back.Size = new System.Drawing.Size(32, 13);
+            this.linkLabel_Back.TabIndex = 60;
+            this.linkLabel_Back.TabStop = true;
+            this.linkLabel_Back.Text = "Back";
+            this.linkLabel_Back.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Back_LinkClicked);
+            // 
             // PolicyPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 802);
+            this.Controls.Add(this.linkLabel_Back);
             this.Controls.Add(this.label_ShowBeneficiaryLastName);
             this.Controls.Add(this.label_ShowBeneficiaryFirstName);
             this.Controls.Add(this.label_ShowMonthlyPremium);
@@ -779,6 +795,8 @@ namespace _340GUI
         private Label label_ShowMonthlyPremium;
         private Label label_ShowBeneficiaryFirstName;
         private Label label_ShowBeneficiaryLastName;
-        //private Agent usingAgent;
+        private LinkLabel linkLabel_Back;
+        private Agent usingAgent;
+        //private Search previousPage;
     }
 }
