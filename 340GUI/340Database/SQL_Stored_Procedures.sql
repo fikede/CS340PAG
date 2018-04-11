@@ -19,7 +19,6 @@ VALUES		(@departmentName)
 END
 GO
 
-
 -- Add a beneficiary to DB
 CREATE PROCEDURE addBeneficary @policyNumber AS varchar(30), @firstName AS varchar(100), @lastName AS varchar(100)
 AS
@@ -28,7 +27,6 @@ INSERT INTO	Beneficiary(policy_number, first_name, last_name)
 VALUES		(@policyNumber, @firstName, @lastName)
 END
 GO
-
 
 -- Add an employee to DB
 CREATE PROCEDURE addEmployee @employeeID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @username AS varchar(20), @password AS varchar(255), @usertype AS char, @department AS varchar (50)
@@ -56,9 +54,7 @@ VALUES (@policyNumber, @holderID, @empID, @holderDOB, @fatherDeath, @motherDeath
 END
 GO
 
-
 -- Procedure for retrieving all employee IDs
--- CREATED IN DB
 CREATE PROCEDURE returnEmployeeID
 AS
 BEGIN
@@ -71,7 +67,6 @@ END
 GO
 
 -- Procedure to search and validate the employees login
--- CREATED IN DB
 CREATE PROCEDURE loginEmployee @employeeID AS varchar(20), @password AS varchar(255)
 AS
 BEGIN
@@ -82,9 +77,18 @@ WHERE ID = @employeeID AND password_hashed = @password
 END
 GO
 
+-- Procedure to get the payments of a given policy by the policy number.
+CREATE PROCEDURE getPayments @policyNumber AS varchar(30)
+AS
+BEGIN
+SELECT [date], [type], amount
+FROM Payment
+WHERE policy_number = @policyNumber
+END
+GO
 
--- NOTE: NO OTHER PROCEDURES HAVE BEEN CREATED IN THE DB.
 
+-- SEARCH PROCEDURES
 
 -- Procedure to search for a policy by the policy number.
 -- if this is an agent then we use their agent ID as well.
@@ -93,37 +97,28 @@ AS
 BEGIN
 
 IF (@agentID = '') OR (@agentID = NULL)
-SELECT *
+SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
 FROM
-([Policy] INNER JOIN PolicyHolder)
-ON [Policy].holder_ID = PolicyHolder.ID
+([Policy] INNER JOIN PolicyHolder
+ON [Policy].holder_ID = PolicyHolder.ID)
 
 ELSE
-SELECT *
+SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
 FROM
-([Policy] INNER JOIN PolicyHolder)
-ON [Policy].holder_ID = PolicyHolder.ID
+([Policy] INNER JOIN PolicyHolder
+ON [Policy].holder_ID = PolicyHolder.ID)
 WHERE [Policy].emp_ID = @agentID AND [Policy].[number] = @policyNumber
 
 END
 GO
 
 
--- Procedure to get the payments of a given policy by the policy number.
-CREATE PROCEDURE getPayments @policyNumber AS varchar(30)
-AS
-BEGIN
-SELECT * 
-FROM Payment
-EXCEPT SELECT policy_number
-FROM Payment
-WHERE policy_number = @policyNumber
-END
-GO
+-- NOTE: NO OTHER PROCEDURES HAVE BEEN CREATED IN THE DB.
 
 
 -- Procedure to search for a policy by the holders name and the agents ID.
-CREATE PROCEDURE searchPolicybyholderNameandAgentID @holderFName AS varchar(100), @holderLName AS varchar(100), @agentID AS varchar(20)
+-- Three Joins Needed
+CREATE PROCEDURE searchPolicybyHolderNameandAgentID @holderFName AS varchar(100), @holderLName AS varchar(100), @agentID AS varchar(20)
 AS
 BEGIN
 
@@ -132,9 +127,9 @@ FROM(
 [Policy]INNER JOIN(
 SELECT ID 
 FROM Employee
-WHERE Employee.ID = @agentID
-ON [Policy]. emp_ID = Employee.ID
+ON [Policy].emp_ID = Employee.ID
 )
+WHERE Employee.ID = @agentID
 INNER JOIN PolicyHolder
 ON
 [Policy].holder_ID = PolicyHolder.ID
@@ -147,7 +142,7 @@ GO
 -- INCOMPLETE PROCEDURES
 
 -- Procedure to search for a policy by the holders name and the agents name.
-CREATE PROCEDURE searchPolicybyholderNameandAgentName @holderFName AS varchar(100), @holderLName AS varchar(100), @agentFName AS varchar(100), @agentLName AS varchar(100)
+CREATE PROCEDURE searchPolicybyHolderNameandAgentName @holderFName AS varchar(100), @holderLName AS varchar(100), @agentFName AS varchar(100), @agentLName AS varchar(100)
 AS
 BEGIN
 --

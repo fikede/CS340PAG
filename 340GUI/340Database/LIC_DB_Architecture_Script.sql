@@ -48,7 +48,7 @@ CREATE TABLE [Policy]
 [number] varchar(30),
 holder_ID varchar(20),
 emp_ID varchar(20),
-holder_dateofbirth date,
+holder_DOB date,
 fathers_age_at_death decimal(5,2), -- months/12
 mothers_age_at_death decimal(5,2), -- months/12
 cigs_per_day int,
