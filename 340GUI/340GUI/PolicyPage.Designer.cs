@@ -72,7 +72,7 @@ namespace _340GUI
             this.linkLabel_MakeClaim = new System.Windows.Forms.LinkLabel();
             this.linkLabel_ViewPaymentHistory = new System.Windows.Forms.LinkLabel();
             this.label_ShowPolicyNumber = new System.Windows.Forms.Label();
-            this.label_ShowPolicholderFirstName = new System.Windows.Forms.Label();
+            this.label_ShowPolicyholderFirstName = new System.Windows.Forms.Label();
             this.label_ShowPolicyholderLastName = new System.Windows.Forms.Label();
             this.label_ShowAddressStreet = new System.Windows.Forms.Label();
             this.label_ShowAddressCity = new System.Windows.Forms.Label();
@@ -395,6 +395,7 @@ namespace _340GUI
             this.linkLabel_ViewPaymentHistory.TabIndex = 31;
             this.linkLabel_ViewPaymentHistory.TabStop = true;
             this.linkLabel_ViewPaymentHistory.Text = "View Payment History";
+            this.linkLabel_ViewPaymentHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ViewPaymentHistory_LinkClicked);
             // 
             // label_ShowPolicyNumber
             // 
@@ -405,14 +406,14 @@ namespace _340GUI
             this.label_ShowPolicyNumber.TabIndex = 32;
             this.label_ShowPolicyNumber.Text = "label29";
             // 
-            // label_ShowPolicholderFirstName
+            // label_ShowPolicyholderFirstName
             // 
-            this.label_ShowPolicholderFirstName.AutoSize = true;
-            this.label_ShowPolicholderFirstName.Location = new System.Drawing.Point(311, 63);
-            this.label_ShowPolicholderFirstName.Name = "label_ShowPolicholderFirstName";
-            this.label_ShowPolicholderFirstName.Size = new System.Drawing.Size(41, 13);
-            this.label_ShowPolicholderFirstName.TabIndex = 33;
-            this.label_ShowPolicholderFirstName.Text = "label30";
+            this.label_ShowPolicyholderFirstName.AutoSize = true;
+            this.label_ShowPolicyholderFirstName.Location = new System.Drawing.Point(311, 63);
+            this.label_ShowPolicyholderFirstName.Name = "label_ShowPolicyholderFirstName";
+            this.label_ShowPolicyholderFirstName.Size = new System.Drawing.Size(41, 13);
+            this.label_ShowPolicyholderFirstName.TabIndex = 33;
+            this.label_ShowPolicyholderFirstName.Text = "label30";
             // 
             // label_ShowPolicyholderLastName
             // 
@@ -692,7 +693,7 @@ namespace _340GUI
             this.Controls.Add(this.label_ShowAddressCity);
             this.Controls.Add(this.label_ShowAddressStreet);
             this.Controls.Add(this.label_ShowPolicyholderLastName);
-            this.Controls.Add(this.label_ShowPolicholderFirstName);
+            this.Controls.Add(this.label_ShowPolicyholderFirstName);
             this.Controls.Add(this.label_ShowPolicyNumber);
             this.Controls.Add(this.linkLabel_ViewPaymentHistory);
             this.Controls.Add(this.linkLabel_MakeClaim);
@@ -768,7 +769,7 @@ namespace _340GUI
         private LinkLabel linkLabel_MakeClaim;
         private LinkLabel linkLabel_ViewPaymentHistory;
         private Label label_ShowPolicyNumber;
-        private Label label_ShowPolicholderFirstName;
+        private Label label_ShowPolicyholderFirstName;
         private Label label_ShowPolicyholderLastName;
         private Label label_ShowAddressStreet;
         private Label label_ShowAddressCity;
@@ -797,6 +798,6 @@ namespace _340GUI
         private Label label_ShowBeneficiaryLastName;
         private LinkLabel linkLabel_Back;
         private Agent usingAgent;
-        //private Search previousPage;
+        private Search previousPage;
     }
 }

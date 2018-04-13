@@ -11,23 +11,15 @@ using PAG340MiddleWare;
 
 namespace _340GUI
 {
-    public partial class MakeClaim : Form
+    public partial class PriceFirstError : Form
     {
-        public MakeClaim(Search where)
+        public PriceFirstError()
         {
             InitializeComponent();
-            goBack = where;
         }
 
-        private void Cancel_Button_Click(object sender, EventArgs e)
+        private void button_OK_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void button_Confirm_Click(object sender, EventArgs e)
-        {
-            //Make Claim method
-            goBack.Show();
             this.Close();
         }
     }

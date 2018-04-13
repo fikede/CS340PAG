@@ -351,7 +351,6 @@ namespace _340GUI
             this.label_PricePolicy.Size = new System.Drawing.Size(85, 13);
             this.label_PricePolicy.TabIndex = 67;
             this.label_PricePolicy.Text = "Price a Policy";
-            this.label_PricePolicy.Click += new System.EventHandler(this.label1_Click);
             // 
             // button_Accept
             // 
@@ -405,6 +404,7 @@ namespace _340GUI
             this.button_Price.TabIndex = 72;
             this.button_Price.Text = "Price";
             this.button_Price.UseVisualStyleBackColor = false;
+            this.button_Price.Click += new System.EventHandler(this.button_Price_Click);
             // 
             // PricePolicy
             // 
@@ -493,6 +493,5 @@ namespace _340GUI
         private Label label_ShowTotalAmountOfPayment;
         private Agent usingAgent;
         private Button button_Price;
-        //private 
     }
 }

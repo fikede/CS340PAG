@@ -68,6 +68,7 @@ namespace _340GUI
             this.linkLabel_Back.TabIndex = 0;
             this.linkLabel_Back.TabStop = true;
             this.linkLabel_Back.Text = "Back";
+            this.linkLabel_Back.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Back_LinkClicked);
             // 
             // label_PaymentHistory
             // 
@@ -105,7 +106,6 @@ namespace _340GUI
             this.listBox_PaymentHiotory.ScrollAlwaysVisible = true;
             this.listBox_PaymentHiotory.Size = new System.Drawing.Size(581, 199);
             this.listBox_PaymentHiotory.TabIndex = 4;
-            this.listBox_PaymentHiotory.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label_ShowPolicyNum
             // 
@@ -114,7 +114,6 @@ namespace _340GUI
             this.label_ShowPolicyNum.Size = new System.Drawing.Size(100, 23);
             this.label_ShowPolicyNum.TabIndex = 6;
             this.label_ShowPolicyNum.Text = "label4";
-            this.label_ShowPolicyNum.Click += new System.EventHandler(this.PolicyNum_Click);
             // 
             // label_ShowPolicyholderName
             // 
@@ -123,7 +122,6 @@ namespace _340GUI
             this.label_ShowPolicyholderName.Size = new System.Drawing.Size(100, 23);
             this.label_ShowPolicyholderName.TabIndex = 7;
             this.label_ShowPolicyholderName.Text = "HolderName";
-            this.label_ShowPolicyholderName.Click += new System.EventHandler(this.label5_Click);
             // 
             // PaymentHistory
             // 
@@ -156,5 +154,6 @@ namespace _340GUI
         private Label label_ShowPolicyNum;
         private Label label_ShowPolicyholderName;
         //private Agent usingAgent;
+        private PolicyPage previousePage;
     }
 }

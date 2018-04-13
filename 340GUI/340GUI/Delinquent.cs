@@ -17,6 +17,20 @@ namespace _340GUI
         {
             InitializeComponent();
             usingAgent = inUsingAgent;
+            listBox_DelinquentList.Visible = false;
+            if (usingAgent.isManager())
+            {
+                label_ShowAgentFirstName.Visible = false;
+                label_ShowAgentLastName.Visible = false;
+            }
+            else
+            {
+                textBox_AgentFirstName.Visible = false;
+                textBox_AgentLastName.Visible = false;
+                linkLabel_AddNewAgent.Visible = false;
+                label_ShowAgentFirstName.Text = usingAgent.Firstname;
+                label_ShowAgentLastName.Text = usingAgent.Lastname;
+            }
         }
 
         private void AddAgent_Load(object sender, EventArgs e)
@@ -71,6 +85,10 @@ namespace _340GUI
         {
             IncompleteForm incomplete = new IncompleteForm();
             incomplete.Show();
+            if(textBox_AgentFirstName.Text == null && textBox_AgentLastName.Text == null && textBox_AmountOverdue.Text == null && comboBox_State.Text == "No state specified")
+            {
+                listBox_DelinquentList.Visible = false;
+            }
         }
     }
 }

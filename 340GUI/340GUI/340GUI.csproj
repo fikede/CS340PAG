@@ -117,6 +117,18 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="PriceFirstError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceFirstError.Designer.cs">
+      <DependentUpon>PriceFirstError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PricePolicyWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PricePolicyWarning.Designer.cs">
+      <DependentUpon>PricePolicyWarning.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +220,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceFirstError.resx">
+      <DependentUpon>PriceFirstError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PricePolicyWarning.resx">
+      <DependentUpon>PricePolicyWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search.resx">
       <DependentUpon>Search.cs</DependentUpon>

@@ -55,6 +55,9 @@ namespace _340GUI
             this.label_DelinquentAccount = new System.Windows.Forms.Label();
             this.textBox_AgentLastName = new System.Windows.Forms.TextBox();
             this.textBox_AgentFirstName = new System.Windows.Forms.TextBox();
+            this.label_ShowAgentFirstName = new System.Windows.Forms.Label();
+            this.label_ShowAgentLastName = new System.Windows.Forms.Label();
+            this.listBox_DelinquentList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // linkLabel_AddNewAgent
@@ -125,6 +128,7 @@ namespace _340GUI
             // 
             // comboBox_State
             // 
+            this.comboBox_State.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBox_State.FormattingEnabled = true;
             this.comboBox_State.Items.AddRange(new object[] {
             "AL",
@@ -182,6 +186,7 @@ namespace _340GUI
             this.comboBox_State.Name = "comboBox_State";
             this.comboBox_State.Size = new System.Drawing.Size(223, 21);
             this.comboBox_State.TabIndex = 66;
+            this.comboBox_State.Text = "No state specified";
             // 
             // button_Submit
             // 
@@ -262,12 +267,41 @@ namespace _340GUI
             this.textBox_AgentFirstName.Size = new System.Drawing.Size(223, 20);
             this.textBox_AgentFirstName.TabIndex = 68;
             // 
+            // label_ShowAgentFirstName
+            // 
+            this.label_ShowAgentFirstName.AutoSize = true;
+            this.label_ShowAgentFirstName.Location = new System.Drawing.Point(341, 92);
+            this.label_ShowAgentFirstName.Name = "label_ShowAgentFirstName";
+            this.label_ShowAgentFirstName.Size = new System.Drawing.Size(35, 13);
+            this.label_ShowAgentFirstName.TabIndex = 69;
+            this.label_ShowAgentFirstName.Text = "label1";
+            // 
+            // label_ShowAgentLastName
+            // 
+            this.label_ShowAgentLastName.AutoSize = true;
+            this.label_ShowAgentLastName.Location = new System.Drawing.Point(341, 118);
+            this.label_ShowAgentLastName.Name = "label_ShowAgentLastName";
+            this.label_ShowAgentLastName.Size = new System.Drawing.Size(35, 13);
+            this.label_ShowAgentLastName.TabIndex = 70;
+            this.label_ShowAgentLastName.Text = "label1";
+            // 
+            // listBox_DelinquentList
+            // 
+            this.listBox_DelinquentList.FormattingEnabled = true;
+            this.listBox_DelinquentList.Location = new System.Drawing.Point(203, 199);
+            this.listBox_DelinquentList.Name = "listBox_DelinquentList";
+            this.listBox_DelinquentList.Size = new System.Drawing.Size(480, 173);
+            this.listBox_DelinquentList.TabIndex = 71;
+            // 
             // Delinquent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.listBox_DelinquentList);
+            this.Controls.Add(this.label_ShowAgentLastName);
+            this.Controls.Add(this.label_ShowAgentFirstName);
             this.Controls.Add(this.textBox_AgentFirstName);
             this.Controls.Add(this.textBox_AgentLastName);
             this.Controls.Add(this.comboBox_State);
@@ -310,5 +344,8 @@ namespace _340GUI
         private TextBox textBox_AgentLastName;
         private TextBox textBox_AgentFirstName;
         private Agent usingAgent;
+        private Label label_ShowAgentFirstName;
+        private Label label_ShowAgentLastName;
+        private ListBox listBox_DelinquentList;
     }
 }

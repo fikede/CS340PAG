@@ -13,10 +13,11 @@ namespace _340GUI
 {
     public partial class PolicyPage : Form
     {
-        public PolicyPage(Agent inUsingAgent)
+        public PolicyPage(Agent inUsingAgent, Search inPage)
         {
             InitializeComponent();
             usingAgent = inUsingAgent;
+            previousPage = inPage;
         }
 
         private void PolicyPage_Load(object sender, EventArgs e)
@@ -32,7 +33,8 @@ namespace _340GUI
 
         private void linkLabel_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Close();
+            previousPage.Show();
         }
 
         private void linkLabel_UpdatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,8 +46,15 @@ namespace _340GUI
 
         private void linkLabel_MakeClaim_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MakeClaim claim = new MakeClaim();
+            MakeClaim claim = new MakeClaim(previousPage);
             claim.Show();
+        }
+
+        private void linkLabel_ViewPaymentHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PaymentHistory payment = new PaymentHistory(this, label_ShowPolicyNumber.Text, label_ShowPolicyholderFirstName.Text, label_ShowPolicyholderLastName.Text);
+            payment.Show();
+            this.Hide();
         }
     }
 }

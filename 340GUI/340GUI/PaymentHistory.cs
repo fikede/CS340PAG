@@ -13,24 +13,18 @@ namespace _340GUI
 {
     public partial class PaymentHistory : Form
     {
-        public PaymentHistory()
+        public PaymentHistory(PolicyPage inPage, String policyNum, String holderFirstName, String holderLastName)
         {
             InitializeComponent();
+            previousePage = inPage;
+            label_ShowPolicyNum.Text = policyNum;
+            label_ShowPolicyholderName.Text = holderFirstName + " " + holderLastName;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void linkLabel_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PolicyNum_Click(object sender, EventArgs e)
-        {
-            
+            previousePage.Show();
+            this.Close();
         }
     }
 }

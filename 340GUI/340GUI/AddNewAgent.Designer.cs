@@ -103,6 +103,7 @@ namespace _340GUI
             this.comboBox_UserType.Name = "comboBox_UserType";
             this.comboBox_UserType.Size = new System.Drawing.Size(261, 21);
             this.comboBox_UserType.TabIndex = 32;
+            this.comboBox_UserType.Text = "Agent";
             // 
             // textBox_DateOfBirthday
             // 
@@ -238,7 +239,6 @@ namespace _340GUI
             this.label_ShowAgentNumber.Size = new System.Drawing.Size(41, 13);
             this.label_ShowAgentNumber.TabIndex = 36;
             this.label_ShowAgentNumber.Text = "label10";
-            this.label_ShowAgentNumber.Click += new System.EventHandler(this.label_ShowAgentNumber_Click);
             // 
             // AddNewAgent
             // 

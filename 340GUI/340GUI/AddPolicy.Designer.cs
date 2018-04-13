@@ -361,6 +361,7 @@ namespace _340GUI
             this.textBox_ShowPolicyholderFirstName.Name = "textBox_ShowPolicyholderFirstName";
             this.textBox_ShowPolicyholderFirstName.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowPolicyholderFirstName.TabIndex = 56;
+            this.textBox_ShowPolicyholderFirstName.TextChanged += new System.EventHandler(this.textBox_ShowPolicyholderFirstName_TextChanged);
             // 
             // textBox_ShowPolicyholderLastName
             // 

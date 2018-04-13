@@ -28,6 +28,10 @@ namespace _340GUI
 
         private void button_Submit_Click(object sender, EventArgs e)
         {
+            if (textBox_AgentFirstName.Text == "" || textBox_AgentLastName.Text == ""|| textBox_Username.Text == "" || textBox_Password.Text =="")
+            {
+
+            }
             String AgentNumber = label_ShowAgentNumber.Text;
             String UserName = textBox_Username.Text;
             String AgentFirstName = textBox_AgentFirstName.Text;
@@ -49,16 +53,10 @@ namespace _340GUI
             confirmPage.Show();
         }
 
-
         private string getUserTypeCharacter(String s)
         {
             if (s.Equals("Manager")) return "M";
             else return "A";
-        }
-
-        private void label_ShowAgentNumber_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

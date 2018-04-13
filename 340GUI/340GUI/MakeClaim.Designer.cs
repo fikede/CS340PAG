@@ -64,6 +64,7 @@ namespace _340GUI
             this.button_Confirm.TabIndex = 6;
             this.button_Confirm.Text = "Confirm";
             this.button_Confirm.UseVisualStyleBackColor = true;
+            this.button_Confirm.Click += new System.EventHandler(this.button_Confirm_Click);
             // 
             // label_Comment
             // 
@@ -97,5 +98,6 @@ namespace _340GUI
         private Button button_Confirm;
         private Label label_Comment;
         //private Agent usingAgent;
+        private Search goBack;
     }
 }
