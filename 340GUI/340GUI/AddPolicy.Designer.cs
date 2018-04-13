@@ -344,7 +344,6 @@ namespace _340GUI
             this.label_PolicyholderFirstName.Size = new System.Drawing.Size(120, 13);
             this.label_PolicyholderFirstName.TabIndex = 29;
             this.label_PolicyholderFirstName.Text = "Policyholder First Name:";
-            this.label_PolicyholderFirstName.Click += new System.EventHandler(this.Policyholder_First_Name_Click);
             // 
             // label_PolicyNumber
             // 
@@ -361,7 +360,6 @@ namespace _340GUI
             this.textBox_ShowPolicyholderFirstName.Name = "textBox_ShowPolicyholderFirstName";
             this.textBox_ShowPolicyholderFirstName.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowPolicyholderFirstName.TabIndex = 56;
-            this.textBox_ShowPolicyholderFirstName.TextChanged += new System.EventHandler(this.textBox_ShowPolicyholderFirstName_TextChanged);
             // 
             // textBox_ShowPolicyholderLastName
             // 
@@ -417,6 +415,58 @@ namespace _340GUI
             // comboBox_AddressState
             // 
             this.comboBox_AddressState.FormattingEnabled = true;
+            this.comboBox_AddressState.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "DC",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
             this.comboBox_AddressState.Location = new System.Drawing.Point(321, 179);
             this.comboBox_AddressState.Name = "comboBox_AddressState";
             this.comboBox_AddressState.Size = new System.Drawing.Size(293, 21);
@@ -431,7 +481,6 @@ namespace _340GUI
             this.label_AddPolicy.Size = new System.Drawing.Size(67, 13);
             this.label_AddPolicy.TabIndex = 65;
             this.label_AddPolicy.Text = "Add Policy";
-            this.label_AddPolicy.Click += new System.EventHandler(this.label30_Click);
             // 
             // label_ShowPolicyNumber
             // 
@@ -711,7 +760,6 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyNumber);
             this.Name = "AddPolicy";
             this.Text = "Add Policy";
-            this.Load += new System.EventHandler(this.AddPolicy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

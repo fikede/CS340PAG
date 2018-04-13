@@ -17,25 +17,5 @@ namespace _340GUI
         {
             InitializeComponent();
         }
-
-        private void AddPolicy_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Policyholder_First_Name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_ShowPolicyholderFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

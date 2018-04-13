@@ -21,11 +21,6 @@ namespace _340GUI
             label_ShowPayoffAmount.Visible = false;
         }
 
-        private void PricePolicy_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Accept_Click(object sender, EventArgs e)
         {
             if(label_ShowTotalAmountOfPayment.Visible)

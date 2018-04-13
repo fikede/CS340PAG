@@ -64,16 +64,22 @@ namespace _340GUI
             this.textBox_HoursOfExercise = new System.Windows.Forms.TextBox();
             this.radioButton_YesHeartDisease = new System.Windows.Forms.RadioButton();
             this.radioButton_NoHeartDisease = new System.Windows.Forms.RadioButton();
-            this.radioButton_NoCancer = new System.Windows.Forms.RadioButton();
-            this.radioButton_YesCancer = new System.Windows.Forms.RadioButton();
-            this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
-            this.radioButton_YesHospitalized = new System.Windows.Forms.RadioButton();
             this.label_PricePolicy = new System.Windows.Forms.Label();
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
             this.label_ShowPayoffAmount = new System.Windows.Forms.Label();
             this.label_ShowTotalAmountOfPayment = new System.Windows.Forms.Label();
             this.button_Price = new System.Windows.Forms.Button();
+            this.panel_HeartDisease = new System.Windows.Forms.Panel();
+            this.panel_Cancer = new System.Windows.Forms.Panel();
+            this.radioButton_YesCancer = new System.Windows.Forms.RadioButton();
+            this.radioButton_NoCancer = new System.Windows.Forms.RadioButton();
+            this.panel_Hospitalized = new System.Windows.Forms.Panel();
+            this.radioButton_YesHospitalized = new System.Windows.Forms.RadioButton();
+            this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
+            this.panel_HeartDisease.SuspendLayout();
+            this.panel_Cancer.SuspendLayout();
+            this.panel_Hospitalized.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_TotalAmountOfPayment
@@ -279,7 +285,7 @@ namespace _340GUI
             // radioButton_YesHeartDisease
             // 
             this.radioButton_YesHeartDisease.AutoSize = true;
-            this.radioButton_YesHeartDisease.Location = new System.Drawing.Point(370, 197);
+            this.radioButton_YesHeartDisease.Location = new System.Drawing.Point(3, 3);
             this.radioButton_YesHeartDisease.Name = "radioButton_YesHeartDisease";
             this.radioButton_YesHeartDisease.Size = new System.Drawing.Size(43, 17);
             this.radioButton_YesHeartDisease.TabIndex = 61;
@@ -290,57 +296,13 @@ namespace _340GUI
             // radioButton_NoHeartDisease
             // 
             this.radioButton_NoHeartDisease.AutoSize = true;
-            this.radioButton_NoHeartDisease.Location = new System.Drawing.Point(432, 197);
+            this.radioButton_NoHeartDisease.Location = new System.Drawing.Point(65, 3);
             this.radioButton_NoHeartDisease.Name = "radioButton_NoHeartDisease";
             this.radioButton_NoHeartDisease.Size = new System.Drawing.Size(39, 17);
             this.radioButton_NoHeartDisease.TabIndex = 62;
             this.radioButton_NoHeartDisease.TabStop = true;
             this.radioButton_NoHeartDisease.Text = "No";
             this.radioButton_NoHeartDisease.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_NoCancer
-            // 
-            this.radioButton_NoCancer.AutoSize = true;
-            this.radioButton_NoCancer.Location = new System.Drawing.Point(432, 219);
-            this.radioButton_NoCancer.Name = "radioButton_NoCancer";
-            this.radioButton_NoCancer.Size = new System.Drawing.Size(39, 17);
-            this.radioButton_NoCancer.TabIndex = 64;
-            this.radioButton_NoCancer.TabStop = true;
-            this.radioButton_NoCancer.Text = "No";
-            this.radioButton_NoCancer.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_YesCancer
-            // 
-            this.radioButton_YesCancer.AutoSize = true;
-            this.radioButton_YesCancer.Location = new System.Drawing.Point(370, 219);
-            this.radioButton_YesCancer.Name = "radioButton_YesCancer";
-            this.radioButton_YesCancer.Size = new System.Drawing.Size(43, 17);
-            this.radioButton_YesCancer.TabIndex = 63;
-            this.radioButton_YesCancer.TabStop = true;
-            this.radioButton_YesCancer.Text = "Yes";
-            this.radioButton_YesCancer.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_NoHospitalized
-            // 
-            this.radioButton_NoHospitalized.AutoSize = true;
-            this.radioButton_NoHospitalized.Location = new System.Drawing.Point(432, 241);
-            this.radioButton_NoHospitalized.Name = "radioButton_NoHospitalized";
-            this.radioButton_NoHospitalized.Size = new System.Drawing.Size(39, 17);
-            this.radioButton_NoHospitalized.TabIndex = 66;
-            this.radioButton_NoHospitalized.TabStop = true;
-            this.radioButton_NoHospitalized.Text = "No";
-            this.radioButton_NoHospitalized.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_YesHospitalized
-            // 
-            this.radioButton_YesHospitalized.AutoSize = true;
-            this.radioButton_YesHospitalized.Location = new System.Drawing.Point(370, 241);
-            this.radioButton_YesHospitalized.Name = "radioButton_YesHospitalized";
-            this.radioButton_YesHospitalized.Size = new System.Drawing.Size(43, 17);
-            this.radioButton_YesHospitalized.TabIndex = 65;
-            this.radioButton_YesHospitalized.TabStop = true;
-            this.radioButton_YesHospitalized.Text = "Yes";
-            this.radioButton_YesHospitalized.UseVisualStyleBackColor = true;
             // 
             // label_PricePolicy
             // 
@@ -406,24 +368,92 @@ namespace _340GUI
             this.button_Price.UseVisualStyleBackColor = false;
             this.button_Price.Click += new System.EventHandler(this.button_Price_Click);
             // 
+            // panel_HeartDisease
+            // 
+            this.panel_HeartDisease.Controls.Add(this.radioButton_YesHeartDisease);
+            this.panel_HeartDisease.Controls.Add(this.radioButton_NoHeartDisease);
+            this.panel_HeartDisease.Location = new System.Drawing.Point(367, 194);
+            this.panel_HeartDisease.Name = "panel_HeartDisease";
+            this.panel_HeartDisease.Size = new System.Drawing.Size(164, 21);
+            this.panel_HeartDisease.TabIndex = 73;
+            // 
+            // panel_Cancer
+            // 
+            this.panel_Cancer.Controls.Add(this.radioButton_YesCancer);
+            this.panel_Cancer.Controls.Add(this.radioButton_NoCancer);
+            this.panel_Cancer.Location = new System.Drawing.Point(367, 217);
+            this.panel_Cancer.Name = "panel_Cancer";
+            this.panel_Cancer.Size = new System.Drawing.Size(164, 21);
+            this.panel_Cancer.TabIndex = 74;
+            // 
+            // radioButton_YesCancer
+            // 
+            this.radioButton_YesCancer.AutoSize = true;
+            this.radioButton_YesCancer.Location = new System.Drawing.Point(3, 3);
+            this.radioButton_YesCancer.Name = "radioButton_YesCancer";
+            this.radioButton_YesCancer.Size = new System.Drawing.Size(43, 17);
+            this.radioButton_YesCancer.TabIndex = 61;
+            this.radioButton_YesCancer.TabStop = true;
+            this.radioButton_YesCancer.Text = "Yes";
+            this.radioButton_YesCancer.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_NoCancer
+            // 
+            this.radioButton_NoCancer.AutoSize = true;
+            this.radioButton_NoCancer.Location = new System.Drawing.Point(65, 3);
+            this.radioButton_NoCancer.Name = "radioButton_NoCancer";
+            this.radioButton_NoCancer.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_NoCancer.TabIndex = 62;
+            this.radioButton_NoCancer.TabStop = true;
+            this.radioButton_NoCancer.Text = "No";
+            this.radioButton_NoCancer.UseVisualStyleBackColor = true;
+            // 
+            // panel_Hospitalized
+            // 
+            this.panel_Hospitalized.Controls.Add(this.radioButton_YesHospitalized);
+            this.panel_Hospitalized.Controls.Add(this.radioButton_NoHospitalized);
+            this.panel_Hospitalized.Location = new System.Drawing.Point(367, 241);
+            this.panel_Hospitalized.Name = "panel_Hospitalized";
+            this.panel_Hospitalized.Size = new System.Drawing.Size(164, 21);
+            this.panel_Hospitalized.TabIndex = 75;
+            // 
+            // radioButton_YesHospitalized
+            // 
+            this.radioButton_YesHospitalized.AutoSize = true;
+            this.radioButton_YesHospitalized.Location = new System.Drawing.Point(3, 3);
+            this.radioButton_YesHospitalized.Name = "radioButton_YesHospitalized";
+            this.radioButton_YesHospitalized.Size = new System.Drawing.Size(43, 17);
+            this.radioButton_YesHospitalized.TabIndex = 61;
+            this.radioButton_YesHospitalized.TabStop = true;
+            this.radioButton_YesHospitalized.Text = "Yes";
+            this.radioButton_YesHospitalized.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_NoHospitalized
+            // 
+            this.radioButton_NoHospitalized.AutoSize = true;
+            this.radioButton_NoHospitalized.Location = new System.Drawing.Point(65, 3);
+            this.radioButton_NoHospitalized.Name = "radioButton_NoHospitalized";
+            this.radioButton_NoHospitalized.Size = new System.Drawing.Size(39, 17);
+            this.radioButton_NoHospitalized.TabIndex = 62;
+            this.radioButton_NoHospitalized.TabStop = true;
+            this.radioButton_NoHospitalized.Text = "No";
+            this.radioButton_NoHospitalized.UseVisualStyleBackColor = true;
+            // 
             // PricePolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.panel_Hospitalized);
+            this.Controls.Add(this.panel_Cancer);
+            this.Controls.Add(this.panel_HeartDisease);
             this.Controls.Add(this.button_Price);
             this.Controls.Add(this.label_ShowTotalAmountOfPayment);
             this.Controls.Add(this.label_ShowPayoffAmount);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Accept);
             this.Controls.Add(this.label_PricePolicy);
-            this.Controls.Add(this.radioButton_NoHospitalized);
-            this.Controls.Add(this.radioButton_YesHospitalized);
-            this.Controls.Add(this.radioButton_NoCancer);
-            this.Controls.Add(this.radioButton_YesCancer);
-            this.Controls.Add(this.radioButton_NoHeartDisease);
-            this.Controls.Add(this.radioButton_YesHeartDisease);
             this.Controls.Add(this.textBox_HoursOfExercise);
             this.Controls.Add(this.textBox_DangerousActivity);
             this.Controls.Add(this.textBox_AverageFatPerDay);
@@ -449,7 +479,12 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyholderDOB);
             this.Name = "PricePolicy";
             this.Text = "Price a Policy";
-            this.Load += new System.EventHandler(this.PricePolicy_Load);
+            this.panel_HeartDisease.ResumeLayout(false);
+            this.panel_HeartDisease.PerformLayout();
+            this.panel_Cancer.ResumeLayout(false);
+            this.panel_Cancer.PerformLayout();
+            this.panel_Hospitalized.ResumeLayout(false);
+            this.panel_Hospitalized.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,10 +517,6 @@ namespace _340GUI
         private TextBox textBox_HoursOfExercise;
         private RadioButton radioButton_YesHeartDisease;
         private RadioButton radioButton_NoHeartDisease;
-        private RadioButton radioButton_NoCancer;
-        private RadioButton radioButton_YesCancer;
-        private RadioButton radioButton_NoHospitalized;
-        private RadioButton radioButton_YesHospitalized;
         private Label label_PricePolicy;
         private Button button_Accept;
         private Button button_Cancel;
@@ -493,5 +524,12 @@ namespace _340GUI
         private Label label_ShowTotalAmountOfPayment;
         private Agent usingAgent;
         private Button button_Price;
+        private Panel panel_HeartDisease;
+        private Panel panel_Cancer;
+        private RadioButton radioButton_YesCancer;
+        private RadioButton radioButton_NoCancer;
+        private Panel panel_Hospitalized;
+        private RadioButton radioButton_YesHospitalized;
+        private RadioButton radioButton_NoHospitalized;
     }
 }
