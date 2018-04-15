@@ -420,6 +420,7 @@ namespace _340GUI
             this.button_SubmitChanges.TabIndex = 65;
             this.button_SubmitChanges.Text = "Submit Changes";
             this.button_SubmitChanges.UseVisualStyleBackColor = true;
+            this.button_SubmitChanges.Click += new System.EventHandler(this.button_SubmitChanges_Click);
             // 
             // button_Cancel
             // 
@@ -430,6 +431,7 @@ namespace _340GUI
             this.button_Cancel.TabIndex = 66;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // comboBox_AddressState
             // 
@@ -862,5 +864,7 @@ namespace _340GUI
         private Label label_ShowMonthlyPremium;
         private Agent usingAgent;
         private PolicyPage previousPage;
+        private Policy inPolicy;
+        private Search searchPage;
     }
 }

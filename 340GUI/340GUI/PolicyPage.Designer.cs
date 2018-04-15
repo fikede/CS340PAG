@@ -799,5 +799,6 @@ namespace _340GUI
         private LinkLabel linkLabel_Back;
         private Agent usingAgent;
         private Search previousPage;
+        private Policy inPolicy;
     }
 }

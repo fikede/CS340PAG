@@ -13,10 +13,12 @@ namespace _340GUI
 {
     public partial class MakeClaim : Form
     {
-        public MakeClaim(Search where)
+        public MakeClaim(Search search, Policy inPolicy, PolicyPage inPage)
         {
             InitializeComponent();
-            goBack = where;
+            goBack = search;
+            usingPolicy = inPolicy;
+            previousPage = inPage;
         }
 
         private void Cancel_Button_Click(object sender, EventArgs e)
@@ -27,7 +29,28 @@ namespace _340GUI
         private void button_Confirm_Click(object sender, EventArgs e)
         {
             //Make Claim method
-            goBack.Show();
+            //need to be fixed
+            double lossRate = 3.2;
+            double moreLossRate = 5.4;
+            if (usingPolicy.CalculateProfitMade() >= lossRate && usingPolicy.CalculateProfitMade() < moreLossRate)
+            {
+                LossWarning warning = new LossWarning(lossRate, previousPage);
+                warning.Show();
+            }
+            else if (usingPolicy.CalculateProfitMade() >= moreLossRate)
+            {
+                LossWarning warning = new LossWarning(moreLossRate, previousPage);
+                warning.Show();
+            }
+            else
+            {
+                goBack.Show();
+                this.Close();
+            }
+        }
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

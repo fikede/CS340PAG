@@ -130,5 +130,6 @@ namespace _340GUI
         private Button button_Save;
         private Agent usingAgent;
         private PolicyPage previousPage;
+        private Policy inPolicy;
     }
 }

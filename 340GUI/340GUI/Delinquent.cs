@@ -83,11 +83,21 @@ namespace _340GUI
 
         private void button_Submit_Click(object sender, EventArgs e)
         {
-            IncompleteForm incomplete = new IncompleteForm();
-            incomplete.Show();
-            if(textBox_AgentFirstName.Text == null && textBox_AgentLastName.Text == null && textBox_AmountOverdue.Text == null && comboBox_State.Text == "No state specified")
+            //IncompleteForm incomplete = new IncompleteForm();
+            //incomplete.Show();
+            if(textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || textBox_AmountOverdue.Text != "" || comboBox_State.Text != "No state specified")
             {
-                listBox_DelinquentList.Visible = false;
+                List<Policy> delinquentList = new List<Policy>();
+                if (usingAgent.isManager())
+                {
+                    Manager usingManager = new Manager(usingAgent);
+                    delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Int32.Parse(textBox_AmountOverdue.Text), textBox_AgentFirstName.Text, textBox_AgentLastName.Text);
+                }
+                else
+                {
+                    delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Int32.Parse(textBox_AmountOverdue.Text));
+                }
+                listBox_DelinquentList.Visible = true;
             }
         }
     }
