@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAG340MiddleWare", "PAG340MiddleWare\PAG340MiddleWare.csproj", "{C7318192-2D0C-472E-A318-6902609CF136}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LICDatabaseImport", "LICDatabaseImport\LICDatabaseImport.csproj", "{1F01793D-4573-453E-8F94-9D42182A9F9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{C7318192-2D0C-472E-A318-6902609CF136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7318192-2D0C-472E-A318-6902609CF136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7318192-2D0C-472E-A318-6902609CF136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F01793D-4573-453E-8F94-9D42182A9F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F01793D-4573-453E-8F94-9D42182A9F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F01793D-4573-453E-8F94-9D42182A9F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F01793D-4573-453E-8F94-9D42182A9F9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
