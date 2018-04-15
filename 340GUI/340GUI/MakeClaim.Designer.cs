@@ -53,6 +53,7 @@ namespace _340GUI
             this.button_Cancel.TabIndex = 7;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // button_Confirm
             // 
@@ -99,5 +100,7 @@ namespace _340GUI
         private Label label_Comment;
         //private Agent usingAgent;
         private Search goBack;
+        private Policy usingPolicy;
+        private PolicyPage previousPage;
     }
 }

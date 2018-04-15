@@ -39,8 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Cancel = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
+            this.button_OK = new System.Windows.Forms.Button();
             this.label_WarningComment2 = new System.Windows.Forms.Label();
             this.label_WarningComment1 = new System.Windows.Forms.Label();
             this.pictureBox_Warning = new System.Windows.Forms.PictureBox();
@@ -49,28 +48,17 @@ namespace _340GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_Cancel
+            // button_OK
             // 
-            this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Cancel.Location = new System.Drawing.Point(217, 126);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(93, 32);
-            this.button_Cancel.TabIndex = 7;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = true;
-            // 
-            // button_Save
-            // 
-            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Save.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_Save.Location = new System.Drawing.Point(51, 126);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(93, 32);
-            this.button_Save.TabIndex = 6;
-            this.button_Save.Text = "Save";
-            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_OK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_OK.Location = new System.Drawing.Point(142, 136);
+            this.button_OK.Name = "button_OK";
+            this.button_OK.Size = new System.Drawing.Size(93, 32);
+            this.button_OK.TabIndex = 7;
+            this.button_OK.Text = "Ok";
+            this.button_OK.UseVisualStyleBackColor = true;
+            this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
             // 
             // label_WarningComment2
             // 
@@ -90,9 +78,9 @@ namespace _340GUI
             this.label_WarningComment1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label_WarningComment1.Location = new System.Drawing.Point(86, 64);
             this.label_WarningComment1.Name = "label_WarningComment1";
-            this.label_WarningComment1.Size = new System.Drawing.Size(212, 16);
+            this.label_WarningComment1.Size = new System.Drawing.Size(209, 16);
             this.label_WarningComment1.TabIndex = 4;
-            this.label_WarningComment1.Text = "A loss off 3.2% has been detected,";
+            this.label_WarningComment1.Text = "A loss of 3.2% has been detected,";
             // 
             // pictureBox_Warning
             // 
@@ -119,11 +107,11 @@ namespace _340GUI
             this.label_MoreLoss1.AutoSize = true;
             this.label_MoreLoss1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_MoreLoss1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_MoreLoss1.Location = new System.Drawing.Point(86, 64);
+            this.label_MoreLoss1.Location = new System.Drawing.Point(88, 64);
             this.label_MoreLoss1.Name = "label_MoreLoss1";
-            this.label_MoreLoss1.Size = new System.Drawing.Size(212, 16);
+            this.label_MoreLoss1.Size = new System.Drawing.Size(209, 16);
             this.label_MoreLoss1.TabIndex = 10;
-            this.label_MoreLoss1.Text = "A loss off 5.4% has been detected,";
+            this.label_MoreLoss1.Text = "A loss of 5.4% has been detected,";
             // 
             // LossWarning
             // 
@@ -134,8 +122,7 @@ namespace _340GUI
             this.Controls.Add(this.label_MoreLoss2);
             this.Controls.Add(this.label_MoreLoss1);
             this.Controls.Add(this.pictureBox_Warning);
-            this.Controls.Add(this.button_Cancel);
-            this.Controls.Add(this.button_Save);
+            this.Controls.Add(this.button_OK);
             this.Controls.Add(this.label_WarningComment2);
             this.Controls.Add(this.label_WarningComment1);
             this.Name = "LossWarning";
@@ -148,13 +135,13 @@ namespace _340GUI
 
         #endregion
 
-        private Button button_Cancel;
-        private Button button_Save;
+        private Button button_OK;
         private Label label_WarningComment2;
         private Label label_WarningComment1;
         private PictureBox pictureBox_Warning;
         private Label label_MoreLoss2;
         private Label label_MoreLoss1;
+        private PolicyPage previousPage;
         //private Agent usingAgent;
     }
 }

@@ -54,6 +54,7 @@ namespace _340GUI
             this.button_Cancel.TabIndex = 7;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
+            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
             // button_Save
             // 
@@ -65,6 +66,7 @@ namespace _340GUI
             this.button_Save.TabIndex = 6;
             this.button_Save.Text = "Save";
             this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // label_Comment2
             // 
@@ -109,6 +111,17 @@ namespace _340GUI
         private Button button_Save;
         private Label label_Comment2;
         private Label label_Comment1;
-        //private Agent usingAgent;
+        private Search searchPage;
+        private Agent usingAgent;
+        private PolicyPage previousPage;
+        private Policy usingPolicy;
+        private string phFirstName;
+        private string phLastName;
+        private string street;
+        private string city;
+        private string state;
+        private string zIP;
+        private string benefFirstName;
+        private string benefLastName;
     }
 }
