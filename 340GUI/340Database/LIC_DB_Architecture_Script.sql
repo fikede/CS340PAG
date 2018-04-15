@@ -9,6 +9,8 @@
 USE LIC_PAG
 GO
 
+CREATE DATABASE
+
 CREATE TABLE Department
 (
 name varchar(50)
@@ -61,8 +63,8 @@ hospitalized int, -- boolean value representation
 dangerous_activities varchar(255),
 start_date date,
 end_date date,
-payoff_amount decimal(8,2),
-monthly_premium decimal(8,2),
+payoff_amount decimal(10,2),
+monthly_premium decimal(10,2),
 
 CONSTRAINT PK_Policy PRIMARY KEY([number]),
 CONSTRAINT FK_Policy_PolicyHolder FOREIGN KEY(holder_ID)
@@ -79,7 +81,7 @@ CREATE TABLE Payment
 policy_number varchar(30),
 [date] datetime,
 [type] char,
-amount decimal (8,2),
+amount decimal (10,2),
 CONSTRAINT PK_Payment PRIMARY KEY(policy_number, [date]),
 CONSTRAINT FK_Payment_Policy FOREIGN KEY(policy_number)
 	REFERENCES [Policy]([number]),
@@ -91,7 +93,7 @@ CREATE TABLE Delinquent_Accounts_Parameters
 emp_ID varchar (20),
 date_generated datetime,
 [state] char(2),
-amount_overdue decimal(8,2),
+amount_overdue decimal(10,2),
 CONSTRAINT PK_Delinquent_Accounts_Parameters PRIMARY KEY(emp_ID),
 CONSTRAINT FK_Delinquent_Accounts_Parameters_Employee FOREIGN KEY(emp_ID)
 	REFERENCES Employee(ID)

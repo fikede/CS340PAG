@@ -61,3 +61,12 @@ FROM Department
 SELECT * 
 FROM Employee
 */
+
+/*
+TO DELETE ALL INFORMATION FROM A TABLE DO 
+USE LIC_PAG
+GO
+
+DELETE FROM Employee
+SELECT * FROM Employee
+*/
