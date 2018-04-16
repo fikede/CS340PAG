@@ -11,11 +11,13 @@ using PAG340MiddleWare;
 
 namespace _340GUI
 {
-    public partial class PriceFirstError : Form
+    public partial class PriceButtonWarning : Form
     {
-        public PriceFirstError()
+        public PriceButtonWarning(bool forPriceFirst)
         {
             InitializeComponent();
+            if (forPriceFirst) label_IncompleteInfo.Visible = false;
+            else label_PriceFirst.Visible = false;
         }
 
         private void button_OK_Click(object sender, EventArgs e)

@@ -32,5 +32,10 @@ namespace _340GUI
             this.Close();
             previousPage.Close();
         }
+
+        private void button_Ok_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

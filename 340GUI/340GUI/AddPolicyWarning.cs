@@ -18,9 +18,9 @@ namespace _340GUI
             InitializeComponent();
         }
 
-        private void Ok_Button_Click(object sender, EventArgs e)
+        private void button_OK_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

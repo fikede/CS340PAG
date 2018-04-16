@@ -211,7 +211,7 @@ namespace _340GUI
             // 
             // textBox_PolicyholderDOB
             // 
-            this.textBox_PolicyholderDOB.ForeColor = System.Drawing.Color.Silver;
+            this.textBox_PolicyholderDOB.ForeColor = System.Drawing.Color.Black;
             this.textBox_PolicyholderDOB.Location = new System.Drawing.Point(362, 42);
             this.textBox_PolicyholderDOB.Name = "textBox_PolicyholderDOB";
             this.textBox_PolicyholderDOB.Size = new System.Drawing.Size(239, 20);
@@ -531,5 +531,6 @@ namespace _340GUI
         private Panel panel_Hospitalized;
         private RadioButton radioButton_YesHospitalized;
         private RadioButton radioButton_NoHospitalized;
+        private Policy pricingPolicy;
     }
 }

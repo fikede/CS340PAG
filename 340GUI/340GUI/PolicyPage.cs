@@ -82,7 +82,7 @@ namespace _340GUI
 
         private void linkLabel_ViewPaymentHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PaymentHistory payment = new PaymentHistory(this, label_ShowPolicyNumber.Text, label_ShowPolicyholderFirstName.Text, label_ShowPolicyholderLastName.Text);
+            PaymentHistory payment = new PaymentHistory(this, inPolicy);
             payment.Show();
             this.Hide();
         }

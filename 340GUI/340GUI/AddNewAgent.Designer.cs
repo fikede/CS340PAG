@@ -86,6 +86,16 @@ namespace _340GUI
             // comboBox_Department
             // 
             this.comboBox_Department.FormattingEnabled = true;
+            this.comboBox_Department.Items.AddRange(new object[] {
+            "Claims",
+            "Customer Service",
+            "Finance",
+            "Freelancer",
+            "Human Resources",
+            "Legal",
+            "Marketing",
+            "Obfuscation",
+            "Sales"});
             this.comboBox_Department.Location = new System.Drawing.Point(296, 234);
             this.comboBox_Department.Name = "comboBox_Department";
             this.comboBox_Department.Size = new System.Drawing.Size(261, 21);

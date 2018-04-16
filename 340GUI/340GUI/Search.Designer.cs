@@ -85,7 +85,6 @@ namespace _340GUI
             this.textBox_PolicyholderLastName.Name = "textBox_PolicyholderLastName";
             this.textBox_PolicyholderLastName.Size = new System.Drawing.Size(238, 20);
             this.textBox_PolicyholderLastName.TabIndex = 32;
-            this.textBox_PolicyholderLastName.TextChanged += new System.EventHandler(this.textBox_PolicyholderLastName_TextChanged);
             // 
             // textBox_PolicyholderFirstName
             // 
@@ -93,7 +92,6 @@ namespace _340GUI
             this.textBox_PolicyholderFirstName.Name = "textBox_PolicyholderFirstName";
             this.textBox_PolicyholderFirstName.Size = new System.Drawing.Size(238, 20);
             this.textBox_PolicyholderFirstName.TabIndex = 31;
-            this.textBox_PolicyholderFirstName.TextChanged += new System.EventHandler(this.textBox_PolicyholderFirstName_TextChanged);
             // 
             // textBox_AgentLastName
             // 
@@ -101,7 +99,6 @@ namespace _340GUI
             this.textBox_AgentLastName.Name = "textBox_AgentLastName";
             this.textBox_AgentLastName.Size = new System.Drawing.Size(238, 20);
             this.textBox_AgentLastName.TabIndex = 30;
-            this.textBox_AgentLastName.TextChanged += new System.EventHandler(this.textBox_AgentLastName_TextChanged);
             // 
             // textBox_AgentFirstName
             // 
@@ -109,7 +106,6 @@ namespace _340GUI
             this.textBox_AgentFirstName.Name = "textBox_AgentFirstName";
             this.textBox_AgentFirstName.Size = new System.Drawing.Size(238, 20);
             this.textBox_AgentFirstName.TabIndex = 29;
-            this.textBox_AgentFirstName.TextChanged += new System.EventHandler(this.textBox_AgentFirstName_TextChanged);
             // 
             // textBox_PolicyNumber
             // 
@@ -117,7 +113,6 @@ namespace _340GUI
             this.textBox_PolicyNumber.Name = "textBox_PolicyNumber";
             this.textBox_PolicyNumber.Size = new System.Drawing.Size(238, 20);
             this.textBox_PolicyNumber.TabIndex = 28;
-            this.textBox_PolicyNumber.TextChanged += new System.EventHandler(this.textBox_PolicyNumber_TextChanged);
             // 
             // label_PolicyholderLastName
             // 
@@ -127,7 +122,6 @@ namespace _340GUI
             this.label_PolicyholderLastName.Size = new System.Drawing.Size(118, 13);
             this.label_PolicyholderLastName.TabIndex = 27;
             this.label_PolicyholderLastName.Text = "Policyholder Last Name";
-            this.label_PolicyholderLastName.Click += new System.EventHandler(this.label6_Click);
             // 
             // label_PolicyholderFirstName
             // 
@@ -137,7 +131,6 @@ namespace _340GUI
             this.label_PolicyholderFirstName.Size = new System.Drawing.Size(117, 13);
             this.label_PolicyholderFirstName.TabIndex = 26;
             this.label_PolicyholderFirstName.Text = "Policyholder First Name";
-            this.label_PolicyholderFirstName.Click += new System.EventHandler(this.label5_Click);
             // 
             // label_AgentLastName
             // 
@@ -147,7 +140,6 @@ namespace _340GUI
             this.label_AgentLastName.Size = new System.Drawing.Size(89, 13);
             this.label_AgentLastName.TabIndex = 25;
             this.label_AgentLastName.Text = "Agent Last Name";
-            this.label_AgentLastName.Click += new System.EventHandler(this.label_AgentLastName_Click);
             // 
             // label_AgentFirstName
             // 
@@ -157,7 +149,6 @@ namespace _340GUI
             this.label_AgentFirstName.Size = new System.Drawing.Size(88, 13);
             this.label_AgentFirstName.TabIndex = 24;
             this.label_AgentFirstName.Text = "Agent First Name";
-            this.label_AgentFirstName.Click += new System.EventHandler(this.label_AgentFirstName_Click);
             // 
             // label_PolicyNumber
             // 
@@ -167,7 +158,6 @@ namespace _340GUI
             this.label_PolicyNumber.Size = new System.Drawing.Size(75, 13);
             this.label_PolicyNumber.TabIndex = 23;
             this.label_PolicyNumber.Text = "Policy Number";
-            this.label_PolicyNumber.Click += new System.EventHandler(this.label2_Click);
             // 
             // label_SearchBy
             // 
@@ -178,7 +168,6 @@ namespace _340GUI
             this.label_SearchBy.Size = new System.Drawing.Size(64, 13);
             this.label_SearchBy.TabIndex = 22;
             this.label_SearchBy.Text = "Search by";
-            this.label_SearchBy.Click += new System.EventHandler(this.label1_Click);
             // 
             // linkLabel_Logout
             // 
@@ -344,7 +333,6 @@ namespace _340GUI
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Search";
             this.Text = "Search Page";
-            this.Load += new System.EventHandler(this.Search_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,5 +367,6 @@ namespace _340GUI
         private Label label7;
         private Label label_ShowAgentFirstName;
         private Label label_ShowAgentLastName;
+        private List<PAG340MiddleWare.Policy> searching;
     }
 }

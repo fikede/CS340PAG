@@ -69,6 +69,12 @@
     <Compile Include="AddPolicy.Designer.cs">
       <DependentUpon>AddPolicy.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPolicyMakeSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPolicyMakeSure.Designer.cs">
+      <DependentUpon>AddPolicyMakeSure.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddPolicyWarning.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +123,11 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="PriceFirstError.cs">
+    <Compile Include="PriceButtonWarning.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PriceFirstError.Designer.cs">
-      <DependentUpon>PriceFirstError.cs</DependentUpon>
+    <Compile Include="PriceButtonWarning.Designer.cs">
+      <DependentUpon>PriceButtonWarning.cs</DependentUpon>
     </Compile>
     <Compile Include="PricePolicyWarning.cs">
       <SubType>Form</SubType>
@@ -197,6 +203,9 @@
     <EmbeddedResource Include="AddPolicy.resx">
       <DependentUpon>AddPolicy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPolicyMakeSure.resx">
+      <DependentUpon>AddPolicyMakeSure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPolicyWarning.resx">
       <DependentUpon>AddPolicyWarning.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,8 +230,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PriceFirstError.resx">
-      <DependentUpon>PriceFirstError.cs</DependentUpon>
+    <EmbeddedResource Include="PriceButtonWarning.resx">
+      <DependentUpon>PriceButtonWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PricePolicyWarning.resx">
       <DependentUpon>PricePolicyWarning.cs</DependentUpon>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,11 +20,6 @@ namespace _340GUI
             usingManager = new Manager(inAgent);
             label_ShowAgentNumber.Text = usingManager.getNextId();
             previousPage = inPage;
-        }
-
-        private void Amount_Overdue_isAt_Least_textBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button_Submit_Click(object sender, EventArgs e)

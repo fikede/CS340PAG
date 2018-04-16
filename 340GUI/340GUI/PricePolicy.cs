@@ -19,18 +19,21 @@ namespace _340GUI
             usingAgent = inUsingAgent;
             label_ShowTotalAmountOfPayment.Visible = false;
             label_ShowPayoffAmount.Visible = false;
+            radioButton_YesCancer.Checked = true;
+            radioButton_YesHeartDisease.Checked = true;
+            radioButton_YesHospitalized.Checked = true;
         }
 
         private void button_Accept_Click(object sender, EventArgs e)
         {
             if(label_ShowTotalAmountOfPayment.Visible)
             {
-                AddPolicy addPolicy = new AddPolicy();
+                AddPolicy addPolicy = new AddPolicy(pricingPolicy, usingAgent);
                 addPolicy.Show();
             }
             else
             {
-                PriceFirstError priceFirst = new PriceFirstError();
+                PriceButtonWarning priceFirst = new PriceButtonWarning(true);
                 priceFirst.Show();
             }
         }
@@ -43,20 +46,21 @@ namespace _340GUI
 
         private void button_Price_Click(object sender, EventArgs e)
         {
-            //Policy pricing = new Policy(label_FatherAAD.Text, label_MotherAAD.Text, )
-            //Policy(double inFathersAgeAtDeath, double inMothersAgeAtDeath, double inCigsPerDay, double inSmokingHis, double inSystolicBldPressure,
-            //double inGramsFatPerDay, bool inHeartDisease, bool inCancer, bool inHospitalized, string inDangerousActivities)
-            //label_ShowTotalAmountOfPayment = PricePolicy();
-            if (textBox_PolicyholderDOB.Text != null && textBox_FatherAAD.Text != null && textBox_MotherAAD.Text != null && textBox_SmokingHistory.Text != null
-                && textBox_CigPerDay.Text != null && textBox_HoursOfExercise.Text != null)
+            if (textBox_PolicyholderDOB.Text == "" || textBox_FatherAAD.Text == "" || textBox_MotherAAD.Text == "" || textBox_SmokingHistory.Text == ""
+                || textBox_CigPerDay.Text == "" || textBox_HoursOfExercise.Text != "")
             {
-                label_ShowPayoffAmount.Visible = true;
-                label_ShowTotalAmountOfPayment.Visible = true;
+                PriceButtonWarning priceFirst = new PriceButtonWarning(false);
+                priceFirst.Show();
             }
             else
             {
-                PricePolicyWarning warning = new PricePolicyWarning(usingAgent, this);
-                warning.Show();
+                pricingPolicy = new Policy(Int32.Parse(textBox_FatherAAD.Text), Int32.Parse(textBox_MotherAAD.Text), Int32.Parse(textBox_CigPerDay.Text),
+                    Int32.Parse(textBox_SmokingHistory.Text), Int32.Parse(textBox_SystolicBloodPressure.Text), Int32.Parse(textBox_AverageFatPerDay.Text),
+                    radioButton_YesHeartDisease.Checked, radioButton_YesCancer.Checked, radioButton_YesHospitalized.Checked, textBox_DangerousActivity.Text);
+                //label_ShowPayoffAmount.Text = Convert.ToString(pricing.PricePolicy);
+                label_ShowTotalAmountOfPayment.Text = Convert.ToString(pricingPolicy.PricePolicy());
+                label_ShowPayoffAmount.Visible = true;
+                label_ShowTotalAmountOfPayment.Visible = true;
             }
         }
     }
