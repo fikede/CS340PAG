@@ -281,6 +281,5 @@ namespace _340GUI
         private Label label_AddNewAgent;
         private Label label_ShowAgentNumber;
         private Manager usingManager;
-        private Home previousPage;
     }
 }

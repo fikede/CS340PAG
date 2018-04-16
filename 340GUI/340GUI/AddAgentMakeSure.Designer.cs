@@ -98,6 +98,6 @@ namespace _340GUI
         private Button button_Yes;
         private Button button_No;
         private AddNewAgent previousPage;
-        private Home homePage;
+        private Agent usingAgent;
     }
 }

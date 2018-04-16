@@ -13,18 +13,19 @@ namespace _340GUI
 {
     public partial class AddAgentMakeSure : Form
     {
-        public AddAgentMakeSure(AddNewAgent inPage, Home inHomePage)
+        public AddAgentMakeSure(AddNewAgent inPage, Agent inUsingAgent)
         {
             InitializeComponent();
             previousPage = inPage;
-            homePage = inHomePage;
+            usingAgent = inUsingAgent;
         }
 
         private void button_Yes_Click(object sender, EventArgs e)
         {
+            Home home = new Home(usingAgent);
+            home.Show();
             previousPage.Close();
             this.Close();
-            homePage.Show();
         }
 
         private void button_No_Click(object sender, EventArgs e)

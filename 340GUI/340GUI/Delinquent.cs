@@ -69,7 +69,7 @@ namespace _340GUI
         private void linkLabel_AddNewAgent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Home home = new Home(usingAgent);
-            AddNewAgent addNewAgent = new AddNewAgent(usingAgent, home);
+            AddNewAgent addNewAgent = new AddNewAgent(usingAgent);
             addNewAgent.Show();
             this.Close();
         }

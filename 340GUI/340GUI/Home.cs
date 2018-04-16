@@ -51,7 +51,7 @@ namespace _340GUI
 
         private void linkLabel_AddNewAgent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AddNewAgent addNewAgent = new AddNewAgent(usingAgent, this);
+            AddNewAgent addNewAgent = new AddNewAgent(usingAgent);
             addNewAgent.Show();
             this.Close();
         }

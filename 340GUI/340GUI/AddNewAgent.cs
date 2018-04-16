@@ -14,17 +14,16 @@ namespace _340GUI
 {
     public partial class AddNewAgent : Form
     {
-        public AddNewAgent(Agent inAgent, Home inPage)
+        public AddNewAgent(Agent inAgent)
         {
             InitializeComponent();
             usingManager = new Manager(inAgent);
             label_ShowAgentNumber.Text = usingManager.getNextId();
-            previousPage = inPage;
         }
 
         private void button_Submit_Click(object sender, EventArgs e)
         {
-            if (textBox_AgentFirstName.Text == "" || textBox_AgentLastName.Text == "" || textBox_Username.Text == "" || textBox_Password.Text == "")
+            if (textBox_AgentFirstName.Text == "" || textBox_AgentLastName.Text == "" || textBox_Username.Text == "" || textBox_Password.Text == "" || comboBox_Department.Text == "")
             {
                 AddAgentWarning warning = new AddAgentWarning();
                 warning.Show();
@@ -40,7 +39,7 @@ namespace _340GUI
                 String Department = comboBox_Department.Text;
                 Agent newAgent = new Agent(AgentFirstName, AgentLastName, AgentNumber, UserName, Password, UserType, Department);
                 usingManager.addAgent(newAgent);
-                AddAgentMakeSure makeSurePage = new AddAgentMakeSure(this, previousPage);
+                AddAgentMakeSure makeSurePage = new AddAgentMakeSure(this, usingManager);
                 makeSurePage.Show();
                 this.Close();
             }
@@ -48,7 +47,7 @@ namespace _340GUI
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            AddAgentMakeSure confirmPage = new AddAgentMakeSure(this , previousPage);
+            AddAgentMakeSure confirmPage = new AddAgentMakeSure(this , usingManager);
             confirmPage.Show();
         }
 
