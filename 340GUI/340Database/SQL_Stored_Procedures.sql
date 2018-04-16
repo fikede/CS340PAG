@@ -86,6 +86,13 @@ GO
 -- Searching Procedures
 -----------------------------------------------------------------------------------------------------
 
+CREATE PROCEDURE getDepartments
+AS
+BEGIN
+SELECT * FROM Department
+END
+GO
+
 -- Procedure for retrieving all employee IDs
 CREATE PROCEDURE returnEmployeeID
 AS
