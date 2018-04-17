@@ -98,8 +98,8 @@ namespace _340GUI
                 label_WarningStatement1.Visible = false;
                 label_WarningStatement2.Visible = false;
                 listBox_Searching.Visible = true;
-                //while ()
-                //listBox_Searching.ValueMember = searching;
+                listBox_Searching.DataSource = searching;
+                
             }
             else
             {
