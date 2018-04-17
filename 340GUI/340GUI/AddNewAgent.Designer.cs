@@ -40,8 +40,8 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ComboBox comboBox_Department;
-            System.Windows.Forms.ComboBox comboBox_UserType;
+            this.comboBox_Department = new System.Windows.Forms.ComboBox();
+            this.comboBox_UserType = new System.Windows.Forms.ComboBox();
             this.button_Cancel = new System.Windows.Forms.Button();
             this.button_Submit = new System.Windows.Forms.Button();
             this.textBox_Password = new System.Windows.Forms.TextBox();
@@ -57,9 +57,38 @@ namespace _340GUI
             this.label_AgentNumber = new System.Windows.Forms.Label();
             this.label_AddNewAgent = new System.Windows.Forms.Label();
             this.label_ShowAgentNumber = new System.Windows.Forms.Label();
-            comboBox_Department = new System.Windows.Forms.ComboBox();
-            comboBox_UserType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // comboBox_Department
+            // 
+            this.comboBox_Department.FormattingEnabled = true;
+            this.comboBox_Department.Items.AddRange(new object[] {
+            "Claims",
+            "Customer Service",
+            "Finance",
+            "Freelancer",
+            "Human Resources",
+            "Legal",
+            "Marketing",
+            "Obfuscation",
+            "Sales"});
+            this.comboBox_Department.Location = new System.Drawing.Point(296, 234);
+            this.comboBox_Department.Name = "comboBox_Department";
+            this.comboBox_Department.Size = new System.Drawing.Size(261, 21);
+            this.comboBox_Department.TabIndex = 33;
+            // 
+            // comboBox_UserType
+            // 
+            this.comboBox_UserType.Enabled = false;
+            this.comboBox_UserType.FormattingEnabled = true;
+            this.comboBox_UserType.Items.AddRange(new object[] {
+            "Manager",
+            "Agent"});
+            this.comboBox_UserType.Location = new System.Drawing.Point(296, 207);
+            this.comboBox_UserType.Name = "comboBox_UserType";
+            this.comboBox_UserType.Size = new System.Drawing.Size(261, 21);
+            this.comboBox_UserType.TabIndex = 32;
+            this.comboBox_UserType.Text = "Agent";
             // 
             // button_Cancel
             // 
@@ -84,37 +113,6 @@ namespace _340GUI
             this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = true;
             this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
-            // 
-            // comboBox_Department
-            // 
-            comboBox_Department.FormattingEnabled = true;
-            comboBox_Department.Items.AddRange(new object[] {
-            "Claims",
-            "Customer Service",
-            "Finance",
-            "Freelancer",
-            "Human Resources",
-            "Legal",
-            "Marketing",
-            "Obfuscation",
-            "Sales"});
-            comboBox_Department.Location = new System.Drawing.Point(296, 234);
-            comboBox_Department.Name = "comboBox_Department";
-            comboBox_Department.Size = new System.Drawing.Size(261, 21);
-            comboBox_Department.TabIndex = 33;
-            // 
-            // comboBox_UserType
-            // 
-            comboBox_UserType.Enabled = false;
-            comboBox_UserType.FormattingEnabled = true;
-            comboBox_UserType.Items.AddRange(new object[] {
-            "Manager",
-            "Agent"});
-            comboBox_UserType.Location = new System.Drawing.Point(296, 207);
-            comboBox_UserType.Name = "comboBox_UserType";
-            comboBox_UserType.Size = new System.Drawing.Size(261, 21);
-            comboBox_UserType.TabIndex = 32;
-            comboBox_UserType.Text = "Agent";
             // 
             // textBox_Password
             // 
@@ -245,8 +243,8 @@ namespace _340GUI
             this.Controls.Add(this.label_ShowAgentNumber);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Submit);
-            this.Controls.Add(comboBox_Department);
-            this.Controls.Add(comboBox_UserType);
+            this.Controls.Add(this.comboBox_Department);
+            this.Controls.Add(this.comboBox_UserType);
             this.Controls.Add(this.textBox_Password);
             this.Controls.Add(this.textBox_AgentLastName);
             this.Controls.Add(this.textBox_Username);
@@ -284,5 +282,7 @@ namespace _340GUI
         private Label label_AddNewAgent;
         private Label label_ShowAgentNumber;
         private Manager usingManager;
+        private ComboBox comboBox_Department;
+        private ComboBox comboBox_UserType;
     }
 }

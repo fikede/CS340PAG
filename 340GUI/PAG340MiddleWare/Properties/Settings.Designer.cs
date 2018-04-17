@@ -26,8 +26,8 @@ namespace PAG340MiddleWare.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DATABASE\\\\CSCI3400011030;Initial Catalog = LIC_PAG;\" + \"Integrated Se" +
-            "curity=False;user=\'LIC_PAG_MW\';pwd=\'PAG\'")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG; Integrated Securit" +
+            "y=False;user=\'LIC_PAG_MW\';pwd=\'PAG\';")]
         public string SqlConnection {
             get {
                 return ((string)(this["SqlConnection"]));
