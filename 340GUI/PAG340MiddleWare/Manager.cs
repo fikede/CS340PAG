@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Net;
+using PAG340MiddleWare.Properties;
 
 namespace PAG340MiddleWare
 {
@@ -52,7 +53,7 @@ namespace PAG340MiddleWare
 
         public string getNextId()
         {
-            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            String connectionString = Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
             String query = "EXECUTE returnEmployeeID";
             SqlCommand cmd = new SqlCommand(query);

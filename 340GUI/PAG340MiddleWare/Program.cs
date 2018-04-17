@@ -18,19 +18,6 @@ namespace PAG340MiddleWare
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             /*Testing underneath - jef
-            Matrix matrix = new Matrix(3, 5);
-            FillMatrix(matrix);
-            Console.WriteLine(matrix.ToString());
-
-            Matrix matrix2 = new Matrix(5, 3);
-            FillMatrix(matrix2);
-            Console.WriteLine(matrix2.ToString());
-
-            Matrix productMatrix = matrix * matrix2;
-            Console.WriteLine(productMatrix.ToString());
-
-            Matrix newMatrix = matrix.transpose();
-            Console.WriteLine(newMatrix.ToString());
             
             Agent agent = new Agent();
             agent.logIn("11111111111111111111", "test");
@@ -56,6 +43,6 @@ namespace PAG340MiddleWare
                     m.setNumberAt(row, column, value);
                 }
             }
-        } */
+        }*/ 
     }
 }

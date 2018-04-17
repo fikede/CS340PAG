@@ -28,11 +28,11 @@ namespace PAG340MiddleWare
             int oldRowNumber = 0;
             for(int rowNumber = 0; rowNumber < NumberOfRows; rowNumber++)
             {
-                if (oldRowNumber == inRowNumber - 1) oldRowNumber++;
+                if (oldRowNumber == inRowNumber) oldRowNumber++;
                 int oldColumnNumber = 0;
                 for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
                 {
-                    if (oldColumnNumber == inColumnNumber - 1) oldColumnNumber++;
+                    if (oldColumnNumber == inColumnNumber) oldColumnNumber++;
                     value = inMatrix.getNumberAt(oldRowNumber, oldColumnNumber);
                     setNumberAt(rowNumber, columnNumber, value);
                     oldColumnNumber++;
@@ -94,7 +94,8 @@ namespace PAG340MiddleWare
                for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
                 {
                     value = getNumberAt(0, columnNumber);
-                    Matrix newMatrix = new Matrix(1, columnNumber + 1, this);
+                    if (value == 0.0) return value;
+                    Matrix newMatrix = new Matrix(0, columnNumber, this);
                     if (columnNumber % 2 == 0) determinant += value * newMatrix.getDeterminant();
                     else determinant -= value * newMatrix.getDeterminant();
                 }

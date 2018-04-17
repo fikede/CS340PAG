@@ -49,7 +49,7 @@ namespace PAG340MiddleWare
 
         public override void saveToDataBase()
         {
-            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
             String query = "INSERT INTO Employee(ID, first_Name, last_Name, username, password_hashed, usertype, department) " +
                 " VALUES ('" + id + "', '" + firstName + "', '" + lastName + "', '" + userName + "', '" + hashPassword + "', '" + userType + "', '" + dept + "')";
@@ -77,7 +77,7 @@ namespace PAG340MiddleWare
         public bool logIn(string inID, string inHashPassword)
         {
 
-            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
             String query = "execute loginEmployee '" + inID + "','" + inHashPassword + "'";
             SqlCommand cmd = new SqlCommand(query);
@@ -96,7 +96,6 @@ namespace PAG340MiddleWare
                 columnNum++; //skipping over password.
                 this.userType = reader.GetString(columnNum++);
                 conn.Close();
-               //if(reader.GetString(columnNum++) != null) this.dept = reader.GetString(columnNum++);
                 return true;
             }
             else
