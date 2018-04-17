@@ -132,7 +132,7 @@ namespace _340GUI
             this.textBox_Username.Location = new System.Drawing.Point(296, 103);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(261, 20);
-            this.textBox_Username.TabIndex = 28;
+            this.textBox_Username.TabIndex = 26;
             // 
             // textBox_AgentFirstName
             // 
@@ -148,7 +148,7 @@ namespace _340GUI
             this.label_Department.Location = new System.Drawing.Point(225, 237);
             this.label_Department.Name = "label_Department";
             this.label_Department.Size = new System.Drawing.Size(65, 13);
-            this.label_Department.TabIndex = 26;
+            this.label_Department.TabIndex = 28;
             this.label_Department.Text = "Department:";
             // 
             // label_UserType
