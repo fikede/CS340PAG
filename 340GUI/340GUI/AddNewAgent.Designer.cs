@@ -61,6 +61,7 @@ namespace _340GUI
             // 
             // comboBox_Department
             // 
+            this.comboBox_Department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Department.FormattingEnabled = true;
             this.comboBox_Department.Items.AddRange(new object[] {
             "Claims",
@@ -79,7 +80,10 @@ namespace _340GUI
             // 
             // comboBox_UserType
             // 
-            this.comboBox_UserType.Enabled = false;
+            this.comboBox_UserType.AutoCompleteCustomSource.AddRange(new string[] {
+            "Agent"});
+            this.comboBox_UserType.DisplayMember = "Agent";
+            this.comboBox_UserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_UserType.FormattingEnabled = true;
             this.comboBox_UserType.Items.AddRange(new object[] {
             "Manager",
@@ -88,7 +92,7 @@ namespace _340GUI
             this.comboBox_UserType.Name = "comboBox_UserType";
             this.comboBox_UserType.Size = new System.Drawing.Size(261, 21);
             this.comboBox_UserType.TabIndex = 32;
-            this.comboBox_UserType.Text = "Agent";
+            this.comboBox_UserType.ValueMember = "Agent";
             // 
             // button_Cancel
             // 

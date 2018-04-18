@@ -19,6 +19,8 @@ namespace _340GUI
             InitializeComponent();
             usingManager = new Manager(inAgent);
             label_ShowAgentNumber.Text = usingManager.getNextId();
+            comboBox_Department.SelectedValue = 7;
+            comboBox_UserType.SelectedValue = 1;
         }
 
         private void button_Submit_Click(object sender, EventArgs e)

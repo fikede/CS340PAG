@@ -67,7 +67,6 @@ namespace _340GUI
             this.label_PricePolicy = new System.Windows.Forms.Label();
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
-            this.label_ShowPayoffAmount = new System.Windows.Forms.Label();
             this.label_ShowTotalAmountOfPayment = new System.Windows.Forms.Label();
             this.button_Price = new System.Windows.Forms.Button();
             this.panel_HeartDisease = new System.Windows.Forms.Panel();
@@ -77,6 +76,7 @@ namespace _340GUI
             this.panel_Hospitalized = new System.Windows.Forms.Panel();
             this.radioButton_YesHospitalized = new System.Windows.Forms.RadioButton();
             this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
+            this.textBox_PayOffAmount = new System.Windows.Forms.TextBox();
             this.panel_HeartDisease.SuspendLayout();
             this.panel_Cancer.SuspendLayout();
             this.panel_Hospitalized.SuspendLayout();
@@ -336,15 +336,6 @@ namespace _340GUI
             this.button_Cancel.UseVisualStyleBackColor = true;
             this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
-            // label_ShowPayoffAmount
-            // 
-            this.label_ShowPayoffAmount.AutoSize = true;
-            this.label_ShowPayoffAmount.Location = new System.Drawing.Point(367, 309);
-            this.label_ShowPayoffAmount.Name = "label_ShowPayoffAmount";
-            this.label_ShowPayoffAmount.Size = new System.Drawing.Size(35, 13);
-            this.label_ShowPayoffAmount.TabIndex = 70;
-            this.label_ShowPayoffAmount.Text = "label2";
-            // 
             // label_ShowTotalAmountOfPayment
             // 
             this.label_ShowTotalAmountOfPayment.AutoSize = true;
@@ -439,18 +430,26 @@ namespace _340GUI
             this.radioButton_NoHospitalized.Text = "No";
             this.radioButton_NoHospitalized.UseVisualStyleBackColor = true;
             // 
+            // textBox_PayOffAmount
+            // 
+            this.textBox_PayOffAmount.ForeColor = System.Drawing.Color.Black;
+            this.textBox_PayOffAmount.Location = new System.Drawing.Point(362, 306);
+            this.textBox_PayOffAmount.Name = "textBox_PayOffAmount";
+            this.textBox_PayOffAmount.Size = new System.Drawing.Size(239, 20);
+            this.textBox_PayOffAmount.TabIndex = 76;
+            // 
             // PricePolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.textBox_PayOffAmount);
             this.Controls.Add(this.panel_Hospitalized);
             this.Controls.Add(this.panel_Cancer);
             this.Controls.Add(this.panel_HeartDisease);
             this.Controls.Add(this.button_Price);
             this.Controls.Add(this.label_ShowTotalAmountOfPayment);
-            this.Controls.Add(this.label_ShowPayoffAmount);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Accept);
             this.Controls.Add(this.label_PricePolicy);
@@ -520,7 +519,6 @@ namespace _340GUI
         private Label label_PricePolicy;
         private Button button_Accept;
         private Button button_Cancel;
-        private Label label_ShowPayoffAmount;
         private Label label_ShowTotalAmountOfPayment;
         private Agent usingAgent;
         private Button button_Price;
@@ -532,5 +530,6 @@ namespace _340GUI
         private RadioButton radioButton_YesHospitalized;
         private RadioButton radioButton_NoHospitalized;
         private Policy pricingPolicy;
+        private TextBox textBox_PayOffAmount;
     }
 }

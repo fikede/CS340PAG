@@ -91,11 +91,11 @@ namespace _340GUI
                 if (usingAgent.isManager())
                 {
                     Manager usingManager = new Manager(usingAgent);
-                    delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Int32.Parse(textBox_AmountOverdue.Text), textBox_AgentFirstName.Text, textBox_AgentLastName.Text);
+                    delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text), textBox_AgentFirstName.Text, textBox_AgentLastName.Text);
                 }
                 else
                 {
-                    delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Int32.Parse(textBox_AmountOverdue.Text));
+                    delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text));
                 }
                 listBox_DelinquentList.Visible = true;
             }
