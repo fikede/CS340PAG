@@ -87,18 +87,18 @@ namespace _340GUI
                 if (usingAgent.isManager())
                 {
                     Manager usingManager = new Manager(usingAgent);
-                    searching = usingManager.search(textBox_PolicyNumber.Text, textBox_AgentFirstName.Text, 
-                        textBox_AgentLastName.Text, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text);
+                    policyList = usingManager.search(textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_AgentFirstName.Text, 
+                        textBox_AgentLastName.Text, textBox_PolicyNumber.Text);
                 }
                 else
                 {
-                    searching = usingAgent.search(textBox_PolicyNumber.Text, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text);
+                    policyList = usingAgent.search(textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_PolicyNumber.Text);
                 }
                 pictureBox_Warning.Visible = false;
                 label_WarningStatement1.Visible = false;
                 label_WarningStatement2.Visible = false;
                 listBox_Searching.Visible = true;
-                listBox_Searching.DataSource = searching;
+                listBox_Searching.DataSource = policyList;
                 
             }
             else

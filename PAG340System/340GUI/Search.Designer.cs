@@ -367,6 +367,6 @@ namespace _340GUI
         private Label label7;
         private Label label_ShowAgentFirstName;
         private Label label_ShowAgentLastName;
-        private List<PAG340MiddleWare.Policy> searching;
+        private List<PAG340MiddleWare.Policy> policyList;
     }
 }
