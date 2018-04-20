@@ -94,12 +94,17 @@ namespace _340GUI
                 {
                     policyList = usingAgent.search(textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_PolicyNumber.Text);
                 }
+   
+                foreach (Policy policy in policyList)
+                {
+                    string listString = alignItemString(policy);
+                    listBox_Searching.Items.Add(listString);
+                }
+
                 pictureBox_Warning.Visible = false;
                 label_WarningStatement1.Visible = false;
                 label_WarningStatement2.Visible = false;
                 listBox_Searching.Visible = true;
-                listBox_Searching.DataSource = policyList;
-                
             }
             else
             {
@@ -108,6 +113,20 @@ namespace _340GUI
                 label_WarningStatement2.Visible = true;
                 listBox_Searching.Visible = false;
             }
+        }
+
+        private string alignItemString(Policy policy)
+        {
+            int length;
+            string output = "";
+            output += policy.PolicyNumber;
+            length = 30 - policy.PolicyNumber.Length;
+            for (int i = 0; i < length; i++) output += " ";
+            output += policy.Holder.FirstName + " " + policy.Holder.LastName;
+            length = 50 - (policy.Holder.FirstName.Length + policy.Holder.LastName.Length + 1);
+            for (int i = 0; i < length; i++) output += " ";
+            output += policy.RepresentativeAgent.Firstname + " " + policy.RepresentativeAgent.Lastname;
+            return output;
         }
     }
 }

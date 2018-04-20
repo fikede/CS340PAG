@@ -70,6 +70,7 @@ namespace _340GUI
             // textBox_AgentNumber
             // 
             this.textBox_AgentNumber.Location = new System.Drawing.Point(276, 168);
+            this.textBox_AgentNumber.MaxLength = 20;
             this.textBox_AgentNumber.Name = "textBox_AgentNumber";
             this.textBox_AgentNumber.Size = new System.Drawing.Size(238, 20);
             this.textBox_AgentNumber.TabIndex = 2;
@@ -78,9 +79,11 @@ namespace _340GUI
             // textBox_Password
             // 
             this.textBox_Password.Location = new System.Drawing.Point(276, 200);
+            this.textBox_Password.MaxLength = 255;
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(238, 20);
             this.textBox_Password.TabIndex = 3;
+            this.textBox_Password.UseSystemPasswordChar = true;
             // 
             // button_Login
             // 

@@ -125,6 +125,7 @@ namespace _340GUI
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(261, 20);
             this.textBox_Password.TabIndex = 30;
+            this.textBox_Password.UseSystemPasswordChar = true;
             // 
             // textBox_AgentLastName
             // 
