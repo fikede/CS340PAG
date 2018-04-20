@@ -11,11 +11,16 @@ namespace LICDatabaseImport
     class PaymentHistory : Savable
     {
         // for PaymentHistory
+        
+        private List<string> policyNumbers;
         private char[] amount = new char[10];
         private char[] paymentDateTime = new char[12];
         private char[] paymentPolicyNum = new char[30];
         private char[] paymentDescription = new char[1];
-
+        public PaymentHistory(List<string> inNumbers)
+        {
+            policyNumbers = inNumbers;
+        }
         public override void parseInfo(string s)
         {
             amount = getInfo(0, 9, s, amount);
@@ -89,20 +94,20 @@ namespace LICDatabaseImport
             string inputPaymentDate = dateConversion(paymentDateTime);
             string inputDescription = convertToString(paymentDescription);
             decimal inputAmount = convertAmount(amount);
-
-            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
-            SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("addPayment", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@policyNumber", inputPolicyNum);
-            cmd.Parameters.AddWithValue("@paymentDate", inputPaymentDate);
-            cmd.Parameters.AddWithValue("@paymentType", inputDescription);
-            cmd.Parameters.AddWithValue("@amount", inputAmount);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            if (policyNumbers.Contains(inputPolicyNum))
+            {
+                string connectionString = LICDatabaseImport.Properties.Settings.Default.SqlConnection;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("addPayment", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@policyNumber", inputPolicyNum);
+                cmd.Parameters.AddWithValue("@paymentDate", inputPaymentDate);
+                cmd.Parameters.AddWithValue("@paymentType", inputDescription);
+                cmd.Parameters.AddWithValue("@amount", inputAmount);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }           
         }
     }
 }

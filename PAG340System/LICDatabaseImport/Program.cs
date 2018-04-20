@@ -5,6 +5,7 @@
  */
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace LICDatabaseImport
 {
@@ -14,30 +15,15 @@ namespace LICDatabaseImport
         {
 
             // create classes for each of the file types.
-            LifePolicy policy = new LifePolicy();
+            String filePath = LICDatabaseImport.Properties.Settings.Default.FilePath;
+            List<string> policyNumbers = new List<string>();
+            LifePolicy policy = new LifePolicy(policyNumbers);
             Beneficiary beneficiary = new Beneficiary();
-            PaymentHistory payments = new PaymentHistory();
             User users = new User();
-            //            baseClass[] baseClasses = new baseClass[6];
-            //            string[] filePaths = new string[10];
-
-            //            int i = 0;
-            //            string s = "";
-
-            //            baseClasses[i].parseInfo(s);
-
             /*
-             * Would like : need: to create a single method for reading each text file
-             * line by line.
-             */
-
-            /*
-             * We needed to create filepath for every text file that we import.
-             */
-
             try
             {
-                using (StreamReader stringReader = new StreamReader("User.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "User.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
@@ -50,12 +36,12 @@ namespace LICDatabaseImport
             catch (Exception e)
             {
                 throw new FileNotFoundException("File Not Found", e);
-            }
-
+            }*/
             try
             {
-                using (StreamReader stringReader = new StreamReader("LifePolicy.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "LifePolicy.txt"))
                 {
+                    
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
                     {
@@ -66,12 +52,12 @@ namespace LICDatabaseImport
             catch (Exception e)
             {
                 throw new FileNotFoundException("File Not Found", e);
-            }
+            }/*
 
 
             try
             {
-                using (StreamReader stringReader = new StreamReader("Beneficiaries.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "Beneficiaries.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
@@ -83,12 +69,44 @@ namespace LICDatabaseImport
             catch (Exception e)
             {
                 throw new FileNotFoundException("File Not Found", e);
-            }
+            }*/
 
+            PaymentHistory payments = new PaymentHistory(policyNumbers);
+            try
+            {
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory0.txt"))
+                {
+                    string line;
+                    while ((line = stringReader.ReadLine()) != null)
+                    {
+                        payments.parseInfo(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new FileNotFoundException("File Not Found", e);
+            }
+            
+            try
+            {
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory1.txt"))
+                {
+                    string line;
+                    while ((line = stringReader.ReadLine()) != null)
+                    {
+                       payments.parseInfo(line);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new FileNotFoundException("File Not Found", e);
+            }
 
             try
             {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory0.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory2.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
@@ -104,7 +122,7 @@ namespace LICDatabaseImport
 
             try
             {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory1.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory3.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
@@ -120,7 +138,7 @@ namespace LICDatabaseImport
 
             try
             {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory2.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory4.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
@@ -136,7 +154,7 @@ namespace LICDatabaseImport
 
             try
             {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory3.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory5.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)
@@ -152,39 +170,7 @@ namespace LICDatabaseImport
 
             try
             {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory4.txt"))
-                {
-                    string line;
-                    while ((line = stringReader.ReadLine()) != null)
-                    {
-                        payments.parseInfo(line);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                throw new FileNotFoundException("File Not Found", e);
-            }
-
-            try
-            {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory5.txt"))
-                {
-                    string line;
-                    while ((line = stringReader.ReadLine()) != null)
-                    {
-                        payments.parseInfo(line);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                throw new FileNotFoundException("File Not Found", e);
-            }
-
-            try
-            {
-                using (StreamReader stringReader = new StreamReader("PaymentHistory6.txt"))
+                using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory6.txt"))
                 {
                     string line;
                     while ((line = stringReader.ReadLine()) != null)

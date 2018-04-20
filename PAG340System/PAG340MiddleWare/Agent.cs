@@ -116,12 +116,14 @@ namespace PAG340MiddleWare
                     decimalValue = reader.GetDecimal(columnNumber);
                     policy.FathersAgeAtDeath = Convert.ToDouble(decimalValue);
                 }
-                    columnNumber = reader.GetOrdinal("mothers_age_at_death");
+
+                columnNumber = reader.GetOrdinal("mothers_age_at_death");
                 if (!reader.IsDBNull(columnNumber))
                 {
                     decimalValue = reader.GetDecimal(columnNumber);
                     policy.MothersAgeAtDeath = Convert.ToDouble(decimalValue);
                 }
+
                 columnNumber = reader.GetOrdinal("cigs_per_day");
                 policy.CigsPerDay = reader.GetInt32(columnNumber);
 
@@ -225,6 +227,7 @@ namespace PAG340MiddleWare
             }
             else
             {
+                conn.Close();
                 return false;
             }
         }

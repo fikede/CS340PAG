@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LICDatabaseImport.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SqlConnection" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DATABASE\CSCI3400011030;Initial Catalog = LIC_PAG; Integrated Security=False;user='LIC_PAG_MW';pwd='PAG';&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DATABASE\CSCI3400011030;Initial Catalog = LIC_PAG; Integrated Security=False;user='LIC_PAG_MW';pwd='PAG';</Value>
+    </Setting>
+    <Setting Name="FilePath" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;C:\Users\gfarmer\source\repos\CS340PAG\PAG340System\LICDatabaseImport\Data\&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">C:\Users\gfarmer\source\repos\CS340PAG\PAG340System\LICDatabaseImport\Data\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -29,7 +29,12 @@ namespace LICDatabaseImport
         private char[] agentID = new char[20];
         private char[] payoffAmount = new char[10];
         private char[] monthlyPremium = new char[10];
+        private List<string> numbers;
 
+        public LifePolicy(List<string> inNumbers)
+        {
+            numbers = inNumbers;
+        }
         public override void parseInfo(string s)
         {
             policyNum = getInfo(0, 29, s, policyNum);
@@ -157,34 +162,37 @@ namespace LICDatabaseImport
             string inputPolicyEndDate = dateConversion(policyEndDate);
             decimal inputPayoffAmount = convertAmount(payoffAmount);
             decimal inputMonthlyPremium = convertAmount(monthlyPremium);
+            numbers.Add(inputPolicyNum);
+            if (false)
+            {
+                String connectionString = LICDatabaseImport.Properties.Settings.Default.SqlConnection;
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("addPolicy", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
-            SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand("addPolicy", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@policyNumber", inputPolicyNum);
+                cmd.Parameters.AddWithValue("@holderID", inputHolderID);
+                cmd.Parameters.AddWithValue("@empID", inputAgentID);
+                cmd.Parameters.AddWithValue("@holderDOB", inputHolderDOB);
+                if (inputFatherDOD > 0) cmd.Parameters.AddWithValue("@fatherDeath", inputFatherDOD);
+                if (inputMotherDOD > 0) cmd.Parameters.AddWithValue("@motherDeath", inputMotherDOD);
+                cmd.Parameters.AddWithValue("@cigsPerDay", inputCigsPerDay);
+                cmd.Parameters.AddWithValue("@smokeHistory", inputSmokingHistory);
+                cmd.Parameters.AddWithValue("@sysBP", inputSystolicBloodPressure);
+                cmd.Parameters.AddWithValue("@aGramsFat", inputAverageGramsFatPerDay);
+                cmd.Parameters.AddWithValue("@heartDisease", inputHeartDisease);
+                cmd.Parameters.AddWithValue("@cancer", inputCancer);
+                cmd.Parameters.AddWithValue("@hospitalized", inputHospitalized);
+                cmd.Parameters.AddWithValue("@dangerousActivities", inputDangerousActivities);
+                cmd.Parameters.AddWithValue("@startDate", inputPolicyStartDate);
+                if (inputPolicyEndDate != "null") cmd.Parameters.AddWithValue("@endDate", inputPolicyEndDate);
+                cmd.Parameters.AddWithValue("@payoffAmount", inputPayoffAmount);
+                cmd.Parameters.AddWithValue("@monthlyPremium", inputMonthlyPremium);
 
-            cmd.Parameters.AddWithValue("@policyNumber", inputPolicyNum);
-            cmd.Parameters.AddWithValue("@holderID", inputHolderID);
-            cmd.Parameters.AddWithValue("@empID", inputAgentID);
-            cmd.Parameters.AddWithValue("@holderDOB", inputHolderDOB);
-            if (inputFatherDOD > 0) cmd.Parameters.AddWithValue("@fatherDeath", inputFatherDOD);
-            if (inputMotherDOD > 0) cmd.Parameters.AddWithValue("@motherDeath", inputMotherDOD);
-            cmd.Parameters.AddWithValue("@cigsPerDay", inputCigsPerDay);
-            cmd.Parameters.AddWithValue("@smokeHistory", inputSmokingHistory);
-            cmd.Parameters.AddWithValue("@sysBP", inputSystolicBloodPressure);
-            cmd.Parameters.AddWithValue("@aGramsFat", inputAverageGramsFatPerDay);
-            cmd.Parameters.AddWithValue("@heartDisease", inputHeartDisease);
-            cmd.Parameters.AddWithValue("@cancer", inputCancer);
-            cmd.Parameters.AddWithValue("@hospitalized", inputHospitalized);
-            cmd.Parameters.AddWithValue("@dangerousActivities", inputDangerousActivities);
-            cmd.Parameters.AddWithValue("@startDate", inputPolicyStartDate);
-            if (inputPolicyEndDate != "null") cmd.Parameters.AddWithValue("@endDate", inputPolicyEndDate);
-            cmd.Parameters.AddWithValue("@payoffAmount", inputPayoffAmount);
-            cmd.Parameters.AddWithValue("@monthlyPremium", inputMonthlyPremium);
-
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
         }
     }
 }

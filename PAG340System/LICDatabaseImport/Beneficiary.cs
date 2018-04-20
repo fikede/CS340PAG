@@ -46,7 +46,7 @@ namespace LICDatabaseImport
             string inputFirstName = convertToString(beneficiaryFName);
             string inputLastName = convertToString(beneficiaryLName);
 
-            /*String connectionString = "Data Source=DATABASE\\CSCI3400011030;Initial Catalog = LIC_PAG;" + "Integrated Security=False;user='LIC_PAG_MW';pwd='PAG'";
+            String connectionString = LICDatabaseImport.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("addBeneficary", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -62,7 +62,7 @@ namespace LICDatabaseImport
             {
                 throw new Exception("Cannot Save");
             }
-            conn.Close();*/
+            conn.Close();
         }
     }
 }
