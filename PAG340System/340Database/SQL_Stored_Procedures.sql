@@ -40,7 +40,7 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- Add an employee to DB
-CREATE PROCEDURE addEmployee @employeeID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @username AS varchar(20), @password AS varchar(255), @usertype AS char, @department AS varchar (50)
+CREATE PROCEDURE addEmployee @employeeID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @username AS varchar(20), @password AS varchar(255), @usertype AS char, @department AS varchar(50)
 AS
 BEGIN
 INSERT INTO	Employee(ID, first_name, last_name, username, password_hashed, user_type, department)
@@ -86,12 +86,15 @@ GO
 -- Searching Procedures
 -----------------------------------------------------------------------------------------------------
 
+-- Procedure to generate the departments 
 CREATE PROCEDURE getDepartments
 AS
 BEGIN
 SELECT * FROM Department
 END
 GO
+
+-----------------------------------------------------------------------------------------------------
 
 -- Procedure for retrieving all employee IDs
 CREATE PROCEDURE returnEmployeeID
@@ -132,74 +135,27 @@ GO
 
 -----------------------------------------------------------------------------------------------------
 
--- Procedure to search for a policy by the policy number.
--- if this is an agent then we use their agent ID as well.
-CREATE PROCEDURE searchPolicybyPolicyNumber @policyNumber AS varchar(30), @agentID AS varchar(20)
+-- MASTER SEARCH PROCEDURE THAT TAKES IN ALL PARAMETERS.
+CREATE PROCEDURE searchPolicy @policyNumber AS varchar(30) = NULL, @agentID AS varchar(20) = NULL, @agentFName AS varchar(100) = NULL, @agentLName AS varchar(100) = NULL, @holderFName AS varchar(100) = NULL, @holderLName AS varchar(100) = NULL
 AS
 BEGIN
-
-IF (@agentID = '') OR (@agentID = NULL) -- manager
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
+SELECT [number], holder_ID, emp_ID, Employee.first_name AS agent_first_name, Employee.last_name AS agent_last_name, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, PolicyHolder.first_name AS holder_first_name, PolicyHolder.last_name AS holder_last_name, street, city, [state], zip, Beneficiary.first_name AS beneficiary_first_name, Beneficiary.last_name AS beneficiary_last_name
 FROM
-([Policy] INNER JOIN PolicyHolder
-ON [Policy].holder_ID = PolicyHolder.ID)
-WHERE [Policy].[number] = @policyNumber;
-
-ELSE -- agent
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
-FROM
-([Policy] INNER JOIN PolicyHolder
-ON [Policy].holder_ID = PolicyHolder.ID)
-WHERE [Policy].emp_ID = @agentID AND [Policy].[number] = @policyNumber;
-
-END
-GO
-
------------------------------------------------------------------------------------------------------
-
--- Procedure to search for a policy by the holders name and the agents ID (if needed).
-CREATE PROCEDURE searchPolicybyHolderName @holderFName AS varchar(100), @holderLName AS varchar(100), @agentID AS varchar(20)
-AS
-BEGIN
-
--- manager
-IF (@agentID = '') OR (@agentID = NULL)
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
-FROM(
-[Policy]INNER JOIN PolicyHolder
-ON [Policy].holder_ID = PolicyHolder.ID)
-WHERE PolicyHolder.first_name = @holderFName AND PolicyHolder.last_name = @holderLName;
-
--- agent
-ELSE 
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
-FROM(
-[Policy]INNER JOIN PolicyHolder
-ON
-[Policy].holder_ID = PolicyHolder.ID)
-WHERE [Policy].emp_ID = @agentID AND PolicyHolder.first_name = @holderFName AND PolicyHolder.last_name = @holderLName;
-
-END
-GO
-
------------------------------------------------------------------------------------------------------
-
--- Procedure to search for a policy by the holders name and the agents name.
-CREATE PROCEDURE searchPolicybyHolderNameandAgentName @holderFName AS varchar(100), @holderLName AS varchar(100), @agentFName AS varchar(100), @agentLName AS varchar(100)
-AS
-BEGIN
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, PolicyHolder.first_name, PolicyHolder.last_name, street, city, [state], zip
-FROM(
-[Policy]INNER JOIN PolicyHolder
+(
+[Policy] INNER JOIN PolicyHolder
 ON [Policy].holder_ID = PolicyHolder.ID
 INNER JOIN Employee
-ON Employee.ID = [Policy].emp_ID
+ON [Policy].emp_ID = Employee.ID
+INNER JOIN Beneficiary
+ON
+Policy.[number] = Beneficiary.policy_number
 )
-WHERE PolicyHolder.first_name = @holderFName AND PolicyHolder.last_name = @holderLName AND Employee.first_name = @agentFName AND Employee.last_name = @agentLName
+WHERE (Policy.[number] LIKE '%'+@policyNumber+'%' AND Policy.emp_ID LIKE '%'+@agentID+'%' AND PolicyHolder.first_name LIKE '%'+@holderFName+'%' AND PolicyHolder.last_name LIKE '%'+@holderLName+'%' AND Employee.first_name LIKE '%'+@agentFName+'%' AND Employee.last_name LIKE '%'+@agentLName+'%');
 END
 GO
 
 -----------------------------------------------------------------------------------------------------
+
 -- Procedure to retrieve all policies ended in the LIC DB
 CREATE PROCEDURE getEndedPolicies
 AS
@@ -214,8 +170,6 @@ GO
 
 
 -----------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------------
 -- Confirmation Search
 -----------------------------------------------------------------------------------------------------
 
@@ -224,7 +178,7 @@ CREATE PROCEDURE doesPolicyExist @policyNumber as varchar(30)
 AS
 BEGIN
 SELECT * FROM Policy
-WHERE number = @p
+WHERE number = @policyNumber
 END
 GO
 
