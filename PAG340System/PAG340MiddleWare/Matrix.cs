@@ -50,6 +50,9 @@ namespace PAG340MiddleWare
             else
             {
                 inverseMatrix.OfMinors(this);
+                inverseMatrix.OfCofactors();
+                inverseMatrix.transpose();
+                inverseMatrix.MultiplyByANumber(1 / determinant);
             }
             
               return inverseMatrix;
@@ -75,7 +78,33 @@ namespace PAG340MiddleWare
             {
                 for (int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
                 {
+                    if(rowNumber % 2 == 0)
+                    {
+                        if(columnNumber % 2 == 1)
+                        {
+                            double opposite = 0.0 - getNumberAt(rowNumber, columnNumber);
+                            setNumberAt(rowNumber, columnNumber, opposite);
+                        }
+                    }
+                    else if(columnNumber % 2 == 0)
+                    {
+                        double opposite = 0.0 - getNumberAt(rowNumber, columnNumber);
+                        setNumberAt(rowNumber, columnNumber, opposite);
+                    }
+                }
+            }
+        }
 
+        private void MultiplyByANumber(double number)
+        {
+            double value;
+            for(int rowNumber = 0; rowNumber < numberOfRows; rowNumber++)
+            {
+                for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
+                {
+                    value = getNumberAt(rowNumber, columnNumber);
+                    value *= number;
+                    setNumberAt(rowNumber, columnNumber, value);
                 }
             }
         }

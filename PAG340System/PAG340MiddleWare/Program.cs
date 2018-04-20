@@ -21,10 +21,10 @@ namespace PAG340MiddleWare
             
             Agent agent = new Agent();
             agent.logIn("11111111111111111111", "test");
-
+            
             Agent newagent = new Agent("firstName", "lastName", "12341234123412341234","jfarmer", "hi", "A", "Freelancer");
             newagent.saveToDataBase();
-
+            
             Manager manager = new Manager();
             string s = manager.getNextId();
             */
@@ -43,6 +43,6 @@ namespace PAG340MiddleWare
                     m.setNumberAt(row, column, value);
                 }
             }
-        }*/ 
+        }*/
     }
 }
