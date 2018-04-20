@@ -87,11 +87,11 @@
     <Compile Include="CancelPolicy.Designer.cs">
       <DependentUpon>CancelPolicy.cs</DependentUpon>
     </Compile>
-    <Compile Include="IncompleteForm.cs">
+    <Compile Include="IncompleteFeature.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IncompleteForm.Designer.cs">
-      <DependentUpon>IncompleteForm.cs</DependentUpon>
+    <Compile Include="IncompleteFeature.Designer.cs">
+      <DependentUpon>IncompleteFeature.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -212,8 +212,8 @@
     <EmbeddedResource Include="CancelPolicy.resx">
       <DependentUpon>CancelPolicy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IncompleteForm.resx">
-      <DependentUpon>IncompleteForm.cs</DependentUpon>
+    <EmbeddedResource Include="IncompleteFeature.resx">
+      <DependentUpon>IncompleteFeature.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

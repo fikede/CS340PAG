@@ -128,5 +128,14 @@ namespace _340GUI
             output += policy.RepresentativeAgent.Firstname + " " + policy.RepresentativeAgent.Lastname;
             return output;
         }
+
+        private void listBox_Searching_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox_Searching.SelectedIndex;
+            Policy policy = policyList.ElementAt(index);
+            PolicyPage policyPage = new PolicyPage(usingAgent, this, policy);
+            policyPage.Show();
+            this.Hide();
+        }
     }
 }

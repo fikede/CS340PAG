@@ -243,6 +243,7 @@ namespace _340GUI
             this.listBox_Searching.ScrollAlwaysVisible = true;
             this.listBox_Searching.Size = new System.Drawing.Size(501, 160);
             this.listBox_Searching.TabIndex = 54;
+            this.listBox_Searching.SelectedIndexChanged += new System.EventHandler(this.listBox_Searching_SelectedIndexChanged);
             // 
             // pictureBox_Warning
             // 

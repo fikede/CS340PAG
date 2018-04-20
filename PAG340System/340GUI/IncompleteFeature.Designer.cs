@@ -11,7 +11,7 @@ using PAG340MiddleWare;
 
 namespace _340GUI
 {
-    partial class IncompleteForm
+    partial class IncompleteFeature
     {
         /// <summary>
         /// Required designer variable.
@@ -48,11 +48,11 @@ namespace _340GUI
             this.Comment.AutoSize = true;
             this.Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Comment.ForeColor = System.Drawing.Color.Maroon;
-            this.Comment.Location = new System.Drawing.Point(119, 65);
+            this.Comment.Location = new System.Drawing.Point(113, 65);
             this.Comment.Name = "Comment";
-            this.Comment.Size = new System.Drawing.Size(144, 20);
+            this.Comment.Size = new System.Drawing.Size(166, 20);
             this.Comment.TabIndex = 0;
-            this.Comment.Text = "Incomplete Form";
+            this.Comment.Text = "Incomplete Feature";
             // 
             // button_OK
             // 
@@ -64,7 +64,7 @@ namespace _340GUI
             this.button_OK.UseVisualStyleBackColor = true;
             this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
             // 
-            // IncompleteForm
+            // IncompleteFeature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,7 +72,7 @@ namespace _340GUI
             this.ClientSize = new System.Drawing.Size(368, 176);
             this.Controls.Add(this.button_OK);
             this.Controls.Add(this.Comment);
-            this.Name = "IncompleteForm";
+            this.Name = "IncompleteFeature";
             this.Text = "IncompleteForm";
             this.ResumeLayout(false);
             this.PerformLayout();

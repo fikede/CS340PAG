@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _340GUI
 {
-    public partial class IncompleteForm : Form
+    public partial class IncompleteFeature : Form
     {
-        public IncompleteForm()
+        public IncompleteFeature()
         {
             InitializeComponent();
         }
