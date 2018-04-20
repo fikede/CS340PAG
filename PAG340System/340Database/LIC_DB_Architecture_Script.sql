@@ -5,6 +5,7 @@
 -- https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql
 -- Use this Links for all commands.
 
+CREATE DATABASE LIC_PAG
 
 USE LIC_PAG
 GO
