@@ -40,11 +40,11 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- Add an employee to DB
-CREATE PROCEDURE addEmployee @employeeID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @username AS varchar(20), @password AS varchar(255), @usertype AS char, @department AS varchar(50)
+CREATE PROCEDURE addEmployee @employeeID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @username AS varchar(20), @passwordHashed AS varchar(255), @usertype AS char, @department AS varchar(50)
 AS
 BEGIN
 INSERT INTO	Employee(ID, first_name, last_name, username, password_hashed, user_type, department)
-VALUES		(@employeeID, @firstName, @lastName, @username, @password, @usertype, @department)
+VALUES		(@employeeID, @firstName, @lastName, @username, @passwordHashed, @usertype, @department)
 END
 GO
 
@@ -111,13 +111,13 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- Procedure to search and validate the employees login
-CREATE PROCEDURE loginEmployee @employeeID AS varchar(20), @password AS varchar(255)
+CREATE PROCEDURE loginEmployee @employeeID AS varchar(20), @passwordHashed AS varchar(255)
 AS
 BEGIN
 
 SELECT * 
 FROM Employee
-WHERE ID = @employeeID AND password_hashed = @password
+WHERE ID = @employeeID AND password_hashed = @passwordHashed
 END
 GO
 
