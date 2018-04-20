@@ -74,7 +74,6 @@ namespace _340GUI
             this.textBox_AgentNumber.Name = "textBox_AgentNumber";
             this.textBox_AgentNumber.Size = new System.Drawing.Size(238, 20);
             this.textBox_AgentNumber.TabIndex = 2;
-            this.textBox_AgentNumber.TextChanged += new System.EventHandler(this.textBox_AgentNumber_TextChanged);
             // 
             // textBox_Password
             // 
@@ -133,7 +132,6 @@ namespace _340GUI
             this.Controls.Add(this.Label_AgentNumber);
             this.Name = "Login";
             this.Text = "Login Page";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

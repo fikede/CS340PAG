@@ -20,10 +20,6 @@ namespace _340GUI
             label_WarningComment.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Agent usingAgent = new Agent();
@@ -40,11 +36,6 @@ namespace _340GUI
                 pictureBox_Warning.Visible = true;
                 label_WarningComment.Visible = true;
             }
-        }
-
-        private void textBox_AgentNumber_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
