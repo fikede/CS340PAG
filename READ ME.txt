@@ -1,0 +1,32 @@
+To Use This System Follow These Steps:
+1. Create a database in SQL Server Management Studio (SSMS).
+2. Create a user that can access that database with SQL Server Authentication with a login and a password.
+3. Open the PAG340System file.
+4. Open the 340Database file.
+5. Open the LIC_DB_Architecture_Script into SSMS.
+6. Change the USE LIC_PAG to USE [name of your database] and execute the query.
+7. Open the SQL_Stored_Procedures into SSMS.
+8. Change the USE LIC_PAG to USE [name of your database] and execute the query.
+9. Open the SQL_DummyEmp into SSMS.
+10. Change the USE LIC_PAG to USE [name of your database] and execute the query.
+11. Go back to the PAG340System file and open the PAG340System.sln file.
+12. In the Solution Explorer open PAG340MiddleWare, open Properties, double click Settings.settings.
+13. In the value of SqlConnection change:
+	a. Data Source to be equal to your server name in SSMS.
+	b. Initial Catalog to be equal to your database name.
+	c. user to be equal to your login you created for your database.
+	d. pwd to be equal to the passwored of your user you created for you database.
+14. Build the solution.
+15. At the top of the page in Visual Studios make sure 340GUI is selected next to ANYCPU and press Start.
+16. Sign in with Agent Number "11111111111111111111" and Password "test" and Press Login.
+17. Press Add New Agent on the Home Page.
+18. Write down the Agent Number that is diplayed and enter into:
+	a. Username: jsmith455
+	b. Agent First Name: John
+	c. Agent Last Name: Smith
+	d. Password: testing
+	e. User Type: Agent
+	f. Department: Sales
+19. Press Logout on the Home Page.
+20. Login in with Agent Number to be the one you wrote down and Password "testing".
+21. The system should have worked perfectly. 

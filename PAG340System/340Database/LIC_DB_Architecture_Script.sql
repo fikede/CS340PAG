@@ -9,8 +9,6 @@
 USE LIC_PAG
 GO
 
-CREATE DATABASE
-
 CREATE TABLE Department
 (
 name varchar(50)
