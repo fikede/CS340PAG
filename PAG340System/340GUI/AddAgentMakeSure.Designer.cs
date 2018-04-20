@@ -39,20 +39,22 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_Comment = new System.Windows.Forms.Label();
+            this.label_CancelConfirm = new System.Windows.Forms.Label();
             this.button_Yes = new System.Windows.Forms.Button();
             this.button_No = new System.Windows.Forms.Button();
+            this.label_SubmitSuccess = new System.Windows.Forms.Label();
+            this.button_Ok = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label_Comment
+            // label_CancelConfirm
             // 
-            this.label_Comment.AutoSize = true;
-            this.label_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Comment.Location = new System.Drawing.Point(67, 61);
-            this.label_Comment.Name = "label_Comment";
-            this.label_Comment.Size = new System.Drawing.Size(147, 16);
-            this.label_Comment.TabIndex = 0;
-            this.label_Comment.Text = "Are you sure to cancel?";
+            this.label_CancelConfirm.AutoSize = true;
+            this.label_CancelConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CancelConfirm.Location = new System.Drawing.Point(70, 58);
+            this.label_CancelConfirm.Name = "label_CancelConfirm";
+            this.label_CancelConfirm.Size = new System.Drawing.Size(147, 16);
+            this.label_CancelConfirm.TabIndex = 0;
+            this.label_CancelConfirm.Text = "Are you sure to cancel?";
             // 
             // button_Yes
             // 
@@ -76,15 +78,38 @@ namespace _340GUI
             this.button_No.UseVisualStyleBackColor = true;
             this.button_No.Click += new System.EventHandler(this.button_No_Click);
             // 
+            // label_SubmitSuccess
+            // 
+            this.label_SubmitSuccess.AutoSize = true;
+            this.label_SubmitSuccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_SubmitSuccess.Location = new System.Drawing.Point(43, 58);
+            this.label_SubmitSuccess.Name = "label_SubmitSuccess";
+            this.label_SubmitSuccess.Size = new System.Drawing.Size(193, 16);
+            this.label_SubmitSuccess.TabIndex = 3;
+            this.label_SubmitSuccess.Text = "Successfully added new agent.";
+            // 
+            // button_Ok
+            // 
+            this.button_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Ok.Location = new System.Drawing.Point(98, 103);
+            this.button_Ok.Name = "button_Ok";
+            this.button_Ok.Size = new System.Drawing.Size(75, 23);
+            this.button_Ok.TabIndex = 4;
+            this.button_Ok.Text = "Ok";
+            this.button_Ok.UseVisualStyleBackColor = true;
+            this.button_Ok.Click += new System.EventHandler(this.button_Ok_Click);
+            // 
             // AddAgentMakeSure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(276, 159);
+            this.Controls.Add(this.button_Ok);
+            this.Controls.Add(this.label_SubmitSuccess);
             this.Controls.Add(this.button_No);
             this.Controls.Add(this.button_Yes);
-            this.Controls.Add(this.label_Comment);
+            this.Controls.Add(this.label_CancelConfirm);
             this.Name = "AddAgentMakeSure";
             this.Text = "AddAgentMakeSure";
             this.ResumeLayout(false);
@@ -94,10 +119,12 @@ namespace _340GUI
 
         #endregion
 
-        private Label label_Comment;
+        private Label label_CancelConfirm;
         private Button button_Yes;
         private Button button_No;
         private AddNewAgent previousPage;
         private Agent usingAgent;
+        private Label label_SubmitSuccess;
+        private Button button_Ok;
     }
 }

@@ -25,9 +25,11 @@ namespace _340GUI
 
         private void linkLabel_CreatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PricePolicy pricePolicy = new PricePolicy(usingAgent);
-            pricePolicy.Show();
-            this.Close();
+            IncompleteFeature incomplete = new IncompleteFeature();
+            incomplete.Show();
+            //PricePolicy pricePolicy = new PricePolicy(usingAgent);
+            //pricePolicy.Show();
+            //this.Close();
         }
 
         private void linkLabel_Search_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,9 +46,11 @@ namespace _340GUI
 
         private void linkLabel_DelinquentAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Delinquent delinquent = new Delinquent(usingAgent);
-            delinquent.Show();
-            this.Close();
+            IncompleteFeature incomplete = new IncompleteFeature();
+            incomplete.Show();
+            //Delinquent delinquent = new Delinquent(usingAgent);
+            //delinquent.Show();
+            //this.Close();
         }
 
         private void linkLabel_AddNewAgent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

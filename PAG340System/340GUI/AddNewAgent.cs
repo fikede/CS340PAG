@@ -41,15 +41,14 @@ namespace _340GUI
                 String Department = comboBox_Department.Text;
                 Agent newAgent = new Agent(AgentFirstName, AgentLastName, AgentNumber, UserName, Password, UserType, Department);
                 usingManager.addAgent(newAgent);
-                AddAgentMakeSure makeSurePage = new AddAgentMakeSure(this, usingManager);
+                AddAgentMakeSure makeSurePage = new AddAgentMakeSure(this, usingManager, true);
                 makeSurePage.Show();
-                this.Close();
             }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            AddAgentMakeSure confirmPage = new AddAgentMakeSure(this , usingManager);
+            AddAgentMakeSure confirmPage = new AddAgentMakeSure(this , usingManager, false);
             confirmPage.Show();
         }
 

@@ -57,8 +57,10 @@ namespace _340GUI
 
         private void linkLabel_CancelPolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CancelPolicy cancelPolicy = new CancelPolicy(usingAgent, this, inPolicy);
-            cancelPolicy.Show();
+            IncompleteFeature incomplete = new IncompleteFeature();
+            incomplete.Show();
+            //CancelPolicy cancelPolicy = new CancelPolicy(usingAgent, this, inPolicy);
+            //cancelPolicy.Show();
         }
 
         private void linkLabel_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -69,22 +71,28 @@ namespace _340GUI
 
         private void linkLabel_UpdatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            UpdatePolicy update = new UpdatePolicy(usingAgent, this, inPolicy, previousPage);
-            update.Show();
-            this.Hide();
+            IncompleteFeature incomplete = new IncompleteFeature();
+            incomplete.Show();
+            //UpdatePolicy update = new UpdatePolicy(usingAgent, this, inPolicy, previousPage);
+            //update.Show();
+            //this.Hide();
         }
 
         private void linkLabel_MakeClaim_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
-            claim.Show();
+            IncompleteFeature incomplete = new IncompleteFeature();
+            incomplete.Show();
+            //MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
+            //claim.Show();
         }
 
         private void linkLabel_ViewPaymentHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PaymentHistory payment = new PaymentHistory(this, inPolicy);
-            payment.Show();
-            this.Hide();
+            IncompleteFeature incomplete = new IncompleteFeature();
+            incomplete.Show();
+            //PaymentHistory payment = new PaymentHistory(this, inPolicy);
+            //payment.Show();
+            //this.Hide();
         }
 
         private string convertBool(bool b)
