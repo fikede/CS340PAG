@@ -18,7 +18,8 @@ namespace _340GUI
             InitializeComponent();
             previousPage = inPage;
             usingAgent = inUsingAgent;
-            if (submit) {
+            if (submit)
+            {
                 label_CancelConfirm.Visible = false;
                 button_Yes.Visible = false;
                 button_No.Visible = false;

@@ -95,7 +95,7 @@ namespace _340GUI
             this.label_CancelWarning.AutoSize = true;
             this.label_CancelWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_CancelWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_CancelWarning.Location = new System.Drawing.Point(60, 62);
+            this.label_CancelWarning.Location = new System.Drawing.Point(57, 62);
             this.label_CancelWarning.Name = "label_CancelWarning";
             this.label_CancelWarning.Size = new System.Drawing.Size(209, 16);
             this.label_CancelWarning.TabIndex = 11;

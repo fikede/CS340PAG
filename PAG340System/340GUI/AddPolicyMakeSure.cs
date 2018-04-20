@@ -37,6 +37,10 @@ namespace _340GUI
         private void button_Save_Click(object sender, EventArgs e)
         {
             completePolicy.saveToDataBase();
+            Home home = new Home(usingAgent);
+            home.Show();
+            previousPage.Close();
+            this.Close();
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
