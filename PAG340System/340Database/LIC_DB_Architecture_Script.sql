@@ -107,3 +107,10 @@ CONSTRAINT PK_Beneficiary PRIMARY KEY(policy_number, first_name, last_name),
 CONSTRAINT FK_Beneficiary FOREIGN KEY(policy_number)
 	REFERENCES Policy([number])
 )
+
+CREATE TABLE USInflation
+(
+[date] date,
+[value] decimal(6,3),
+CONSTRAINT PK_USInflation PRIMARY KEY([date], [value])
+)
