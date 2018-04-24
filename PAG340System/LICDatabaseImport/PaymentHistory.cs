@@ -32,14 +32,24 @@ namespace LICDatabaseImport
 
         public void updateClaimedPolicies()
         {
+            int columnNumber = 0;
             List<string> policyList = new List<string>();
             List<string> dates = new List<string>();
+
             string connectionString = LICDatabaseImport.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand("getClaims", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             conn.Open();
-            //need to complete
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                columnNumber = reader.GetOrdinal("number");
+                policyList.Add(reader.GetString(columnNumber));
+                columnNumber = reader.GetOrdinal("holder_ID");
+                dates.Add(reader.GetString(columnNumber));
+            }
             conn.Close();
         }
 

@@ -22,7 +22,8 @@ namespace LICDatabaseImport
             LifePolicy policy = new LifePolicy(policyNumbers);
             Beneficiary beneficiary = new Beneficiary();
             User users = new User();
-            
+            PaymentHistory payments = new PaymentHistory(policyNumbers);
+            /*
             try
             {
                 using (StreamReader stringReader = new StreamReader(filePath + "User.txt"))
@@ -73,7 +74,6 @@ namespace LICDatabaseImport
                 throw new FileNotFoundException("File Not Found", e);
             }
 
-            PaymentHistory payments = new PaymentHistory(policyNumbers);
             try
             {
                 using (StreamReader stringReader = new StreamReader(filePath + "PaymentHistory0.txt"))
@@ -186,11 +186,11 @@ namespace LICDatabaseImport
                 throw new FileNotFoundException("File Not Found", e);
             }
 
+            */
+
             // need to end policies with claims.
 
             // need to upload US Dollar Inflation.
-
-
         }
     }
 }
