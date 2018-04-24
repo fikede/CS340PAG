@@ -478,6 +478,7 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyholderDOB);
             this.Name = "PricePolicy";
             this.Text = "Price a Policy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PricePolicy_FormClosing);
             this.panel_HeartDisease.ResumeLayout(false);
             this.panel_HeartDisease.PerformLayout();
             this.panel_Cancer.ResumeLayout(false);

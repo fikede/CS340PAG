@@ -37,5 +37,10 @@ namespace _340GUI
                 label_WarningComment.Visible = true;
             }
         }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

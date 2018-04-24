@@ -264,6 +264,7 @@ namespace _340GUI
             this.Controls.Add(this.label_AddNewAgent);
             this.Name = "AddNewAgent";
             this.Text = "Add New Agent";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddNewAgent_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

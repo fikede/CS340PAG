@@ -39,11 +39,6 @@ namespace _340GUI
             this.Close();
         }
 
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel_DelinquentAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             IncompleteFeature incomplete = new IncompleteFeature();
@@ -72,6 +67,11 @@ namespace _340GUI
             Login loginPage = new Login();
             loginPage.Show();
             this.Close();
+        }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
         }
     }
 }

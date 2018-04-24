@@ -320,6 +320,7 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_Home);
             this.Name = "Delinquent";
             this.Text = "Delinquent Account Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Delinquent_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

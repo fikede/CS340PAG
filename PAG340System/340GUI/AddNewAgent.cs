@@ -57,5 +57,10 @@ namespace _340GUI
             if (s.Equals("Manager")) return "M";
             else return "A";
         }
+
+        private void AddNewAgent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

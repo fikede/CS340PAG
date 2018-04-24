@@ -334,6 +334,7 @@ namespace _340GUI
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Search";
             this.Text = "Search Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Search_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

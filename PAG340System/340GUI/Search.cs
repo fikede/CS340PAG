@@ -141,5 +141,10 @@ namespace _340GUI
             policyPage.Show();
             this.Hide();
         }
+
+        private void Search_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

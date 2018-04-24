@@ -740,6 +740,7 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyNumber);
             this.Name = "AddPolicy";
             this.Text = "Add Policy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPolicy_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

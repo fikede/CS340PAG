@@ -729,6 +729,7 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyNumber);
             this.Name = "PolicyPage";
             this.Text = "Policy Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PolicyPage_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

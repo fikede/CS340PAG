@@ -796,6 +796,7 @@ namespace _340GUI
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "UpdatePolicy";
             this.Text = "Update Policy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdatePolicy_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

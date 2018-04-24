@@ -100,5 +100,10 @@ namespace _340GUI
                 listBox_DelinquentList.Visible = true;
             }
         }
+
+        private void Delinquent_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

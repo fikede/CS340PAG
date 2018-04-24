@@ -28,5 +28,10 @@ namespace _340GUI
             previousePage.Show();
             this.Close();
         }
+
+        private void PaymentHistory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }
