@@ -168,6 +168,18 @@ WHERE Policy.end_date IS NOT NULL
 END
 GO
 
+-----------------------------------------------------------------------------------------------------
+
+-- Procedure to retrieve all policy numbers that have claims paid.
+CREATE PROCEDURE getClaims
+AS
+BEGIN
+SELECT policy_number
+FROM Payment
+WHERE [type] = 'C' OR [type] = 'c'
+END
+GO
+
 
 -----------------------------------------------------------------------------------------------------
 -- Confirmation Search

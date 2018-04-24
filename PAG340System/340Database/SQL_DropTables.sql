@@ -4,6 +4,7 @@
 USE LIC_PAG
 GO
 
+DROP TABLE USInflation
 DROP TABLE Delinquent_Accounts_Parameters
 DROP TABLE Beneficiary
 DROP TABLE Payment
@@ -43,5 +44,4 @@ ALTER COLUMN amount decimal(10,2) null
 
 ALTER TABLE Delinquent_Accounts_Parameters
 ALTER COLUMN amount_overdue decimal(10,2) null
-
 */
