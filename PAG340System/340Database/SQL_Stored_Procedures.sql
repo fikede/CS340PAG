@@ -174,7 +174,7 @@ GO
 CREATE PROCEDURE getClaims
 AS
 BEGIN
-SELECT policy_number
+SELECT policy_number, [date]
 FROM Payment
 WHERE [type] = 'C' OR [type] = 'c'
 END
