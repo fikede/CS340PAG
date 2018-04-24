@@ -1,7 +1,9 @@
 ﻿/*
  * Author: Morgan Johnson
  * Program Purpose: This program is specifically designed for the "one-time" use of data import to the LIC DB
- * Current Status:  Encounter Issue with pushing Payments to SQL Policy Numbers dont exist. Seeking Guidance.
+ * Current Status:  Added all data import files.
+ *                  - Need to end policies with claims.
+ *                  - Need to import US Dollar Inflation.
  */
 using System;
 using System.IO;
@@ -20,7 +22,7 @@ namespace LICDatabaseImport
             LifePolicy policy = new LifePolicy(policyNumbers);
             Beneficiary beneficiary = new Beneficiary();
             User users = new User();
-            /*
+            
             try
             {
                 using (StreamReader stringReader = new StreamReader(filePath + "User.txt"))
@@ -36,7 +38,7 @@ namespace LICDatabaseImport
             catch (Exception e)
             {
                 throw new FileNotFoundException("File Not Found", e);
-            }*/
+            }
             try
             {
                 using (StreamReader stringReader = new StreamReader(filePath + "LifePolicy.txt"))
@@ -52,7 +54,7 @@ namespace LICDatabaseImport
             catch (Exception e)
             {
                 throw new FileNotFoundException("File Not Found", e);
-            }/*
+            }
 
 
             try
@@ -69,7 +71,7 @@ namespace LICDatabaseImport
             catch (Exception e)
             {
                 throw new FileNotFoundException("File Not Found", e);
-            }*/
+            }
 
             PaymentHistory payments = new PaymentHistory(policyNumbers);
             try
@@ -183,6 +185,12 @@ namespace LICDatabaseImport
             {
                 throw new FileNotFoundException("File Not Found", e);
             }
+
+            // need to end policies with claims.
+
+            // need to upload US Dollar Inflation.
+
+
         }
     }
 }

@@ -11,7 +11,7 @@ namespace LICDatabaseImport
     class PaymentHistory : Savable
     {
         // for PaymentHistory
-        
+
         private List<string> policyNumbers;
         private char[] amount = new char[10];
         private char[] paymentDateTime = new char[12];
@@ -28,6 +28,19 @@ namespace LICDatabaseImport
             paymentPolicyNum = getInfo(22, 51, s, paymentPolicyNum);
             paymentDescription = getInfo(52, 52, s, paymentDescription);
             saveToDatabase();
+        }
+
+        public void updateClaimedPolicies()
+        {
+            List<string> policyList = new List<string>();
+            List<string> dates = new List<string>();
+            string connectionString = LICDatabaseImport.Properties.Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand("getClaims", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            //need to complete
+            conn.Close();
         }
 
         private static char[] getInfo(int start, int end, string input, char[] output)
@@ -107,7 +120,7 @@ namespace LICDatabaseImport
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-            }           
+            }
         }
     }
 }
