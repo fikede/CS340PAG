@@ -203,6 +203,21 @@ WHERE number = @policyNumber
 END
 GO
 
+-----------------------------------------------------------------------------------------------------
+-- Update Information
+-----------------------------------------------------------------------------------------------------
+
+-- Ending a policy by claim.
+CREATE PROCEDURE endPolicyWithClaim @policyNumber AS varchar(30), @cancelDate AS datetime
+AS
+BEGIN
+
+UPDATE Policy
+SET end_date = @cancelDate
+WHERE [number] = @policyNumber
+END
+GO
+
 /*
 -----------------------------------------------------------------------------------------------------
 -- NOTE: NO OTHER PROCEDURES HAVE BEEN CREATED IN THE DB.
@@ -241,15 +256,4 @@ END
 GO
 
 -----------------------------------------------------------------------------------------------------
-
-CREATE PROCEDURE endPolicyWithClaim
-AS
-BEGIN
-
---NEED TO DO THE FOLLOWING:
-	1) Make a claim
-	2) Modify Policy Table
-
-END
-GO
 */

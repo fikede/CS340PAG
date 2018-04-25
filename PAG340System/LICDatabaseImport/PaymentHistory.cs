@@ -35,6 +35,7 @@ namespace LICDatabaseImport
             int columnNumber = 0;
             List<string> policyList = new List<string>();
             List<string> dates = new List<string>();
+            DateTime date = new DateTime();
 
             string connectionString = LICDatabaseImport.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -45,12 +46,27 @@ namespace LICDatabaseImport
 
             while (reader.Read())
             {
-                columnNumber = reader.GetOrdinal("number");
+                columnNumber = reader.GetOrdinal("policy_number");
                 policyList.Add(reader.GetString(columnNumber));
-                columnNumber = reader.GetOrdinal("holder_ID");
-                dates.Add(reader.GetString(columnNumber));
+                columnNumber = reader.GetOrdinal("date");
+                date = reader.GetDateTime(columnNumber);
+                dates.Add(date.ToShortDateString()); //removed the times for ending a policy... not needed.
             }
             conn.Close();
+            // now that we have the policies and dates....
+
+            // PROBABLY INEFFICIENT BUT EFFECTIVE.
+            for (int i = 0; i < policyList.Count; i++)
+            {
+                SqlCommand cmd_Policy = new SqlCommand("endPolicyWithClaim", conn);
+                cmd_Policy.CommandType = CommandType.StoredProcedure;
+                cmd_Policy.Parameters.AddWithValue("@policyNumber", policyList[i]);
+                cmd_Policy.Parameters.AddWithValue("@cancelDate", dates[i]);
+                conn.Open();
+                cmd_Policy.ExecuteNonQuery();
+                conn.Close();
+            }
+            // end the policy.
         }
 
         private static char[] getInfo(int start, int end, string input, char[] output)
