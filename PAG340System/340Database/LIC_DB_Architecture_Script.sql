@@ -113,5 +113,5 @@ CREATE TABLE USInflation
 [month] varchar(10), 
 [year] varchar (4),
 [value] decimal(6,3),
-CONSTRAINT PK_USInflation PRIMARY KEY([month], [year], [value])
+CONSTRAINT PK_USInflation PRIMARY KEY([month], [year])
 )
