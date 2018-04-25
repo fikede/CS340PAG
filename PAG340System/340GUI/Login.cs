@@ -20,7 +20,7 @@ namespace _340GUI
             label_WarningComment.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_Login_Click(object sender, EventArgs e)
         {
             Agent usingAgent = new Agent();
             string id = textBox_AgentNumber.Text;
@@ -38,9 +38,12 @@ namespace _340GUI
             }
         }
 
-        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        private void button_Login_KeyPress(object sender, KeyPressEventArgs e)
         {
-            System.Environment.Exit(1);
+            if (e.KeyChar == 13)
+            {
+                button_Login.PerformClick();
+            }
         }
     }
 }

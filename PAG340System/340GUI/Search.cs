@@ -85,6 +85,9 @@ namespace _340GUI
 
         private void button_Submit_Click(object sender, EventArgs e)
         {
+            //Clear the box first
+            //Create Button to view the selected policy
+            //listBox_Searching.Dispose();
             if (textBox_PolicyNumber.Text != "" || textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || 
                 textBox_PolicyholderFirstName.Text != "" || textBox_PolicyholderLastName.Text != "")
             {
@@ -140,11 +143,6 @@ namespace _340GUI
             PolicyPage policyPage = new PolicyPage(usingAgent, this, policy);
             policyPage.Show();
             this.Hide();
-        }
-
-        private void Search_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Environment.Exit(1);
         }
     }
 }

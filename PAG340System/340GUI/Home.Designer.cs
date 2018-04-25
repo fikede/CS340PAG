@@ -54,7 +54,7 @@ namespace _340GUI
             this.linkLabel_Logout.Location = new System.Drawing.Point(645, 357);
             this.linkLabel_Logout.Name = "linkLabel_Logout";
             this.linkLabel_Logout.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel_Logout.TabIndex = 5;
+            this.linkLabel_Logout.TabIndex = 6;
             this.linkLabel_Logout.TabStop = true;
             this.linkLabel_Logout.Text = "Log out";
             this.linkLabel_Logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Logout_LinkClicked);
@@ -65,7 +65,7 @@ namespace _340GUI
             this.linkLabel_DelinquentAccounts.Location = new System.Drawing.Point(333, 357);
             this.linkLabel_DelinquentAccounts.Name = "linkLabel_DelinquentAccounts";
             this.linkLabel_DelinquentAccounts.Size = new System.Drawing.Size(106, 13);
-            this.linkLabel_DelinquentAccounts.TabIndex = 3;
+            this.linkLabel_DelinquentAccounts.TabIndex = 4;
             this.linkLabel_DelinquentAccounts.TabStop = true;
             this.linkLabel_DelinquentAccounts.Text = "Delinquent Accounts";
             this.linkLabel_DelinquentAccounts.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_DelinquentAccounts_LinkClicked);
@@ -76,7 +76,7 @@ namespace _340GUI
             this.linkLabel_CreatePolicy.Location = new System.Drawing.Point(185, 357);
             this.linkLabel_CreatePolicy.Name = "linkLabel_CreatePolicy";
             this.linkLabel_CreatePolicy.Size = new System.Drawing.Size(78, 13);
-            this.linkLabel_CreatePolicy.TabIndex = 2;
+            this.linkLabel_CreatePolicy.TabIndex = 3;
             this.linkLabel_CreatePolicy.TabStop = true;
             this.linkLabel_CreatePolicy.Text = "Create a Policy";
             this.linkLabel_CreatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_CreatePolicy_LinkClicked);
@@ -87,7 +87,7 @@ namespace _340GUI
             this.linkLabel_Search.Location = new System.Drawing.Point(71, 357);
             this.linkLabel_Search.Name = "linkLabel_Search";
             this.linkLabel_Search.Size = new System.Drawing.Size(41, 13);
-            this.linkLabel_Search.TabIndex = 1;
+            this.linkLabel_Search.TabIndex = 2;
             this.linkLabel_Search.TabStop = true;
             this.linkLabel_Search.Text = "Search";
             this.linkLabel_Search.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Search_LinkClicked);
@@ -98,7 +98,7 @@ namespace _340GUI
             this.linkLabel_AddNewAgent.Location = new System.Drawing.Point(501, 357);
             this.linkLabel_AddNewAgent.Name = "linkLabel_AddNewAgent";
             this.linkLabel_AddNewAgent.Size = new System.Drawing.Size(82, 13);
-            this.linkLabel_AddNewAgent.TabIndex = 4;
+            this.linkLabel_AddNewAgent.TabIndex = 5;
             this.linkLabel_AddNewAgent.TabStop = true;
             this.linkLabel_AddNewAgent.Text = "Add New Agent";
             this.linkLabel_AddNewAgent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_AddNewAgent_LinkClicked);
@@ -129,7 +129,6 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_Search);
             this.Name = "Home";
             this.Text = "Home Page";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Home_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LICLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

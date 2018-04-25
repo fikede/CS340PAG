@@ -94,7 +94,8 @@ namespace _340GUI
             this.button_Login.TabIndex = 4;
             this.button_Login.Text = "Login";
             this.button_Login.UseVisualStyleBackColor = false;
-            this.button_Login.Click += new System.EventHandler(this.button1_Click);
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
+            this.button_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button_Login_KeyPress);
             // 
             // pictureBox_Warning
             // 
@@ -132,7 +133,6 @@ namespace _340GUI
             this.Controls.Add(this.Label_AgentNumber);
             this.Name = "Login";
             this.Text = "Login Page";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

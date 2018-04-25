@@ -68,10 +68,5 @@ namespace _340GUI
             loginPage.Show();
             this.Close();
         }
-
-        private void Home_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Environment.Exit(1);
-        }
     }
 }

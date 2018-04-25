@@ -272,7 +272,7 @@ namespace _340GUI
             this.textBox_DangerousActivity.Location = new System.Drawing.Point(362, 262);
             this.textBox_DangerousActivity.Name = "textBox_DangerousActivity";
             this.textBox_DangerousActivity.Size = new System.Drawing.Size(239, 20);
-            this.textBox_DangerousActivity.TabIndex = 59;
+            this.textBox_DangerousActivity.TabIndex = 62;
             // 
             // textBox_HoursOfExercise
             // 
@@ -280,7 +280,7 @@ namespace _340GUI
             this.textBox_HoursOfExercise.Location = new System.Drawing.Point(362, 284);
             this.textBox_HoursOfExercise.Name = "textBox_HoursOfExercise";
             this.textBox_HoursOfExercise.Size = new System.Drawing.Size(239, 20);
-            this.textBox_HoursOfExercise.TabIndex = 60;
+            this.textBox_HoursOfExercise.TabIndex = 63;
             // 
             // radioButton_YesHeartDisease
             // 
@@ -288,7 +288,7 @@ namespace _340GUI
             this.radioButton_YesHeartDisease.Location = new System.Drawing.Point(3, 3);
             this.radioButton_YesHeartDisease.Name = "radioButton_YesHeartDisease";
             this.radioButton_YesHeartDisease.Size = new System.Drawing.Size(43, 17);
-            this.radioButton_YesHeartDisease.TabIndex = 61;
+            this.radioButton_YesHeartDisease.TabIndex = 56;
             this.radioButton_YesHeartDisease.TabStop = true;
             this.radioButton_YesHeartDisease.Text = "Yes";
             this.radioButton_YesHeartDisease.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@ namespace _340GUI
             this.radioButton_NoHeartDisease.Location = new System.Drawing.Point(65, 3);
             this.radioButton_NoHeartDisease.Name = "radioButton_NoHeartDisease";
             this.radioButton_NoHeartDisease.Size = new System.Drawing.Size(39, 17);
-            this.radioButton_NoHeartDisease.TabIndex = 62;
+            this.radioButton_NoHeartDisease.TabIndex = 57;
             this.radioButton_NoHeartDisease.TabStop = true;
             this.radioButton_NoHeartDisease.Text = "No";
             this.radioButton_NoHeartDisease.UseVisualStyleBackColor = true;
@@ -320,7 +320,7 @@ namespace _340GUI
             this.button_Accept.Location = new System.Drawing.Point(246, 361);
             this.button_Accept.Name = "button_Accept";
             this.button_Accept.Size = new System.Drawing.Size(75, 23);
-            this.button_Accept.TabIndex = 68;
+            this.button_Accept.TabIndex = 66;
             this.button_Accept.Text = "Accept";
             this.button_Accept.UseVisualStyleBackColor = true;
             this.button_Accept.Click += new System.EventHandler(this.button_Accept_Click);
@@ -331,7 +331,7 @@ namespace _340GUI
             this.button_Cancel.Location = new System.Drawing.Point(464, 361);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_Cancel.TabIndex = 69;
+            this.button_Cancel.TabIndex = 67;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
             this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
@@ -354,7 +354,7 @@ namespace _340GUI
             this.button_Price.Location = new System.Drawing.Point(546, 327);
             this.button_Price.Name = "button_Price";
             this.button_Price.Size = new System.Drawing.Size(55, 23);
-            this.button_Price.TabIndex = 72;
+            this.button_Price.TabIndex = 65;
             this.button_Price.Text = "Price";
             this.button_Price.UseVisualStyleBackColor = false;
             this.button_Price.Click += new System.EventHandler(this.button_Price_Click);
@@ -383,7 +383,7 @@ namespace _340GUI
             this.radioButton_YesCancer.Location = new System.Drawing.Point(3, 3);
             this.radioButton_YesCancer.Name = "radioButton_YesCancer";
             this.radioButton_YesCancer.Size = new System.Drawing.Size(43, 17);
-            this.radioButton_YesCancer.TabIndex = 61;
+            this.radioButton_YesCancer.TabIndex = 58;
             this.radioButton_YesCancer.TabStop = true;
             this.radioButton_YesCancer.Text = "Yes";
             this.radioButton_YesCancer.UseVisualStyleBackColor = true;
@@ -394,7 +394,7 @@ namespace _340GUI
             this.radioButton_NoCancer.Location = new System.Drawing.Point(65, 3);
             this.radioButton_NoCancer.Name = "radioButton_NoCancer";
             this.radioButton_NoCancer.Size = new System.Drawing.Size(39, 17);
-            this.radioButton_NoCancer.TabIndex = 62;
+            this.radioButton_NoCancer.TabIndex = 59;
             this.radioButton_NoCancer.TabStop = true;
             this.radioButton_NoCancer.Text = "No";
             this.radioButton_NoCancer.UseVisualStyleBackColor = true;
@@ -414,7 +414,7 @@ namespace _340GUI
             this.radioButton_YesHospitalized.Location = new System.Drawing.Point(3, 3);
             this.radioButton_YesHospitalized.Name = "radioButton_YesHospitalized";
             this.radioButton_YesHospitalized.Size = new System.Drawing.Size(43, 17);
-            this.radioButton_YesHospitalized.TabIndex = 61;
+            this.radioButton_YesHospitalized.TabIndex = 60;
             this.radioButton_YesHospitalized.TabStop = true;
             this.radioButton_YesHospitalized.Text = "Yes";
             this.radioButton_YesHospitalized.UseVisualStyleBackColor = true;
@@ -425,7 +425,7 @@ namespace _340GUI
             this.radioButton_NoHospitalized.Location = new System.Drawing.Point(65, 3);
             this.radioButton_NoHospitalized.Name = "radioButton_NoHospitalized";
             this.radioButton_NoHospitalized.Size = new System.Drawing.Size(39, 17);
-            this.radioButton_NoHospitalized.TabIndex = 62;
+            this.radioButton_NoHospitalized.TabIndex = 61;
             this.radioButton_NoHospitalized.TabStop = true;
             this.radioButton_NoHospitalized.Text = "No";
             this.radioButton_NoHospitalized.UseVisualStyleBackColor = true;
@@ -436,7 +436,7 @@ namespace _340GUI
             this.textBox_PayOffAmount.Location = new System.Drawing.Point(362, 306);
             this.textBox_PayOffAmount.Name = "textBox_PayOffAmount";
             this.textBox_PayOffAmount.Size = new System.Drawing.Size(239, 20);
-            this.textBox_PayOffAmount.TabIndex = 76;
+            this.textBox_PayOffAmount.TabIndex = 64;
             // 
             // PricePolicy
             // 
@@ -478,7 +478,6 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyholderDOB);
             this.Name = "PricePolicy";
             this.Text = "Price a Policy";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PricePolicy_FormClosing);
             this.panel_HeartDisease.ResumeLayout(false);
             this.panel_HeartDisease.PerformLayout();
             this.panel_Cancer.ResumeLayout(false);

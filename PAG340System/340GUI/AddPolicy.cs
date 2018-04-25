@@ -73,10 +73,5 @@ namespace _340GUI
             if (b) return "Yes";
             else return "No";
         }
-
-        private void AddPolicy_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Environment.Exit(1);
-        }
     }
 }

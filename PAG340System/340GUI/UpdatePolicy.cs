@@ -89,10 +89,5 @@ namespace _340GUI
             }
             return true;
         }
-
-        private void UpdatePolicy_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Environment.Exit(1);
-        }
     }
 }

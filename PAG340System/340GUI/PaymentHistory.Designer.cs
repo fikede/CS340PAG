@@ -139,7 +139,6 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_Back);
             this.Name = "PaymentHistory";
             this.Text = "Payment History";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PaymentHistory_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
