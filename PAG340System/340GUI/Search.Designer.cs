@@ -74,7 +74,7 @@ namespace _340GUI
             this.button_Submit.Location = new System.Drawing.Point(486, 193);
             this.button_Submit.Name = "button_Submit";
             this.button_Submit.Size = new System.Drawing.Size(75, 23);
-            this.button_Submit.TabIndex = 33;
+            this.button_Submit.TabIndex = 28;
             this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = false;
             this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
@@ -84,35 +84,35 @@ namespace _340GUI
             this.textBox_PolicyholderLastName.Location = new System.Drawing.Point(323, 167);
             this.textBox_PolicyholderLastName.Name = "textBox_PolicyholderLastName";
             this.textBox_PolicyholderLastName.Size = new System.Drawing.Size(238, 20);
-            this.textBox_PolicyholderLastName.TabIndex = 32;
+            this.textBox_PolicyholderLastName.TabIndex = 27;
             // 
             // textBox_PolicyholderFirstName
             // 
             this.textBox_PolicyholderFirstName.Location = new System.Drawing.Point(323, 141);
             this.textBox_PolicyholderFirstName.Name = "textBox_PolicyholderFirstName";
             this.textBox_PolicyholderFirstName.Size = new System.Drawing.Size(238, 20);
-            this.textBox_PolicyholderFirstName.TabIndex = 31;
+            this.textBox_PolicyholderFirstName.TabIndex = 26;
             // 
             // textBox_AgentLastName
             // 
             this.textBox_AgentLastName.Location = new System.Drawing.Point(323, 115);
             this.textBox_AgentLastName.Name = "textBox_AgentLastName";
             this.textBox_AgentLastName.Size = new System.Drawing.Size(238, 20);
-            this.textBox_AgentLastName.TabIndex = 30;
+            this.textBox_AgentLastName.TabIndex = 25;
             // 
             // textBox_AgentFirstName
             // 
             this.textBox_AgentFirstName.Location = new System.Drawing.Point(323, 89);
             this.textBox_AgentFirstName.Name = "textBox_AgentFirstName";
             this.textBox_AgentFirstName.Size = new System.Drawing.Size(238, 20);
-            this.textBox_AgentFirstName.TabIndex = 29;
+            this.textBox_AgentFirstName.TabIndex = 24;
             // 
             // textBox_PolicyNumber
             // 
             this.textBox_PolicyNumber.Location = new System.Drawing.Point(323, 63);
             this.textBox_PolicyNumber.Name = "textBox_PolicyNumber";
             this.textBox_PolicyNumber.Size = new System.Drawing.Size(238, 20);
-            this.textBox_PolicyNumber.TabIndex = 28;
+            this.textBox_PolicyNumber.TabIndex = 23;
             // 
             // label_PolicyholderLastName
             // 
@@ -175,7 +175,7 @@ namespace _340GUI
             this.linkLabel_Logout.Location = new System.Drawing.Point(12, 170);
             this.linkLabel_Logout.Name = "linkLabel_Logout";
             this.linkLabel_Logout.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel_Logout.TabIndex = 21;
+            this.linkLabel_Logout.TabIndex = 22;
             this.linkLabel_Logout.TabStop = true;
             this.linkLabel_Logout.Text = "Log out";
             this.linkLabel_Logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Logout_LinkClicked);
@@ -230,7 +230,7 @@ namespace _340GUI
             this.linkLabel_AddNewAgent.Location = new System.Drawing.Point(12, 144);
             this.linkLabel_AddNewAgent.Name = "linkLabel_AddNewAgent";
             this.linkLabel_AddNewAgent.Size = new System.Drawing.Size(82, 13);
-            this.linkLabel_AddNewAgent.TabIndex = 34;
+            this.linkLabel_AddNewAgent.TabIndex = 21;
             this.linkLabel_AddNewAgent.TabStop = true;
             this.linkLabel_AddNewAgent.Text = "Add New Agent";
             this.linkLabel_AddNewAgent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_AddNewAgent_LinkClicked);

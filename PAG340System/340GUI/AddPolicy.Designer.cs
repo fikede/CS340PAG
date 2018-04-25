@@ -385,21 +385,21 @@ namespace _340GUI
             this.textBox_AddressZip.Location = new System.Drawing.Point(321, 180);
             this.textBox_AddressZip.Name = "textBox_AddressZip";
             this.textBox_AddressZip.Size = new System.Drawing.Size(293, 20);
-            this.textBox_AddressZip.TabIndex = 60;
+            this.textBox_AddressZip.TabIndex = 61;
             // 
             // textBox_BeneficiaryFirstName
             // 
             this.textBox_BeneficiaryFirstName.Location = new System.Drawing.Point(321, 640);
             this.textBox_BeneficiaryFirstName.Name = "textBox_BeneficiaryFirstName";
             this.textBox_BeneficiaryFirstName.Size = new System.Drawing.Size(293, 20);
-            this.textBox_BeneficiaryFirstName.TabIndex = 61;
+            this.textBox_BeneficiaryFirstName.TabIndex = 62;
             // 
             // textBox_BeneficiaryLastName
             // 
             this.textBox_BeneficiaryLastName.Location = new System.Drawing.Point(321, 663);
             this.textBox_BeneficiaryLastName.Name = "textBox_BeneficiaryLastName";
             this.textBox_BeneficiaryLastName.Size = new System.Drawing.Size(293, 20);
-            this.textBox_BeneficiaryLastName.TabIndex = 62;
+            this.textBox_BeneficiaryLastName.TabIndex = 63;
             // 
             // comboBox_AddressState
             // 
@@ -459,7 +459,7 @@ namespace _340GUI
             this.comboBox_AddressState.Location = new System.Drawing.Point(321, 157);
             this.comboBox_AddressState.Name = "comboBox_AddressState";
             this.comboBox_AddressState.Size = new System.Drawing.Size(293, 21);
-            this.comboBox_AddressState.TabIndex = 64;
+            this.comboBox_AddressState.TabIndex = 60;
             // 
             // label_AddPolicy
             // 

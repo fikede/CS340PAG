@@ -545,7 +545,7 @@ namespace _340GUI
             this.comboBox_AddressState.Name = "comboBox_AddressState";
             this.comboBox_AddressState.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox_AddressState.Size = new System.Drawing.Size(239, 21);
-            this.comboBox_AddressState.TabIndex = 68;
+            this.comboBox_AddressState.TabIndex = 61;
             // 
             // label_ShowPolicyNumber
             // 

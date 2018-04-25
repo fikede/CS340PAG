@@ -66,7 +66,7 @@ namespace _340GUI
             this.linkLabel_AddNewAgent.Location = new System.Drawing.Point(12, 144);
             this.linkLabel_AddNewAgent.Name = "linkLabel_AddNewAgent";
             this.linkLabel_AddNewAgent.Size = new System.Drawing.Size(82, 13);
-            this.linkLabel_AddNewAgent.TabIndex = 58;
+            this.linkLabel_AddNewAgent.TabIndex = 57;
             this.linkLabel_AddNewAgent.TabStop = true;
             this.linkLabel_AddNewAgent.Text = "Add New Agent";
             this.linkLabel_AddNewAgent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_AddNewAgent_LinkClicked);
@@ -77,7 +77,7 @@ namespace _340GUI
             this.linkLabel_Logout.Location = new System.Drawing.Point(12, 170);
             this.linkLabel_Logout.Name = "linkLabel_Logout";
             this.linkLabel_Logout.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel_Logout.TabIndex = 57;
+            this.linkLabel_Logout.TabIndex = 58;
             this.linkLabel_Logout.TabStop = true;
             this.linkLabel_Logout.Text = "Log out";
             this.linkLabel_Logout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Logout_LinkClicked);
@@ -195,7 +195,7 @@ namespace _340GUI
             this.button_Submit.Location = new System.Drawing.Point(486, 167);
             this.button_Submit.Name = "button_Submit";
             this.button_Submit.Size = new System.Drawing.Size(75, 23);
-            this.button_Submit.TabIndex = 65;
+            this.button_Submit.TabIndex = 70;
             this.button_Submit.Text = "Submit";
             this.button_Submit.UseVisualStyleBackColor = false;
             this.button_Submit.Click += new System.EventHandler(this.button_Submit_Click);
@@ -205,7 +205,7 @@ namespace _340GUI
             this.textBox_AmountOverdue.Location = new System.Drawing.Point(338, 141);
             this.textBox_AmountOverdue.Name = "textBox_AmountOverdue";
             this.textBox_AmountOverdue.Size = new System.Drawing.Size(223, 20);
-            this.textBox_AmountOverdue.TabIndex = 64;
+            this.textBox_AmountOverdue.TabIndex = 69;
             // 
             // label_AmountOverdue
             // 
@@ -258,14 +258,14 @@ namespace _340GUI
             this.textBox_AgentLastName.Location = new System.Drawing.Point(338, 115);
             this.textBox_AgentLastName.Name = "textBox_AgentLastName";
             this.textBox_AgentLastName.Size = new System.Drawing.Size(223, 20);
-            this.textBox_AgentLastName.TabIndex = 67;
+            this.textBox_AgentLastName.TabIndex = 68;
             // 
             // textBox_AgentFirstName
             // 
             this.textBox_AgentFirstName.Location = new System.Drawing.Point(338, 89);
             this.textBox_AgentFirstName.Name = "textBox_AgentFirstName";
             this.textBox_AgentFirstName.Size = new System.Drawing.Size(223, 20);
-            this.textBox_AgentFirstName.TabIndex = 68;
+            this.textBox_AgentFirstName.TabIndex = 67;
             // 
             // label_ShowAgentFirstName
             // 

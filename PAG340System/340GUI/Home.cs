@@ -39,11 +39,6 @@ namespace _340GUI
             this.Close();
         }
 
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel_DelinquentAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             IncompleteFeature incomplete = new IncompleteFeature();

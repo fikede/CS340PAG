@@ -67,18 +67,15 @@ namespace PAG340MiddleWare
             List<Policy> policyList = new List<Policy>();
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
-            String query;
-            if (policyNumber != "")
-            {
-                query = "execute searchPolicybyPolicyNumber " + policyNumber + ", " + id;
-            }
-            else
-            {
-                query = "execute searchPolicybyHolderName " + policyHolderFirstName + ", " + policyHolderLastName + ", " + id;
-            }
-
-            SqlCommand cmd = new SqlCommand(query);
-            cmd.Connection = conn;
+            String query = "searchPolicy";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            cmd.Parameters.AddWithValue("@agentID", id);
+            cmd.Parameters.AddWithValue("@agentFName", "");
+            cmd.Parameters.AddWithValue("@agentLName", "");
+            cmd.Parameters.AddWithValue("@holderFName", policyHolderFirstName);
+            cmd.Parameters.AddWithValue("@holderLName", policyHolderLastName);
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             policyList = getSearchResults(reader);
@@ -166,10 +163,10 @@ namespace PAG340MiddleWare
                 decimalValue = reader.GetDecimal(columnNumber);
                 policy.Premium = Convert.ToDouble(decimalValue);
 
-                columnNumber = reader.GetOrdinal("first_name");
+                columnNumber = reader.GetOrdinal("holder_first_name");
                 holder.FirstName = reader.GetString(columnNumber);
 
-                columnNumber = reader.GetOrdinal("last_name");
+                columnNumber = reader.GetOrdinal("holder_last_name");
                 holder.LastName = reader.GetString(columnNumber);
 
                 columnNumber = reader.GetOrdinal("street");
@@ -184,11 +181,9 @@ namespace PAG340MiddleWare
                 columnNumber = reader.GetOrdinal("zip");
                 holder.ZIP = reader.GetString(columnNumber);
 
-
                 policy.RepresentativeAgent = rep;
                 policy.Holder = holder;
                 policy.Beneficiary = beneficiary;
-
                 policyList.Add(policy);
             }
             return policyList;
