@@ -189,7 +189,7 @@ namespace LICDatabaseImport
             */
 
             // need to end policies with claims.
-
+            payments.updateClaimedPolicies();
             // need to upload US Dollar Inflation.
         }
     }

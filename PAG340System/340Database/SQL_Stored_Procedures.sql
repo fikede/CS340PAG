@@ -139,16 +139,13 @@ GO
 CREATE PROCEDURE searchPolicy @policyNumber AS varchar(30) = '', @agentID AS varchar(20) = '', @agentFName AS varchar(100) = '', @agentLName AS varchar(100) = '', @holderFName AS varchar(100) = '', @holderLName AS varchar(100) = ''
 AS
 BEGIN
-SELECT [number], holder_ID, emp_ID, Employee.first_name AS agent_first_name, Employee.last_name AS agent_last_name, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, PolicyHolder.first_name AS holder_first_name, PolicyHolder.last_name AS holder_last_name, street, city, [state], zip, Beneficiary.first_name AS beneficiary_first_name, Beneficiary.last_name AS beneficiary_last_name
+SELECT [number], holder_ID, emp_ID, Employee.first_name AS agent_first_name, Employee.last_name AS agent_last_name, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, PolicyHolder.first_name AS holder_first_name, PolicyHolder.last_name AS holder_last_name, street, city, [state], zip
 FROM
 (
 [Policy] INNER JOIN PolicyHolder
 ON [Policy].holder_ID = PolicyHolder.ID
 INNER JOIN Employee
 ON [Policy].emp_ID = Employee.ID
-INNER JOIN Beneficiary
-ON
-Policy.[number] = Beneficiary.policy_number
 )
 WHERE (Policy.[number] LIKE '%'+@policyNumber+'%' AND Policy.emp_ID LIKE '%'+@agentID+'%' AND PolicyHolder.first_name LIKE '%'+@holderFName+'%' AND PolicyHolder.last_name LIKE '%'+@holderLName+'%' AND Employee.first_name LIKE '%'+@agentFName+'%' AND Employee.last_name LIKE '%'+@agentLName+'%');
 END
@@ -177,6 +174,18 @@ BEGIN
 SELECT policy_number, [date]
 FROM Payment
 WHERE [type] = 'C' OR [type] = 'c'
+END
+GO
+
+-----------------------------------------------------------------------------------------------------
+
+-- Procedure to retrieve all beneficiaries of a specified policy.
+CREATE PROCEDURE getBeneficiaries @policyNumber AS varchar(30)
+AS
+BEGIN
+SELECT first_name, last_name
+FROM Beneficiary
+WHERE policy_number = @policyNumber
 END
 GO
 
