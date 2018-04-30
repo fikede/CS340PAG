@@ -81,6 +81,17 @@ VALUES		(@policyNumber, @paymentDate, @paymentType, @amount)
 END
 GO
 
+-----------------------------------------------------------------------------------------------------
+
+-- Add US Dollar Inflation Data
+CREATE PROCEDURE addDollarInflation @month AS varchar(10), @year AS varchar(4),@amount AS decimal(6,3)
+AS
+BEGIN
+INSERT INTO USInflation([month], [year], [value])
+VALUES 		(@month, @year, @amount)
+END
+GO
+
 
 -----------------------------------------------------------------------------------------------------
 -- Searching Procedures
@@ -208,8 +219,6 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- Ending a policy by claim. 
--- 		(I THINK THIS WILL WORK WITH AND WITHOUT CLAIMS.)
--- 		THE MIDDLEWARE COULD GET THE CLAIM DATE AND PUSH IT INTO THE CLAIM AND THEN CANCEL THE POLICY.
 CREATE PROCEDURE endPolicy @policyNumber AS varchar(30), @cancelDate AS datetime
 AS
 BEGIN

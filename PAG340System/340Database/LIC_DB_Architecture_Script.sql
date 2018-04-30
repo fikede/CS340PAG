@@ -18,7 +18,7 @@ CONSTRAINT PK_Department PRIMARY KEY(name)
 
 CREATE TABLE Employee
 (
-ID varchar (20),
+ID varchar(20),
 first_name varchar(100),
 last_name varchar(100),
 username varchar(20),
@@ -34,7 +34,7 @@ CONSTRAINT CHECK_employee_user_type CHECK(user_type = 'A' OR user_type = 'M')
 
 CREATE TABLE PolicyHolder
 (
-ID varchar (20),
+ID varchar(20),
 first_name varchar(100),
 last_name varchar(100),
 street varchar(30),
@@ -80,7 +80,7 @@ CREATE TABLE Payment
 policy_number varchar(30),
 [date] datetime,
 [type] char,
-amount decimal (10,2),
+amount decimal(10,2),
 CONSTRAINT PK_Payment PRIMARY KEY(policy_number, [date]),
 CONSTRAINT FK_Payment_Policy FOREIGN KEY(policy_number)
 	REFERENCES [Policy]([number]),
@@ -89,7 +89,7 @@ CONSTRAINT CHECK_description CHECK([type] = 'P' OR [type] = 'C')
 
 CREATE TABLE Delinquent_Accounts_Parameters
 (
-emp_ID varchar (20),
+emp_ID varchar(20),
 date_generated datetime,
 [state] char(2),
 amount_overdue decimal(10,2),
@@ -111,7 +111,7 @@ CONSTRAINT FK_Beneficiary FOREIGN KEY(policy_number)
 CREATE TABLE USInflation
 (
 [month] varchar(10), 
-[year] varchar (4),
+[year] varchar(4),
 [value] decimal(6,3),
 CONSTRAINT PK_USInflation PRIMARY KEY([month], [year])
 )
