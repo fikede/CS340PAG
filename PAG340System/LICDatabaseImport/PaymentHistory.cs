@@ -58,7 +58,7 @@ namespace LICDatabaseImport
             // PROBABLY INEFFICIENT BUT EFFECTIVE.
             for (int i = 0; i < policyList.Count; i++)
             {
-                SqlCommand cmd_Policy = new SqlCommand("endPolicyWithClaim", conn);
+                SqlCommand cmd_Policy = new SqlCommand("endPolicy", conn);
                 cmd_Policy.CommandType = CommandType.StoredProcedure;
                 cmd_Policy.Parameters.AddWithValue("@policyNumber", policyList[i]);
                 cmd_Policy.Parameters.AddWithValue("@cancelDate", dates[i]);

@@ -1,9 +1,7 @@
 ﻿/*
  * Author: Morgan Johnson
  * Program Purpose: This program is specifically designed for the "one-time" use of data import to the LIC DB
- * Current Status:  Added all data import files.
- *                  - Need to end policies with claims.
- *                  - Need to import US Dollar Inflation.
+ * Current Status: - Need to import US Dollar Inflation.
  */
 using System;
 using System.IO;
