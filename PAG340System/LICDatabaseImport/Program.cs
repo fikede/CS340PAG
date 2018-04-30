@@ -21,7 +21,7 @@ namespace LICDatabaseImport
             Beneficiary beneficiary = new Beneficiary();
             User users = new User();
             PaymentHistory payments = new PaymentHistory(policyNumbers);
-            /*
+            Inflation inflation = new Inflation();
             try
             {
                 using (StreamReader stringReader = new StreamReader(filePath + "User.txt"))
@@ -184,20 +184,10 @@ namespace LICDatabaseImport
                 throw new FileNotFoundException("File Not Found", e);
             }
 
-
             // need to end policies with claims.
             payments.updateClaimedPolicies();
-                        
-            /*COMPLETED (Proof) run this in the DB
-                select * from Policy
-                WHERE end_date is not null
-                ORDER BY  number
-                select * from Payment
-                where type = 'c'
-                ORDER BY  policy_number
-            */
-
             // need to upload US Dollar Inflation.
+            inflation.getInfo();
         }
     }
 }

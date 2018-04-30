@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beneficiary.cs" />
+    <Compile Include="Inflation.cs" />
     <Compile Include="LifePolicy.cs" />
     <Compile Include="PaymentHistory.cs" />
     <Compile Include="Program.cs" />
