@@ -207,8 +207,10 @@ GO
 -- Update Information
 -----------------------------------------------------------------------------------------------------
 
--- Ending a policy by claim.
-CREATE PROCEDURE endPolicyWithClaim @policyNumber AS varchar(30), @cancelDate AS datetime
+-- Ending a policy by claim. 
+-- 		(I THINK THIS WILL WORK WITH AND WITHOUT CLAIMS.)
+-- 		THE MIDDLEWARE COULD GET THE CLAIM DATE AND PUSH IT INTO THE CLAIM AND THEN CANCEL THE POLICY.
+CREATE PROCEDURE endPolicy @policyNumber AS varchar(30), @cancelDate AS datetime
 AS
 BEGIN
 
@@ -220,38 +222,21 @@ GO
 
 /*
 -----------------------------------------------------------------------------------------------------
--- NOTE: NO OTHER PROCEDURES HAVE BEEN CREATED IN THE DB.
------------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------------
 -- INCOMPLETE PROCEDURES
 -----------------------------------------------------------------------------------------------------
 
 
------------------------------------------------------------------------------------------------------
-
 -- Procedure to generate the parameters of a delinquent account.
+-- SHOULD THIS BE AN INSERT OR A SELECT COMMAND.
+
 CREATE PROCEDURE generateDelinquentAccountReport @state AS char(2), @amountOverdue AS decimal(10,2), @agentFName AS varchar(100), @agentLName AS varchar(100)
 AS
 BEGIN
-
---NOTE: WE MAY NEED TO JOIN SOME TABLES
 
 SELECT *
 FROM Delinquent_Accounts_Parameters
 WHERE amount_overdue >= @amountOverdue
 -- NOT DONE
-END
-GO
-
-
-
------------------------------------------------------------------------------------------------------
-
-CREATE PROCEDURE endPolicyWithoutClaim @policyNumber AS varchar(30)
-AS
-BEGIN
---
 END
 GO
 
