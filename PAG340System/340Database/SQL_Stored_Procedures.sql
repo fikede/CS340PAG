@@ -1,7 +1,5 @@
 -----------------------------------------------------------------------------------------------------
 -- This is the format and commands to create the LIC_PAG SQL stored Procedures.
--- NOTE: This has not been executed yet.
--- There are some procedures that must be completed
 -- NOTE: If the table names are underlined and SQL states that the object is undefined.
 --			Go to: Edit -> IntelliSense -> Refresh Local Cache
 -----------------------------------------------------------------------------------------------------
@@ -233,21 +231,57 @@ GO
 -----------------------------------------------------------------------------------------------------
 -- INCOMPLETE PROCEDURES
 -----------------------------------------------------------------------------------------------------
-
-
+-- COMPLETED
+-- NEEDS REVIEW AND APPROVAL.
 -- Procedure to generate the parameters of a delinquent account.
--- SHOULD THIS BE AN INSERT OR A SELECT COMMAND.
-
-CREATE PROCEDURE generateDelinquentAccountReport @state AS char(2), @amountOverdue AS decimal(10,2), @agentFName AS varchar(100), @agentLName AS varchar(100)
+CREATE PROCEDURE createDelinquentAccountReport @ID AS varchar(20), @date AS datetime, @state AS char(2), @amountOverdue AS decimal(10,2)
 AS
 BEGIN
 
-SELECT *
-FROM Delinquent_Accounts_Parameters
-WHERE amount_overdue >= @amountOverdue
--- NOT DONE
+INSERT INTO Delinquent_Accounts_Parameters(emp_ID, date_generated, [state], amount_overdue)
+VALUES (@ID, @date, @state, @amountOverdue)
 END
 GO
 
 -----------------------------------------------------------------------------------------------------
+-- NEEDS REVIEW
+-- Procedure to get search for a delinquent account report.
+CREATE PROCEDURE getDelinquentAccountReport @ID AS varchar(20) = '', @date AS datetime = NULL, @state AS char(2) = '', @amountOverdue AS decimal(10,2) = NULL
+AS
+BEGIN
+
+SELECT 
+FROM Delinquent_Accounts_Parameters
+INNER JOIN 
+WHERE emp_ID = @ID AND date_generated AND [state] LIKE '%'+@state+'%' AND 
+END
+GO
+-----------------------------------------------------------------------------------------------------
+-- COMPLETED
+NEEDS REVIEW
+-- Change Policyholder's name, address
+CREATE PROCEDURE updateHolder @ID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @street AS varchar(30), @city AS varchar(20), @state AS char(2), @zip AS char(9)
+AS
+BEGIN
+
+UPDATE PolicyHolder
+SET first_name = @firstName, last_name = @lastName, street = @street, city = @city, state = @state, zip = @zip
+WHERE ID = @ID
+END
+GO
+
+-----------------------------------------------------------------------------------------------------
+-- NEEDS REVIEW
+-- PROBLEM: THERE ARE MULTIPLE BENEFICIARIES.
+--			HOW DO WE ENSURE WE ARE MODIFYING THE CORRECT BENEFICIARY
+-- Change Beneficiary's Name
+CREATE PROCEDURE updateBeneficiary @policyNumber AS varchar(30), @firstName AS varchar(100), @lastName AS varchar(100)
+AS
+BEGIN
+
+UPDATE PolicyHolder
+SET first_name = @firstName, last_name = @lastName, 
+WHERE policy_number = @policyNumber
+END
+GO
 */
