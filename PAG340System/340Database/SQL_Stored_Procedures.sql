@@ -186,6 +186,22 @@ GO
 
 -----------------------------------------------------------------------------------------------------
 
+-- Procedure to get Claimed polices
+CREATE PROCEDURE getClaimedPolicies
+AS
+BEGIN
+SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
+FROM(
+[Policy]INNER JOIN PolicyHolder
+ON [Policy].holder_ID = PolicyHolder.ID
+INNER JOIN Payment
+ON Payment.policy_number = [Policy].number)
+WHERE Policy.end_date IS NOT NULL AND Payment.[type] = 'C'
+END
+GO
+
+-----------------------------------------------------------------------------------------------------
+
 -- Procedure to retrieve all beneficiaries of a specified policy.
 CREATE PROCEDURE getBeneficiaries @policyNumber AS varchar(30)
 AS
@@ -195,7 +211,6 @@ FROM Beneficiary
 WHERE policy_number = @policyNumber
 END
 GO
-
 
 -----------------------------------------------------------------------------------------------------
 -- Confirmation Search
@@ -224,11 +239,36 @@ WHERE [number] = @policyNumber
 END
 GO
 
-/*
+-----------------------------------------------------------------------------------------------------
+
+-- Change Policyholder's name, address
+CREATE PROCEDURE updatePolicyHolder @ID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @street AS varchar(30), @city AS varchar(20), @state AS char(2), @zip AS char(9)
+AS
+BEGIN
+UPDATE PolicyHolder
+SET first_name = @firstName, last_name = @lastName, street = @street, city = @city, state = @state, zip = @zip
+WHERE ID = @ID
+END
+GO
+
+-----------------------------------------------------------------------------------------------------
+
+-- Change Beneficiary's Name
+-- Note that there may be multiple beneficiaries:
+-- So we need to have the old name and the new name to update.
+CREATE PROCEDURE updateBeneficiary @policyNumber AS varchar(30), @oldFirstName AS varchar(100), @oldLastName AS varchar(100), @newFirstName AS varchar(100), @newLastName AS varchar(100)
+AS
+BEGIN
+UPDATE Beneficiary
+SET first_name = @newFirstName, last_name = @newLastName
+WHERE policy_number = @policyNumber AND first_name = @oldFirstName AND last_name = @oldLastName
+END
+GO
+
 -----------------------------------------------------------------------------------------------------
 -- INCOMPLETE PROCEDURES
 -----------------------------------------------------------------------------------------------------
-
+/*
 -- COMPLETED
 -- NEEDS REVIEW AND APPROVAL.
 
@@ -257,36 +297,4 @@ END
 GO
 
 -----------------------------------------------------------------------------------------------------
-
--- COMPLETED
--- NEEDS REVIEW
-
--- Change Policyholder's name, address
-CREATE PROCEDURE updateHolder @ID AS varchar(20), @firstName AS varchar(100), @lastName AS varchar(100), @street AS varchar(30), @city AS varchar(20), @state AS char(2), @zip AS char(9)
-AS
-BEGIN
-UPDATE PolicyHolder
-SET first_name = @firstName, last_name = @lastName, street = @street, city = @city, state = @state, zip = @zip
-WHERE ID = @ID
-END
-GO
-
------------------------------------------------------------------------------------------------------
-
--- NEEDS REVIEW
--- PROBLEM: THERE ARE MULTIPLE BENEFICIARIES.
---			HOW DO WE ENSURE WE ARE MODIFYING THE CORRECT BENEFICIARY
-
--- Change Beneficiary's Name
-CREATE PROCEDURE updateBeneficiary @policyNumber AS varchar(30), @firstName AS varchar(100), @lastName AS varchar(100)
-AS
-BEGIN
-UPDATE PolicyHolder
-SET first_name = @firstName, last_name = @lastName, 
-WHERE policy_number = @policyNumber
-END
-GO
-
------------------------------------------------------------------------------------------------------
-
 */
