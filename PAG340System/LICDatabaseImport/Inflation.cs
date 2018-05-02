@@ -42,18 +42,18 @@ namespace LICDatabaseImport
             readInfo("November.CSV", novemberValues);
             readInfo("December.CSV", decemberValues);
 
-            saveToDatabase("January", januaryValues, years);
-            saveToDatabase("February", februaryValues, years);
-            saveToDatabase("March", marchValues, years);
-            saveToDatabase("April", aprilValues, years);
-            saveToDatabase("May", mayValues, years);
-            saveToDatabase("June", juneValues, years);
-            saveToDatabase("July", julyValues, years);
-            saveToDatabase("August", augustValues, years);
-            saveToDatabase("September", septeberValues, years);
-            saveToDatabase("October", octoberValues, years);
-            saveToDatabase("November", novemberValues, years);
-            saveToDatabase("December", decemberValues, years);
+            saveToDatabase("January", 1, januaryValues, years);
+            saveToDatabase("February", 2, februaryValues, years);
+            saveToDatabase("March", 3, marchValues, years);
+            saveToDatabase("April", 4, aprilValues, years);
+            saveToDatabase("May", 5, mayValues, years);
+            saveToDatabase("June", 6, juneValues, years);
+            saveToDatabase("July", 7, julyValues, years);
+            saveToDatabase("August", 8, augustValues, years);
+            saveToDatabase("September", 9, septeberValues, years);
+            saveToDatabase("October", 10, octoberValues, years);
+            saveToDatabase("November", 11, novemberValues, years);
+            saveToDatabase("December", 12, decemberValues, years);
         }
 
         private void readInfo(string fileInput, List<string> input)
@@ -83,7 +83,7 @@ namespace LICDatabaseImport
             return result;
         }
 
-        private void saveToDatabase(string month, List<string> inputMonth, List<string> inputYear)
+        private void saveToDatabase(string month, int monthNum, List<string> inputMonth, List<string> inputYear)
         {
             string currentYear = "";
             string stringAmount = "";
@@ -96,7 +96,8 @@ namespace LICDatabaseImport
                 SqlConnection conn = new SqlConnection(connectionString);
                 SqlCommand cmd = new SqlCommand("addDollarInflation", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@month", month);
+                cmd.Parameters.AddWithValue("@monthName", monthName);
+                cmd.Parameters.AddWithValue("@monthNumber", monthNum);
                 cmd.Parameters.AddWithValue("@year", currentYear);
                 cmd.Parameters.AddWithValue("@amount", currentAmount);
                 conn.Open();

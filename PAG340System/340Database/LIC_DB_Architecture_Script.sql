@@ -110,8 +110,9 @@ CONSTRAINT FK_Beneficiary FOREIGN KEY(policy_number)
 
 CREATE TABLE USInflation
 (
-[month] varchar(10), 
+month_name varchar(10),
+month_number int,
 [year] varchar(4),
 [value] decimal(6,3),
-CONSTRAINT PK_USInflation PRIMARY KEY([month], [year])
+CONSTRAINT PK_USInflation PRIMARY KEY([month], month_number, [year])
 )

@@ -82,11 +82,11 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- Add US Dollar Inflation Data
-CREATE PROCEDURE addDollarInflation @month AS varchar(10), @year AS varchar(4),@amount AS decimal(6,3)
+CREATE PROCEDURE addDollarInflation @monthName AS varchar(10), @monthNumber AS int, @year AS varchar(4),@amount AS decimal(6,3)
 AS
 BEGIN
-INSERT INTO USInflation([month], [year], [value])
-VALUES 		(@month, @year, @amount)
+INSERT INTO USInflation(month_name, month_number, [year], [value])
+VALUES 		(@monthName, @monthNumber, @year, @amount)
 END
 GO
 
@@ -215,12 +215,12 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- Procedure to get the value of the US dollar.
-CREATE PROCEDURE getDollarValue @inputMonth AS varchar(10), @inputYear AS varchar(4)
+CREATE PROCEDURE getDollarValue @inputMonth AS int, @inputYear AS varchar(4)
 AS
 BEGIN
 SELECT [value]
 FROM USInflation
-WHERE [month] = @inputMonth AND [year] = @inputYear
+WHERE month_number = @inputMonth AND [year] = @inputYear
 END
 GO
 
