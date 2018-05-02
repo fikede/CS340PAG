@@ -213,6 +213,18 @@ END
 GO
 
 -----------------------------------------------------------------------------------------------------
+
+-- Procedure to get the value of the US dollar.
+CREATE PROCEDURE getDollarValue @inputMonth AS varchar(10), @inputYear AS varchar(4)
+AS
+BEGIN
+SELECT [value]
+FROM USInflation
+WHERE [month] = @inputMonth AND [year] = @inputYear
+END
+GO
+
+-----------------------------------------------------------------------------------------------------
 -- Confirmation Search
 -----------------------------------------------------------------------------------------------------
 
