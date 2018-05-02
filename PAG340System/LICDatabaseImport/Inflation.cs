@@ -83,7 +83,7 @@ namespace LICDatabaseImport
             return result;
         }
 
-        private void saveToDatabase(string month, int monthNum, List<string> inputMonth, List<string> inputYear)
+        private void saveToDatabase(string monthName, int monthNum, List<string> inputMonth, List<string> inputYear)
         {
             string currentYear = "";
             string stringAmount = "";
