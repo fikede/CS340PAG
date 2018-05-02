@@ -85,9 +85,7 @@ namespace _340GUI
 
         private void button_Submit_Click(object sender, EventArgs e)
         {
-            //Clear the box first
-            //Create Button to view the selected policy
-            //listBox_Searching.Dispose();
+            listBox_Searching.Items.Clear();
             if (textBox_PolicyNumber.Text != "" || textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || 
                 textBox_PolicyholderFirstName.Text != "" || textBox_PolicyholderLastName.Text != "")
             {
@@ -125,7 +123,7 @@ namespace _340GUI
         private string alignItemString(Policy policy)
         {
             int length;
-            string output = "";
+            string output = " ";
             output += policy.PolicyNumber;
             length = 30 - policy.PolicyNumber.Length;
             for (int i = 0; i < length; i++) output += " ";
@@ -139,10 +137,15 @@ namespace _340GUI
         private void listBox_Searching_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = listBox_Searching.SelectedIndex;
-            Policy policy = policyList.ElementAt(index);
-            PolicyPage policyPage = new PolicyPage(usingAgent, this, policy);
-            policyPage.Show();
-            this.Hide();
+            Policy policy;
+            try
+            {
+                policy = policyList.ElementAt(index);
+                PolicyPage policyPage = new PolicyPage(usingAgent, this, policy);
+                policyPage.Show();
+                this.Hide();
+            }
+            catch { }
         }
     }
 }
