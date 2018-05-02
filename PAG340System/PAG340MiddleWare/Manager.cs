@@ -35,7 +35,20 @@ namespace PAG340MiddleWare
         public List<Policy> search(string policyHolderFirstName, string policyHolderLastName, string agentFirstName, string agentLastName, string policyNumber)
         {
             List<Policy> policyList = new List<Policy>();
-
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "searchPolicy";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            cmd.Parameters.AddWithValue("@agentFName", agentFirstName);
+            cmd.Parameters.AddWithValue("@agentLName", agentLastName);
+            cmd.Parameters.AddWithValue("@holderFName", policyHolderFirstName);
+            cmd.Parameters.AddWithValue("@holderLName", policyHolderLastName);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            policyList = getSearchResults(reader);
+            conn.Close();
             return policyList;
         }
 

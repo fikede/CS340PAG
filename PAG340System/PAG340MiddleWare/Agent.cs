@@ -72,8 +72,8 @@ namespace PAG340MiddleWare
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
             cmd.Parameters.AddWithValue("@agentID", id);
-            cmd.Parameters.AddWithValue("@agentFName", "");
-            cmd.Parameters.AddWithValue("@agentLName", "");
+            //cmd.Parameters.AddWithValue("@agentFName", "");
+            //cmd.Parameters.AddWithValue("@agentLName", "");
             cmd.Parameters.AddWithValue("@holderFName", policyHolderFirstName);
             cmd.Parameters.AddWithValue("@holderLName", policyHolderLastName);
             conn.Open();
@@ -83,7 +83,7 @@ namespace PAG340MiddleWare
             return policyList;
         }
 
-        private List<Policy> getSearchResults(SqlDataReader reader)
+        protected List<Policy> getSearchResults(SqlDataReader reader)
         {
             List<Policy> policyList = new List<Policy>();
             int columnNumber;
@@ -100,6 +100,12 @@ namespace PAG340MiddleWare
 
                 columnNumber = reader.GetOrdinal("holder_ID");
                 holder.ID = reader.GetString(columnNumber);
+
+                columnNumber = reader.GetOrdinal("agent_first_name");
+                rep.Firstname = reader.GetString(columnNumber);
+
+                columnNumber = reader.GetOrdinal("agent_last_name");
+                rep.Lastname = reader.GetString(columnNumber);
 
                 columnNumber = reader.GetOrdinal("emp_ID");
                 rep.ID = reader.GetString(columnNumber);
