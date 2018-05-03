@@ -477,6 +477,8 @@ namespace _340GUI
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
+            this.comboBox_AddressState.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox_AddressState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_AddressState.FormattingEnabled = true;
             this.comboBox_AddressState.Items.AddRange(new object[] {
             "AL",

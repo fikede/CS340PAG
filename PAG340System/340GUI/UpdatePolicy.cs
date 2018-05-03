@@ -56,10 +56,9 @@ namespace _340GUI
 
             label_ShowPolicyStartDate.Text = inPolicy.StartDate.ToString("yyyy/MM/dd");
 
-            String endDate = inPolicy.EndDate.ToString("yyyy/MM/dd");
-            if (endDate != "0001/01/01")
+            if (inPolicy.EndDate.ToString("yyyy/MM/dd") != "0001/01/01")
             {
-                label_ShowPolicyEndDate.Text = endDate;
+                label_ShowPolicyEndDate.Text = inPolicy.EndDate.ToString("yyyy/MM/dd");
             }
 
             label_ShowAgentNumber.Text = inPolicy.RepresentativeAgent.ID;

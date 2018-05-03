@@ -48,7 +48,6 @@ namespace _340GUI
             this.label_AgentNumber = new System.Windows.Forms.Label();
             this.label_PolicyEndDate = new System.Windows.Forms.Label();
             this.label_PolicyStartDate = new System.Windows.Forms.Label();
-            this.label_HoursOfExercise = new System.Windows.Forms.Label();
             this.label_DangerousActivities = new System.Windows.Forms.Label();
             this.label_Hospitalized = new System.Windows.Forms.Label();
             this.label_Cancer = new System.Windows.Forms.Label();
@@ -88,7 +87,6 @@ namespace _340GUI
             this.label_ShowCancer = new System.Windows.Forms.Label();
             this.label_ShowHospitalized = new System.Windows.Forms.Label();
             this.label_ShowDangerousActivities = new System.Windows.Forms.Label();
-            this.label_ShowHoursOfExercise = new System.Windows.Forms.Label();
             this.label_ShowPolicyStartDate = new System.Windows.Forms.Label();
             this.label_ShowPolicyEndDate = new System.Windows.Forms.Label();
             this.label_ShowAgentNumber = new System.Windows.Forms.Label();
@@ -103,7 +101,7 @@ namespace _340GUI
             // label_BeneficiaryLastName
             // 
             this.label_BeneficiaryLastName.AutoSize = true;
-            this.label_BeneficiaryLastName.Location = new System.Drawing.Point(199, 666);
+            this.label_BeneficiaryLastName.Location = new System.Drawing.Point(199, 643);
             this.label_BeneficiaryLastName.Name = "label_BeneficiaryLastName";
             this.label_BeneficiaryLastName.Size = new System.Drawing.Size(116, 13);
             this.label_BeneficiaryLastName.TabIndex = 55;
@@ -112,7 +110,7 @@ namespace _340GUI
             // label_BeneficiaryFirstName
             // 
             this.label_BeneficiaryFirstName.AutoSize = true;
-            this.label_BeneficiaryFirstName.Location = new System.Drawing.Point(200, 643);
+            this.label_BeneficiaryFirstName.Location = new System.Drawing.Point(200, 620);
             this.label_BeneficiaryFirstName.Name = "label_BeneficiaryFirstName";
             this.label_BeneficiaryFirstName.Size = new System.Drawing.Size(115, 13);
             this.label_BeneficiaryFirstName.TabIndex = 54;
@@ -121,7 +119,7 @@ namespace _340GUI
             // label_MonthlyPremium
             // 
             this.label_MonthlyPremium.AutoSize = true;
-            this.label_MonthlyPremium.Location = new System.Drawing.Point(225, 620);
+            this.label_MonthlyPremium.Location = new System.Drawing.Point(225, 597);
             this.label_MonthlyPremium.Name = "label_MonthlyPremium";
             this.label_MonthlyPremium.Size = new System.Drawing.Size(90, 13);
             this.label_MonthlyPremium.TabIndex = 53;
@@ -130,7 +128,7 @@ namespace _340GUI
             // label_PayoffAmount
             // 
             this.label_PayoffAmount.AutoSize = true;
-            this.label_PayoffAmount.Location = new System.Drawing.Point(236, 597);
+            this.label_PayoffAmount.Location = new System.Drawing.Point(236, 574);
             this.label_PayoffAmount.Name = "label_PayoffAmount";
             this.label_PayoffAmount.Size = new System.Drawing.Size(79, 13);
             this.label_PayoffAmount.TabIndex = 52;
@@ -139,7 +137,7 @@ namespace _340GUI
             // label_AgentLastName
             // 
             this.label_AgentLastName.AutoSize = true;
-            this.label_AgentLastName.Location = new System.Drawing.Point(223, 574);
+            this.label_AgentLastName.Location = new System.Drawing.Point(223, 551);
             this.label_AgentLastName.Name = "label_AgentLastName";
             this.label_AgentLastName.Size = new System.Drawing.Size(92, 13);
             this.label_AgentLastName.TabIndex = 51;
@@ -148,7 +146,7 @@ namespace _340GUI
             // label_AgentFirstName
             // 
             this.label_AgentFirstName.AutoSize = true;
-            this.label_AgentFirstName.Location = new System.Drawing.Point(224, 551);
+            this.label_AgentFirstName.Location = new System.Drawing.Point(224, 528);
             this.label_AgentFirstName.Name = "label_AgentFirstName";
             this.label_AgentFirstName.Size = new System.Drawing.Size(91, 13);
             this.label_AgentFirstName.TabIndex = 50;
@@ -157,7 +155,7 @@ namespace _340GUI
             // label_AgentNumber
             // 
             this.label_AgentNumber.AutoSize = true;
-            this.label_AgentNumber.Location = new System.Drawing.Point(237, 528);
+            this.label_AgentNumber.Location = new System.Drawing.Point(237, 505);
             this.label_AgentNumber.Name = "label_AgentNumber";
             this.label_AgentNumber.Size = new System.Drawing.Size(78, 13);
             this.label_AgentNumber.TabIndex = 49;
@@ -166,7 +164,7 @@ namespace _340GUI
             // label_PolicyEndDate
             // 
             this.label_PolicyEndDate.AutoSize = true;
-            this.label_PolicyEndDate.Location = new System.Drawing.Point(229, 505);
+            this.label_PolicyEndDate.Location = new System.Drawing.Point(229, 482);
             this.label_PolicyEndDate.Name = "label_PolicyEndDate";
             this.label_PolicyEndDate.Size = new System.Drawing.Size(86, 13);
             this.label_PolicyEndDate.TabIndex = 48;
@@ -175,20 +173,11 @@ namespace _340GUI
             // label_PolicyStartDate
             // 
             this.label_PolicyStartDate.AutoSize = true;
-            this.label_PolicyStartDate.Location = new System.Drawing.Point(226, 482);
+            this.label_PolicyStartDate.Location = new System.Drawing.Point(226, 459);
             this.label_PolicyStartDate.Name = "label_PolicyStartDate";
             this.label_PolicyStartDate.Size = new System.Drawing.Size(89, 13);
             this.label_PolicyStartDate.TabIndex = 47;
             this.label_PolicyStartDate.Text = "Policy Start Date:";
-            // 
-            // label_HoursOfExercise
-            // 
-            this.label_HoursOfExercise.AutoSize = true;
-            this.label_HoursOfExercise.Location = new System.Drawing.Point(172, 459);
-            this.label_HoursOfExercise.Name = "label_HoursOfExercise";
-            this.label_HoursOfExercise.Size = new System.Drawing.Size(143, 13);
-            this.label_HoursOfExercise.TabIndex = 46;
-            this.label_HoursOfExercise.Text = "Hours of Exercise per Week:";
             // 
             // label_DangerousActivities
             // 
@@ -391,14 +380,14 @@ namespace _340GUI
             // 
             // textBox_BeneficiaryFirstName
             // 
-            this.textBox_BeneficiaryFirstName.Location = new System.Drawing.Point(321, 640);
+            this.textBox_BeneficiaryFirstName.Location = new System.Drawing.Point(321, 617);
             this.textBox_BeneficiaryFirstName.Name = "textBox_BeneficiaryFirstName";
             this.textBox_BeneficiaryFirstName.Size = new System.Drawing.Size(293, 20);
             this.textBox_BeneficiaryFirstName.TabIndex = 62;
             // 
             // textBox_BeneficiaryLastName
             // 
-            this.textBox_BeneficiaryLastName.Location = new System.Drawing.Point(321, 663);
+            this.textBox_BeneficiaryLastName.Location = new System.Drawing.Point(321, 640);
             this.textBox_BeneficiaryLastName.Name = "textBox_BeneficiaryLastName";
             this.textBox_BeneficiaryLastName.Size = new System.Drawing.Size(293, 20);
             this.textBox_BeneficiaryLastName.TabIndex = 63;
@@ -497,18 +486,18 @@ namespace _340GUI
             this.label_ShowFatherAAD.AutoSize = true;
             this.label_ShowFatherAAD.Location = new System.Drawing.Point(323, 229);
             this.label_ShowFatherAAD.Name = "label_ShowFatherAAD";
-            this.label_ShowFatherAAD.Size = new System.Drawing.Size(35, 13);
+            this.label_ShowFatherAAD.Size = new System.Drawing.Size(27, 13);
             this.label_ShowFatherAAD.TabIndex = 69;
-            this.label_ShowFatherAAD.Text = "label4";
+            this.label_ShowFatherAAD.Text = "N/A";
             // 
             // label_ShowMotherAAD
             // 
             this.label_ShowMotherAAD.AutoSize = true;
             this.label_ShowMotherAAD.Location = new System.Drawing.Point(323, 252);
             this.label_ShowMotherAAD.Name = "label_ShowMotherAAD";
-            this.label_ShowMotherAAD.Size = new System.Drawing.Size(35, 13);
+            this.label_ShowMotherAAD.Size = new System.Drawing.Size(27, 13);
             this.label_ShowMotherAAD.TabIndex = 70;
-            this.label_ShowMotherAAD.Text = "label5";
+            this.label_ShowMotherAAD.Text = "N/A";
             // 
             // label_ShowSmokingHistory
             // 
@@ -578,23 +567,14 @@ namespace _340GUI
             this.label_ShowDangerousActivities.AutoSize = true;
             this.label_ShowDangerousActivities.Location = new System.Drawing.Point(323, 436);
             this.label_ShowDangerousActivities.Name = "label_ShowDangerousActivities";
-            this.label_ShowDangerousActivities.Size = new System.Drawing.Size(41, 13);
+            this.label_ShowDangerousActivities.Size = new System.Drawing.Size(27, 13);
             this.label_ShowDangerousActivities.TabIndex = 78;
-            this.label_ShowDangerousActivities.Text = "label30";
-            // 
-            // label_ShowHoursOfExercise
-            // 
-            this.label_ShowHoursOfExercise.AutoSize = true;
-            this.label_ShowHoursOfExercise.Location = new System.Drawing.Point(323, 459);
-            this.label_ShowHoursOfExercise.Name = "label_ShowHoursOfExercise";
-            this.label_ShowHoursOfExercise.Size = new System.Drawing.Size(41, 13);
-            this.label_ShowHoursOfExercise.TabIndex = 79;
-            this.label_ShowHoursOfExercise.Text = "label31";
+            this.label_ShowDangerousActivities.Text = "N/A";
             // 
             // label_ShowPolicyStartDate
             // 
             this.label_ShowPolicyStartDate.AutoSize = true;
-            this.label_ShowPolicyStartDate.Location = new System.Drawing.Point(323, 482);
+            this.label_ShowPolicyStartDate.Location = new System.Drawing.Point(323, 459);
             this.label_ShowPolicyStartDate.Name = "label_ShowPolicyStartDate";
             this.label_ShowPolicyStartDate.Size = new System.Drawing.Size(41, 13);
             this.label_ShowPolicyStartDate.TabIndex = 80;
@@ -603,16 +583,16 @@ namespace _340GUI
             // label_ShowPolicyEndDate
             // 
             this.label_ShowPolicyEndDate.AutoSize = true;
-            this.label_ShowPolicyEndDate.Location = new System.Drawing.Point(323, 505);
+            this.label_ShowPolicyEndDate.Location = new System.Drawing.Point(323, 482);
             this.label_ShowPolicyEndDate.Name = "label_ShowPolicyEndDate";
-            this.label_ShowPolicyEndDate.Size = new System.Drawing.Size(41, 13);
+            this.label_ShowPolicyEndDate.Size = new System.Drawing.Size(27, 13);
             this.label_ShowPolicyEndDate.TabIndex = 81;
-            this.label_ShowPolicyEndDate.Text = "label33";
+            this.label_ShowPolicyEndDate.Text = "N/A";
             // 
             // label_ShowAgentNumber
             // 
             this.label_ShowAgentNumber.AutoSize = true;
-            this.label_ShowAgentNumber.Location = new System.Drawing.Point(323, 528);
+            this.label_ShowAgentNumber.Location = new System.Drawing.Point(323, 505);
             this.label_ShowAgentNumber.Name = "label_ShowAgentNumber";
             this.label_ShowAgentNumber.Size = new System.Drawing.Size(41, 13);
             this.label_ShowAgentNumber.TabIndex = 82;
@@ -621,7 +601,7 @@ namespace _340GUI
             // label_ShowAgentFirstName
             // 
             this.label_ShowAgentFirstName.AutoSize = true;
-            this.label_ShowAgentFirstName.Location = new System.Drawing.Point(323, 551);
+            this.label_ShowAgentFirstName.Location = new System.Drawing.Point(323, 528);
             this.label_ShowAgentFirstName.Name = "label_ShowAgentFirstName";
             this.label_ShowAgentFirstName.Size = new System.Drawing.Size(41, 13);
             this.label_ShowAgentFirstName.TabIndex = 83;
@@ -630,7 +610,7 @@ namespace _340GUI
             // label_ShowAgentLastName
             // 
             this.label_ShowAgentLastName.AutoSize = true;
-            this.label_ShowAgentLastName.Location = new System.Drawing.Point(323, 574);
+            this.label_ShowAgentLastName.Location = new System.Drawing.Point(323, 551);
             this.label_ShowAgentLastName.Name = "label_ShowAgentLastName";
             this.label_ShowAgentLastName.Size = new System.Drawing.Size(41, 13);
             this.label_ShowAgentLastName.TabIndex = 84;
@@ -639,7 +619,7 @@ namespace _340GUI
             // label_ShowPayoffAmount
             // 
             this.label_ShowPayoffAmount.AutoSize = true;
-            this.label_ShowPayoffAmount.Location = new System.Drawing.Point(323, 597);
+            this.label_ShowPayoffAmount.Location = new System.Drawing.Point(323, 574);
             this.label_ShowPayoffAmount.Name = "label_ShowPayoffAmount";
             this.label_ShowPayoffAmount.Size = new System.Drawing.Size(41, 13);
             this.label_ShowPayoffAmount.TabIndex = 85;
@@ -648,7 +628,7 @@ namespace _340GUI
             // label_ShowMonthlyPremium
             // 
             this.label_ShowMonthlyPremium.AutoSize = true;
-            this.label_ShowMonthlyPremium.Location = new System.Drawing.Point(323, 620);
+            this.label_ShowMonthlyPremium.Location = new System.Drawing.Point(323, 597);
             this.label_ShowMonthlyPremium.Name = "label_ShowMonthlyPremium";
             this.label_ShowMonthlyPremium.Size = new System.Drawing.Size(41, 13);
             this.label_ShowMonthlyPremium.TabIndex = 86;
@@ -657,7 +637,7 @@ namespace _340GUI
             // button_Submit
             // 
             this.button_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Submit.Location = new System.Drawing.Point(252, 702);
+            this.button_Submit.Location = new System.Drawing.Point(252, 679);
             this.button_Submit.Name = "button_Submit";
             this.button_Submit.Size = new System.Drawing.Size(75, 23);
             this.button_Submit.TabIndex = 87;
@@ -668,7 +648,7 @@ namespace _340GUI
             // button_Cancel
             // 
             this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Cancel.Location = new System.Drawing.Point(447, 702);
+            this.button_Cancel.Location = new System.Drawing.Point(447, 679);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(75, 23);
             this.button_Cancel.TabIndex = 88;
@@ -691,7 +671,6 @@ namespace _340GUI
             this.Controls.Add(this.label_ShowAgentNumber);
             this.Controls.Add(this.label_ShowPolicyEndDate);
             this.Controls.Add(this.label_ShowPolicyStartDate);
-            this.Controls.Add(this.label_ShowHoursOfExercise);
             this.Controls.Add(this.label_ShowDangerousActivities);
             this.Controls.Add(this.label_ShowHospitalized);
             this.Controls.Add(this.label_ShowCancer);
@@ -722,7 +701,6 @@ namespace _340GUI
             this.Controls.Add(this.label_AgentNumber);
             this.Controls.Add(this.label_PolicyEndDate);
             this.Controls.Add(this.label_PolicyStartDate);
-            this.Controls.Add(this.label_HoursOfExercise);
             this.Controls.Add(this.label_DangerousActivities);
             this.Controls.Add(this.label_Hospitalized);
             this.Controls.Add(this.label_Cancer);
@@ -759,7 +737,6 @@ namespace _340GUI
         private Label label_AgentNumber;
         private Label label_PolicyEndDate;
         private Label label_PolicyStartDate;
-        private Label label_HoursOfExercise;
         private Label label_DangerousActivities;
         private Label label_Hospitalized;
         private Label label_Cancer;
@@ -799,7 +776,6 @@ namespace _340GUI
         private Label label_ShowCancer;
         private Label label_ShowHospitalized;
         private Label label_ShowDangerousActivities;
-        private Label label_ShowHoursOfExercise;
         private Label label_ShowPolicyStartDate;
         private Label label_ShowPolicyEndDate;
         private Label label_ShowAgentNumber;
