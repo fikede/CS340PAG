@@ -27,9 +27,18 @@ namespace _340GUI
             label_ShowAddressCity.Text = inPolicy.Holder.City;
             label_ShowAddressState.Text = inPolicy.Holder.State;
             label_ShowAddressZip.Text = inPolicy.Holder.ZIP;
-            label_ShowPolicyholderDOB.Text = inPolicy.Holder.BirthDate.ToString("yyyy/MM/dd"); 
-            label_ShowFatherAAD.Text = Convert.ToString(inPolicy.FathersAgeAtDeath);
-            label_ShowMotherAAD.Text = Convert.ToString(inPolicy.MothersAgeAtDeath);
+            label_ShowPolicyholderDOB.Text = inPolicy.Holder.BirthDate.ToString("yyyy/MM/dd");
+
+            if (Convert.ToString(inPolicy.FathersAgeAtDeath) != "0")
+            {
+                label_ShowFatherAAD.Text = Convert.ToString(inPolicy.FathersAgeAtDeath);
+            }
+
+            if (Convert.ToString(inPolicy.MothersAgeAtDeath) != "0")
+            {
+                label_ShowMotherAAD.Text = Convert.ToString(inPolicy.MothersAgeAtDeath);
+            }
+
             label_ShowSmokingHistory.Text = Convert.ToString(inPolicy.SmokingHis);
             label_ShowCigPerDay.Text = Convert.ToString(inPolicy.CigsPerDay);
             label_ShowSystolicBloodPressure.Text = Convert.ToString(inPolicy.SystolicBldPressure);

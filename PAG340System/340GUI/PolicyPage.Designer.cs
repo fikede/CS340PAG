@@ -463,18 +463,18 @@ namespace _340GUI
             this.label_ShowFatherAAD.AutoSize = true;
             this.label_ShowFatherAAD.Location = new System.Drawing.Point(311, 231);
             this.label_ShowFatherAAD.Name = "label_ShowFatherAAD";
-            this.label_ShowFatherAAD.Size = new System.Drawing.Size(41, 13);
+            this.label_ShowFatherAAD.Size = new System.Drawing.Size(27, 13);
             this.label_ShowFatherAAD.TabIndex = 40;
-            this.label_ShowFatherAAD.Text = "label37";
+            this.label_ShowFatherAAD.Text = "N/A";
             // 
             // label_ShowMotherAAD
             // 
             this.label_ShowMotherAAD.AutoSize = true;
             this.label_ShowMotherAAD.Location = new System.Drawing.Point(311, 255);
             this.label_ShowMotherAAD.Name = "label_ShowMotherAAD";
-            this.label_ShowMotherAAD.Size = new System.Drawing.Size(41, 13);
+            this.label_ShowMotherAAD.Size = new System.Drawing.Size(27, 13);
             this.label_ShowMotherAAD.TabIndex = 41;
-            this.label_ShowMotherAAD.Text = "label38";
+            this.label_ShowMotherAAD.Text = "N/A";
             // 
             // label_ShowSmokingHistory
             // 
