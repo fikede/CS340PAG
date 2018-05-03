@@ -143,7 +143,8 @@ GO
 -----------------------------------------------------------------------------------------------------
 
 -- MASTER SEARCH PROCEDURE THAT TAKES IN ALL PARAMETERS.
-CREATE PROCEDURE searchPolicy @policyNumber AS varchar(30) = '', @agentID AS varchar(20) = '', @agentFName AS varchar(100) = '', @agentLName AS varchar(100) = '', @holderFName AS varchar(100) = '', @holderLName AS varchar(100) = ''
+-- THIS PROCEDURE IS NOW COMPATIBILE WITH DELINQUENT ACCOUNT PARAMETER SEARCHING.
+CREATE PROCEDURE searchPolicy @policyNumber AS varchar(30) = '', @agentID AS varchar(20) = '', @agentFName AS varchar(100) = '', @agentLName AS varchar(100) = '', @holderFName AS varchar(100) = '', @holderLName AS varchar(100) = '', @searchState AS char(2) = '__'
 AS
 BEGIN
 SELECT [number], holder_ID, emp_ID, Employee.first_name AS agent_first_name, Employee.last_name AS agent_last_name, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, PolicyHolder.first_name AS holder_first_name, PolicyHolder.last_name AS holder_last_name, street, city, [state], zip
@@ -154,21 +155,7 @@ ON [Policy].holder_ID = PolicyHolder.ID
 INNER JOIN Employee
 ON [Policy].emp_ID = Employee.ID
 )
-WHERE (Policy.[number] LIKE '%'+@policyNumber+'%' AND Policy.emp_ID LIKE '%'+@agentID+'%' AND PolicyHolder.first_name LIKE '%'+@holderFName+'%' AND PolicyHolder.last_name LIKE '%'+@holderLName+'%' AND Employee.first_name LIKE '%'+@agentFName+'%' AND Employee.last_name LIKE '%'+@agentLName+'%');
-END
-GO
-
------------------------------------------------------------------------------------------------------
-
--- Procedure to retrieve all policies ended in the LIC DB
-CREATE PROCEDURE getEndedPolicies
-AS
-BEGIN
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
-FROM(
-[Policy]INNER JOIN PolicyHolder
-ON [Policy].holder_ID = PolicyHolder.ID)
-WHERE Policy.end_date IS NOT NULL
+WHERE (Policy.[number] LIKE '%'+@policyNumber+'%' AND Policy.emp_ID LIKE '%'+@agentID+'%' AND PolicyHolder.first_name LIKE '%'+@holderFName+'%' AND PolicyHolder.last_name LIKE '%'+@holderLName+'%' AND Employee.first_name LIKE '%'+@agentFName+'%' AND Employee.last_name LIKE '%'+@agentLName+'%' AND PolicyHolder.[state] LIKE @searchState);
 END
 GO
 

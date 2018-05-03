@@ -238,10 +238,10 @@ namespace _340GUI
             // listBox_Searching
             // 
             this.listBox_Searching.FormattingEnabled = true;
-            this.listBox_Searching.Location = new System.Drawing.Point(203, 222);
+            this.listBox_Searching.Location = new System.Drawing.Point(203, 235);
             this.listBox_Searching.Name = "listBox_Searching";
             this.listBox_Searching.ScrollAlwaysVisible = true;
-            this.listBox_Searching.Size = new System.Drawing.Size(501, 160);
+            this.listBox_Searching.Size = new System.Drawing.Size(501, 147);
             this.listBox_Searching.TabIndex = 54;
             this.listBox_Searching.SelectedIndexChanged += new System.EventHandler(this.listBox_Searching_SelectedIndexChanged);
             // 

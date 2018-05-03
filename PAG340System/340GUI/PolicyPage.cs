@@ -27,25 +27,44 @@ namespace _340GUI
             label_ShowAddressCity.Text = inPolicy.Holder.City;
             label_ShowAddressState.Text = inPolicy.Holder.State;
             label_ShowAddressZip.Text = inPolicy.Holder.ZIP;
-            label_ShowPolicyholderDOB.Text = inPolicy.Holder.BirthDate.ToString("yyyyMMdd"); //need to be fixed?
-            label_ShowFatherAAD.Text = Convert.ToString(inPolicy.FathersAgeAtDeath);//need to be fixed?
-            label_ShowMotherAAD.Text = Convert.ToString(inPolicy.MothersAgeAtDeath);//need to be fixed?
-            label_ShowSmokingHistory.Text = Convert.ToString(inPolicy.SmokingHis);//need to be fixed?
-            label_ShowCigPerDay.Text = Convert.ToString(inPolicy.CigsPerDay);//need to be fixed?
-            label_ShowSystolicBloodPressure.Text = Convert.ToString(inPolicy.SystolicBldPressure);//need to be fixed?
-            label_ShowAverageFatPerDay.Text = Convert.ToString(inPolicy.GramsFatPerDay);//need to be fixed?
+            label_ShowPolicyholderDOB.Text = inPolicy.Holder.BirthDate.ToString("yyyy/MM/dd");
+
+            if (Convert.ToString(inPolicy.FathersAgeAtDeath) != "0")
+            {
+                label_ShowFatherAAD.Text = Convert.ToString(inPolicy.FathersAgeAtDeath);
+            }
+
+            if (Convert.ToString(inPolicy.MothersAgeAtDeath) != "0")
+            {
+                label_ShowMotherAAD.Text = Convert.ToString(inPolicy.MothersAgeAtDeath);
+            }
+
+            label_ShowSmokingHistory.Text = Convert.ToString(inPolicy.SmokingHis);
+            label_ShowCigPerDay.Text = Convert.ToString(inPolicy.CigsPerDay);
+            label_ShowSystolicBloodPressure.Text = Convert.ToString(inPolicy.SystolicBldPressure);
+            label_ShowAverageFatPerDay.Text = Convert.ToString(inPolicy.GramsFatPerDay);
             label_ShowHeartDisease.Text = convertBool(inPolicy.HeartDisease);
             label_ShowCancer.Text = convertBool(inPolicy.Cancer);
             label_ShowHospitalized.Text = convertBool(inPolicy.Hospitalized);
-            label_ShowDangerousActivity.Text = inPolicy.DangerousActivities;
-            //label_ShowHoursOfExercise.Text = Convert.ToString(inPolicy.???????????); in the class Policy, there is no housrs of exercise per week
-            label_ShowPolicyStartDate.Text = inPolicy.StartDate.ToString("yyyyMMdd");//need to be fixed?
-            label_ShowPolicyEndDate.Text = inPolicy.EndDate.ToString("yyyyMMdd");//need to be fixed?
+
+            if (inPolicy.DangerousActivities != "")
+            {
+                label_ShowDangerousActivity.Text = inPolicy.DangerousActivities;
+            }
+
+            label_ShowPolicyStartDate.Text = inPolicy.StartDate.ToString("yyyy/MM/dd");
+
+            String endDate = inPolicy.EndDate.ToString("yyyy/MM/dd");
+            if (endDate != "0001/01/01")
+            {
+                label_ShowPolicyEndDate.Text = endDate;
+            }
+
             label_ShowAgentNumber.Text = inPolicy.RepresentativeAgent.ID;
             label_ShowAgentFirstName.Text = inPolicy.RepresentativeAgent.Firstname;
             label_ShowAgentLastName.Text = inPolicy.RepresentativeAgent.Lastname;
-            label_ShowPayoffAmount.Text = Convert.ToString(inPolicy.PayOffAmount);//need to be fixed?
-            label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);//need to be fixed?
+            label_ShowPayoffAmount.Text = Convert.ToString(inPolicy.PayOffAmount);
+            label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);
             label_ShowBeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
             label_ShowBeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
         }
