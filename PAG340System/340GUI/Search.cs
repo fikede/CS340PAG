@@ -99,13 +99,19 @@ namespace _340GUI
                 {
                     policyList = usingAgent.search(textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_PolicyNumber.Text);
                 }
-   
+
+                
                 foreach (Policy policy in policyList)
                 {
                     string listString = alignItemString(policy);
                     listBox_Searching.Items.Add(listString);
                 }
 
+                if (listBox_Searching.Items.Count == 0)
+                {
+                    listBox_Searching.Items.Add("There is no result.");
+                }
+                
                 pictureBox_Warning.Visible = false;
                 label_WarningStatement1.Visible = false;
                 label_WarningStatement2.Visible = false;
