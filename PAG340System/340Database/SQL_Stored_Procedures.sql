@@ -190,7 +190,7 @@ GO
 CREATE PROCEDURE getClaimedPolicies
 AS
 BEGIN
-SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name, last_name, street, city, [state], zip
+SELECT [number], holder_ID, emp_ID, holder_DOB, fathers_age_at_death, mothers_age_at_death, cigs_per_day, smoking_history, systolic_blood_pressure, average_grams_fat_per_day, heart_disease, cancer, hospitalized, dangerous_activities, [start_date], end_date, payoff_amount, monthly_premium, first_name as holder_first_name, last_name as holder_last_name, street, city, [state], zip
 FROM(
 [Policy]INNER JOIN PolicyHolder
 ON [Policy].holder_ID = PolicyHolder.ID

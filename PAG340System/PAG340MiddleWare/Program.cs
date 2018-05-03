@@ -17,6 +17,7 @@ namespace PAG340MiddleWare
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             /*Testing underneath - jef
             
             Agent agent = new Agent();
