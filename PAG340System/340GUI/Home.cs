@@ -25,11 +25,11 @@ namespace _340GUI
 
         private void linkLabel_CreatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //PricePolicy pricePolicy = new PricePolicy(usingAgent);
-            //pricePolicy.Show();
-            //this.Close();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            PricePolicy pricePolicy = new PricePolicy(usingAgent);
+            pricePolicy.Show();
+            this.Close();
         }
 
         private void linkLabel_Search_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

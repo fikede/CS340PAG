@@ -355,6 +355,7 @@ namespace _340GUI
             // textBox_ShowPolicyholderFirstName
             // 
             this.textBox_ShowPolicyholderFirstName.Location = new System.Drawing.Point(321, 64);
+            this.textBox_ShowPolicyholderFirstName.MaxLength = 255;
             this.textBox_ShowPolicyholderFirstName.Name = "textBox_ShowPolicyholderFirstName";
             this.textBox_ShowPolicyholderFirstName.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowPolicyholderFirstName.TabIndex = 56;
@@ -362,6 +363,7 @@ namespace _340GUI
             // textBox_ShowPolicyholderLastName
             // 
             this.textBox_ShowPolicyholderLastName.Location = new System.Drawing.Point(321, 87);
+            this.textBox_ShowPolicyholderLastName.MaxLength = 255;
             this.textBox_ShowPolicyholderLastName.Name = "textBox_ShowPolicyholderLastName";
             this.textBox_ShowPolicyholderLastName.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowPolicyholderLastName.TabIndex = 57;
