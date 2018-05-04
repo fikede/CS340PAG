@@ -39,7 +39,6 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             System.Windows.Forms.TextBox textBox_Categories;
             this.linkLabel_Back = new System.Windows.Forms.LinkLabel();
             this.label_PaymentHistory = new System.Windows.Forms.Label();
@@ -57,8 +56,11 @@ namespace _340GUI
             textBox_Categories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             textBox_Categories.Location = new System.Drawing.Point(88, 153);
             textBox_Categories.Name = "textBox_Categories";
+            textBox_Categories.ReadOnly = true;
             textBox_Categories.Size = new System.Drawing.Size(581, 20);
             textBox_Categories.TabIndex = 5;
+            textBox_Categories.Text = "                         Date                                                   A" +
+    "mount Paid ($)                                            Description";
             // 
             // linkLabel_Back
             // 
@@ -140,6 +142,7 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_Back);
             this.Name = "PaymentHistory";
             this.Text = "Payment History";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

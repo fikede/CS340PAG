@@ -18,6 +18,8 @@ namespace _340GUI
             InitializeComponent();
             usingAgent = inUsingAgent;
             listBox_DelinquentList.Visible = false;
+            textBox_Categories.Visible = false;
+            comboBox_State.Text = "No State Specified";
             if (usingAgent.isManager())
             {
                 label_ShowAgentFirstName.Visible = false;
@@ -31,11 +33,6 @@ namespace _340GUI
                 label_ShowAgentFirstName.Text = usingAgent.Firstname;
                 label_ShowAgentLastName.Text = usingAgent.Lastname;
             }
-        }
-
-        private void AddAgent_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void linkLabel_Home_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -85,20 +82,51 @@ namespace _340GUI
         {
             //IncompleteForm incomplete = new IncompleteForm();
             //incomplete.Show();
-            if(textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || textBox_AmountOverdue.Text != "" || comboBox_State.Text != "No state specified")
+            if(textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || textBox_AmountOverdue.Text != "" 
+                || comboBox_State.Text != "No State Specified")
             {
                 List<Policy> delinquentList = new List<Policy>();
                 if (usingAgent.isManager())
                 {
                     Manager usingManager = new Manager(usingAgent);
-                    delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text), textBox_AgentFirstName.Text, textBox_AgentLastName.Text);
+                    delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text)
+                        , textBox_AgentFirstName.Text, textBox_AgentLastName.Text);
                 }
                 else
                 {
                     delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text));
                 }
+
+                foreach (Policy policy in delinquentList)
+                {
+                    string listString = alignItemString(policy);
+                    listBox_DelinquentList.Items.Add(listString);
+                }
+
+                if (listBox_DelinquentList.Items.Count == 0)
+                {
+                    listBox_DelinquentList.Items.Add("There is no result.");
+                }
                 listBox_DelinquentList.Visible = true;
+                textBox_Categories.Visible = true;
             }
+        }
+
+        private string alignItemString(Policy policy)
+        {
+            int length;
+            string output = "   ";
+            output += policy.PolicyNumber;
+            length = 30 - policy.PolicyNumber.Length;
+            for (int i = 0; i < length; i++) output += " ";
+            output += policy.Holder.FirstName + " " + policy.Holder.LastName;
+            length = 50 - (policy.Holder.FirstName.Length + policy.Holder.LastName.Length + 1);
+            for (int i = 0; i < length; i++) output += " ";
+            output += policy.RepresentativeAgent.Firstname + " " + policy.RepresentativeAgent.Lastname;
+            length = 50 - (policy.RepresentativeAgent.Firstname.Length + policy.RepresentativeAgent.Lastname.Length + 1);
+            for (int i = 0; i < length; i++) output += " ";
+            //output += policy.Overdue; I cannot find overdue.
+            return output;
         }
 
         private void shutDown(object sender, FormClosingEventArgs e)
