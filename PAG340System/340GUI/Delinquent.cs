@@ -99,7 +99,9 @@ namespace _340GUI
 
                 foreach (Policy policy in delinquentList)
                 {
-                    string listString = alignItemString(policy);
+                    double amountOverdue = 0;
+                    //amountOverdue = policy.getAmountOverdue(payment);
+                    string listString = alignItemString(policy, amountOverdue);
                     listBox_DelinquentList.Items.Add(listString);
                 }
 
@@ -112,7 +114,7 @@ namespace _340GUI
             }
         }
 
-        private string alignItemString(Policy policy)
+        private string alignItemString(Policy policy, double amountOverdue)
         {
             int length;
             string output = "   ";
@@ -125,7 +127,7 @@ namespace _340GUI
             output += policy.RepresentativeAgent.Firstname + " " + policy.RepresentativeAgent.Lastname;
             length = 50 - (policy.RepresentativeAgent.Firstname.Length + policy.RepresentativeAgent.Lastname.Length + 1);
             for (int i = 0; i < length; i++) output += " ";
-            //output += policy.Overdue; I cannot find overdue.
+            //output += amountOverdue; I cannot find overdue.
             return output;
         }
 
