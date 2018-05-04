@@ -39,7 +39,6 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.button_Submit = new System.Windows.Forms.Button();
             this.textBox_PolicyholderLastName = new System.Windows.Forms.TextBox();
             this.textBox_PolicyholderFirstName = new System.Windows.Forms.TextBox();
@@ -312,8 +311,8 @@ namespace _340GUI
             this.textBox_Categories.ReadOnly = true;
             this.textBox_Categories.Size = new System.Drawing.Size(501, 20);
             this.textBox_Categories.TabIndex = 63;
-            this.textBox_Categories.Text = "Policy Number                 Policyholder\'s Name                              Ag" +
-    "ent\'s Name";
+            this.textBox_Categories.Text = "  Policy Number                 Policyholder\'s Name                              " +
+    "Agent\'s Name";
             // 
             // Search
             // 
@@ -350,6 +349,7 @@ namespace _340GUI
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Search";
             this.Text = "Search Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

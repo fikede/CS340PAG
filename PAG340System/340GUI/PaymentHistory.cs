@@ -31,7 +31,7 @@ namespace _340GUI
 
         private void shutDown(object sender, FormClosingEventArgs e)
         {
-            if (Application.OpenForms.Count == 4) Application.Exit();
+            //if (Application.OpenForms.Count == 4) Application.Exit();
         }
     }
 }

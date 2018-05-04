@@ -69,17 +69,12 @@ namespace _340GUI
             label_ShowBeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
         }
 
-        private void PolicyPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel_CancelPolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //CancelPolicy cancelPolicy = new CancelPolicy(usingAgent, this, inPolicy);
-            //cancelPolicy.Show();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            CancelPolicy cancelPolicy = new CancelPolicy(usingAgent, this, inPolicy);
+            cancelPolicy.Show();
         }
 
         private void linkLabel_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -90,28 +85,28 @@ namespace _340GUI
 
         private void linkLabel_UpdatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //UpdatePolicy update = new UpdatePolicy(usingAgent, this, inPolicy, previousPage);
-            //update.Show();
-            //this.Hide();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            UpdatePolicy update = new UpdatePolicy(usingAgent, this, inPolicy, previousPage);
+            update.Show();
+            this.Hide();
         }
 
         private void linkLabel_MakeClaim_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
-            //claim.Show();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
+            claim.Show();
         }
 
         private void linkLabel_ViewPaymentHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //PaymentHistory payment = new PaymentHistory(this, inPolicy);
-            //payment.Show();
-            //this.Hide();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            PaymentHistory payment = new PaymentHistory(this, inPolicy);
+            payment.Show();
+            this.Hide();
         }
 
         private string convertBool(bool b)
@@ -122,7 +117,7 @@ namespace _340GUI
 
         private void shutDown(object sender, FormClosingEventArgs e)
         {
-            if (Application.OpenForms.Count == 3) Application.Exit();
+            //if (Application.OpenForms.Count == 3) Application.Exit();
         }
     }
 }
