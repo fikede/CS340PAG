@@ -28,5 +28,10 @@ namespace _340GUI
             previousePage.Show();
             this.Close();
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 4) Application.Exit();
+        }
     }
 }

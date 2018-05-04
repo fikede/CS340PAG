@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.button_Submit = new System.Windows.Forms.Button();
             this.textBox_PolicyholderLastName = new System.Windows.Forms.TextBox();
             this.textBox_PolicyholderFirstName = new System.Windows.Forms.TextBox();
@@ -64,6 +65,7 @@ namespace _340GUI
             this.label7 = new System.Windows.Forms.Label();
             this.label_ShowAgentFirstName = new System.Windows.Forms.Label();
             this.label_ShowAgentLastName = new System.Windows.Forms.Label();
+            this.textBox_Categories = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,7 +240,7 @@ namespace _340GUI
             // listBox_Searching
             // 
             this.listBox_Searching.FormattingEnabled = true;
-            this.listBox_Searching.Location = new System.Drawing.Point(203, 235);
+            this.listBox_Searching.Location = new System.Drawing.Point(203, 241);
             this.listBox_Searching.Name = "listBox_Searching";
             this.listBox_Searching.ScrollAlwaysVisible = true;
             this.listBox_Searching.Size = new System.Drawing.Size(501, 147);
@@ -248,7 +250,7 @@ namespace _340GUI
             // pictureBox_Warning
             // 
             this.pictureBox_Warning.Image = global::_340GUI.Properties.Resources.warning;
-            this.pictureBox_Warning.Location = new System.Drawing.Point(204, 216);
+            this.pictureBox_Warning.Location = new System.Drawing.Point(205, 213);
             this.pictureBox_Warning.Name = "pictureBox_Warning";
             this.pictureBox_Warning.Size = new System.Drawing.Size(16, 21);
             this.pictureBox_Warning.TabIndex = 60;
@@ -258,7 +260,7 @@ namespace _340GUI
             // 
             this.label_WarningStatement2.AutoSize = true;
             this.label_WarningStatement2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_WarningStatement2.Location = new System.Drawing.Point(220, 232);
+            this.label_WarningStatement2.Location = new System.Drawing.Point(221, 229);
             this.label_WarningStatement2.Name = "label_WarningStatement2";
             this.label_WarningStatement2.Size = new System.Drawing.Size(323, 13);
             this.label_WarningStatement2.TabIndex = 59;
@@ -268,7 +270,7 @@ namespace _340GUI
             // 
             this.label_WarningStatement1.AutoSize = true;
             this.label_WarningStatement1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_WarningStatement1.Location = new System.Drawing.Point(220, 219);
+            this.label_WarningStatement1.Location = new System.Drawing.Point(221, 216);
             this.label_WarningStatement1.Name = "label_WarningStatement1";
             this.label_WarningStatement1.Size = new System.Drawing.Size(341, 13);
             this.label_WarningStatement1.TabIndex = 58;
@@ -300,12 +302,26 @@ namespace _340GUI
             this.label_ShowAgentLastName.TabIndex = 62;
             this.label_ShowAgentLastName.Text = "label1";
             // 
+            // textBox_Categories
+            // 
+            this.textBox_Categories.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_Categories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_Categories.Enabled = false;
+            this.textBox_Categories.Location = new System.Drawing.Point(203, 222);
+            this.textBox_Categories.Name = "textBox_Categories";
+            this.textBox_Categories.ReadOnly = true;
+            this.textBox_Categories.Size = new System.Drawing.Size(501, 20);
+            this.textBox_Categories.TabIndex = 63;
+            this.textBox_Categories.Text = "Policy Number                 Policyholder\'s Name                              Ag" +
+    "ent\'s Name";
+            // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.textBox_Categories);
             this.Controls.Add(this.label_ShowAgentLastName);
             this.Controls.Add(this.label_ShowAgentFirstName);
             this.Controls.Add(this.pictureBox_Warning);
@@ -369,5 +385,6 @@ namespace _340GUI
         private Label label_ShowAgentFirstName;
         private Label label_ShowAgentLastName;
         private List<PAG340MiddleWare.Policy> policyList;
+        private TextBox textBox_Categories;
     }
 }

@@ -90,5 +90,10 @@ namespace _340GUI
             if (b) return "Yes";
             else return "No";
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
+        }
     }
 }

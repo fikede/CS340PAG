@@ -108,5 +108,10 @@ namespace _340GUI
             }
             return true;
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 1) Application.Exit();
+        }
     }
 }

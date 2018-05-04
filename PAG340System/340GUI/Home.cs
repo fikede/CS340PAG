@@ -68,5 +68,10 @@ namespace _340GUI
             loginPage.Show();
             this.Close();
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
+        }
     }
 }

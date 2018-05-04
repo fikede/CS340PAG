@@ -39,6 +39,8 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
+            System.Windows.Forms.TextBox textBox_Categories;
             this.linkLabel_AddNewAgent = new System.Windows.Forms.LinkLabel();
             this.linkLabel_Logout = new System.Windows.Forms.LinkLabel();
             this.linkLabel_DelinquentAccounts = new System.Windows.Forms.LinkLabel();
@@ -58,6 +60,7 @@ namespace _340GUI
             this.label_ShowAgentFirstName = new System.Windows.Forms.Label();
             this.label_ShowAgentLastName = new System.Windows.Forms.Label();
             this.listBox_DelinquentList = new System.Windows.Forms.ListBox();
+            textBox_Categories = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // linkLabel_AddNewAgent
@@ -288,10 +291,21 @@ namespace _340GUI
             // listBox_DelinquentList
             // 
             this.listBox_DelinquentList.FormattingEnabled = true;
-            this.listBox_DelinquentList.Location = new System.Drawing.Point(203, 199);
+            this.listBox_DelinquentList.Location = new System.Drawing.Point(203, 215);
             this.listBox_DelinquentList.Name = "listBox_DelinquentList";
-            this.listBox_DelinquentList.Size = new System.Drawing.Size(480, 173);
+            this.listBox_DelinquentList.Size = new System.Drawing.Size(480, 160);
             this.listBox_DelinquentList.TabIndex = 71;
+            // 
+            // textBox_Categories
+            // 
+            textBox_Categories.BackColor = System.Drawing.Color.Silver;
+            textBox_Categories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            textBox_Categories.Location = new System.Drawing.Point(203, 196);
+            textBox_Categories.Name = "textBox_Categories";
+            textBox_Categories.Size = new System.Drawing.Size(480, 20);
+            textBox_Categories.TabIndex = 72;
+            textBox_Categories.Text = "  Policy Number                                 Policyholder\'s Name              " +
+    "                          Agent\'s Name";
             // 
             // Delinquent
             // 
@@ -299,6 +313,7 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(textBox_Categories);
             this.Controls.Add(this.listBox_DelinquentList);
             this.Controls.Add(this.label_ShowAgentLastName);
             this.Controls.Add(this.label_ShowAgentFirstName);

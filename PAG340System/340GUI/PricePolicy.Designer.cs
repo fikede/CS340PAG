@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_TotalAmountOfPayment = new System.Windows.Forms.Label();
             this.label_PayoffAmount = new System.Windows.Forms.Label();
             this.label_HoursOfExercise = new System.Windows.Forms.Label();

@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             System.Windows.Forms.TextBox textBox_Categories;
             this.linkLabel_Back = new System.Windows.Forms.LinkLabel();
             this.label_PaymentHistory = new System.Windows.Forms.Label();
@@ -153,7 +154,6 @@ namespace _340GUI
         private ListBox listBox_PaymentHiotory;
         private Label label_ShowPolicyNum;
         private Label label_ShowPolicyholderName;
-        //private Agent usingAgent;
         private PolicyPage previousePage;
     }
 }

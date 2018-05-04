@@ -62,5 +62,10 @@ namespace _340GUI
                 label_ShowTotalAmountOfPayment.Visible = true;
             }
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
+        }
     }
 }
