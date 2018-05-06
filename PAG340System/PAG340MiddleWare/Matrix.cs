@@ -26,11 +26,11 @@ namespace PAG340MiddleWare
             matrix = new double[numberOfRows, numberOfColumns];
             double value;
             int oldRowNumber = 0;
-            for(int rowNumber = 0; rowNumber < NumberOfRows; rowNumber++)
+            for (int rowNumber = 0; rowNumber < NumberOfRows; rowNumber++)
             {
                 if (oldRowNumber == inRowNumber) oldRowNumber++;
                 int oldColumnNumber = 0;
-                for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
+                for (int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
                 {
                     if (oldColumnNumber == inColumnNumber) oldColumnNumber++;
                     value = inMatrix.getNumberAt(oldRowNumber, oldColumnNumber);
@@ -43,55 +43,87 @@ namespace PAG340MiddleWare
 
         public Matrix inverse()
         {
-            double determinant = getDeterminant();
-            Matrix inverseMatrix = new Matrix(numberOfRows, numberOfColumns);
             if (numberOfRows != numberOfColumns) throw new Exception("Matrix is not square.");
-            else if (determinant == 0) throw new Exception("Matrix is not is not invertible");
-            else
-            {
-                inverseMatrix.OfMinors(this);
-                inverseMatrix.OfCofactors();
-                inverseMatrix.transpose();
-                inverseMatrix.MultiplyByANumber(1 / determinant);
-            }
-            
-              return inverseMatrix;
-        }
+            Matrix inverseMatrix = new Matrix(numberOfRows, numberOfColumns);
+            inverseMatrix.makeThisIdentityMatrix();
+            Matrix A = this * inverseMatrix;
+            A.checkForZero();
+            if (A.matrix[0, 0] == 0.0) throw new Exception("Inverse matrix doesn't exist.");
 
-        private void OfMinors(Matrix inMatrix)
-        {
-            double value;
             for(int rowNumber = 0; rowNumber < numberOfRows; rowNumber++)
             {
-                for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
+                for(int columnNumber = 0; columnNumber < rowNumber; columnNumber++)
                 {
-                    Matrix newMatrix = new Matrix(rowNumber + 1, columnNumber + 1, inMatrix);
-                    value = newMatrix.getDeterminant();
-                    setNumberAt(rowNumber, columnNumber, value);
+                    double factor = A.matrix[rowNumber, columnNumber];
+                    A.subtractRowFrom(rowNumber, columnNumber, factor);
+                    inverseMatrix.subtractRowFrom(rowNumber, columnNumber, factor);
+                }
+                double divisor = A.matrix[rowNumber, rowNumber];
+                A.divideRowBy(rowNumber, divisor);
+                inverseMatrix.divideRowBy(rowNumber, divisor);
+            }
+
+            for(int columnNumber = numberOfColumns - 1; columnNumber > 0; columnNumber--)
+            {
+                for (int rowNumber = 0; rowNumber < columnNumber; rowNumber++)
+                {
+                    double factor = A.matrix[rowNumber, columnNumber];
+                    A.subtractRowFrom(rowNumber, columnNumber, factor);
+                    inverseMatrix.subtractRowFrom(rowNumber, columnNumber, factor);
+                }
+            }
+
+            return inverseMatrix;
+        }
+
+        private void divideRowBy(int rowNumber, double divisor)
+        {
+            for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
+            {
+                matrix[rowNumber, columnNumber] /= divisor;
+            }
+        }
+
+        private void subtractRowFrom(int rowToBeSubtracted, int subtractingRow, double factor)
+        {
+            for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
+            {
+                matrix[rowToBeSubtracted, columnNumber] -= factor * matrix[subtractingRow, columnNumber];
+            }
+        }
+
+        private void checkForZero()
+        {
+            for(int rowNumber = 0; rowNumber < NumberOfRows; rowNumber++)
+            {
+                if (matrix[rowNumber, 0] != 0.0)
+                {
+                    if (rowNumber != 0)
+                    {
+                        this.swap(0, rowNumber);
+                        break;
+                    }
+                    else break;
                 }
             }
         }
 
-        private void OfCofactors()
+        private void swap(int rowToBeReplaced, int replacingRow)
         {
-            for (int rowNumber = 0; rowNumber < numberOfRows; rowNumber++)
+            double[] temporaryRow = new double[numberOfColumns];
+            for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
             {
-                for (int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
-                {
-                    if(rowNumber % 2 == 0)
-                    {
-                        if(columnNumber % 2 == 1)
-                        {
-                            double opposite = 0.0 - getNumberAt(rowNumber, columnNumber);
-                            setNumberAt(rowNumber, columnNumber, opposite);
-                        }
-                    }
-                    else if(columnNumber % 2 == 0)
-                    {
-                        double opposite = 0.0 - getNumberAt(rowNumber, columnNumber);
-                        setNumberAt(rowNumber, columnNumber, opposite);
-                    }
-                }
+                temporaryRow[columnNumber] = matrix[rowToBeReplaced, columnNumber];
+                matrix[rowToBeReplaced, columnNumber] = matrix[replacingRow, columnNumber];
+                matrix[replacingRow, columnNumber] = temporaryRow[columnNumber];
+            }
+        }
+
+        private void makeThisIdentityMatrix()
+        {
+            for(int i = 0; i < numberOfRows; i++)
+            {
+                matrix[i,i] = 1;
             }
         }
 
@@ -107,29 +139,6 @@ namespace PAG340MiddleWare
                     setNumberAt(rowNumber, columnNumber, value);
                 }
             }
-        }
-
-        private double getDeterminant()
-        {
-            double determinant = 0.0;
-            if(numberOfColumns == 2)
-            {
-                determinant += getNumberAt(0, 0) * getNumberAt(1, 1);
-                determinant -= getNumberAt(0, 1) * getNumberAt(1, 0);
-            }
-            else
-            {
-                double value;
-               for(int columnNumber = 0; columnNumber < numberOfColumns; columnNumber++)
-                {
-                    value = getNumberAt(0, columnNumber);
-                    if (value == 0.0) return value;
-                    Matrix newMatrix = new Matrix(0, columnNumber, this);
-                    if (columnNumber % 2 == 0) determinant += value * newMatrix.getDeterminant();
-                    else determinant -= value * newMatrix.getDeterminant();
-                }
-            }
-            return determinant;
         }
 
         /*

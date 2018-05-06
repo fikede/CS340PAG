@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
+using System.Data.SqlTypes;
 
 namespace PAG340MiddleWare
 {
@@ -33,6 +35,19 @@ namespace PAG340MiddleWare
         public override void saveToDataBase()
         {
 
+        }
+
+        public void getValuesWithReader(SqlDataReader reader)
+        {
+            int columnNumber = reader.GetOrdinal("date");
+            date = reader.GetDateTime(columnNumber);
+
+            columnNumber = reader.GetOrdinal("type");
+            SqlChars typeChar = reader.GetSqlChars(columnNumber);
+            type = typeChar.Value[0];
+
+            columnNumber = reader.GetOrdinal("amount");
+            amount = Convert.ToDouble(reader.GetDecimal(columnNumber));
         }
 
         public string PolicyNumber
