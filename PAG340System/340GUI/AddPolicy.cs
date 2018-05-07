@@ -58,8 +58,8 @@ namespace _340GUI
             label_ShowAgentNumber.Text = inPolicy.RepresentativeAgent.ID;
             label_ShowAgentFirstName.Text = inPolicy.RepresentativeAgent.Firstname;
             label_ShowAgentLastName.Text = inPolicy.RepresentativeAgent.Lastname;
-            label_ShowPayoffAmount.Text = Convert.ToString(inPolicy.PayOffAmount);
-            label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);
+            label_ShowPayoffAmount.Text = "$" + Convert.ToString(inPolicy.PayOffAmount);
+            label_ShowMonthlyPremium.Text = "$" + Convert.ToString(inPolicy.Premium);
             textBox_BeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
             textBox_BeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
         }

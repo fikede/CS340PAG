@@ -311,7 +311,7 @@ namespace _340GUI
             this.textBox_Categories.Size = new System.Drawing.Size(564, 20);
             this.textBox_Categories.TabIndex = 74;
             this.textBox_Categories.Text = "  Policy Number                 Policyholder\'s Name                Agent\'s Name  " +
-    "                   Amount Overdue";
+    "                   Amount Overdue($)";
             // 
             // label_Warning
             // 

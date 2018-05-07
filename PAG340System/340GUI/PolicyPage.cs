@@ -63,8 +63,8 @@ namespace _340GUI
             label_ShowAgentNumber.Text = inPolicy.RepresentativeAgent.ID;
             label_ShowAgentFirstName.Text = inPolicy.RepresentativeAgent.Firstname;
             label_ShowAgentLastName.Text = inPolicy.RepresentativeAgent.Lastname;
-            label_ShowPayoffAmount.Text = Convert.ToString(inPolicy.PayOffAmount);
-            label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);
+            label_ShowPayoffAmount.Text = "$" + Convert.ToString(inPolicy.PayOffAmount);
+            label_ShowMonthlyPremium.Text = "$" + Convert.ToString(inPolicy.Premium);
 
             List<Beneficiary> beneficiariesList = usingPolicy.GetBeneficiaries();
             if (beneficiariesList.Count == 0) listBox_BeneficiaryName.Items.Add("There are no beneficiaries.");
