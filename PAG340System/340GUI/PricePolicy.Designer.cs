@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_TotalAmountOfPayment = new System.Windows.Forms.Label();
             this.label_PayoffAmount = new System.Windows.Forms.Label();
             this.label_HoursOfExercise = new System.Windows.Forms.Label();
@@ -366,7 +367,7 @@ namespace _340GUI
             this.panel_HeartDisease.Location = new System.Drawing.Point(367, 194);
             this.panel_HeartDisease.Name = "panel_HeartDisease";
             this.panel_HeartDisease.Size = new System.Drawing.Size(164, 21);
-            this.panel_HeartDisease.TabIndex = 73;
+            this.panel_HeartDisease.TabIndex = 56;
             // 
             // panel_Cancer
             // 
@@ -375,7 +376,7 @@ namespace _340GUI
             this.panel_Cancer.Location = new System.Drawing.Point(367, 217);
             this.panel_Cancer.Name = "panel_Cancer";
             this.panel_Cancer.Size = new System.Drawing.Size(164, 21);
-            this.panel_Cancer.TabIndex = 74;
+            this.panel_Cancer.TabIndex = 58;
             // 
             // radioButton_YesCancer
             // 
@@ -406,7 +407,7 @@ namespace _340GUI
             this.panel_Hospitalized.Location = new System.Drawing.Point(367, 241);
             this.panel_Hospitalized.Name = "panel_Hospitalized";
             this.panel_Hospitalized.Size = new System.Drawing.Size(164, 21);
-            this.panel_Hospitalized.TabIndex = 75;
+            this.panel_Hospitalized.TabIndex = 60;
             // 
             // radioButton_YesHospitalized
             // 

@@ -45,5 +45,10 @@ namespace _340GUI
                 button_Login.PerformClick();
             }
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
+        }
     }
 }

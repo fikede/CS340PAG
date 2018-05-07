@@ -18,6 +18,7 @@ namespace _340GUI
             InitializeComponent();
             usingAgent = inUsingAgent;
             listBox_Searching.Visible = false;
+            textBox_Categories.Visible = false;
             label_WarningStatement1.Visible = false;
             label_WarningStatement2.Visible = false;
             pictureBox_Warning.Visible = false;
@@ -45,20 +46,20 @@ namespace _340GUI
 
         private void linkLabel_CreatePolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //PricePolicy pricePolicy = new PricePolicy(usingAgent);
-            //pricePolicy.Show();
-            //this.Close();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            PricePolicy pricePolicy = new PricePolicy(usingAgent);
+            pricePolicy.Show();
+            this.Close();
         }
 
         private void linkLabel_DelinquentAccounts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            IncompleteFeature incomplete = new IncompleteFeature();
-            incomplete.Show();
-            //Delinquent delinquent = new Delinquent(usingAgent);
-            //delinquent.Show();
-            //this.Close();
+            //IncompleteFeature incomplete = new IncompleteFeature();
+            //incomplete.Show();
+            Delinquent delinquent = new Delinquent(usingAgent);
+            delinquent.Show();
+            this.Close();
         }
 
         private void linkLabel_Logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -99,17 +100,24 @@ namespace _340GUI
                 {
                     policyList = usingAgent.search(textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_PolicyNumber.Text);
                 }
-   
+
+                
                 foreach (Policy policy in policyList)
                 {
                     string listString = alignItemString(policy);
                     listBox_Searching.Items.Add(listString);
                 }
 
+                if (listBox_Searching.Items.Count == 0)
+                {
+                    listBox_Searching.Items.Add("There is no result.");
+                }
+                
                 pictureBox_Warning.Visible = false;
                 label_WarningStatement1.Visible = false;
                 label_WarningStatement2.Visible = false;
                 listBox_Searching.Visible = true;
+                textBox_Categories.Visible = true;
             }
             else
             {
@@ -117,13 +125,14 @@ namespace _340GUI
                 label_WarningStatement1.Visible = true;
                 label_WarningStatement2.Visible = true;
                 listBox_Searching.Visible = false;
+                textBox_Categories.Visible = false;
             }
         }
 
         private string alignItemString(Policy policy)
         {
             int length;
-            string output = " ";
+            string output = "   ";
             output += policy.PolicyNumber;
             length = 30 - policy.PolicyNumber.Length;
             for (int i = 0; i < length; i++) output += " ";
@@ -146,6 +155,11 @@ namespace _340GUI
                 this.Hide();
             }
             catch { }
+        }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
         }
     }
 }

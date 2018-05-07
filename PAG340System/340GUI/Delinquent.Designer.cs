@@ -58,6 +58,7 @@ namespace _340GUI
             this.label_ShowAgentFirstName = new System.Windows.Forms.Label();
             this.label_ShowAgentLastName = new System.Windows.Forms.Label();
             this.listBox_DelinquentList = new System.Windows.Forms.ListBox();
+            this.textBox_Categories = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // linkLabel_AddNewAgent
@@ -128,9 +129,12 @@ namespace _340GUI
             // 
             // comboBox_State
             // 
+            this.comboBox_State.DisplayMember = "Select";
+            this.comboBox_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_State.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.comboBox_State.FormattingEnabled = true;
             this.comboBox_State.Items.AddRange(new object[] {
+            "No State Specified",
             "AL",
             "AK",
             "AZ",
@@ -186,7 +190,6 @@ namespace _340GUI
             this.comboBox_State.Name = "comboBox_State";
             this.comboBox_State.Size = new System.Drawing.Size(223, 21);
             this.comboBox_State.TabIndex = 66;
-            this.comboBox_State.Text = "No state specified";
             // 
             // button_Submit
             // 
@@ -288,10 +291,22 @@ namespace _340GUI
             // listBox_DelinquentList
             // 
             this.listBox_DelinquentList.FormattingEnabled = true;
-            this.listBox_DelinquentList.Location = new System.Drawing.Point(203, 199);
+            this.listBox_DelinquentList.Location = new System.Drawing.Point(197, 215);
             this.listBox_DelinquentList.Name = "listBox_DelinquentList";
-            this.listBox_DelinquentList.Size = new System.Drawing.Size(480, 173);
+            this.listBox_DelinquentList.Size = new System.Drawing.Size(535, 160);
             this.listBox_DelinquentList.TabIndex = 71;
+            // 
+            // textBox_Categories
+            // 
+            this.textBox_Categories.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.textBox_Categories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_Categories.Location = new System.Drawing.Point(197, 196);
+            this.textBox_Categories.Name = "textBox_Categories";
+            this.textBox_Categories.ReadOnly = true;
+            this.textBox_Categories.Size = new System.Drawing.Size(535, 20);
+            this.textBox_Categories.TabIndex = 74;
+            this.textBox_Categories.Text = "  Policy Number                 Policyholder\'s Name                Agent\'s Name  " +
+    "                   Amount Overdue";
             // 
             // Delinquent
             // 
@@ -299,6 +314,7 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.textBox_Categories);
             this.Controls.Add(this.listBox_DelinquentList);
             this.Controls.Add(this.label_ShowAgentLastName);
             this.Controls.Add(this.label_ShowAgentFirstName);
@@ -320,6 +336,7 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_Home);
             this.Name = "Delinquent";
             this.Text = "Delinquent Account Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +364,6 @@ namespace _340GUI
         private Label label_ShowAgentFirstName;
         private Label label_ShowAgentLastName;
         private ListBox listBox_DelinquentList;
+        private TextBox textBox_Categories;
     }
 }

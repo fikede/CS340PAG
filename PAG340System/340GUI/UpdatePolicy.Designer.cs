@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_BeneficiaryLastName = new System.Windows.Forms.Label();
             this.label_BeneficiaryFirstName = new System.Windows.Forms.Label();
             this.label_MonthlyPremium = new System.Windows.Forms.Label();
@@ -477,6 +478,8 @@ namespace _340GUI
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
+            this.comboBox_AddressState.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBox_AddressState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_AddressState.FormattingEnabled = true;
             this.comboBox_AddressState.Items.AddRange(new object[] {
             "AL",

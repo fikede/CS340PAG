@@ -58,9 +58,14 @@ namespace _340GUI
                     Convert.ToDouble(textBox_SmokingHistory.Text), Convert.ToDouble(textBox_SystolicBloodPressure.Text), Convert.ToDouble(textBox_AverageFatPerDay.Text),
                     radioButton_YesHeartDisease.Checked, radioButton_YesCancer.Checked, radioButton_YesHospitalized.Checked, textBox_DangerousActivity.Text);
                 double premium = pricingPolicy.PricePolicy();
-                label_ShowTotalAmountOfPayment.Text = "" + premium;
+                label_ShowTotalAmountOfPayment.Text = " " + premium;
                 label_ShowTotalAmountOfPayment.Visible = true;
             }
+        }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
         }
     }
 }

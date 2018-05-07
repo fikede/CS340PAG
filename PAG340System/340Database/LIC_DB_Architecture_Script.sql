@@ -5,7 +5,7 @@
 -- https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql
 -- Use this Links for all commands.
 
-CREATE DATABASE LIC_PAG
+--CREATE DATABASE LIC_PAG
 
 USE LIC_PAG
 GO
@@ -114,5 +114,5 @@ month_name varchar(10),
 month_number int,
 [year] varchar(4),
 [value] decimal(6,3),
-CONSTRAINT PK_USInflation PRIMARY KEY([month], month_number, [year])
+CONSTRAINT PK_USInflation PRIMARY KEY([month_name], month_number, [year])
 )

@@ -40,6 +40,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.comboBox_Department = new System.Windows.Forms.ComboBox();
             this.comboBox_UserType = new System.Windows.Forms.ComboBox();
             this.button_Cancel = new System.Windows.Forms.Button();

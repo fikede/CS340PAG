@@ -105,6 +105,31 @@ GO
 
 -----------------------------------------------------------------------------------------------------
 
+--Procedure for retrieving all policy numbers
+CREATE PROCEDURE returnPolicyNumber
+AS
+BEGIN
+SELECT number from Policy
+ORDER BY number DESC
+
+END
+GO
+
+----------------------------------------------------------------------------------------------------
+
+--Procedure for retrieving all policy holder IDs
+CREATE PROCEDURE returnPolicyHolderID
+AS
+BEGIN
+SELECT ID 
+FROM PolicyHolder
+ORDER BY ID DESC
+
+END
+GO
+
+-----------------------------------------------------------------------------------------------------
+
 -- Procedure for retrieving all employee IDs
 CREATE PROCEDURE returnEmployeeID
 AS

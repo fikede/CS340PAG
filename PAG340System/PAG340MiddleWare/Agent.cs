@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace PAG340MiddleWare
 {
@@ -54,9 +55,16 @@ namespace PAG340MiddleWare
         {
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
-            String query = "Execute addEmployee " + id + ", " + firstName + ", " + lastName + ", " + userName + ", " + hashPassword + ", " + userType + ", " + dept;
-            SqlCommand cmd = new SqlCommand(query);
-            cmd.Connection = conn;
+            String query = "addEmployee";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@employeeID", id);
+            cmd.Parameters.AddWithValue("@firstName", firstName);
+            cmd.Parameters.AddWithValue("@lastName", lastName);
+            cmd.Parameters.AddWithValue("@username", userName);
+            cmd.Parameters.AddWithValue("@passwordHashed", hashPassword);
+            cmd.Parameters.AddWithValue("@usertype", userType);
+            cmd.Parameters.AddWithValue("@department", dept);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -72,8 +80,6 @@ namespace PAG340MiddleWare
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
             cmd.Parameters.AddWithValue("@agentID", id);
-            //cmd.Parameters.AddWithValue("@agentFName", "");
-            //cmd.Parameters.AddWithValue("@agentLName", "");
             cmd.Parameters.AddWithValue("@holderFName", policyHolderFirstName);
             cmd.Parameters.AddWithValue("@holderLName", policyHolderLastName);
             conn.Open();

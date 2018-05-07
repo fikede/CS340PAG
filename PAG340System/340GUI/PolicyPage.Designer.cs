@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_PolicyNumber = new System.Windows.Forms.Label();
             this.label_PolicyholderFirstName = new System.Windows.Forms.Label();
             this.label_PolicyholderLastName = new System.Windows.Forms.Label();

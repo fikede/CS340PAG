@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Data;
+using PAG340MiddleWare.Properties;
 
 namespace PAG340MiddleWare
 {
@@ -101,7 +104,38 @@ namespace PAG340MiddleWare
 
         public override void saveToDataBase()
         {
-            //insert needed.
+            holder.saveToDataBase();
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "addPolicyHolder";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            cmd.Parameters.AddWithValue("@holderID", holder.ID);
+            cmd.Parameters.AddWithValue("@empID", representativeAgent.ID);
+            cmd.Parameters.AddWithValue("@holderDOB", holder.BirthDate);
+            if (fathersAgeAtDeath > 0) cmd.Parameters.AddWithValue("@fatherDeath", fathersAgeAtDeath);
+            if (fathersAgeAtDeath > 0) cmd.Parameters.AddWithValue("@motherDeath", fathersAgeAtDeath);
+            cmd.Parameters.AddWithValue("@cigsPerDay", cigsPerDay);
+            cmd.Parameters.AddWithValue("@smokeHistory", smokingHis);
+            cmd.Parameters.AddWithValue("@sysBP", systolicBldPressure);
+            cmd.Parameters.AddWithValue("@aGramsFat", gramsFatPerDay);
+            int booleanValue = (heartDisease) ? 1 : 0;
+            cmd.Parameters.AddWithValue("@heartDisease", booleanValue);
+            booleanValue = (cancer) ? 1 : 0;
+            cmd.Parameters.AddWithValue("@cancer", booleanValue);
+            booleanValue = (hospitalized) ? 1 : 0;
+            cmd.Parameters.AddWithValue("@hospitalized", booleanValue);
+            cmd.Parameters.AddWithValue("@dangerousActivities", dangerousActivities);
+            cmd.Parameters.AddWithValue("@startDate", startDate);
+            if(endDate.ToString() != "00010101") cmd.Parameters.AddWithValue("@endDate", endDate);
+            cmd.Parameters.AddWithValue("@payoffAmount", payOffAmount);
+            cmd.Parameters.AddWithValue("@monthlyPremium", premium);
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            beneficiary.saveToDataBase();
         }
 
         public double PricePolicy()
@@ -202,13 +236,37 @@ namespace PAG340MiddleWare
 
         public void CancelPolicy()
         {
-
+            endDate = DateTime.Today;
+            string connectionString = Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string query = "endPolicy";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            cmd.Parameters.AddWithValue("@cancelDate", endDate);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public List<Payment> GetPaymentHistory()
         {
             List<Payment> paymentHistory = new List<Payment>();
-
+            String connectionString = Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string query = "getPayments";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                Payment payment = new Payment();
+                payment.getValuesWithReader(reader);
+                paymentHistory.Add(payment);
+            }
+            conn.Close();
             return paymentHistory;
         }
         
@@ -262,7 +320,7 @@ namespace PAG340MiddleWare
             List<Policy> policies = new List<Policy>();
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
-            String query = "getClaimedPolicies";
+            string query = "getClaimedPolicies";
             SqlCommand cmd = new SqlCommand(query, conn);
 
             conn.Open();
@@ -377,6 +435,57 @@ namespace PAG340MiddleWare
             representativeAgent.Lastname = reader.GetString(columnNumber);
 
             getPolicyInformationWithoutAgentName(reader);
+        }
+
+        public string getNextId()
+        {
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "EXECUTE returnPolicyNumber";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Connection = conn;
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            String newNumber = "";
+
+            if (reader.Read())
+            {
+                int columnNum = reader.GetOrdinal("ID");
+                newNumber = reader.GetString(columnNum);
+                newNumber = addOneToNumber(newNumber);
+            }
+            conn.Close();
+            return newNumber;
+        }
+
+        private string addOneToNumber(string newNumber)
+        {
+            char[] charNewNumber = new char[newNumber.Length];
+            bool notAddedOne = true;
+            for (int i = newNumber.Length - 1; i >= 0; i--)
+            {
+                if (newNumber[i] == '9' && notAddedOne)
+                {
+                    charNewNumber[i] = '0';
+                }
+                else if(newNumber[i] == ' ' && notAddedOne)
+                {
+                    charNewNumber[i] = '1';
+                }
+                else if (notAddedOne)
+                {
+                    charNewNumber[i] = newNumber[i];
+                    charNewNumber[i]++;
+                    notAddedOne = false;
+                }
+                else
+                {
+                    charNewNumber[i] = newNumber[i];
+                }
+            }
+            String outID = new String(charNewNumber);
+
+            return outID;
         }
 
         public string PolicyNumber

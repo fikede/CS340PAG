@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.linkLabel_Logout = new System.Windows.Forms.LinkLabel();
             this.linkLabel_DelinquentAccounts = new System.Windows.Forms.LinkLabel();
             this.linkLabel_CreatePolicy = new System.Windows.Forms.LinkLabel();

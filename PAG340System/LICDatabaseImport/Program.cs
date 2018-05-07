@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Morgan Johnson
  * Program Purpose: This program is specifically designed for the "one-time" use of data import to the LIC DB
- * Current Status: - Need to import US Dollar Inflation.
+ * Status: Complete, However there will be more payment files to upload.
  */
 using System;
 using System.IO;

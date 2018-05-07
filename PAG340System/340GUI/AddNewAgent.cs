@@ -57,5 +57,10 @@ namespace _340GUI
             if (s.Equals("Manager")) return "M";
             else return "A";
         }
+
+        private void shutDown(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms.Count == 2) Application.Exit();
+        }
     }
 }

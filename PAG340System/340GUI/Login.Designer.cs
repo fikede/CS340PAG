@@ -39,6 +39,7 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.Label_AgentNumber = new System.Windows.Forms.Label();
             this.Label_Password = new System.Windows.Forms.Label();
             this.textBox_AgentNumber = new System.Windows.Forms.TextBox();
