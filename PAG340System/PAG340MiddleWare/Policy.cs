@@ -248,7 +248,7 @@ namespace PAG340MiddleWare
 
         private double roundToTwoDecimals(double inValue)
         {
-            double roundedValue = 0;
+            double roundedValue = inValue;
             string stringOfValue = "" + inValue;
             if (stringOfValue.Contains('.'))
             {

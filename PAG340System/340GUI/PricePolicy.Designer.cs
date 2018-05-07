@@ -75,6 +75,7 @@ namespace _340GUI
             this.radioButton_YesHospitalized = new System.Windows.Forms.RadioButton();
             this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
             this.textBox_PayOffAmount = new System.Windows.Forms.TextBox();
+            this.label_dateWarning = new System.Windows.Forms.Label();
             this.panel_HeartDisease.SuspendLayout();
             this.panel_Cancer.SuspendLayout();
             this.panel_Hospitalized.SuspendLayout();
@@ -425,12 +426,23 @@ namespace _340GUI
             this.textBox_PayOffAmount.Size = new System.Drawing.Size(239, 20);
             this.textBox_PayOffAmount.TabIndex = 64;
             // 
+            // label_dateWarning
+            // 
+            this.label_dateWarning.AutoSize = true;
+            this.label_dateWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_dateWarning.Location = new System.Drawing.Point(607, 56);
+            this.label_dateWarning.Name = "label_dateWarning";
+            this.label_dateWarning.Size = new System.Drawing.Size(162, 13);
+            this.label_dateWarning.TabIndex = 72;
+            this.label_dateWarning.Text = "Must be in the form \'yyyy/mm/dd\'";
+            // 
             // PricePolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(755, 399);
+            this.ClientSize = new System.Drawing.Size(783, 399);
+            this.Controls.Add(this.label_dateWarning);
             this.Controls.Add(this.textBox_PayOffAmount);
             this.Controls.Add(this.panel_Hospitalized);
             this.Controls.Add(this.panel_Cancer);
@@ -515,5 +527,6 @@ namespace _340GUI
         private RadioButton radioButton_NoHospitalized;
         private Policy pricingPolicy;
         private TextBox textBox_PayOffAmount;
+        private Label label_dateWarning;
     }
 }
