@@ -438,7 +438,7 @@ namespace PAG340MiddleWare
             getPolicyInformationWithoutAgentName(reader);
         }
 
-        public string getNextId()
+        public string getNextNumber()
         {
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -451,7 +451,7 @@ namespace PAG340MiddleWare
 
             if (reader.Read())
             {
-                int columnNum = reader.GetOrdinal("ID");
+                int columnNum = reader.GetOrdinal("number");
                 newNumber = reader.GetString(columnNum);
                 newNumber = addOneToNumber(newNumber);
             }
