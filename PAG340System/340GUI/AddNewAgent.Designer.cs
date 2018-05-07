@@ -40,7 +40,6 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.comboBox_Department = new System.Windows.Forms.ComboBox();
             this.comboBox_UserType = new System.Windows.Forms.ComboBox();
             this.button_Cancel = new System.Windows.Forms.Button();
@@ -74,7 +73,7 @@ namespace _340GUI
             "Marketing",
             "Obfuscation",
             "Sales"});
-            this.comboBox_Department.Location = new System.Drawing.Point(296, 234);
+            this.comboBox_Department.Location = new System.Drawing.Point(296, 251);
             this.comboBox_Department.Name = "comboBox_Department";
             this.comboBox_Department.Size = new System.Drawing.Size(261, 21);
             this.comboBox_Department.TabIndex = 33;
@@ -89,7 +88,7 @@ namespace _340GUI
             this.comboBox_UserType.Items.AddRange(new object[] {
             "Manager",
             "Agent"});
-            this.comboBox_UserType.Location = new System.Drawing.Point(296, 207);
+            this.comboBox_UserType.Location = new System.Drawing.Point(296, 224);
             this.comboBox_UserType.Name = "comboBox_UserType";
             this.comboBox_UserType.Size = new System.Drawing.Size(261, 21);
             this.comboBox_UserType.TabIndex = 32;
@@ -99,7 +98,7 @@ namespace _340GUI
             // 
             this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Cancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_Cancel.Location = new System.Drawing.Point(455, 321);
+            this.button_Cancel.Location = new System.Drawing.Point(455, 320);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(105, 33);
             this.button_Cancel.TabIndex = 35;
@@ -111,7 +110,7 @@ namespace _340GUI
             // 
             this.button_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Submit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button_Submit.Location = new System.Drawing.Point(237, 321);
+            this.button_Submit.Location = new System.Drawing.Point(237, 320);
             this.button_Submit.Name = "button_Submit";
             this.button_Submit.Size = new System.Drawing.Size(105, 33);
             this.button_Submit.TabIndex = 34;
@@ -121,8 +120,8 @@ namespace _340GUI
             // 
             // textBox_Password
             // 
-            this.textBox_Password.Location = new System.Drawing.Point(296, 181);
-            this.textBox_Password.MaxLength = 30;
+            this.textBox_Password.Location = new System.Drawing.Point(296, 198);
+            this.textBox_Password.MaxLength = 255;
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(261, 20);
             this.textBox_Password.TabIndex = 30;
@@ -130,14 +129,15 @@ namespace _340GUI
             // 
             // textBox_AgentLastName
             // 
-            this.textBox_AgentLastName.Location = new System.Drawing.Point(296, 155);
+            this.textBox_AgentLastName.Location = new System.Drawing.Point(296, 172);
+            this.textBox_AgentLastName.MaxLength = 100;
             this.textBox_AgentLastName.Name = "textBox_AgentLastName";
             this.textBox_AgentLastName.Size = new System.Drawing.Size(261, 20);
             this.textBox_AgentLastName.TabIndex = 29;
             // 
             // textBox_Username
             // 
-            this.textBox_Username.Location = new System.Drawing.Point(296, 103);
+            this.textBox_Username.Location = new System.Drawing.Point(296, 120);
             this.textBox_Username.MaxLength = 20;
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(261, 20);
@@ -145,7 +145,8 @@ namespace _340GUI
             // 
             // textBox_AgentFirstName
             // 
-            this.textBox_AgentFirstName.Location = new System.Drawing.Point(296, 129);
+            this.textBox_AgentFirstName.Location = new System.Drawing.Point(296, 146);
+            this.textBox_AgentFirstName.MaxLength = 100;
             this.textBox_AgentFirstName.Name = "textBox_AgentFirstName";
             this.textBox_AgentFirstName.Size = new System.Drawing.Size(261, 20);
             this.textBox_AgentFirstName.TabIndex = 27;
@@ -154,7 +155,7 @@ namespace _340GUI
             // 
             this.label_Department.AutoSize = true;
             this.label_Department.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Department.Location = new System.Drawing.Point(225, 237);
+            this.label_Department.Location = new System.Drawing.Point(225, 254);
             this.label_Department.Name = "label_Department";
             this.label_Department.Size = new System.Drawing.Size(65, 13);
             this.label_Department.TabIndex = 28;
@@ -164,7 +165,7 @@ namespace _340GUI
             // 
             this.label_UserType.AutoSize = true;
             this.label_UserType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_UserType.Location = new System.Drawing.Point(232, 210);
+            this.label_UserType.Location = new System.Drawing.Point(232, 227);
             this.label_UserType.Name = "label_UserType";
             this.label_UserType.Size = new System.Drawing.Size(59, 13);
             this.label_UserType.TabIndex = 24;
@@ -174,7 +175,7 @@ namespace _340GUI
             // 
             this.label_Password.AutoSize = true;
             this.label_Password.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Password.Location = new System.Drawing.Point(235, 184);
+            this.label_Password.Location = new System.Drawing.Point(235, 201);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(56, 13);
             this.label_Password.TabIndex = 23;
@@ -184,7 +185,7 @@ namespace _340GUI
             // 
             this.label_AgentLastName.AutoSize = true;
             this.label_AgentLastName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_AgentLastName.Location = new System.Drawing.Point(198, 158);
+            this.label_AgentLastName.Location = new System.Drawing.Point(198, 175);
             this.label_AgentLastName.Name = "label_AgentLastName";
             this.label_AgentLastName.Size = new System.Drawing.Size(92, 13);
             this.label_AgentLastName.TabIndex = 22;
@@ -194,7 +195,7 @@ namespace _340GUI
             // 
             this.label_AgentFirstName.AutoSize = true;
             this.label_AgentFirstName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_AgentFirstName.Location = new System.Drawing.Point(200, 132);
+            this.label_AgentFirstName.Location = new System.Drawing.Point(200, 149);
             this.label_AgentFirstName.Name = "label_AgentFirstName";
             this.label_AgentFirstName.Size = new System.Drawing.Size(91, 13);
             this.label_AgentFirstName.TabIndex = 21;
@@ -204,7 +205,7 @@ namespace _340GUI
             // 
             this.label_Username.AutoSize = true;
             this.label_Username.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Username.Location = new System.Drawing.Point(232, 106);
+            this.label_Username.Location = new System.Drawing.Point(232, 123);
             this.label_Username.Name = "label_Username";
             this.label_Username.Size = new System.Drawing.Size(58, 13);
             this.label_Username.TabIndex = 20;
@@ -214,7 +215,7 @@ namespace _340GUI
             // 
             this.label_AgentNumber.AutoSize = true;
             this.label_AgentNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_AgentNumber.Location = new System.Drawing.Point(212, 83);
+            this.label_AgentNumber.Location = new System.Drawing.Point(212, 100);
             this.label_AgentNumber.Name = "label_AgentNumber";
             this.label_AgentNumber.Size = new System.Drawing.Size(78, 13);
             this.label_AgentNumber.TabIndex = 19;
@@ -225,7 +226,7 @@ namespace _340GUI
             this.label_AddNewAgent.AutoSize = true;
             this.label_AddNewAgent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label_AddNewAgent.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_AddNewAgent.Location = new System.Drawing.Point(326, 42);
+            this.label_AddNewAgent.Location = new System.Drawing.Point(326, 59);
             this.label_AddNewAgent.Name = "label_AddNewAgent";
             this.label_AddNewAgent.Size = new System.Drawing.Size(95, 13);
             this.label_AddNewAgent.TabIndex = 18;
@@ -234,7 +235,7 @@ namespace _340GUI
             // label_ShowAgentNumber
             // 
             this.label_ShowAgentNumber.AutoSize = true;
-            this.label_ShowAgentNumber.Location = new System.Drawing.Point(298, 83);
+            this.label_ShowAgentNumber.Location = new System.Drawing.Point(298, 100);
             this.label_ShowAgentNumber.Name = "label_ShowAgentNumber";
             this.label_ShowAgentNumber.Size = new System.Drawing.Size(41, 13);
             this.label_ShowAgentNumber.TabIndex = 36;
@@ -265,6 +266,7 @@ namespace _340GUI
             this.Controls.Add(this.label_AddNewAgent);
             this.Name = "AddNewAgent";
             this.Text = "Add New Agent";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -147,7 +147,7 @@ namespace PAG340MiddleWare
             Matrix betaHat = getBetaHat(designMatrix, yHat);
             double predictedAgeAtDeath = predictAgeAtDeath(betaHat);
             double billableMonths = (predictedAgeAtDeath - getAge()) * 12;
-            double grossRevenueGoal = getRevenueGoal(billableMonths);
+            double grossRevenueGoal = getRevenueGoal(billableMonths/12);
             price = grossRevenueGoal / billableMonths;
 
             return price;
@@ -155,7 +155,7 @@ namespace PAG340MiddleWare
 
         private double getRevenueGoal(double billableMonths)
         {
-            double adjustedAmount = payOffAmount;
+            double adjustedAmount = payOffAmount * 1.10; // Multiply by the profit goal which is 10 percent;
             double averageInflation = getAverageInflation();
             adjustedAmount *= Math.Pow(averageInflation + 1, billableMonths);
             return adjustedAmount;

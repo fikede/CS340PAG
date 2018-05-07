@@ -39,7 +39,6 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_BeneficiaryLastName = new System.Windows.Forms.Label();
             this.label_BeneficiaryFirstName = new System.Windows.Forms.Label();
             this.label_MonthlyPremium = new System.Windows.Forms.Label();
@@ -355,6 +354,7 @@ namespace _340GUI
             // textBox_PolicyholderFirstName
             // 
             this.textBox_PolicyholderFirstName.Location = new System.Drawing.Point(305, 89);
+            this.textBox_PolicyholderFirstName.MaxLength = 100;
             this.textBox_PolicyholderFirstName.Name = "textBox_PolicyholderFirstName";
             this.textBox_PolicyholderFirstName.Size = new System.Drawing.Size(238, 20);
             this.textBox_PolicyholderFirstName.TabIndex = 57;
@@ -362,6 +362,7 @@ namespace _340GUI
             // textBox_PolicyholderLastName
             // 
             this.textBox_PolicyholderLastName.Location = new System.Drawing.Point(305, 114);
+            this.textBox_PolicyholderLastName.MaxLength = 100;
             this.textBox_PolicyholderLastName.Name = "textBox_PolicyholderLastName";
             this.textBox_PolicyholderLastName.Size = new System.Drawing.Size(238, 20);
             this.textBox_PolicyholderLastName.TabIndex = 58;
@@ -369,6 +370,7 @@ namespace _340GUI
             // textBox_AddressStreet
             // 
             this.textBox_AddressStreet.Location = new System.Drawing.Point(305, 137);
+            this.textBox_AddressStreet.MaxLength = 30;
             this.textBox_AddressStreet.Name = "textBox_AddressStreet";
             this.textBox_AddressStreet.Size = new System.Drawing.Size(238, 20);
             this.textBox_AddressStreet.TabIndex = 59;
@@ -376,6 +378,7 @@ namespace _340GUI
             // textBox_AddressCity
             // 
             this.textBox_AddressCity.Location = new System.Drawing.Point(304, 162);
+            this.textBox_AddressCity.MaxLength = 20;
             this.textBox_AddressCity.Name = "textBox_AddressCity";
             this.textBox_AddressCity.Size = new System.Drawing.Size(238, 20);
             this.textBox_AddressCity.TabIndex = 60;
@@ -383,6 +386,7 @@ namespace _340GUI
             // textBox_AddressZip
             // 
             this.textBox_AddressZip.Location = new System.Drawing.Point(305, 210);
+            this.textBox_AddressZip.MaxLength = 9;
             this.textBox_AddressZip.Name = "textBox_AddressZip";
             this.textBox_AddressZip.Size = new System.Drawing.Size(238, 20);
             this.textBox_AddressZip.TabIndex = 62;
@@ -390,6 +394,7 @@ namespace _340GUI
             // textBox_BeneficiaryFirstName
             // 
             this.textBox_BeneficiaryFirstName.Location = new System.Drawing.Point(304, 677);
+            this.textBox_BeneficiaryFirstName.MaxLength = 100;
             this.textBox_BeneficiaryFirstName.Name = "textBox_BeneficiaryFirstName";
             this.textBox_BeneficiaryFirstName.Size = new System.Drawing.Size(238, 20);
             this.textBox_BeneficiaryFirstName.TabIndex = 63;
@@ -397,6 +402,7 @@ namespace _340GUI
             // textBox_BeneficiaryLastName
             // 
             this.textBox_BeneficiaryLastName.Location = new System.Drawing.Point(305, 702);
+            this.textBox_BeneficiaryLastName.MaxLength = 100;
             this.textBox_BeneficiaryLastName.Name = "textBox_BeneficiaryLastName";
             this.textBox_BeneficiaryLastName.Size = new System.Drawing.Size(238, 20);
             this.textBox_BeneficiaryLastName.TabIndex = 64;
@@ -777,6 +783,7 @@ namespace _340GUI
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "UpdatePolicy";
             this.Text = "Update Policy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
