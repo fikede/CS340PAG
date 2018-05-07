@@ -155,5 +155,6 @@ namespace _340GUI
         private Policy completePolicy;
         private Agent usingAgent;
         private AddPolicy previousPage;
+        private PricePolicy prepreviousPage;
     }
 }
