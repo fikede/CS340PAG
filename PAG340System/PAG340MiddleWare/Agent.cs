@@ -101,7 +101,7 @@ namespace PAG340MiddleWare
             return policyList;
         }
 
-        public List<Policy> delinquentAccounts(string state, double amountOverdue)
+        public List<Policy> delinquentAccounts(string state, double amountOverdue, List<double> overdueAmounts)
         {
             List<Policy> policyList = new List<Policy>();
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
@@ -115,12 +115,12 @@ namespace PAG340MiddleWare
             SqlDataReader reader = cmd.ExecuteReader();
             policyList = getSearchResults(reader);
             conn.Close();
-            policyList = calculateDelinquentAccounts(policyList, amountOverdue);
+            policyList = calculateDelinquentAccounts(policyList, amountOverdue, overdueAmounts);
 
             return policyList;
         }
 
-        protected List<Policy> calculateDelinquentAccounts(List<Policy> policies, double amountOverdue)
+        protected List<Policy> calculateDelinquentAccounts(List<Policy> policies, double amountOverdue, List<double> overdueAmounts)
         {
             List<Policy> policyList = new List<Policy>();
 
@@ -130,7 +130,11 @@ namespace PAG340MiddleWare
                 TimeSpan sinceStart = DateTime.Today.Subtract(policy.StartDate);
                 double expectedSum = policy.Premium * (sinceStart.TotalDays / 30.42); //To get months.
                 double actualSum = calculateActualSum(payments);
-                if ((expectedSum - actualSum) > amountOverdue) policyList.Add(policy);
+                if ((expectedSum - actualSum) > amountOverdue)
+                {
+                    policyList.Add(policy);
+                    overdueAmounts.Add(expectedSum - actualSum);
+                }
             }
 
             return policyList;
