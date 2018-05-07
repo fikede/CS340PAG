@@ -23,7 +23,7 @@ To Use This System Follow These Steps:
 18. Write down the Agent Number that is diplayed and enter into:
 	a. Username: jsmith455
 	b. Agent First Name: John
-	c. Agent Last Name: Smith
+	c. Agent Last Name: Wick
 	d. Password: testing
 	e. User Type: Agent
 	f. Department: Sales
