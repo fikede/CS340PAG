@@ -76,6 +76,13 @@ namespace _340GUI
             this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
             this.textBox_PayOffAmount = new System.Windows.Forms.TextBox();
             this.label_dateWarning = new System.Windows.Forms.Label();
+            this.label_FAGDWarning = new System.Windows.Forms.Label();
+            this.label_MAADWarning = new System.Windows.Forms.Label();
+            this.label_SMWarning = new System.Windows.Forms.Label();
+            this.label_CPDWarning = new System.Windows.Forms.Label();
+            this.label_SBPWarning = new System.Windows.Forms.Label();
+            this.label_AGFPDWarning = new System.Windows.Forms.Label();
+            this.label_PAWarning = new System.Windows.Forms.Label();
             this.panel_HeartDisease.SuspendLayout();
             this.panel_Cancer.SuspendLayout();
             this.panel_Hospitalized.SuspendLayout();
@@ -436,12 +443,89 @@ namespace _340GUI
             this.label_dateWarning.TabIndex = 72;
             this.label_dateWarning.Text = "Must be in the form \'yyyy/mm/dd\'";
             // 
+            // label_FAGDWarning
+            // 
+            this.label_FAGDWarning.AutoSize = true;
+            this.label_FAGDWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_FAGDWarning.Location = new System.Drawing.Point(607, 78);
+            this.label_FAGDWarning.Name = "label_FAGDWarning";
+            this.label_FAGDWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_FAGDWarning.TabIndex = 74;
+            this.label_FAGDWarning.Text = "Must be a decmial number!";
+            // 
+            // label_MAADWarning
+            // 
+            this.label_MAADWarning.AutoSize = true;
+            this.label_MAADWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_MAADWarning.Location = new System.Drawing.Point(607, 100);
+            this.label_MAADWarning.Name = "label_MAADWarning";
+            this.label_MAADWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_MAADWarning.TabIndex = 75;
+            this.label_MAADWarning.Text = "Must be a decmial number!";
+            // 
+            // label_SMWarning
+            // 
+            this.label_SMWarning.AutoSize = true;
+            this.label_SMWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_SMWarning.Location = new System.Drawing.Point(607, 122);
+            this.label_SMWarning.Name = "label_SMWarning";
+            this.label_SMWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_SMWarning.TabIndex = 76;
+            this.label_SMWarning.Text = "Must be a decmial number!";
+            // 
+            // label_CPDWarning
+            // 
+            this.label_CPDWarning.AutoSize = true;
+            this.label_CPDWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_CPDWarning.Location = new System.Drawing.Point(607, 144);
+            this.label_CPDWarning.Name = "label_CPDWarning";
+            this.label_CPDWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_CPDWarning.TabIndex = 77;
+            this.label_CPDWarning.Text = "Must be a decmial number!";
+            // 
+            // label_SBPWarning
+            // 
+            this.label_SBPWarning.AutoSize = true;
+            this.label_SBPWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_SBPWarning.Location = new System.Drawing.Point(607, 166);
+            this.label_SBPWarning.Name = "label_SBPWarning";
+            this.label_SBPWarning.Size = new System.Drawing.Size(130, 13);
+            this.label_SBPWarning.TabIndex = 78;
+            this.label_SBPWarning.Text = "Must be a integer number!";
+            // 
+            // label_AGFPDWarning
+            // 
+            this.label_AGFPDWarning.AutoSize = true;
+            this.label_AGFPDWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_AGFPDWarning.Location = new System.Drawing.Point(607, 188);
+            this.label_AGFPDWarning.Name = "label_AGFPDWarning";
+            this.label_AGFPDWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_AGFPDWarning.TabIndex = 79;
+            this.label_AGFPDWarning.Text = "Must be a decmial number!";
+            // 
+            // label_PAWarning
+            // 
+            this.label_PAWarning.AutoSize = true;
+            this.label_PAWarning.ForeColor = System.Drawing.Color.DarkRed;
+            this.label_PAWarning.Location = new System.Drawing.Point(607, 298);
+            this.label_PAWarning.Name = "label_PAWarning";
+            this.label_PAWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_PAWarning.TabIndex = 80;
+            this.label_PAWarning.Text = "Must be a decmial number!";
+            // 
             // PricePolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(783, 399);
+            this.Controls.Add(this.label_PAWarning);
+            this.Controls.Add(this.label_AGFPDWarning);
+            this.Controls.Add(this.label_SBPWarning);
+            this.Controls.Add(this.label_CPDWarning);
+            this.Controls.Add(this.label_SMWarning);
+            this.Controls.Add(this.label_MAADWarning);
+            this.Controls.Add(this.label_FAGDWarning);
             this.Controls.Add(this.label_dateWarning);
             this.Controls.Add(this.textBox_PayOffAmount);
             this.Controls.Add(this.panel_Hospitalized);
@@ -528,5 +612,12 @@ namespace _340GUI
         private Policy pricingPolicy;
         private TextBox textBox_PayOffAmount;
         private Label label_dateWarning;
+        private Label label_FAGDWarning;
+        private Label label_MAADWarning;
+        private Label label_SMWarning;
+        private Label label_CPDWarning;
+        private Label label_SBPWarning;
+        private Label label_AGFPDWarning;
+        private Label label_PAWarning;
     }
 }

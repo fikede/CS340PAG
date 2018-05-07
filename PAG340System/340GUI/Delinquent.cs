@@ -16,6 +16,7 @@ namespace _340GUI
         public Delinquent(Agent inUsingAgent)
         {
             InitializeComponent();
+            errorMessage(false);
             usingAgent = inUsingAgent;
             listBox_DelinquentList.Visible = false;
             textBox_Categories.Visible = false;
@@ -85,47 +86,60 @@ namespace _340GUI
             //IncompleteForm incomplete = new IncompleteForm();
             //incomplete.Show();
             listBox_DelinquentList.Items.Clear();
-            if ((textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || comboBox_State.Text != "No State Specified") &&
-                textBox_AmountOverdue.Text != "")
+            try
             {
-                List<Policy> delinquentList = new List<Policy>();
-                List<double> amountsOverdue = new List<double>();
-                if (usingAgent.isManager())
+                errorMessage(false);
+                if ((textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || comboBox_State.Text != "No State Specified") &&
+                    textBox_AmountOverdue.Text != "")
                 {
-                    Manager usingManager = new Manager(usingAgent);
-                    delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text)
-                        , textBox_AgentFirstName.Text, textBox_AgentLastName.Text, amountsOverdue);
+                    List<Policy> delinquentList = new List<Policy>();
+                    List<double> amountsOverdue = new List<double>();
+                    if (usingAgent.isManager())
+                    {
+                        Manager usingManager = new Manager(usingAgent);
+                        delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text)
+                            , textBox_AgentFirstName.Text, textBox_AgentLastName.Text, amountsOverdue);
+                    }
+                    else
+                    {
+                        delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text), amountsOverdue);
+                    }
+
+                    int index = 0;
+                    foreach (Policy policy in delinquentList)
+                    {
+                        double amountOverdue = amountsOverdue.ElementAt(index);
+                        string listString = alignItemString(policy, amountOverdue);
+                        listBox_DelinquentList.Items.Add(listString);
+                        index++;
+                    }
+
+                    if (listBox_DelinquentList.Items.Count == 0)
+                    {
+                        listBox_DelinquentList.Items.Add("There is no result.");
+                    }
+                    listBox_DelinquentList.Visible = true;
+                    textBox_Categories.Visible = true;
+                    pictureBox_Warning.Visible = false;
+                    label_Warning.Visible = false;
                 }
                 else
                 {
-                    delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text), amountsOverdue);
+                    pictureBox_Warning.Visible = true;
+                    label_Warning.Visible = true;
+                    listBox_DelinquentList.Visible = false;
+                    textBox_Categories.Visible = false;
                 }
-
-                int index = 0;
-                foreach (Policy policy in delinquentList)
-                {
-                    double amountOverdue = amountsOverdue.ElementAt(index);
-                    string listString = alignItemString(policy, amountOverdue);
-                    listBox_DelinquentList.Items.Add(listString);
-                    index++;
-                }
-
-                if (listBox_DelinquentList.Items.Count == 0)
-                {
-                    listBox_DelinquentList.Items.Add("There is no result.");
-                }
-                listBox_DelinquentList.Visible = true;
-                textBox_Categories.Visible = true;
-                pictureBox_Warning.Visible = false;
-                label_Warning.Visible = false;
             }
-            else
+            catch
             {
-                pictureBox_Warning.Visible = true;
-                label_Warning.Visible = true;
-                listBox_DelinquentList.Visible = false;
-                textBox_Categories.Visible = false;
+                errorMessage(true);
             }
+        }
+
+        private void errorMessage(bool show)
+        {
+            label_AOWarning.Visible = show;
         }
 
         private string alignItemString(Policy policy, double amountOverdue)

@@ -61,6 +61,7 @@ namespace _340GUI
             this.textBox_Categories = new System.Windows.Forms.TextBox();
             this.label_Warning = new System.Windows.Forms.Label();
             this.pictureBox_Warning = new System.Windows.Forms.PictureBox();
+            this.label_AOWarning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,12 +332,23 @@ namespace _340GUI
             this.pictureBox_Warning.TabIndex = 76;
             this.pictureBox_Warning.TabStop = false;
             // 
+            // label_AOWarning
+            // 
+            this.label_AOWarning.AutoSize = true;
+            this.label_AOWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_AOWarning.Location = new System.Drawing.Point(579, 144);
+            this.label_AOWarning.Name = "label_AOWarning";
+            this.label_AOWarning.Size = new System.Drawing.Size(134, 13);
+            this.label_AOWarning.TabIndex = 77;
+            this.label_AOWarning.Text = "Must be a decimal number!";
+            // 
             // Delinquent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.label_AOWarning);
             this.Controls.Add(this.pictureBox_Warning);
             this.Controls.Add(this.label_Warning);
             this.Controls.Add(this.textBox_Categories);
@@ -393,5 +405,6 @@ namespace _340GUI
         private TextBox textBox_Categories;
         private Label label_Warning;
         private PictureBox pictureBox_Warning;
+        private Label label_AOWarning;
     }
 }
