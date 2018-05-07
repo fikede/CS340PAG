@@ -66,28 +66,26 @@ namespace _340GUI
             label_ShowAgentLastName.Text = inPolicy.RepresentativeAgent.Lastname;
             label_ShowPayoffAmount.Text = Convert.ToString(inPolicy.PayOffAmount);
             label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);
-            //textBox_BeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
-            //textBox_BeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
+            textBox_BeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
+            textBox_BeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
         }
 
         private void button_SubmitChanges_Click(object sender, EventArgs e)
         {
-            UpdateMakeSure update = new UpdateMakeSure(searchPage, previousPage, inPolicy, usingAgent, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text,
-                textBox_AddressStreet.Text, textBox_AddressCity.Text, comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text);
-            update.Show();
-            /*String[] arrayOfInputs = {textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_AddressStreet.Text, textBox_AddressCity.Text,
-                comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text};
+            
+            String[] arrayOfInputs = {textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_AddressStreet.Text, textBox_AddressCity.Text,
+                comboBox_AddressState.Text, textBox_AddressZip.Text};
             if (incompleteInfo(arrayOfInputs))
             {
-                UpdateUnsave updateUnsave = new UpdateUnsave(searchPage, previousPage, inPolicy, usingAgent, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text,
+                UpdateMakeSure update = new UpdateMakeSure(searchPage, previousPage, inPolicy, usingAgent, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text,
                 textBox_AddressStreet.Text, textBox_AddressCity.Text, comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text);
-                updateUnsave.Show();
+                update.Show();
             }
             else
             {
                 UpdateWarning warning = new UpdateWarning();
                 warning.Show();
-            }*/
+            }
         }
 
         private string convertBool (bool b)
@@ -98,7 +96,8 @@ namespace _340GUI
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            UpdateUnsave undave = new UpdateUnsave(previousPage, this);
+            UpdateUnsave unsave = new UpdateUnsave(previousPage, this);
+            unsave.Show();
         }
 
         private bool incompleteInfo(string[] s)
@@ -112,7 +111,7 @@ namespace _340GUI
 
         private void shutDown(object sender, FormClosingEventArgs e)
         {
-            if (Application.OpenForms.Count == 1) Application.Exit();
+            //if (Application.OpenForms.Count == 2) Application.Exit();
         }
     }
 }
