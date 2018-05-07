@@ -156,7 +156,7 @@ namespace PAG340MiddleWare
             double billableMonths = (predictedAgeAtDeath - getAge()) * 12;
             double grossRevenueGoal = getRevenueGoal(billableMonths/12);
             price = grossRevenueGoal / billableMonths;
-
+            price = roundToTwoDecimals(price);
             return price;
         }
 
@@ -242,7 +242,21 @@ namespace PAG340MiddleWare
             double actualRevenue = GetSummationOfInflationAdjusted(payments);
             profit = actualRevenue - payOffAmount;
             profit = (profit / grossRevenueGoal) * 100;
+            profit = roundToTwoDecimals(profit);
             return profit;
+        }
+
+        private double roundToTwoDecimals(double inValue)
+        {
+            double roundedValue = 0;
+            string stringOfValue = "" + inValue;
+            if (stringOfValue.Contains('.'))
+            {
+                int index = stringOfValue.IndexOf('.');
+                string newString = stringOfValue.Substring(0, index + 3);
+                roundedValue = Convert.ToDouble(newString);
+            }
+            return roundedValue;
         }
 
         private double GetSummationOfInflationAdjusted(List<Payment> payments)

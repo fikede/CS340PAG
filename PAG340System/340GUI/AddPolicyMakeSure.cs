@@ -55,6 +55,7 @@ namespace _340GUI
         private void button_Yes_Click(object sender, EventArgs e)
         {
             prepreviousPage.Show();
+            previousPage.Close();
             this.Close();
         }
 
