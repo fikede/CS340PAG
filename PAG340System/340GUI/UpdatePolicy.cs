@@ -75,17 +75,7 @@ namespace _340GUI
             UpdateMakeSure update = new UpdateMakeSure(searchPage, previousPage, inPolicy, usingAgent, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text,
                 textBox_AddressStreet.Text, textBox_AddressCity.Text, comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text);
             update.Show();
-        }
-
-        private string convertBool (bool b)
-        {
-            if (b) return "Yes";
-            else return "No";
-        }
-
-        private void button_Cancel_Click(object sender, EventArgs e)
-        {
-            String[] arrayOfInputs = {textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_AddressStreet.Text, textBox_AddressCity.Text,
+            /*String[] arrayOfInputs = {textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text, textBox_AddressStreet.Text, textBox_AddressCity.Text,
                 comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text};
             if (incompleteInfo(arrayOfInputs))
             {
@@ -97,7 +87,18 @@ namespace _340GUI
             {
                 UpdateWarning warning = new UpdateWarning();
                 warning.Show();
-            }
+            }*/
+        }
+
+        private string convertBool (bool b)
+        {
+            if (b) return "Yes";
+            else return "No";
+        }
+
+        private void button_Cancel_Click(object sender, EventArgs e)
+        {
+            UpdateUnsave undave = new UpdateUnsave(previousPage, this);
         }
 
         private bool incompleteInfo(string[] s)

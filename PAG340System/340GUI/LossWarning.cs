@@ -34,7 +34,7 @@ namespace _340GUI
 
         private void button_OK_Click(object sender, EventArgs e)
         {
-            prepreviousPage.Refresh();
+            prepreviousPage.Update();
             previousPage.Close();
             this.Close();
         }

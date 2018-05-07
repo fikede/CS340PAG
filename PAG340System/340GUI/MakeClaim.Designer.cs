@@ -43,6 +43,7 @@ namespace _340GUI
             this.button_Confirm = new System.Windows.Forms.Button();
             this.label_Comment = new System.Windows.Forms.Label();
             this.label_profitMade = new System.Windows.Forms.Label();
+            this.button_Ok = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Cancel
@@ -72,7 +73,7 @@ namespace _340GUI
             // 
             this.label_Comment.AutoSize = true;
             this.label_Comment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Comment.Location = new System.Drawing.Point(115, 50);
+            this.label_Comment.Location = new System.Drawing.Point(119, 52);
             this.label_Comment.Name = "label_Comment";
             this.label_Comment.Size = new System.Drawing.Size(90, 16);
             this.label_Comment.TabIndex = 4;
@@ -81,11 +82,22 @@ namespace _340GUI
             // label_profitMade
             // 
             this.label_profitMade.AutoSize = true;
-            this.label_profitMade.Location = new System.Drawing.Point(139, 82);
+            this.label_profitMade.Location = new System.Drawing.Point(144, 82);
             this.label_profitMade.Name = "label_profitMade";
             this.label_profitMade.Size = new System.Drawing.Size(35, 13);
             this.label_profitMade.TabIndex = 8;
             this.label_profitMade.Text = "label1";
+            // 
+            // button_Ok
+            // 
+            this.button_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Ok.Location = new System.Drawing.Point(122, 119);
+            this.button_Ok.Name = "button_Ok";
+            this.button_Ok.Size = new System.Drawing.Size(75, 32);
+            this.button_Ok.TabIndex = 9;
+            this.button_Ok.Text = "Ok";
+            this.button_Ok.UseVisualStyleBackColor = true;
+            this.button_Ok.Click += new System.EventHandler(this.button_Ok_Click);
             // 
             // MakeClaim
             // 
@@ -93,6 +105,7 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(322, 187);
+            this.Controls.Add(this.button_Ok);
             this.Controls.Add(this.label_profitMade);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_Confirm);
@@ -109,10 +122,11 @@ namespace _340GUI
         private Button button_Cancel;
         private Button button_Confirm;
         private Label label_Comment;
-        //private Agent usingAgent;
+        private Agent usingAgent;
         private Search goBack;
         private Policy usingPolicy;
         private PolicyPage previousPage;
         private Label label_profitMade;
+        private Button button_Ok;
     }
 }

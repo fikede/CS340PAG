@@ -39,34 +39,34 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Cancel = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
+            this.button_No = new System.Windows.Forms.Button();
+            this.button_Yes = new System.Windows.Forms.Button();
             this.label_Comment2 = new System.Windows.Forms.Label();
             this.label_Comment1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button_Cancel
+            // button_No
             // 
-            this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Cancel.Location = new System.Drawing.Point(220, 106);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(93, 32);
-            this.button_Cancel.TabIndex = 7;
-            this.button_Cancel.Text = "Cancel";
-            this.button_Cancel.UseVisualStyleBackColor = true;
-            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            this.button_No.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_No.Location = new System.Drawing.Point(220, 106);
+            this.button_No.Name = "button_No";
+            this.button_No.Size = new System.Drawing.Size(93, 32);
+            this.button_No.TabIndex = 7;
+            this.button_No.Text = "No";
+            this.button_No.UseVisualStyleBackColor = true;
+            this.button_No.Click += new System.EventHandler(this.button_No_Click);
             // 
-            // button_Save
+            // button_Yes
             // 
-            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Save.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_Save.Location = new System.Drawing.Point(54, 106);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(93, 32);
-            this.button_Save.TabIndex = 6;
-            this.button_Save.Text = "Save";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+            this.button_Yes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Yes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_Yes.Location = new System.Drawing.Point(54, 106);
+            this.button_Yes.Name = "button_Yes";
+            this.button_Yes.Size = new System.Drawing.Size(93, 32);
+            this.button_Yes.TabIndex = 6;
+            this.button_Yes.Text = "Yes";
+            this.button_Yes.UseVisualStyleBackColor = true;
+            this.button_Yes.Click += new System.EventHandler(this.button_Yes_Click);
             // 
             // label_Comment2
             // 
@@ -94,8 +94,8 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(356, 172);
-            this.Controls.Add(this.button_Cancel);
-            this.Controls.Add(this.button_Save);
+            this.Controls.Add(this.button_No);
+            this.Controls.Add(this.button_Yes);
             this.Controls.Add(this.label_Comment2);
             this.Controls.Add(this.label_Comment1);
             this.Name = "UpdateUnsave";
@@ -107,21 +107,11 @@ namespace _340GUI
 
         #endregion
 
-        private Button button_Cancel;
-        private Button button_Save;
+        private Button button_No;
+        private Button button_Yes;
         private Label label_Comment2;
         private Label label_Comment1;
-        private Search searchPage;
-        private Agent usingAgent;
-        private PolicyPage previousPage;
-        private Policy usingPolicy;
-        private string phFirstName;
-        private string phLastName;
-        private string street;
-        private string city;
-        private string state;
-        private string zIP;
-        private string benefFirstName;
-        private string benefLastName;
+        private PolicyPage prepreviousPage;
+        private UpdatePolicy previousPage;
     }
 }

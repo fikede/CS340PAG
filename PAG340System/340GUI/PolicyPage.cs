@@ -113,7 +113,7 @@ namespace _340GUI
             //incomplete.Show();
             if (label_ShowPolicyEndDate.Text == "N/A")
             {
-                MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
+                MakeClaim claim = new MakeClaim(previousPage, inPolicy, this, usingAgent);
                 claim.Show();
             }
             else
@@ -141,6 +141,11 @@ namespace _340GUI
         private void shutDown(object sender, FormClosingEventArgs e)
         {
             //if (Application.OpenForms.Count == 3) Application.Exit();
+        }
+
+        public void updateEndDate(DateTime time)
+        {
+            label_ShowPolicyEndDate.Text = time.ToString("yyyy/MM/dd");
         }
     }
 }

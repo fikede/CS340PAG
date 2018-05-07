@@ -23,6 +23,7 @@ namespace _340GUI
         private void button_Yes_Click(object sender, EventArgs e)
         {
             inPolicy.CancelPolicy();
+            previousPage.updateEndDate(DateTime.Today);
             this.Close();
             previousPage.Refresh();
         }

@@ -13,13 +13,15 @@ namespace _340GUI
 {
     public partial class MakeClaim : Form
     {
-        public MakeClaim(Search search, Policy inPolicy, PolicyPage inPage)
+        public MakeClaim(Search search, Policy inPolicy, PolicyPage inPage, Agent agent)
         {
             InitializeComponent();
             goBack = search;
             usingPolicy = inPolicy;
             previousPage = inPage;
             label_profitMade.Visible = false;
+            button_Ok.Visible = false;
+            usingAgent = agent;
         }
 
         private void Cancel_Button_Click(object sender, EventArgs e)
@@ -32,6 +34,7 @@ namespace _340GUI
             //Make Claim method
             //need to be fixed
             usingPolicy.CancelPolicy();
+            previousPage.updateEndDate(DateTime.Today);
             Payment claim = new Payment(usingPolicy.PolicyNumber, DateTime.Today, usingPolicy.PayOffAmount, 'C');
             claim.saveToDataBase();
             double profit = usingPolicy.CalculateProfitMade();
@@ -44,14 +47,22 @@ namespace _340GUI
             {
                 label_profitMade.Visible = true;
                 label_profitMade.Text = "The company made " + profit + " percent profit!";
-                goBack.Show();
-                this.Close();
+                button_Cancel.Visible = false;
+                button_Confirm.Visible = false;
+                button_Ok.Visible = true;
             }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_Ok_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            previousPage.Close();
+            PolicyPage newPage = new PolicyPage(usingAgent, goBack, usingPolicy);
         }
     }
 }
