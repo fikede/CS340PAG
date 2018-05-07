@@ -82,7 +82,7 @@ namespace _340GUI
             //incomplete.Show();
             if (label_ShowPolicyEndDate.Text == "N/A")
             {
-                CancelPolicy cancelPolicy = new CancelPolicy(inPolicy);
+                CancelPolicy cancelPolicy = new CancelPolicy(inPolicy, this);
                 cancelPolicy.Show();
             }
             else

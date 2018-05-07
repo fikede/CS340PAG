@@ -40,8 +40,8 @@ namespace _340GUI
         private void InitializeComponent()
         {
             this.label_Asking = new System.Windows.Forms.Label();
-            this.button_Cancel = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
+            this.button_No = new System.Windows.Forms.Button();
+            this.button_Yes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_Asking
@@ -54,28 +54,28 @@ namespace _340GUI
             this.label_Asking.TabIndex = 0;
             this.label_Asking.Text = "Would you like to  cancel this policy?";
             // 
-            // button_Cancel
+            // button_No
             // 
-            this.button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Cancel.Location = new System.Drawing.Point(198, 110);
-            this.button_Cancel.Name = "button_Cancel";
-            this.button_Cancel.Size = new System.Drawing.Size(93, 32);
-            this.button_Cancel.TabIndex = 9;
-            this.button_Cancel.Text = "No";
-            this.button_Cancel.UseVisualStyleBackColor = true;
-            this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
+            this.button_No.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_No.Location = new System.Drawing.Point(198, 110);
+            this.button_No.Name = "button_No";
+            this.button_No.Size = new System.Drawing.Size(93, 32);
+            this.button_No.TabIndex = 9;
+            this.button_No.Text = "No";
+            this.button_No.UseVisualStyleBackColor = true;
+            this.button_No.Click += new System.EventHandler(this.button_No_Click);
             // 
-            // button_Save
+            // button_Yes
             // 
-            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_Save.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_Save.Location = new System.Drawing.Point(39, 110);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(93, 32);
-            this.button_Save.TabIndex = 8;
-            this.button_Save.Text = "Yes";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+            this.button_Yes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Yes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_Yes.Location = new System.Drawing.Point(39, 110);
+            this.button_Yes.Name = "button_Yes";
+            this.button_Yes.Size = new System.Drawing.Size(93, 32);
+            this.button_Yes.TabIndex = 8;
+            this.button_Yes.Text = "Yes";
+            this.button_Yes.UseVisualStyleBackColor = true;
+            this.button_Yes.Click += new System.EventHandler(this.button_Yes_Click);
             // 
             // CancelPolicy
             // 
@@ -83,8 +83,8 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(330, 179);
-            this.Controls.Add(this.button_Cancel);
-            this.Controls.Add(this.button_Save);
+            this.Controls.Add(this.button_No);
+            this.Controls.Add(this.button_Yes);
             this.Controls.Add(this.label_Asking);
             this.Name = "CancelPolicy";
             this.Text = "Cancel Policy";
@@ -96,8 +96,9 @@ namespace _340GUI
         #endregion
 
         private Label label_Asking;
-        private Button button_Cancel;
-        private Button button_Save;
+        private Button button_No;
+        private Button button_Yes;
         private Policy inPolicy;
+        private PolicyPage previousPage;
     }
 }
