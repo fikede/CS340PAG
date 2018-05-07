@@ -19,6 +19,7 @@ namespace _340GUI
             goBack = search;
             usingPolicy = inPolicy;
             previousPage = inPage;
+            label_profitMade.Visible = false;
         }
 
         private void Cancel_Button_Click(object sender, EventArgs e)
@@ -30,20 +31,19 @@ namespace _340GUI
         {
             //Make Claim method
             //need to be fixed
-            double lossRate = 3.2;
-            double moreLossRate = 5.4;
-            if (usingPolicy.CalculateProfitMade() >= lossRate && usingPolicy.CalculateProfitMade() < moreLossRate)
+            usingPolicy.CancelPolicy();
+            Payment claim = new Payment(usingPolicy.PolicyNumber, DateTime.Today, usingPolicy.PayOffAmount, 'C');
+            claim.saveToDataBase();
+            double profit = usingPolicy.CalculateProfitMade();
+            if (profit < 0.0)
             {
-                LossWarning warning = new LossWarning(lossRate, previousPage);
-                warning.Show();
-            }
-            else if (usingPolicy.CalculateProfitMade() >= moreLossRate)
-            {
-                LossWarning warning = new LossWarning(moreLossRate, previousPage);
+                LossWarning warning = new LossWarning(profit, previousPage);
                 warning.Show();
             }
             else
             {
+                label_profitMade.Visible = true;
+                label_profitMade.Text = "The company made " + profit + " percent profit!";
                 goBack.Show();
                 this.Close();
             }

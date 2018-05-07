@@ -11,21 +11,14 @@ using PAG340MiddleWare;
 
 namespace _340GUI
 {
-    public partial class CancelPolicy : Form
+    public partial class PolicyWarning : Form
     {
-        public CancelPolicy(Policy thePolicy)
+        public PolicyWarning()
         {
             InitializeComponent();
-            inPolicy = thePolicy;
         }
 
-        private void button_Save_Click(object sender, EventArgs e)
-        {
-            inPolicy.CancelPolicy();
-            this.Close();
-        }
-
-        private void button_Cancel_Click(object sender, EventArgs e)
+        private void button_Ok_Click(object sender, EventArgs e)
         {
             this.Close();
         }

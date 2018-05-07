@@ -48,7 +48,7 @@ namespace _340GUI
             // 
             this.label_Asking.AutoSize = true;
             this.label_Asking.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Asking.Location = new System.Drawing.Point(68, 60);
+            this.label_Asking.Location = new System.Drawing.Point(56, 64);
             this.label_Asking.Name = "label_Asking";
             this.label_Asking.Size = new System.Drawing.Size(225, 16);
             this.label_Asking.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace _340GUI
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(93, 32);
             this.button_Cancel.TabIndex = 9;
-            this.button_Cancel.Text = "Cancel";
+            this.button_Cancel.Text = "No";
             this.button_Cancel.UseVisualStyleBackColor = true;
             this.button_Cancel.Click += new System.EventHandler(this.button_Cancel_Click);
             // 
@@ -69,11 +69,11 @@ namespace _340GUI
             // 
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_Save.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_Save.Location = new System.Drawing.Point(32, 110);
+            this.button_Save.Location = new System.Drawing.Point(39, 110);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(93, 32);
             this.button_Save.TabIndex = 8;
-            this.button_Save.Text = "Save";
+            this.button_Save.Text = "Yes";
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
@@ -98,8 +98,6 @@ namespace _340GUI
         private Label label_Asking;
         private Button button_Cancel;
         private Button button_Save;
-        private Agent usingAgent;
-        private PolicyPage previousPage;
         private Policy inPolicy;
     }
 }

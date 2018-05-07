@@ -39,7 +39,6 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_PolicyNumber = new System.Windows.Forms.Label();
             this.label_PolicyholderFirstName = new System.Windows.Forms.Label();
             this.label_PolicyholderLastName = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@ namespace _340GUI
             this.label_PayoffAmount = new System.Windows.Forms.Label();
             this.label_MonthlyPremium = new System.Windows.Forms.Label();
             this.label_BenficiaryFirstName = new System.Windows.Forms.Label();
-            this.label_BeneficiaryLastName = new System.Windows.Forms.Label();
             this.linkLabel_CancelPolicy = new System.Windows.Forms.LinkLabel();
             this.linkLabel_UpdatePolicy = new System.Windows.Forms.LinkLabel();
             this.linkLabel_MakeClaim = new System.Windows.Forms.LinkLabel();
@@ -96,9 +94,8 @@ namespace _340GUI
             this.label_ShowAgentLastName = new System.Windows.Forms.Label();
             this.label_ShowPayoffAmount = new System.Windows.Forms.Label();
             this.label_ShowMonthlyPremium = new System.Windows.Forms.Label();
-            this.label_ShowBeneficiaryFirstName = new System.Windows.Forms.Label();
-            this.label_ShowBeneficiaryLastName = new System.Windows.Forms.Label();
             this.linkLabel_Back = new System.Windows.Forms.LinkLabel();
+            this.listBox_BeneficiaryName = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label_PolicyNumber
@@ -328,20 +325,11 @@ namespace _340GUI
             // label_BenficiaryFirstName
             // 
             this.label_BenficiaryFirstName.AutoSize = true;
-            this.label_BenficiaryFirstName.Location = new System.Drawing.Point(190, 638);
+            this.label_BenficiaryFirstName.Location = new System.Drawing.Point(212, 638);
             this.label_BenficiaryFirstName.Name = "label_BenficiaryFirstName";
-            this.label_BenficiaryFirstName.Size = new System.Drawing.Size(115, 13);
+            this.label_BenficiaryFirstName.Size = new System.Drawing.Size(93, 13);
             this.label_BenficiaryFirstName.TabIndex = 26;
-            this.label_BenficiaryFirstName.Text = "Beneficiary First Name:";
-            // 
-            // label_BeneficiaryLastName
-            // 
-            this.label_BeneficiaryLastName.AutoSize = true;
-            this.label_BeneficiaryLastName.Location = new System.Drawing.Point(189, 662);
-            this.label_BeneficiaryLastName.Name = "label_BeneficiaryLastName";
-            this.label_BeneficiaryLastName.Size = new System.Drawing.Size(116, 13);
-            this.label_BeneficiaryLastName.TabIndex = 27;
-            this.label_BeneficiaryLastName.Text = "Beneficiary Last Name:";
+            this.label_BenficiaryFirstName.Text = "Beneficiary Name:";
             // 
             // linkLabel_CancelPolicy
             // 
@@ -349,7 +337,7 @@ namespace _340GUI
             this.linkLabel_CancelPolicy.Location = new System.Drawing.Point(102, 748);
             this.linkLabel_CancelPolicy.Name = "linkLabel_CancelPolicy";
             this.linkLabel_CancelPolicy.Size = new System.Drawing.Size(71, 13);
-            this.linkLabel_CancelPolicy.TabIndex = 28;
+            this.linkLabel_CancelPolicy.TabIndex = 3;
             this.linkLabel_CancelPolicy.TabStop = true;
             this.linkLabel_CancelPolicy.Text = "Cancel Policy";
             this.linkLabel_CancelPolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_CancelPolicy_LinkClicked);
@@ -360,7 +348,7 @@ namespace _340GUI
             this.linkLabel_UpdatePolicy.Location = new System.Drawing.Point(260, 748);
             this.linkLabel_UpdatePolicy.Name = "linkLabel_UpdatePolicy";
             this.linkLabel_UpdatePolicy.Size = new System.Drawing.Size(73, 13);
-            this.linkLabel_UpdatePolicy.TabIndex = 29;
+            this.linkLabel_UpdatePolicy.TabIndex = 4;
             this.linkLabel_UpdatePolicy.TabStop = true;
             this.linkLabel_UpdatePolicy.Text = "Update Policy";
             this.linkLabel_UpdatePolicy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_UpdatePolicy_LinkClicked);
@@ -371,7 +359,7 @@ namespace _340GUI
             this.linkLabel_MakeClaim.Location = new System.Drawing.Point(413, 748);
             this.linkLabel_MakeClaim.Name = "linkLabel_MakeClaim";
             this.linkLabel_MakeClaim.Size = new System.Drawing.Size(71, 13);
-            this.linkLabel_MakeClaim.TabIndex = 30;
+            this.linkLabel_MakeClaim.TabIndex = 5;
             this.linkLabel_MakeClaim.TabStop = true;
             this.linkLabel_MakeClaim.Text = "Make a Claim";
             this.linkLabel_MakeClaim.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_MakeClaim_LinkClicked);
@@ -382,7 +370,7 @@ namespace _340GUI
             this.linkLabel_ViewPaymentHistory.Location = new System.Drawing.Point(560, 748);
             this.linkLabel_ViewPaymentHistory.Name = "linkLabel_ViewPaymentHistory";
             this.linkLabel_ViewPaymentHistory.Size = new System.Drawing.Size(109, 13);
-            this.linkLabel_ViewPaymentHistory.TabIndex = 31;
+            this.linkLabel_ViewPaymentHistory.TabIndex = 6;
             this.linkLabel_ViewPaymentHistory.TabStop = true;
             this.linkLabel_ViewPaymentHistory.Text = "View Payment History";
             this.linkLabel_ViewPaymentHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_ViewPaymentHistory_LinkClicked);
@@ -612,34 +600,25 @@ namespace _340GUI
             this.label_ShowMonthlyPremium.TabIndex = 57;
             this.label_ShowMonthlyPremium.Text = "label54";
             // 
-            // label_ShowBeneficiaryFirstName
-            // 
-            this.label_ShowBeneficiaryFirstName.AutoSize = true;
-            this.label_ShowBeneficiaryFirstName.Location = new System.Drawing.Point(311, 638);
-            this.label_ShowBeneficiaryFirstName.Name = "label_ShowBeneficiaryFirstName";
-            this.label_ShowBeneficiaryFirstName.Size = new System.Drawing.Size(41, 13);
-            this.label_ShowBeneficiaryFirstName.TabIndex = 58;
-            this.label_ShowBeneficiaryFirstName.Text = "label55";
-            // 
-            // label_ShowBeneficiaryLastName
-            // 
-            this.label_ShowBeneficiaryLastName.AutoSize = true;
-            this.label_ShowBeneficiaryLastName.Location = new System.Drawing.Point(311, 662);
-            this.label_ShowBeneficiaryLastName.Name = "label_ShowBeneficiaryLastName";
-            this.label_ShowBeneficiaryLastName.Size = new System.Drawing.Size(41, 13);
-            this.label_ShowBeneficiaryLastName.TabIndex = 59;
-            this.label_ShowBeneficiaryLastName.Text = "label56";
-            // 
             // linkLabel_Back
             // 
             this.linkLabel_Back.AutoSize = true;
             this.linkLabel_Back.Location = new System.Drawing.Point(12, 21);
             this.linkLabel_Back.Name = "linkLabel_Back";
             this.linkLabel_Back.Size = new System.Drawing.Size(32, 13);
-            this.linkLabel_Back.TabIndex = 60;
+            this.linkLabel_Back.TabIndex = 1;
             this.linkLabel_Back.TabStop = true;
             this.linkLabel_Back.Text = "Back";
             this.linkLabel_Back.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_Back_LinkClicked);
+            // 
+            // listBox_BeneficiaryName
+            // 
+            this.listBox_BeneficiaryName.FormattingEnabled = true;
+            this.listBox_BeneficiaryName.HorizontalScrollbar = true;
+            this.listBox_BeneficiaryName.Location = new System.Drawing.Point(310, 634);
+            this.listBox_BeneficiaryName.Name = "listBox_BeneficiaryName";
+            this.listBox_BeneficiaryName.Size = new System.Drawing.Size(238, 30);
+            this.listBox_BeneficiaryName.TabIndex = 2;
             // 
             // PolicyPage
             // 
@@ -647,9 +626,8 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 791);
+            this.Controls.Add(this.listBox_BeneficiaryName);
             this.Controls.Add(this.linkLabel_Back);
-            this.Controls.Add(this.label_ShowBeneficiaryLastName);
-            this.Controls.Add(this.label_ShowBeneficiaryFirstName);
             this.Controls.Add(this.label_ShowMonthlyPremium);
             this.Controls.Add(this.label_ShowPayoffAmount);
             this.Controls.Add(this.label_ShowAgentLastName);
@@ -679,7 +657,6 @@ namespace _340GUI
             this.Controls.Add(this.linkLabel_MakeClaim);
             this.Controls.Add(this.linkLabel_UpdatePolicy);
             this.Controls.Add(this.linkLabel_CancelPolicy);
-            this.Controls.Add(this.label_BeneficiaryLastName);
             this.Controls.Add(this.label_BenficiaryFirstName);
             this.Controls.Add(this.label_MonthlyPremium);
             this.Controls.Add(this.label_PayoffAmount);
@@ -708,6 +685,7 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyNumber);
             this.Name = "PolicyPage";
             this.Text = "Policy Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,7 +719,6 @@ namespace _340GUI
         private Label label_PayoffAmount;
         private Label label_MonthlyPremium;
         private Label label_BenficiaryFirstName;
-        private Label label_BeneficiaryLastName;
         private LinkLabel linkLabel_CancelPolicy;
         private LinkLabel linkLabel_UpdatePolicy;
         private LinkLabel linkLabel_MakeClaim;
@@ -771,11 +748,10 @@ namespace _340GUI
         private Label label_ShowAgentLastName;
         private Label label_ShowPayoffAmount;
         private Label label_ShowMonthlyPremium;
-        private Label label_ShowBeneficiaryFirstName;
-        private Label label_ShowBeneficiaryLastName;
         private LinkLabel linkLabel_Back;
         private Agent usingAgent;
         private Search previousPage;
         private Policy inPolicy;
+        private ListBox listBox_BeneficiaryName;
     }
 }
