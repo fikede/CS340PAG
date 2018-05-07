@@ -232,12 +232,14 @@ namespace PAG340MiddleWare
         {
             double profit = 0.0;
             List<Payment> payments = GetPaymentHistory();
-            double grossRevenueGoal = payOffAmount * (1 + profitMargin);
-            double actualRevenue = getSummationOfInflationAdjusted(payments);
+            double grossRevenueGoal = payOffAmount * profitMargin;
+            double actualRevenue = GetSummationOfInflationAdjusted(payments);
+            profit = actualRevenue - payOffAmount;
+            profit = (profit / grossRevenueGoal) * 100;
             return profit;
         }
 
-        private double getSummationOfInflationAdjusted(List<Payment> payments)
+        private double GetSummationOfInflationAdjusted(List<Payment> payments)
         {
             double summation = 0;
             string year = "" + startDate.Year;
