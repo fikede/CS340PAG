@@ -107,7 +107,7 @@ namespace PAG340MiddleWare
             holder.saveToDataBase();
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
-            String query = "addPolicyHolder";
+            String query = "addPolicy";
             SqlCommand cmd = new SqlCommand(query);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
@@ -128,7 +128,7 @@ namespace PAG340MiddleWare
             cmd.Parameters.AddWithValue("@hospitalized", booleanValue);
             cmd.Parameters.AddWithValue("@dangerousActivities", dangerousActivities);
             cmd.Parameters.AddWithValue("@startDate", startDate);
-            if(endDate.ToString() != "00010101") cmd.Parameters.AddWithValue("@endDate", endDate);
+            //if(endDate.ToString() != "00010101") cmd.Parameters.AddWithValue("@endDate", endDate);
             cmd.Parameters.AddWithValue("@payoffAmount", payOffAmount);
             cmd.Parameters.AddWithValue("@monthlyPremium", premium);
             cmd.Connection = conn;
@@ -147,7 +147,7 @@ namespace PAG340MiddleWare
             Matrix betaHat = getBetaHat(designMatrix, yHat);
             double predictedAgeAtDeath = predictAgeAtDeath(betaHat);
             double billableMonths = (predictedAgeAtDeath - getAge()) * 12;
-            double grossRevenueGoal = getRevenueGoal(billableMonths);
+            double grossRevenueGoal = getRevenueGoal(billableMonths/12);
             price = grossRevenueGoal / billableMonths;
 
             return price;
@@ -155,7 +155,7 @@ namespace PAG340MiddleWare
 
         private double getRevenueGoal(double billableMonths)
         {
-            double adjustedAmount = payOffAmount;
+            double adjustedAmount = payOffAmount * 1.10; // Multiply by the profit goal which is 10 percent;
             double averageInflation = getAverageInflation();
             adjustedAmount *= Math.Pow(averageInflation + 1, billableMonths);
             return adjustedAmount;
@@ -224,8 +224,7 @@ namespace PAG340MiddleWare
         public void AddPolicyInfo(string phFirstName, string phLastName, string street, string city, string state, string zIP, string benefFirstName, string benefLastName)
         {
             holder.AddPolicyInfo(phFirstName, phLastName, street, city, state, zIP);
-            beneficiary.AddPolicyInfo(benefFirstName, benefLastName);
-            saveToDataBase();
+            beneficiary.AddPolicyInfo(policyNumber, benefFirstName, benefLastName);
         }
 
         public double CalculateProfitMade()

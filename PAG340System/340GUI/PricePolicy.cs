@@ -18,15 +18,19 @@ namespace _340GUI
             InitializeComponent();
             usingAgent = inUsingAgent;
             label_ShowTotalAmountOfPayment.Visible = false;
-            radioButton_YesCancer.Checked = true;
-            radioButton_YesHeartDisease.Checked = true;
-            radioButton_YesHospitalized.Checked = true;
+            radioButton_NoCancer.Checked = true;
+            radioButton_NoHeartDisease.Checked = true;
+            radioButton_NoHospitalized.Checked = true;
         }
 
         private void button_Accept_Click(object sender, EventArgs e)
         {
             if(label_ShowTotalAmountOfPayment.Visible)
             {
+                pricingPolicy.Premium = Convert.ToDouble(label_ShowTotalAmountOfPayment.Text);
+                pricingPolicy.StartDate = DateTime.Today;
+                pricingPolicy.Holder.ID = pricingPolicy.Holder.getNextId();
+                pricingPolicy.PolicyNumber = pricingPolicy.getNextNumber();
                 AddPolicy addPolicy = new AddPolicy(pricingPolicy, usingAgent);
                 addPolicy.Show();
             }
@@ -45,18 +49,26 @@ namespace _340GUI
 
         private void button_Price_Click(object sender, EventArgs e)
         {
+            //textBox_PolicyholderDOB.v
             if (textBox_PolicyholderDOB.Text == "" || textBox_FatherAAD.Text == "" || textBox_MotherAAD.Text == "" || textBox_SmokingHistory.Text == ""
-                || textBox_CigPerDay.Text == "" || textBox_HoursOfExercise.Text != "" || textBox_PayOffAmount.Text != "")
+                || textBox_CigPerDay.Text == "" || textBox_PayOffAmount.Text == "")
             {
                 PriceButtonWarning priceFirst = new PriceButtonWarning(false);
                 priceFirst.Show();
             }
             else
             {
-                //add input PayOffAmount
-                pricingPolicy = new Policy(Convert.ToDouble(textBox_FatherAAD.Text), Convert.ToDouble(textBox_MotherAAD.Text), Convert.ToDouble(textBox_CigPerDay.Text),
+                string stringDOB = textBox_PolicyholderDOB.Text;
+                double value;
+                if (Double.TryParse(textBox_FatherAAD.Text, out value))
+                    {
+
+                    }
+                DateTime DOB = DateTime.Parse(textBox_PolicyholderDOB.Text);
+                pricingPolicy = new Policy(DOB, Convert.ToDouble(textBox_FatherAAD.Text), Convert.ToDouble(textBox_MotherAAD.Text), Convert.ToDouble(textBox_CigPerDay.Text),
                     Convert.ToDouble(textBox_SmokingHistory.Text), Convert.ToDouble(textBox_SystolicBloodPressure.Text), Convert.ToDouble(textBox_AverageFatPerDay.Text),
                     radioButton_YesHeartDisease.Checked, radioButton_YesCancer.Checked, radioButton_YesHospitalized.Checked, textBox_DangerousActivity.Text);
+                pricingPolicy.PayOffAmount = Convert.ToDouble(textBox_PayOffAmount.Text);
                 double premium = pricingPolicy.PricePolicy();
                 label_ShowTotalAmountOfPayment.Text = " " + premium;
                 label_ShowTotalAmountOfPayment.Visible = true;
@@ -66,6 +78,30 @@ namespace _340GUI
         private void shutDown(object sender, FormClosingEventArgs e)
         {
             if (Application.OpenForms.Count == 2) Application.Exit();
+        }
+
+        private bool correctInputName()
+        {
+
+            return false;
+        }
+
+        private bool correctInputDate()
+        {
+
+            return false;
+        }
+
+        private bool correctInputDouble()
+        {
+
+            return false;
+        }
+
+        private bool correctInputString()
+        {
+
+            return false;
         }
     }
 }

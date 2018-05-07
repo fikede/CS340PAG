@@ -39,7 +39,6 @@ namespace _340GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new FormClosingEventHandler(this.shutDown);
             this.label_BeneficiaryLastName = new System.Windows.Forms.Label();
             this.label_BeneficiaryFirstName = new System.Windows.Forms.Label();
             this.label_MonthlyPremium = new System.Windows.Forms.Label();
@@ -345,7 +344,7 @@ namespace _340GUI
             // textBox_ShowPolicyholderFirstName
             // 
             this.textBox_ShowPolicyholderFirstName.Location = new System.Drawing.Point(321, 64);
-            this.textBox_ShowPolicyholderFirstName.MaxLength = 255;
+            this.textBox_ShowPolicyholderFirstName.MaxLength = 100;
             this.textBox_ShowPolicyholderFirstName.Name = "textBox_ShowPolicyholderFirstName";
             this.textBox_ShowPolicyholderFirstName.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowPolicyholderFirstName.TabIndex = 56;
@@ -353,7 +352,7 @@ namespace _340GUI
             // textBox_ShowPolicyholderLastName
             // 
             this.textBox_ShowPolicyholderLastName.Location = new System.Drawing.Point(321, 87);
-            this.textBox_ShowPolicyholderLastName.MaxLength = 255;
+            this.textBox_ShowPolicyholderLastName.MaxLength = 100;
             this.textBox_ShowPolicyholderLastName.Name = "textBox_ShowPolicyholderLastName";
             this.textBox_ShowPolicyholderLastName.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowPolicyholderLastName.TabIndex = 57;
@@ -361,6 +360,7 @@ namespace _340GUI
             // textBox_ShowAddressStreet
             // 
             this.textBox_ShowAddressStreet.Location = new System.Drawing.Point(321, 111);
+            this.textBox_ShowAddressStreet.MaxLength = 30;
             this.textBox_ShowAddressStreet.Name = "textBox_ShowAddressStreet";
             this.textBox_ShowAddressStreet.Size = new System.Drawing.Size(293, 20);
             this.textBox_ShowAddressStreet.TabIndex = 58;
@@ -368,6 +368,7 @@ namespace _340GUI
             // textBox_AddressCity
             // 
             this.textBox_AddressCity.Location = new System.Drawing.Point(321, 134);
+            this.textBox_AddressCity.MaxLength = 20;
             this.textBox_AddressCity.Name = "textBox_AddressCity";
             this.textBox_AddressCity.Size = new System.Drawing.Size(293, 20);
             this.textBox_AddressCity.TabIndex = 59;
@@ -375,6 +376,7 @@ namespace _340GUI
             // textBox_AddressZip
             // 
             this.textBox_AddressZip.Location = new System.Drawing.Point(321, 180);
+            this.textBox_AddressZip.MaxLength = 9;
             this.textBox_AddressZip.Name = "textBox_AddressZip";
             this.textBox_AddressZip.Size = new System.Drawing.Size(293, 20);
             this.textBox_AddressZip.TabIndex = 61;
@@ -382,6 +384,7 @@ namespace _340GUI
             // textBox_BeneficiaryFirstName
             // 
             this.textBox_BeneficiaryFirstName.Location = new System.Drawing.Point(321, 617);
+            this.textBox_BeneficiaryFirstName.MaxLength = 100;
             this.textBox_BeneficiaryFirstName.Name = "textBox_BeneficiaryFirstName";
             this.textBox_BeneficiaryFirstName.Size = new System.Drawing.Size(293, 20);
             this.textBox_BeneficiaryFirstName.TabIndex = 62;
@@ -389,6 +392,7 @@ namespace _340GUI
             // textBox_BeneficiaryLastName
             // 
             this.textBox_BeneficiaryLastName.Location = new System.Drawing.Point(321, 640);
+            this.textBox_BeneficiaryLastName.MaxLength = 100;
             this.textBox_BeneficiaryLastName.Name = "textBox_BeneficiaryLastName";
             this.textBox_BeneficiaryLastName.Size = new System.Drawing.Size(293, 20);
             this.textBox_BeneficiaryLastName.TabIndex = 63;
@@ -722,6 +726,7 @@ namespace _340GUI
             this.Controls.Add(this.label_PolicyNumber);
             this.Name = "AddPolicy";
             this.Text = "Add Policy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
