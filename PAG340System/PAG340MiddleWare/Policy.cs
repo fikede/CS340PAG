@@ -225,6 +225,7 @@ namespace PAG340MiddleWare
         {
             holder.AddPolicyInfo(phFirstName, phLastName, street, city, state, zIP);
             beneficiary.AddPolicyInfo(benefFirstName, benefLastName);
+            saveToDataBase();
         }
 
         public double CalculateProfitMade()
