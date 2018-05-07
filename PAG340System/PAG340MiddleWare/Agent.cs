@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using PAG340MiddleWare.Properties;
 
 namespace PAG340MiddleWare
 {
@@ -108,7 +109,7 @@ namespace PAG340MiddleWare
             SqlConnection conn = new SqlConnection(connectionString);
             String query = "searchPolicy";
             SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@agentID", id);
             if(state.Length == 2) cmd.Parameters.AddWithValue("@searchState", state);
             conn.Open();
@@ -116,8 +117,29 @@ namespace PAG340MiddleWare
             policyList = getSearchResults(reader);
             conn.Close();
             policyList = calculateDelinquentAccounts(policyList, amountOverdue, overdueAmounts);
-
+            if (policyList.Count != 0)
+            {
+                DateTime todayAndNow = DateTime.Now;
+                saveDelinquentAccount(ID, todayAndNow, state, amountOverdue);
+            }
             return policyList;
+        }
+
+        protected void saveDelinquentAccount(string agentID, DateTime today, string state, double amountOverDue)
+        {
+            List<Policy> policyList = new List<Policy>();
+            String connectionString = Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "createDelinquentAccountReport";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ID", agentID);
+            cmd.Parameters.AddWithValue("@date", today);
+            if (state.Length != 2) cmd.Parameters.AddWithValue("state", state);
+            cmd.Parameters.AddWithValue("@amountOverdue", amountOverDue);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         protected List<Policy> calculateDelinquentAccounts(List<Policy> policies, double amountOverdue, List<double> overdueAmounts)

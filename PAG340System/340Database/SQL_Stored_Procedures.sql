@@ -90,6 +90,16 @@ VALUES 		(@monthName, @monthNumber, @year, @amount)
 END
 GO
 
+-----------------------------------------------------------------------------------------------------
+
+--Add a Delinquent Account Report
+CREATE PROCEDURE createDelinquentAccountReport @ID AS varchar(20), @date AS datetime, @state AS char(2), @amountOverdue AS decimal(10,2)
+AS
+BEGIN
+INSERT INTO Delinquent_Accounts_Parameters(emp_ID, date_generated, [state], amount_overdue)
+VALUES (@ID, @date, @state, @amountOverdue)
+END
+GO
 
 -----------------------------------------------------------------------------------------------------
 -- Searching Procedures
