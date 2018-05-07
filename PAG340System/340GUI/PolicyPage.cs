@@ -113,7 +113,7 @@ namespace _340GUI
             //incomplete.Show();
             if (label_ShowPolicyEndDate.Text == "N/A")
             {
-                MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
+                MakeClaim claim = new MakeClaim(previousPage, inPolicy, this, usingAgent);
                 claim.Show();
             }
             else
