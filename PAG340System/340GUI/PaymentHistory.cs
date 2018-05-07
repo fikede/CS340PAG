@@ -38,10 +38,10 @@ namespace _340GUI
             int length;
             string output = "   ";
             output += payment.Date.ToString("yyyy/MM/dd");
-            length = 30 - payment.Date.ToString("yyyy/MM/dd").Length;
+            length = 80 - payment.Date.ToString("yyyy/MM/dd").Length;
             for (int i = 0; i < length; i++) output += " ";
             output += payment.Amount.ToString();
-            length = 50 - (payment.Amount.ToString().Length + 1);
+            length = 100 - (payment.Amount.ToString().Length + 1);
             for (int i = 0; i < length; i++) output += " ";
             output += payment.Type;
             return output;

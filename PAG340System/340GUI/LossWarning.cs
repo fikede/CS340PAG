@@ -13,18 +13,19 @@ namespace _340GUI
 {
     public partial class LossWarning : Form
     {
-        public LossWarning(double LossRate, PolicyPage inPage)
+        public LossWarning(double profit, PolicyPage inPage)
         {
             InitializeComponent();
             previousPage = inPage;
-            double Loss = 3.2;
-            if(LossRate == Loss)
+            if(profit > -5.0)
             {
+                label_WarningComment1.Text = "A loss of" + (-profit) + " percent has been detected";
                 label_MoreLoss1.Visible = false;
                 label_MoreLoss2.Visible = false;
             }
             else
             {
+                label_MoreLoss1.Text = "A loss of " + (-profit) + " percent has been detected";
                 label_WarningComment1.Visible = false;
                 label_WarningComment2.Visible = false;
             }

@@ -65,16 +65,31 @@ namespace _340GUI
             label_ShowAgentLastName.Text = inPolicy.RepresentativeAgent.Lastname;
             label_ShowPayoffAmount.Text = Convert.ToString(inPolicy.PayOffAmount);
             label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);
-            label_ShowBeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
-            label_ShowBeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
+
+            List<Beneficiary> beneficiariesList = usingPolicy.GetBeneficiaries();
+            foreach (Beneficiary beneficiaryNames in beneficiariesList)
+            {
+                listBox_BeneficiaryName.Items.Add(beneficiaryNames.FirstName + " " + beneficiaryNames.LastName);
+            }
+            
+            //label_ShowBeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
+            //label_ShowBeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
         }
 
         private void linkLabel_CancelPolicy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //IncompleteFeature incomplete = new IncompleteFeature();
             //incomplete.Show();
-            CancelPolicy cancelPolicy = new CancelPolicy(usingAgent, this, inPolicy);
-            cancelPolicy.Show();
+            if (label_ShowPolicyEndDate.Text == "N/A")
+            {
+                CancelPolicy cancelPolicy = new CancelPolicy(inPolicy, this);
+                cancelPolicy.Show();
+            }
+            else
+            {
+                PolicyWarning warning = new PolicyWarning();
+                warning.Show();
+            }
         }
 
         private void linkLabel_Back_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -96,8 +111,16 @@ namespace _340GUI
         {
             //IncompleteFeature incomplete = new IncompleteFeature();
             //incomplete.Show();
-            MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
-            claim.Show();
+            if (label_ShowPolicyEndDate.Text == "N/A")
+            {
+                MakeClaim claim = new MakeClaim(previousPage, inPolicy, this);
+                claim.Show();
+            }
+            else
+            {
+                PolicyWarning warning = new PolicyWarning();
+                warning.Show();
+            }
         }
 
         private void linkLabel_ViewPaymentHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
