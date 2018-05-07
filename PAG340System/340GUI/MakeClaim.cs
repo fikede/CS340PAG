@@ -34,6 +34,7 @@ namespace _340GUI
             //Make Claim method
             //need to be fixed
             usingPolicy.CancelPolicy();
+            previousPage.updateEndDate(DateTime.Today);
             Payment claim = new Payment(usingPolicy.PolicyNumber, DateTime.Today, usingPolicy.PayOffAmount, 'C');
             claim.saveToDataBase();
             double profit = usingPolicy.CalculateProfitMade();

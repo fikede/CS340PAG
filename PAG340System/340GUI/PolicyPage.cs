@@ -142,5 +142,10 @@ namespace _340GUI
         {
             //if (Application.OpenForms.Count == 3) Application.Exit();
         }
+
+        public void updateEndDate(DateTime time)
+        {
+            label_ShowPolicyEndDate.Text = time.ToString("yyyy/MM/dd");
+        }
     }
 }
