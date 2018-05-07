@@ -30,6 +30,7 @@ namespace PAG340MiddleWare
         private double payOffAmount;
         private double premium;
         private Beneficiary beneficiary;
+        private static double profitMargin = .1;
 
         public Policy()
         {
@@ -155,7 +156,7 @@ namespace PAG340MiddleWare
 
         private double getRevenueGoal(double billableMonths)
         {
-            double adjustedAmount = payOffAmount * 1.10; // Multiply by the profit goal which is 10 percent;
+            double adjustedAmount = payOffAmount * (1 + profitMargin);
             double averageInflation = getAverageInflation();
             adjustedAmount *= Math.Pow(averageInflation + 1, billableMonths);
             return adjustedAmount;
@@ -230,8 +231,25 @@ namespace PAG340MiddleWare
         public double CalculateProfitMade()
         {
             double profit = 0.0;
-
+            List<Payment> payments = GetPaymentHistory();
+            double grossRevenueGoal = payOffAmount * (1 + profitMargin);
+            double actualRevenue = getSummationOfInflationAdjusted(payments);
             return profit;
+        }
+
+        private double getSummationOfInflationAdjusted(List<Payment> payments)
+        {
+            double summation = 0;
+            string year = "" + startDate.Year;
+            double inflationAtStart = getInflationAmountat(startDate.Month, year);
+            double inflationAtPayDate;
+            foreach (Payment payment in payments)
+            {
+                year = "" + payment.Date.Year;
+                inflationAtPayDate = getInflationAmountat(payment.Date.Month, year);
+                summation += payment.Amount * inflationAtStart / inflationAtPayDate;
+            }
+            return summation;
         }
 
         public void CancelPolicy()
@@ -335,7 +353,7 @@ namespace PAG340MiddleWare
             return policies;
         }
 
-        private List<Beneficiary> GetBeneficiaries()
+        public List<Beneficiary> GetBeneficiaries()
         {
             List<Beneficiary> beneficiaries = new List<Beneficiary>();
             string connectionString = Settings.Default.SqlConnection;
