@@ -13,11 +13,12 @@ namespace _340GUI
 {
     public partial class AddPolicy : Form
     {
-        public AddPolicy(Policy thePolicy, Agent inUsingAgent)
+        public AddPolicy(Policy thePolicy, Agent inUsingAgent, PricePolicy pricePolicy)
         {
             InitializeComponent();
             inPolicy = thePolicy;
             usingAgent = inUsingAgent;
+            previousPage = pricePolicy;
             //labels
             label_ShowPolicyNumber.Text = inPolicy.PolicyNumber;
 
@@ -76,14 +77,14 @@ namespace _340GUI
             {
                 inPolicy.AddPolicyInfo(textBox_ShowPolicyholderFirstName.Text, textBox_ShowPolicyholderLastName.Text, textBox_ShowAddressStreet.Text,
                     textBox_AddressCity.Text, comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text);
-                AddPolicyMakeSure makeSure = new AddPolicyMakeSure(true, inPolicy, this, usingAgent);
+                AddPolicyMakeSure makeSure = new AddPolicyMakeSure(true, inPolicy, this, usingAgent, previousPage);
                 makeSure.Show();
             }
         }
 
         private void button_Cancel_Click(object sender, EventArgs e)
         {
-            AddPolicyMakeSure makeSure = new AddPolicyMakeSure(false, inPolicy, this, usingAgent);
+            AddPolicyMakeSure makeSure = new AddPolicyMakeSure(false, inPolicy, this, usingAgent, previousPage);
             makeSure.Show();
         }
 

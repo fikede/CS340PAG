@@ -31,8 +31,9 @@ namespace _340GUI
                 pricingPolicy.StartDate = DateTime.Today;
                 pricingPolicy.Holder.ID = pricingPolicy.Holder.getNextId();
                 pricingPolicy.PolicyNumber = pricingPolicy.getNextNumber();
-                AddPolicy addPolicy = new AddPolicy(pricingPolicy, usingAgent);
+                AddPolicy addPolicy = new AddPolicy(pricingPolicy, usingAgent, this);
                 addPolicy.Show();
+                this.Hide();
             }
             else
             {

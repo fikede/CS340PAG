@@ -793,5 +793,6 @@ namespace _340GUI
         private Button button_Cancel;
         private Agent usingAgent;
         private Policy inPolicy;
+        private PricePolicy previousPage;
     }
 }
