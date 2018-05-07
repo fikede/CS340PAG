@@ -55,7 +55,19 @@ namespace PAG340MiddleWare
         public List<Policy> delinquentAccounts(string state, double amountOverdue, string agentFirstName, string agentLastName)
         {
             List<Policy> policyList = new List<Policy>();
-
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "searchPolicy";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@agentFName", agentFirstName);
+            cmd.Parameters.AddWithValue("@agentLName", agentLastName);
+            if (state.Length == 2) cmd.Parameters.AddWithValue("@searchState", state);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            policyList = getSearchResults(reader);
+            conn.Close();
+            policyList = calculateDelinquentAccounts(policyList, amountOverdue);
             return policyList;
         }
 

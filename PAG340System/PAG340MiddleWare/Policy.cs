@@ -103,6 +103,12 @@ namespace PAG340MiddleWare
             beneficiary = new Beneficiary();
         }
 
+        public void updatePolicy(string oldBFirstName, string oldBLastName)
+        {
+            beneficiary.updateBeneficiary(oldBFirstName, oldBLastName);
+            holder.updatePolicyHolder();
+        }
+
         public override void saveToDataBase()
         {
             holder.saveToDataBase();
@@ -242,14 +248,20 @@ namespace PAG340MiddleWare
         private double GetSummationOfInflationAdjusted(List<Payment> payments)
         {
             double summation = 0;
-            string year = "" + startDate.Year;
+            string year;
+            if (startDate.Year != DateTime.Today.Year) year = "" + startDate.Year;
+            else year = "" + (startDate.Year - 1);
             double inflationAtStart = getInflationAmountat(startDate.Month, year);
             double inflationAtPayDate;
             foreach (Payment payment in payments)
             {
-                year = "" + payment.Date.Year;
-                inflationAtPayDate = getInflationAmountat(payment.Date.Month, year);
-                summation += payment.Amount * inflationAtStart / inflationAtPayDate;
+                if (payment.Date.Year != DateTime.Today.Year)
+                {
+                    year = "" + payment.Date.Year;
+                    inflationAtPayDate = getInflationAmountat(payment.Date.Month, year);
+                    summation += payment.Amount * inflationAtStart / inflationAtPayDate;
+                }
+                else summation += payment.Amount;
             }
             return summation;
         }

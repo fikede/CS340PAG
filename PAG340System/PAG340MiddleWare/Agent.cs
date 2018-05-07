@@ -104,8 +104,46 @@ namespace PAG340MiddleWare
         public List<Policy> delinquentAccounts(string state, double amountOverdue)
         {
             List<Policy> policyList = new List<Policy>();
-           
+            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "searchPolicy";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@agentID", id);
+            if(state.Length == 2) cmd.Parameters.AddWithValue("@searchState", state);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            policyList = getSearchResults(reader);
+            conn.Close();
+            policyList = calculateDelinquentAccounts(policyList, amountOverdue);
+
             return policyList;
+        }
+
+        protected List<Policy> calculateDelinquentAccounts(List<Policy> policies, double amountOverdue)
+        {
+            List<Policy> policyList = new List<Policy>();
+
+            foreach(Policy policy in policies)
+            {
+                List<Payment> payments = policy.GetPaymentHistory();
+                TimeSpan sinceStart = DateTime.Today.Subtract(policy.StartDate);
+                double expectedSum = policy.Premium * (sinceStart.TotalDays / 30.42); //To get months.
+                double actualSum = calculateActualSum(payments);
+                if ((expectedSum - actualSum) > amountOverdue) policyList.Add(policy);
+            }
+
+            return policyList;
+        }
+
+        protected double calculateActualSum(List<Payment> payments)
+        {
+            double sum = 0;
+            foreach (Payment payment in payments)
+            {
+                if (payment.Type != 'c' && payment.Type != 'C') sum += payment.Amount;
+            }
+            return sum;
         }
 
         public bool logIn(string inID, string inHashPassword)

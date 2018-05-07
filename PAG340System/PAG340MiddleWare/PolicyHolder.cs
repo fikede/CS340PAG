@@ -43,6 +43,26 @@ namespace PAG340MiddleWare
             zip = inZIP;
         }
 
+        public void updatePolicyHolder()
+        {
+            String connectionString = Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "updatePolicyHolder";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ID", id);
+            cmd.Parameters.AddWithValue("@firstName", firstName);
+            cmd.Parameters.AddWithValue("@lastName", lastName);
+            cmd.Parameters.AddWithValue("@street", street);
+            cmd.Parameters.AddWithValue("@city", city);
+            cmd.Parameters.AddWithValue("@state", state);
+            cmd.Parameters.AddWithValue("@zip", zip);
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public override void saveToDataBase()
         {
             String connectionString = Settings.Default.SqlConnection;

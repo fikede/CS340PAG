@@ -28,6 +28,24 @@ namespace PAG340MiddleWare
             policyNumber = inPolicyNumber;
         }
 
+        public void updateBeneficiary(string oldFirstName, string oldLastName)
+        {
+            String connectionString = Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            String query = "updateBeneficiary";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            cmd.Parameters.AddWithValue("@oldFirstName", oldFirstName);
+            cmd.Parameters.AddWithValue("@oldLastName", oldLastName);
+            cmd.Parameters.AddWithValue("@newFirstName", firstName);
+            cmd.Parameters.AddWithValue("@newLastName", lastName);
+            cmd.Connection = conn;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public override void saveToDataBase()
         {
             String connectionString = Settings.Default.SqlConnection;
