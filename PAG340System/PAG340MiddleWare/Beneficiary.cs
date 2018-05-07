@@ -32,7 +32,7 @@ namespace PAG340MiddleWare
         {
             String connectionString = Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
-            String query = "addBeneficiary";
+            String query = "addBeneficary";
             SqlCommand cmd = new SqlCommand(query);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
@@ -44,8 +44,9 @@ namespace PAG340MiddleWare
             conn.Close();
         }
 
-        public void AddPolicyInfo(string inFirstName, string inLastName)
+        public void AddPolicyInfo(string inPolicyNumber, string inFirstName, string inLastName)
         {
+            policyNumber = inPolicyNumber;
             firstName = inFirstName;
             lastName = inLastName;
         }

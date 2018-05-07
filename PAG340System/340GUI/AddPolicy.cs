@@ -19,7 +19,9 @@ namespace _340GUI
             inPolicy = thePolicy;
             usingAgent = inUsingAgent;
             //labels
-            //label_ShowPolicyNumber.Text = inPolicy.PolicyNumber;
+            label_ShowPolicyNumber.Text = inPolicy.PolicyNumber;
+
+            thePolicy.RepresentativeAgent = inUsingAgent;
             label_ShowPolicyholderDOB.Text = inPolicy.Holder.BirthDate.ToString("yyyy/MM/dd");
 
             if (Convert.ToString(inPolicy.FathersAgeAtDeath) != "0")

@@ -27,6 +27,10 @@ namespace _340GUI
         {
             if(label_ShowTotalAmountOfPayment.Visible)
             {
+                pricingPolicy.Premium = Convert.ToDouble(label_ShowTotalAmountOfPayment.Text);
+                pricingPolicy.StartDate = DateTime.Today;
+                pricingPolicy.Holder.ID = pricingPolicy.Holder.getNextId();
+                pricingPolicy.PolicyNumber = pricingPolicy.getNextNumber();
                 AddPolicy addPolicy = new AddPolicy(pricingPolicy, usingAgent);
                 addPolicy.Show();
             }

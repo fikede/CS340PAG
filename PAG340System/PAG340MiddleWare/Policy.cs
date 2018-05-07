@@ -107,7 +107,7 @@ namespace PAG340MiddleWare
             holder.saveToDataBase();
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
-            String query = "addPolicyHolder";
+            String query = "addPolicy";
             SqlCommand cmd = new SqlCommand(query);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
@@ -128,7 +128,7 @@ namespace PAG340MiddleWare
             cmd.Parameters.AddWithValue("@hospitalized", booleanValue);
             cmd.Parameters.AddWithValue("@dangerousActivities", dangerousActivities);
             cmd.Parameters.AddWithValue("@startDate", startDate);
-            if(endDate.ToString() != "00010101") cmd.Parameters.AddWithValue("@endDate", endDate);
+            //if(endDate.ToString() != "00010101") cmd.Parameters.AddWithValue("@endDate", endDate);
             cmd.Parameters.AddWithValue("@payoffAmount", payOffAmount);
             cmd.Parameters.AddWithValue("@monthlyPremium", premium);
             cmd.Connection = conn;
@@ -224,8 +224,7 @@ namespace PAG340MiddleWare
         public void AddPolicyInfo(string phFirstName, string phLastName, string street, string city, string state, string zIP, string benefFirstName, string benefLastName)
         {
             holder.AddPolicyInfo(phFirstName, phLastName, street, city, state, zIP);
-            beneficiary.AddPolicyInfo(benefFirstName, benefLastName);
-            saveToDataBase();
+            beneficiary.AddPolicyInfo(policyNumber, benefFirstName, benefLastName);
         }
 
         public double CalculateProfitMade()
