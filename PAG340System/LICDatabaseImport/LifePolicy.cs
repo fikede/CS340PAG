@@ -10,7 +10,6 @@ namespace LICDatabaseImport
 {
     class LifePolicy : Savable
     {
-        // for Life Policy
         private char[] policyNum = new char[30];
         private char[] holderID = new char[20];
         private char[] holderDOB = new char[8];
@@ -75,7 +74,6 @@ namespace LICDatabaseImport
             return output;
         }
 
-        // holder_dateofbirth char to string
         private string dateConversion(char[] dateInput)
         {
             string dateString = convertToString(dateInput);
@@ -84,8 +82,6 @@ namespace LICDatabaseImport
             return dateString;
         }
 
-        // convert father and mother age at death to decimal.
-        // Issue found in calculating years. What if they are still alive.
         private decimal calculateYearsInDecimal(char[] ageInput)
         {
             decimal result = 0.00m;

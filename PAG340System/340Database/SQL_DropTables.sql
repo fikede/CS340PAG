@@ -1,5 +1,5 @@
 /*
- * To Drop tables use the following.
+-- To drop tables, use the following commands in the designated order.
 
 USE LIC_PAG
 GO
@@ -12,19 +12,21 @@ DROP TABLE PolicyHolder
 DROP TABLE [Policy]
 DROP TABLE Employee
 DROP TABLE Department
+*/
 
 -----------------------------------------------------------------
-To alter a table column use
+-- To alter a table column use the following schema.
 -----------------------------------------------------------------
-
+/*
 USE LIC_PAG
 GO
-
 ALTER TABLE [table_name]
 ALTER COLUMN [column_name] [data_type]
+*/
 
+/*
 -----------------------------------------------------------------
-EXAMPLE
+-- EXAMPLE
 -----------------------------------------------------------------
 
 USE LIC_PAG

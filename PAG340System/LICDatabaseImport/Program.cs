@@ -13,8 +13,6 @@ namespace LICDatabaseImport
     {
         public static void Main()
         {
-
-            // create classes for each of the file types.
             String filePath = LICDatabaseImport.Properties.Settings.Default.FilePath;
             List<string> policyNumbers = new List<string>();
             LifePolicy policy = new LifePolicy(policyNumbers);
@@ -183,10 +181,7 @@ namespace LICDatabaseImport
             {
                 throw new FileNotFoundException("File Not Found", e);
             }
-
-            // need to end policies with claims.
             payments.updateClaimedPolicies();
-            // need to upload US Dollar Inflation.
             inflation.getInfo();
         }
     }

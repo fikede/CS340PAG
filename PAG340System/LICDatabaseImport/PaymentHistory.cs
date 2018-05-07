@@ -10,8 +10,6 @@ namespace LICDatabaseImport
 {
     class PaymentHistory : Savable
     {
-        // for PaymentHistory
-
         private List<string> policyNumbers;
         private char[] amount = new char[10];
         private char[] paymentDateTime = new char[12];
@@ -50,12 +48,10 @@ namespace LICDatabaseImport
                 policyList.Add(reader.GetString(columnNumber));
                 columnNumber = reader.GetOrdinal("date");
                 date = reader.GetDateTime(columnNumber);
-                dates.Add(date.ToShortDateString()); //removed the times for ending a policy... not needed.
+                dates.Add(date.ToShortDateString());
             }
             conn.Close();
-            // now that we have the policies and dates....
 
-            // PROBABLY INEFFICIENT BUT EFFECTIVE.
             for (int i = 0; i < policyList.Count; i++)
             {
                 SqlCommand cmd_Policy = new SqlCommand("endPolicy", conn);
@@ -66,7 +62,6 @@ namespace LICDatabaseImport
                 cmd_Policy.ExecuteNonQuery();
                 conn.Close();
             }
-            // end the policy.
         }
 
         private static char[] getInfo(int start, int end, string input, char[] output)
@@ -114,7 +109,7 @@ namespace LICDatabaseImport
             {
                 dateString += dateInput[i];
             }
-            dateString += ":00"; // need to add seconds.
+            dateString += ":00";
             return dateString;
         }
         private decimal convertAmount(char[] input)
