@@ -75,13 +75,6 @@ namespace _340GUI
             this.radioButton_YesHospitalized = new System.Windows.Forms.RadioButton();
             this.radioButton_NoHospitalized = new System.Windows.Forms.RadioButton();
             this.textBox_PayOffAmount = new System.Windows.Forms.TextBox();
-            this.label_WarningDOB = new System.Windows.Forms.Label();
-            this.label_WarningFAD = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel_HeartDisease.SuspendLayout();
             this.panel_Cancer.SuspendLayout();
             this.panel_Hospitalized.SuspendLayout();
@@ -432,89 +425,12 @@ namespace _340GUI
             this.textBox_PayOffAmount.Size = new System.Drawing.Size(239, 20);
             this.textBox_PayOffAmount.TabIndex = 64;
             // 
-            // label_WarningDOB
-            // 
-            this.label_WarningDOB.AutoSize = true;
-            this.label_WarningDOB.ForeColor = System.Drawing.Color.DarkRed;
-            this.label_WarningDOB.Location = new System.Drawing.Point(607, 56);
-            this.label_WarningDOB.Name = "label_WarningDOB";
-            this.label_WarningDOB.Size = new System.Drawing.Size(35, 13);
-            this.label_WarningDOB.TabIndex = 72;
-            this.label_WarningDOB.Text = "label1";
-            // 
-            // label_WarningFAD
-            // 
-            this.label_WarningFAD.AutoSize = true;
-            this.label_WarningFAD.ForeColor = System.Drawing.Color.DarkRed;
-            this.label_WarningFAD.Location = new System.Drawing.Point(607, 78);
-            this.label_WarningFAD.Name = "label_WarningFAD";
-            this.label_WarningFAD.Size = new System.Drawing.Size(35, 13);
-            this.label_WarningFAD.TabIndex = 73;
-            this.label_WarningFAD.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(607, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "label1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(607, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 75;
-            this.label3.Text = "label1";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.DarkRed;
-            this.label4.Location = new System.Drawing.Point(607, 144);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 76;
-            this.label4.Text = "label1";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.DarkRed;
-            this.label5.Location = new System.Drawing.Point(607, 163);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 77;
-            this.label5.Text = "label1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.DarkRed;
-            this.label6.Location = new System.Drawing.Point(607, 185);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 78;
-            this.label6.Text = "label1";
-            // 
             // PricePolicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label_WarningFAD);
-            this.Controls.Add(this.label_WarningDOB);
             this.Controls.Add(this.textBox_PayOffAmount);
             this.Controls.Add(this.panel_Hospitalized);
             this.Controls.Add(this.panel_Cancer);
@@ -599,12 +515,5 @@ namespace _340GUI
         private RadioButton radioButton_NoHospitalized;
         private Policy pricingPolicy;
         private TextBox textBox_PayOffAmount;
-        private Label label_WarningDOB;
-        private Label label_WarningFAD;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
     }
 }

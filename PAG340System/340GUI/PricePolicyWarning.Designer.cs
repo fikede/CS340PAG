@@ -82,7 +82,7 @@ namespace _340GUI
             // pictureBox_Warning
             // 
             this.pictureBox_Warning.Image = global::_340GUI.Properties.Resources.warning;
-            this.pictureBox_Warning.Location = new System.Drawing.Point(68, 60);
+            this.pictureBox_Warning.Location = new System.Drawing.Point(67, 59);
             this.pictureBox_Warning.Name = "pictureBox_Warning";
             this.pictureBox_Warning.Size = new System.Drawing.Size(16, 16);
             this.pictureBox_Warning.TabIndex = 9;

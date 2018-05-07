@@ -36,12 +36,12 @@ namespace _340GUI
         private string alignItemString(Payment payment)
         {
             int length;
-            string output = "   ";
+            string output = "                  ";
             output += payment.Date.ToString("yyyy/MM/dd");
-            length = 80 - payment.Date.ToString("yyyy/MM/dd").Length;
+            length = 65 - payment.Date.ToString("yyyy/MM/dd").Length;
             for (int i = 0; i < length; i++) output += " ";
             output += payment.Amount.ToString();
-            length = 100 - (payment.Amount.ToString().Length + 1);
+            length = 65 - (payment.Amount.ToString().Length + 1);
             for (int i = 0; i < length; i++) output += " ";
             output += payment.Type;
             return output;

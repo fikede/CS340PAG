@@ -38,9 +38,11 @@ namespace _340GUI
 
         private void button_Save_Click(object sender, EventArgs e)
         {
-                usingPolicy.AddPolicyInfo(phFirstName, phLastName, street, city, state, zIP, benefFirstName, benefLastName);
-                PolicyPage policy = new PolicyPage(usingAgent, searchPage, usingPolicy);
-                policy.Show();
+            usingPolicy.AddPolicyInfo(phFirstName, phLastName, street, city, state, zIP, benefFirstName, benefLastName);
+            PolicyPage policy = new PolicyPage(usingAgent, searchPage, usingPolicy);
+            policy.Show();
+            SuccessPage success = new SuccessPage();
+            success.Show();
         }
     }
 }

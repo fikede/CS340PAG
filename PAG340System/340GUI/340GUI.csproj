@@ -173,6 +173,12 @@
     <Compile Include="PolicyWarning.Designer.cs">
       <DependentUpon>PolicyWarning.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuccessPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuccessPage.Designer.cs">
+      <DependentUpon>SuccessPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateMakeSure.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PolicyWarning.resx">
       <DependentUpon>PolicyWarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuccessPage.resx">
+      <DependentUpon>SuccessPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateMakeSure.resx">
       <DependentUpon>UpdateMakeSure.cs</DependentUpon>

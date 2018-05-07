@@ -37,7 +37,7 @@ namespace _340GUI
             double profit = usingPolicy.CalculateProfitMade();
             if (profit < 0.0)
             {
-                LossWarning warning = new LossWarning(profit, previousPage);
+                LossWarning warning = new LossWarning(profit, previousPage, this);
                 warning.Show();
             }
             else

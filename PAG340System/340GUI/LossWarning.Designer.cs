@@ -141,7 +141,8 @@ namespace _340GUI
         private PictureBox pictureBox_Warning;
         private Label label_MoreLoss2;
         private Label label_MoreLoss1;
-        private PolicyPage previousPage;
+        private PolicyPage prepreviousPage;
+        private MakeClaim previousPage;
         //private Agent usingAgent;
     }
 }

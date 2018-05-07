@@ -617,7 +617,7 @@ namespace _340GUI
             this.listBox_BeneficiaryName.HorizontalScrollbar = true;
             this.listBox_BeneficiaryName.Location = new System.Drawing.Point(310, 634);
             this.listBox_BeneficiaryName.Name = "listBox_BeneficiaryName";
-            this.listBox_BeneficiaryName.Size = new System.Drawing.Size(238, 30);
+            this.listBox_BeneficiaryName.Size = new System.Drawing.Size(238, 43);
             this.listBox_BeneficiaryName.TabIndex = 2;
             // 
             // PolicyPage

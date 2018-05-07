@@ -19,6 +19,8 @@ namespace _340GUI
             usingAgent = inUsingAgent;
             listBox_DelinquentList.Visible = false;
             textBox_Categories.Visible = false;
+            pictureBox_Warning.Visible = false;
+            label_Warning.Visible = false;
             comboBox_State.Text = "No State Specified";
             if (usingAgent.isManager())
             {
@@ -82,27 +84,30 @@ namespace _340GUI
         {
             //IncompleteForm incomplete = new IncompleteForm();
             //incomplete.Show();
-            if(textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || textBox_AmountOverdue.Text != "" 
-                || comboBox_State.Text != "No State Specified")
+            listBox_DelinquentList.Items.Clear();
+            if ((textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || comboBox_State.Text != "No State Specified") &&
+                textBox_AmountOverdue.Text != "")
             {
                 List<Policy> delinquentList = new List<Policy>();
+                List<double> amountsOverdue = new List<double>();
                 if (usingAgent.isManager())
                 {
                     Manager usingManager = new Manager(usingAgent);
                     delinquentList = usingManager.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text)
-                        , textBox_AgentFirstName.Text, textBox_AgentLastName.Text);
+                        , textBox_AgentFirstName.Text, textBox_AgentLastName.Text, amountsOverdue);
                 }
                 else
                 {
-                    delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text));
+                    delinquentList = usingAgent.delinquentAccounts(comboBox_State.Text, Convert.ToDouble(textBox_AmountOverdue.Text), amountsOverdue);
                 }
 
+                int index = 0;
                 foreach (Policy policy in delinquentList)
                 {
-                    double amountOverdue = 0;
-                    //amountOverdue = policy.getAmountOverdue(payment);
+                    double amountOverdue = amountsOverdue.ElementAt(index);
                     string listString = alignItemString(policy, amountOverdue);
                     listBox_DelinquentList.Items.Add(listString);
+                    index++;
                 }
 
                 if (listBox_DelinquentList.Items.Count == 0)
@@ -111,6 +116,15 @@ namespace _340GUI
                 }
                 listBox_DelinquentList.Visible = true;
                 textBox_Categories.Visible = true;
+                pictureBox_Warning.Visible = false;
+                label_Warning.Visible = false;
+            }
+            else
+            {
+                pictureBox_Warning.Visible = true;
+                label_Warning.Visible = true;
+                listBox_DelinquentList.Visible = false;
+                textBox_Categories.Visible = false;
             }
         }
 
@@ -127,7 +141,7 @@ namespace _340GUI
             output += policy.RepresentativeAgent.Firstname + " " + policy.RepresentativeAgent.Lastname;
             length = 50 - (policy.RepresentativeAgent.Firstname.Length + policy.RepresentativeAgent.Lastname.Length + 1);
             for (int i = 0; i < length; i++) output += " ";
-            //output += amountOverdue; I cannot find overdue.
+            output += amountOverdue; 
             return output;
         }
 

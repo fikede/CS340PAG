@@ -59,6 +59,9 @@ namespace _340GUI
             this.label_ShowAgentLastName = new System.Windows.Forms.Label();
             this.listBox_DelinquentList = new System.Windows.Forms.ListBox();
             this.textBox_Categories = new System.Windows.Forms.TextBox();
+            this.label_Warning = new System.Windows.Forms.Label();
+            this.pictureBox_Warning = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel_AddNewAgent
@@ -291,22 +294,42 @@ namespace _340GUI
             // listBox_DelinquentList
             // 
             this.listBox_DelinquentList.FormattingEnabled = true;
-            this.listBox_DelinquentList.Location = new System.Drawing.Point(197, 215);
+            this.listBox_DelinquentList.HorizontalScrollbar = true;
+            this.listBox_DelinquentList.Location = new System.Drawing.Point(179, 215);
             this.listBox_DelinquentList.Name = "listBox_DelinquentList";
-            this.listBox_DelinquentList.Size = new System.Drawing.Size(535, 160);
+            this.listBox_DelinquentList.Size = new System.Drawing.Size(564, 160);
             this.listBox_DelinquentList.TabIndex = 71;
             // 
             // textBox_Categories
             // 
             this.textBox_Categories.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.textBox_Categories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_Categories.Location = new System.Drawing.Point(197, 196);
+            this.textBox_Categories.Location = new System.Drawing.Point(179, 196);
             this.textBox_Categories.Name = "textBox_Categories";
             this.textBox_Categories.ReadOnly = true;
-            this.textBox_Categories.Size = new System.Drawing.Size(535, 20);
+            this.textBox_Categories.Size = new System.Drawing.Size(564, 20);
             this.textBox_Categories.TabIndex = 74;
             this.textBox_Categories.Text = "  Policy Number                 Policyholder\'s Name                Agent\'s Name  " +
     "                   Amount Overdue";
+            // 
+            // label_Warning
+            // 
+            this.label_Warning.AutoSize = true;
+            this.label_Warning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_Warning.Location = new System.Drawing.Point(335, 193);
+            this.label_Warning.Name = "label_Warning";
+            this.label_Warning.Size = new System.Drawing.Size(230, 13);
+            this.label_Warning.TabIndex = 75;
+            this.label_Warning.Text = "Invalid input. Please enter the amount overdue!";
+            // 
+            // pictureBox_Warning
+            // 
+            this.pictureBox_Warning.Image = global::_340GUI.Properties.Resources.warning;
+            this.pictureBox_Warning.Location = new System.Drawing.Point(319, 191);
+            this.pictureBox_Warning.Name = "pictureBox_Warning";
+            this.pictureBox_Warning.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox_Warning.TabIndex = 76;
+            this.pictureBox_Warning.TabStop = false;
             // 
             // Delinquent
             // 
@@ -314,6 +337,8 @@ namespace _340GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(755, 399);
+            this.Controls.Add(this.pictureBox_Warning);
+            this.Controls.Add(this.label_Warning);
             this.Controls.Add(this.textBox_Categories);
             this.Controls.Add(this.listBox_DelinquentList);
             this.Controls.Add(this.label_ShowAgentLastName);
@@ -337,6 +362,7 @@ namespace _340GUI
             this.Name = "Delinquent";
             this.Text = "Delinquent Account Page";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.shutDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +391,7 @@ namespace _340GUI
         private Label label_ShowAgentLastName;
         private ListBox listBox_DelinquentList;
         private TextBox textBox_Categories;
+        private Label label_Warning;
+        private PictureBox pictureBox_Warning;
     }
 }

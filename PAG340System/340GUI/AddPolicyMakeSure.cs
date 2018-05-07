@@ -40,6 +40,8 @@ namespace _340GUI
             completePolicy.saveToDataBase();
             Home home = new Home(usingAgent);
             home.Show();
+            SuccessPage success = new SuccessPage();
+            success.Show();
             previousPage.Close();
             this.Close();
             prepreviousPage.Close();

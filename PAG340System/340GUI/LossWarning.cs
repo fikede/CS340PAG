@@ -13,10 +13,11 @@ namespace _340GUI
 {
     public partial class LossWarning : Form
     {
-        public LossWarning(double profit, PolicyPage inPage)
+        public LossWarning(double profit, PolicyPage inPage, MakeClaim claim)
         {
             InitializeComponent();
-            previousPage = inPage;
+            prepreviousPage = inPage;
+            previousPage = claim;
             if(profit > -5.0)
             {
                 label_WarningComment1.Text = "A loss of" + (-profit) + " percent has been detected";
@@ -33,7 +34,8 @@ namespace _340GUI
 
         private void button_OK_Click(object sender, EventArgs e)
         {
-            previousPage.Show();
+            prepreviousPage.Refresh();
+            previousPage.Close();
             this.Close();
         }
     }
