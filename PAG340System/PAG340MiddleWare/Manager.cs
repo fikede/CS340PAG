@@ -52,7 +52,7 @@ namespace PAG340MiddleWare
             return policyList;
         }
 
-        public List<Policy> delinquentAccounts(string state, double amountOverdue, string agentFirstName, string agentLastName)
+        public List<Policy> delinquentAccounts(string state, double amountOverdue, string agentFirstName, string agentLastName, List<double> overdueAmounts)
         {
             List<Policy> policyList = new List<Policy>();
             String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
@@ -67,7 +67,7 @@ namespace PAG340MiddleWare
             SqlDataReader reader = cmd.ExecuteReader();
             policyList = getSearchResults(reader);
             conn.Close();
-            policyList = calculateDelinquentAccounts(policyList, amountOverdue);
+            policyList = calculateDelinquentAccounts(policyList, amountOverdue, overdueAmounts);
             return policyList;
         }
 
