@@ -319,7 +319,7 @@ namespace PAG340MiddleWare
         private List<Policy> getClaimedPolicies()
         {
             List<Policy> policies = new List<Policy>();
-            String connectionString = PAG340MiddleWare.Properties.Settings.Default.SqlConnection;
+            String connectionString = Settings.Default.SqlConnection;
             SqlConnection conn = new SqlConnection(connectionString);
             string query = "getClaimedPolicies";
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -334,6 +334,27 @@ namespace PAG340MiddleWare
             }
             conn.Close();
             return policies;
+        }
+
+        private List<Beneficiary> GetBeneficiaries()
+        {
+            List<Beneficiary> beneficiaries = new List<Beneficiary>();
+            string connectionString = Settings.Default.SqlConnection;
+            SqlConnection conn = new SqlConnection(connectionString);
+            string query = "getBeneficiaries";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@policyNumber", policyNumber);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read())
+            {
+                PAG340MiddleWare.Beneficiary newBeneficiary = new Beneficiary();
+                newBeneficiary.PolicyNumber = policyNumber;
+                newBeneficiary.getDataWithReader(reader);
+                beneficiaries.Add(newBeneficiary);
+            }
+            return beneficiaries;
         }
 
         private void getPolicyInformationWithoutAgentName(SqlDataReader reader)

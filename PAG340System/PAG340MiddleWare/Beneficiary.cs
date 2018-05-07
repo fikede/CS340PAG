@@ -44,6 +44,14 @@ namespace PAG340MiddleWare
             conn.Close();
         }
 
+        public void getDataWithReader(SqlDataReader reader)
+        {
+            int columnNumber = reader.GetOrdinal("first_name");
+            firstName = reader.GetString(columnNumber);
+            columnNumber = reader.GetOrdinal("last_name");
+            lastName = reader.GetString(columnNumber);
+        }
+
         public void AddPolicyInfo(string inFirstName, string inLastName)
         {
             firstName = inFirstName;
