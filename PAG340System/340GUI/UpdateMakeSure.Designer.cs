@@ -100,7 +100,7 @@ namespace _340GUI
         private Label label_Comment;
         private Search searchPage;
         private Agent usingAgent;
-        private PolicyPage previousPage;
+        private UpdatePolicy previousPage;
         private Policy usingPolicy;
         private string phFirstName;
         private string phLastName;

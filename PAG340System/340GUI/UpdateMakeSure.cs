@@ -13,7 +13,7 @@ namespace _340GUI
 {
     public partial class UpdateMakeSure : Form
     {
-        public UpdateMakeSure(Search theSearchPage,PolicyPage inPage, Policy inUsingPolicy, Agent inUsingAgent, string policyholderFirstName, string policyholderLastName, 
+        public UpdateMakeSure(Search theSearchPage, UpdatePolicy inPage, Policy inUsingPolicy, Agent inUsingAgent, string policyholderFirstName, string policyholderLastName, 
             string addressStreet, string addressCity, string addressState, string addressZIP, string theBenefFirstName, string theBenefLastName)
         {
             InitializeComponent();
@@ -43,6 +43,8 @@ namespace _340GUI
             policy.Show();
             SuccessPage success = new SuccessPage();
             success.Show();
+            this.Close();
+            previousPage.Close();
         }
     }
 }

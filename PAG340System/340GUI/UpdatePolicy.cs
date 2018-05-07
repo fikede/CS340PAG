@@ -77,7 +77,7 @@ namespace _340GUI
                 comboBox_AddressState.Text, textBox_AddressZip.Text};
             if (incompleteInfo(arrayOfInputs))
             {
-                UpdateMakeSure update = new UpdateMakeSure(searchPage, previousPage, inPolicy, usingAgent, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text,
+                UpdateMakeSure update = new UpdateMakeSure(searchPage, this, inPolicy, usingAgent, textBox_PolicyholderFirstName.Text, textBox_PolicyholderLastName.Text,
                 textBox_AddressStreet.Text, textBox_AddressCity.Text, comboBox_AddressState.Text, textBox_AddressZip.Text, textBox_BeneficiaryFirstName.Text, textBox_BeneficiaryLastName.Text);
                 update.Show();
             }

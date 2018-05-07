@@ -67,11 +67,14 @@ namespace _340GUI
             label_ShowMonthlyPremium.Text = Convert.ToString(inPolicy.Premium);
 
             List<Beneficiary> beneficiariesList = usingPolicy.GetBeneficiaries();
-            foreach (Beneficiary beneficiaryNames in beneficiariesList)
+            if (beneficiariesList.Count == 0) listBox_BeneficiaryName.Items.Add("There are no beneficiaries.");
+            else
             {
-                listBox_BeneficiaryName.Items.Add(beneficiaryNames.FirstName + " " + beneficiaryNames.LastName);
+                foreach (Beneficiary beneficiaryNames in beneficiariesList)
+                {
+                    listBox_BeneficiaryName.Items.Add(beneficiaryNames.FirstName + " " + beneficiaryNames.LastName);
+                }
             }
-            
             //label_ShowBeneficiaryFirstName.Text = inPolicy.Beneficiary.FirstName;
             //label_ShowBeneficiaryLastName.Text = inPolicy.Beneficiary.LastName;
         }
