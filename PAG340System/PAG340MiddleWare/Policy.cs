@@ -75,11 +75,12 @@ namespace PAG340MiddleWare
         }
 
         //This constructor takes in all the indicative date that will be used for the pricing of a new policy. 
-        public Policy(double inFathersAgeAtDeath, double inMothersAgeAtDeath, double inCigsPerDay, double inSmokingHis, double inSystolicBldPressure,
+        public Policy(DateTime DOB, double inFathersAgeAtDeath, double inMothersAgeAtDeath, double inCigsPerDay, double inSmokingHis, double inSystolicBldPressure,
                     double inGramsFatPerDay, bool inHeartDisease, bool inCancer, bool inHospitalized, string inDangerousActivities)
         {
             policyNumber = "";
             holder = new PolicyHolder();
+            holder.BirthDate = DOB;
             fathersAgeAtDeath = inFathersAgeAtDeath;
             motherAgeAtDeath = inMothersAgeAtDeath;
             cigsPerDay = inCigsPerDay;
