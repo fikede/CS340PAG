@@ -89,8 +89,7 @@ namespace _340GUI
             try
             {
                 errorMessage(false);
-                if ((textBox_AgentFirstName.Text != "" || textBox_AgentLastName.Text != "" || comboBox_State.Text != "No State Specified") &&
-                    textBox_AmountOverdue.Text != "")
+                if (textBox_AmountOverdue.Text != "")
                 {
                     List<Policy> delinquentList = new List<Policy>();
                     List<double> amountsOverdue = new List<double>();

@@ -135,7 +135,8 @@ namespace PAG340MiddleWare
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ID", agentID);
             cmd.Parameters.AddWithValue("@date", today);
-            if (state.Length != 2) cmd.Parameters.AddWithValue("state", state);
+            if (state.Length == 2) cmd.Parameters.AddWithValue("@state", state);
+            else cmd.Parameters.AddWithValue("@state", "  ");
             cmd.Parameters.AddWithValue("@amountOverdue", amountOverDue);
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -155,7 +156,8 @@ namespace PAG340MiddleWare
                 if ((expectedSum - actualSum) > amountOverdue)
                 {
                     policyList.Add(policy);
-                    overdueAmounts.Add(expectedSum - actualSum);
+                    double value = Math.Round(expectedSum - actualSum, 2);
+                    overdueAmounts.Add(value);
                 }
             }
 

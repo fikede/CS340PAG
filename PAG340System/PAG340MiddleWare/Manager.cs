@@ -70,7 +70,7 @@ namespace PAG340MiddleWare
             policyList = calculateDelinquentAccounts(policyList, amountOverdue, overdueAmounts);
             if(policyList.Count != 0)
             {
-                saveDelinquentAccount(ID, DateTime.Today, state, amountOverdue);
+                saveDelinquentAccount(ID, DateTime.Now, state, amountOverdue);
             }
             return policyList;
         }

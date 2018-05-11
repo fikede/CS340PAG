@@ -93,7 +93,7 @@ emp_ID varchar(20),
 date_generated datetime,
 [state] char(2),
 amount_overdue decimal(10,2),
-CONSTRAINT PK_Delinquent_Accounts_Parameters PRIMARY KEY(emp_ID),
+CONSTRAINT PK_Delinquent_Accounts_Parameters PRIMARY KEY(emp_ID, date_generated, [state]),
 CONSTRAINT FK_Delinquent_Accounts_Parameters_Employee FOREIGN KEY(emp_ID)
 	REFERENCES Employee(ID)
 )
